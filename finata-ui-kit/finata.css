@@ -1,0 +1,123 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+a {
+  color: #32cfc0;
+}
+a:hover {
+  color: #249dad;
+}
+.divider {
+  height: 10px;
+  clear: both;
+}
+
+.heading {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #333333;
+}
+
+.sub-header {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #555555;
+}
+
+.body-text {
+  font-size: 0.875em;
+  font-weight: normal;
+  color: #646464;
+}
+
+.alert-finata-success {
+  background-color: #bbf2eb;
+}
+
+.alert-finata-attention {
+  background-color: #f3e1e2;
+}
+
+.breadcrumb {
+  background-color: transparent!important;
+}
+.breadcrumb-item a {
+  color: #249dad !important;
+}
+.breadcrumb.active {
+  color: #555555 !important;
+}
+
+.btn-finata-primary {
+  background-color: #32cfc0;
+  color: white;
+}
+.btn-finata-primary:hover {
+  background-color: #249dad;
+  color: white;
+}
+.btn-finata-secondary {
+  background-color: #c2c2c2;
+  color: white;
+}
+.btn-finata-secondary:hover {
+  background-color: #b1b0b0;
+  color: white;
+}
+.btn-finata-tertiary {
+  background-color: transparent;
+  color: #fc592d;
+  border: 2px solid #fc592d;
+}
+.btn-finata-tertiary:hover {
+  background-color: #fc592d;
+  color: white;
+}
+.btn-finata-cancel {
+  background-color: #fc592d;
+  color: white;
+}
+.btn-finata-cancel:hover {
+  background-color: #d43910;
+  color: white !important;
+}
+.btn-sm {
+  padding: 10px;
+}
+.btn-md {
+  width: 170px !important;
+  height: 50px !important;
+}
+.pagination a {
+  color: #777 !important;
+}
+.pagination .active a {
+  background-color: #32cfc0 !important;
+  color: white !important;
+  border-color: #32cfc0 !important;
+}
+.dropdown-item:hover {
+  background-color: #e7ecee;
+}
+.dropdown-item:active {
+ color: inherit;
+}
+.finata-progress-bar {
+  background-color: #32cfc0;
+}
+.card-link:hover {
+  color: inherit;
+}
+.table-hover tbody tr:hover {
+  background-color: #dff4f2;
+}
+.invalid-feedback strong {
+  font-size: 1.175em;
+}
+.nav-link.active {
+  background-color: #32cfc0 !important;
+  color: white !important;
+}
+.spinner-finata {
+  color: #32cfc0;
+}
