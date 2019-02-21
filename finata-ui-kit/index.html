@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="finata.css">
   <style>
     .termometer:hover {
@@ -19,14 +20,122 @@
 </head>
 <body>
 
-  <div class="stars"></div>
+  <div class="wrapper">
+          <!-- Sidebar  -->
+          <nav id="sidebar">
+              <div class="sidebar-header">
+                  <h3>Bootstrap Sidebar</h3>
+                  <strong>BS</strong>
+              </div>
+
+              <ul class="list-unstyled components">
+                  <li class="active">
+                      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                          <i class="fas fa-home"></i>
+                          Home
+                      </a>
+                      <ul class="collapse list-unstyled" id="homeSubmenu">
+                          <li>
+                              <a href="#">Home 1</a>
+                          </li>
+                          <li>
+                              <a href="#">Home 2</a>
+                          </li>
+                          <li>
+                              <a href="#">Home 3</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <i class="fas fa-briefcase"></i>
+                          About
+                      </a>
+                      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                          <i class="fas fa-copy"></i>
+                          Pages
+                      </a>
+                      <ul class="collapse list-unstyled" id="pageSubmenu">
+                          <li>
+                              <a href="#">Page 1</a>
+                          </li>
+                          <li>
+                              <a href="#">Page 2</a>
+                          </li>
+                          <li>
+                              <a href="#">Page 3</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <i class="fas fa-image"></i>
+                          Portfolio
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <i class="fas fa-question"></i>
+                          FAQ
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#">
+                          <i class="fas fa-paper-plane"></i>
+                          Contact
+                      </a>
+                  </li>
+              </ul>
+
+              <ul class="list-unstyled CTAs">
+                  <li>
+                      <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                  </li>
+                  <li>
+                      <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                  </li>
+              </ul>
+          </nav>
+
+          <!-- Page Content  -->
+          <div id="content">
+
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+
+                      <button type="button" id="sidebarCollapse" class="btn btn-info">
+                          <i class="fas fa-align-left"></i>
+                          <span>Toggle Sidebar</span>
+                      </button>
+                      <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fas fa-align-justify"></i>
+                      </button>
+
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="nav navbar-nav ml-auto">
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="#">Page</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Page</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Page</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Page</a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </nav>
 
 <div class="container">
   <h2 class="heading">Typography</h2>
   <hr>
   <p class="heading">Heading</p>
   <p class="sub-header">Sub-Header</p>
-  <p>Body text</p>
+  <p class="body-text">Body text</p>
 </div> <!-- container -->
 
 <div class="divider"></div>
@@ -524,7 +633,10 @@
 <script src="bootstrap-datepicker.min.js"></script>
 <!-- tinymce -->
 <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="script.js">
 
+</script>
 <script>
 $(document).ready(function(){
   $('#example').DataTable();

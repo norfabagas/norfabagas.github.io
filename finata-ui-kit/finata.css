@@ -13,19 +13,19 @@ a:hover {
 }
 
 .heading {
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   font-weight: 700;
   color: #333333;
 }
 
 .sub-header {
-  font-size: 1.1em;
+  font-size: 1.1em !important;
   font-weight: 600;
   color: #555555;
 }
 
 .body-text {
-  font-size: 0.875em;
+  font-size: 0.875em !important;
   font-weight: normal;
   color: #646464;
 }
