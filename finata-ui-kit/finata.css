@@ -64,20 +64,20 @@ a:hover {
   background-color: #b1b0b0;
   color: white;
 }
-.btn-finata-tertiary {
+.btn-finata-quaternary {
   background-color: transparent;
   color: #fc592d;
   border: 2px solid #fc592d;
 }
+.btn-finata-quaternary:hover {
+  background-color: #fc592d;
+  color: white;
+}
+.btn-finata-tertiary {
+  background-color: #fc592d;
+  color: white;
+}
 .btn-finata-tertiary:hover {
-  background-color: #fc592d;
-  color: white;
-}
-.btn-finata-cancel {
-  background-color: #fc592d;
-  color: white;
-}
-.btn-finata-cancel:hover {
   background-color: #d43910;
   color: white !important;
 }
