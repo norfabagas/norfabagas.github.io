@@ -66,20 +66,28 @@ a:hover {
 }
 .btn-finata-quaternary {
   background-color: transparent;
-  color: #fc592d;
-  border: 2px solid #fc592d;
+  color: #ec4113;
+  border: 2px solid #ec4113;
 }
 .btn-finata-quaternary:hover {
-  background-color: #fc592d;
+  background-color: #ec4113;
   color: white;
 }
 .btn-finata-tertiary {
-  background-color: #fc592d;
+  background-color: #ec4113;
   color: white;
 }
 .btn-finata-tertiary:hover {
-  background-color: #d43910;
+  background-color: #d7370c;
   color: white !important;
+}
+.btn-finata-quinary {
+    background-color: #249dad;
+    color: white;
+}
+.btn-finata-quinary:hover {
+    background-color: #1f8b99;
+    color: white;
 }
 .btn-sm {
   padding: 10px;
