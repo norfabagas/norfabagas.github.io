@@ -19,7 +19,7 @@ a:hover {
 }
 
 .sub-header {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 600;
   color: #555555;
 }
@@ -111,7 +111,7 @@ a:hover {
 .table-hover tbody tr:hover {
   background-color: #dff4f2;
 }
-.invalid-feedback strong {
+.invalid-feedback strong, .valid-feedback strong {
   font-size: 1.175em;
 }
 .nav-link.active {
@@ -120,4 +120,13 @@ a:hover {
 }
 .spinner-finata {
   color: #32cfc0;
+}
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #32cfc0;
+}
+.custom-switch .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #32cfc0;
+}
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+  background-color: #32cfc0;
 }

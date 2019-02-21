@@ -10,8 +10,15 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="finata.css">
+  <style>
+    .termometer:hover {
+      background-color: yellow;
+    }
+  </style>
 </head>
 <body>
+
+  <div class="stars"></div>
 
 <div class="container">
   <h2 class="heading">Typography</h2>
@@ -31,7 +38,7 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Alert success!</strong> Lorem ipsum dolor sit amet <a href="#" class="alert-link">this is a link</a>
   </div>
-  
+
   <!-- alert success -->
   <div class="alert alert-finata-attention alert-dismissable fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -50,7 +57,7 @@
     </ol>
   </nav>
 </div> <!-- container -->
-  
+
 <div class="container">
   <h2 class="heading">Button & Link</h2>
   <hr>
@@ -58,13 +65,13 @@
   <button type="button" class="btn btn-sm btn-finata-secondary">Secondary</button>
   <button type="button" class="btn btn-sm btn-finata-tertiary">Tertiary</button>
   <button type="button" class="btn btn-sm btn-finata-cancel">Cancel</button>
-  
+
   <div class="divider"></div>
   <button type="button" class="btn btn-md btn-finata-primary">Primary</button>
   <button type="button" class="btn btn-md btn-finata-secondary">Secondary</button>
   <button type="button" class="btn btn-md btn-finata-tertiary">Tertiary</button>
   <button type="button" class="btn btn-md btn-finata-cancel">Cancel</button>
-  
+
   <div class="divider"></div>
   <button type="button" class="btn btn-md btn-finata-primary">
     <span class="spinner-border spinner-border-sm"></span> Primary
@@ -78,9 +85,9 @@
   <button type="button" class="btn btn-md btn-finata-cancel">
     <span class="spinner-border spinner-border-sm"></span> Cancel
   </button>
-  
+
   <div class="divider"></div>
-  
+
   <div class="btn-group">
     <button type="button" class="btn btn-finata-primary">Apple</button>
     <button type="button" class="btn btn-finata-primary">Samsung</button>
@@ -96,16 +103,16 @@
   </div>
 
 </div> <!-- container -->
-  
+
 <div class="divider"></div>
 <div class="divider"></div>
-  
+
 <div class="container">
   <h2 class="heading">Spinner</h2>
   <hr>
   <span class="spinner-border spinner-border-md spinner-finata"></span>
 </div>
-  
+
 <div class="divider"></div>
 <div class="divider"></div>
 
@@ -122,7 +129,7 @@
       </div>
     </div>
 </div>
-  
+
 <div class="divider"></div>
 <div class="divider"></div>
 
@@ -142,6 +149,15 @@
     <div class="invalid-feedback">
       <strong>
         <i class="fas fa-exclamation-circle"></i> error message
+      </strong>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="usr">Name:</label>
+    <input type="text" class="form-control is-valid" id="usr">
+    <div class="valid-feedback">
+      <strong>
+        <i class="fas fa-check"></i> Success message
       </strong>
     </div>
   </div>
@@ -180,7 +196,7 @@
 
 <div class="divider"></div>
 <div class="divider"></div>
-  
+
   <input list="value" placeholder="datalist" value="" class="custom-select">
   <datalist id="value">
     <option value="1">Indonesia</option>
@@ -190,10 +206,10 @@
     <option value="5">Ecuador</option>
     <option value="6">England</option>
   </datalist>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
-  
+
   <select class="select2 form-control" name="state">
     <option value="">Select2</option>
     <option value="AL">Alabama</option>
@@ -203,10 +219,10 @@
     <option value="US">United States</option>
     <option value="UK">United Kingdom</option>
   </select>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
-  
+
   <select class="select2 form-control" name="state[]" multiple="multiple">
     <option value="AL">Alabama</option>
     <option value="ID">Indonesia</option>
@@ -215,10 +231,10 @@
     <option value="US">United States</option>
     <option value="UK">United Kingdom</option>
   </select>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
-  
+
   <!-- checkbox -->
   <form>
     <div class="custom-control custom-checkbox">
@@ -226,7 +242,7 @@
       <label class="custom-control-label" for="customCheck">Checkbox</label>
     </div>
   </form>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
 
@@ -237,7 +253,7 @@
       <label class="custom-control-label" for="switch1">Toggle me</label>
     </div>
   </form>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
 
@@ -248,7 +264,7 @@
       <label class="custom-control-label" for="customRadio">Radiobutton</label>
     </div>
   </form>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
 
@@ -261,7 +277,7 @@
       <option value="audi">Audi</option>
     </select>
   </form>
-  
+
   <div class="divider"></div>
   <div class="divider"></div>
 
@@ -276,7 +292,7 @@
 
 <div class="divider"></div>
 <div class="divider"></div>
-  
+
 <div class="container">
   <h2 class="heading">Modal</h2>
   <hr>
@@ -351,13 +367,13 @@
 <div class="container">
   <h2 class="heading">Tooltip</h2>
   <hr>
-  
+
   <a href="#" class="btn btn-finata-primary" data-toggle="tooltip" data-placement="bottom" title="Lorem ipsum dolor sit amet">tooltip</a>
 </div>
 
 <div clas="divider"></div>
 <div clas="divider"></div>
-  
+
 <div class="container">
   <h2 class="heading">Accordion Example</h2>
   <div id="accordion">
@@ -399,7 +415,7 @@
     </div>
   </div>
 </div>
-  
+
 <div class="divider"></div>
 <div class="divider"></div>
 
@@ -427,29 +443,29 @@
     <p class="text-body">
       Lorem  ipsum dolor sit amet
     </p>
-    
+
   </div>
   <div class="tab-pane container fade" id="menu1">
     <p class="sub-header">
-      Menu 1 
+      Menu 1
     </p>
     <p class="text-body">
       Lorem ipsum dolor sit amet
     </p>
-    
+
   </div>
   <div class="tab-pane container fade" id="menu2">
     <p class="sub-header">
-      Menu 2 
+      Menu 2
     </p>
     <p class="text-body">
       Lorem ipsum dolor sit amet
     </p>
   </div>
 </div>
-  
+
 </div>
-  
+
 <div class="divider"></div>
 <div class="container">
   <h2 class="heading">Progress bar</h2>
@@ -465,7 +481,7 @@
   <div class="divider"></div>
   <div class="divider"></div>
   <div class="divider"></div>
-  
+
 
 <div class="container">
   <h2 class="heading">DataTable</h2>
@@ -478,7 +494,7 @@
 
 <div class="divider"></div>
 <div class="divider"></div>
-  
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
