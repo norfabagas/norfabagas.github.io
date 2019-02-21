@@ -183,6 +183,13 @@
     <textarea class="form-control" rows="5" id="comment"></textarea>
   </div>
 
+  <!-- wysiwyg -->
+  <h4 class="sub-header">WYSIWYG (tinymce)</h4>
+  <div class="form-group">
+    <label for="editor">Editor</label>
+    <textarea id="editor"></textarea>
+  </div>
+
 <div class="divider"></div>
 <div class="container">
 
@@ -515,6 +522,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <!-- datepicker -->
 <script src="bootstrap-datepicker.min.js"></script>
+<!-- tinymce -->
+<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -524,6 +533,14 @@ $(document).ready(function(){
   $('.select2').select2();
   $('.datepicker').datepicker({
     format: 'dd/mm/yyyy',
+  });
+  tinymce.init({
+    selector: '#editor',
+    menubar: 'edit view',
+    toolbar: [
+      'undo redo | stylesheet | bold italic | link image',
+      'alignleft aligncenter alignright'
+    ],
   });
 });
 </script>
