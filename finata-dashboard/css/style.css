@@ -20,3 +20,22 @@
     padding: 0 !important;
     margin: 5px 5px;
 }
+.finata-sidebar {
+  background-color: inherit;
+}
+.finata-item {
+  display: block;
+  width: 100%;
+  padding: 0.25em;
+  clear: both;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+.finata-item:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
