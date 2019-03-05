@@ -3287,6 +3287,8 @@ input[type="button"].btn-block {
   font-size: 1rem;
   text-align: left;
   list-style: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .dropdown-menu-right {

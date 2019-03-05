@@ -23,16 +23,13 @@
 .sidebar a:hover {
     color: #ecf1f1 !important;
 }
-.nav-link-2 {
+.nav-link-hover {
     padding: 0 !important;
     margin: 6px;
 }
-.dropdown-menu-btn {
-  background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
 .finata-sidebar {
   background-color: inherit;
+  border: 1px solid transparent;
 }
 .finata-item {
   margin-left: 0.5em;
@@ -44,6 +41,10 @@
   color: #dcebea;
   text-align: inherit;
   white-space: nowrap;
+}
+.finata-sidebar .dropdown-menu {
+  background-color: transparent;
+  border: none;
 }
 .finata-item:hover {
   text-decoration: none;
