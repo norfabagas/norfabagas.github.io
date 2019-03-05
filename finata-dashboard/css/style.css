@@ -17,7 +17,7 @@
 }
 .sidebar {
     background-color: #4b5150 !important;
-    font-size: 13px;
+    font-size: 0.8125em;
     color: #f3f7f7;
 }
 .sidebar a:hover {
@@ -38,7 +38,7 @@
   margin-left: 0.5em;
   display: block;
   width: 100%;
-  padding: 0.25em;
+  padding: 0.3em 0.5em;
   clear: both;
   font-weight: 400;
   color: #dcebea;
@@ -62,7 +62,6 @@
 }
 .sidebar-toggler {
   padding: 0;
-  margin: -1em;
   position: static;
 }
 .sidebar-toggler-btn {
