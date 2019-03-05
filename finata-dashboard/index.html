@@ -35,46 +35,49 @@
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto mr-0">
-      <li class="nav-item">
+      <!--<li class="nav-item">
           <a href="#" class="nav-link">
               <i class="fas fa-search fa-lg" style="color: white;"></i>
           </a>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </li>-->
+      <!--<li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link" href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-menu=".popover-notification">
           <i class="fas fa-bell fa-lg" style="color: white;"></i>
           <span class="badge badge-finata">9</span>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+        <ul class="popover-notification" class="list-group" style="display: none">
+          <a href="https://www.google.com" target="_blank" class="list-group-item">Edit Event</a>
+          <a href="#" class="list-group-item">Invite Members</a>
+          <a href="#" class="list-group-item">Delete Event</a>
+        </ul>
+        
+        
+      </li> -->
 
       <li class="nav-item dropdown no-arrow">
-        <a style="background-color: white; border-radius: 100px;" class="nav-link nav-link-2 dropdown-toggle" href="#" id="termometerDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a style="background-color: white; border-radius: 100px;" href="" class="nav-link nav-link-2 pop" data-toggle="popover" data-menu=".popover-termometer" data-placement="bottom">
             <img src="assets/icon/termometer.svg" style="width: 25px; height: 25px;" alt="">
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="termometerDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
+        <!-- termometer popover menu -->
+        <ul class="popover-termometer" class="list-group" style="display: none">
+          <a href="https://www.google.com" target="_blank" class="list-group-item">Edit Event</a>
+          <a href="#" class="list-group-item">Invite Members</a>
+          <a href="#" class="list-group-item">Delete Event</a>
+        </ul>        
       </li>
 
       <li class="nav-item dropdown no-arrow">
-        <a style="color: white" class="nav-link dropdown-toggle body-text" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a style="color: white" class="nav-link" href="#" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-menu=".popover-profile">
           <img src="https://img.icons8.com/material-rounded/50/000000/user-male-circle.png" style="height: 27px; width: 27px; margin-top: -3px;" alt=""> Indra Satria <span class="fa fa-caret-down"></span>
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
+        
+        <!-- profile popover menu -->
+        <ul class="popover-profile" class="list-group" style="display: none">
+          <a href="https://www.google.com" target="_blank" class="list-group-item">Edit Event</a>
+          <a href="#" class="list-group-item">Invite Members</a>
+          <a href="#" class="list-group-item">Delete Event</a>
+        </ul>
+        
       </li>
     </ul>
 
@@ -87,14 +90,15 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <span class="sidebar-menu">Dashboard</span>
         </a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Dropdown</span>
+          <span class="sidebar-menu">Dropdown
           <i class="fas fa-caret-down float-right"></i>
+            </span>
         </a>
         <div class="dropdown-menu finata-sidebar" aria-labelledby="pagesDropdown">
           <a class="finata-item" href="#" id="subPagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -206,7 +210,7 @@
               <button type="button" class="btn btn-sm btn-finata-primary" data-toggle="dropdown">
                  Sony <span class="fas fa-caret-down"></span>
               </button>
-              <div class="dropdown-menu">
+              <div class="dropdown-menu dropdown-menu-btn">
                 <a class="dropdown-item" href="#">Tablet</a>
                 <a class="dropdown-item" href="#">Smartphone</a>
               </div>
@@ -679,7 +683,7 @@
   });
   </script>
   <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin.min.js"></script>
+  <script src="js/sb-admin.js"></script>
 
 </body>
 

@@ -6,6 +6,8 @@
     e.preventDefault();
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
+    $(".sidebar-menu").toggleClass("hidden");
+    $(".finata-item").toggleClass("hidden");
   });
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
@@ -36,5 +38,29 @@
     }, 1000, 'easeInOutExpo');
     event.preventDefault();
   });
+    
+  $('[data-toggle="popover"]').popover({
+    html: true,
+    content: function() {
+      var menu = $(this).data('menu');
+      return $(menu).html();
+    }
+  });
+  
+  $(".pop").popover({ trigger: "manual" , html: true, animation:false})
+    .on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide");
+            }
+  });
+});
 
 })(jQuery); // End of use strict

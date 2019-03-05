@@ -1,7 +1,9 @@
 #wrapper {
     margin-top: 60px;
 }
-
+.hidden {
+    display: none !important;
+}
 .navbar-finata {
     background-color: #32cfc0;
     height: 60px;
@@ -15,27 +17,46 @@
 }
 .sidebar {
     background-color: #4b5150 !important;
+    font-size: 13px;
+    color: #f3f7f7;
+}
+.sidebar a:hover {
+    color: #ecf1f1 !important;
 }
 .nav-link-2 {
     padding: 0 !important;
     margin: 5px 5px;
 }
+.dropdown-menu-btn {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
 .finata-sidebar {
   background-color: inherit;
 }
 .finata-item {
+  margin-left: 0.5em;
   display: block;
   width: 100%;
   padding: 0.25em;
   clear: both;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #dcebea;
   text-align: inherit;
   white-space: nowrap;
-  background-color: transparent;
-  border: 0;
 }
 .finata-item:hover {
   text-decoration: none;
-  color: rgba(255, 255, 255, 1);
+  color: #d6e4e3;
+}
+.list-group-item {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  border-top: none;
+  color: #212529;
+}
+.list-group-item:hover {
+  color: inherit;
+  background-color: rgb(50, 207, 192, 0.1);
 }
