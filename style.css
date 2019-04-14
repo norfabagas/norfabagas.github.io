@@ -10,7 +10,7 @@ html, body {
 .center-vertical {
     position: fixed;
     top: 50vh;
-    left: 40%;
+    left: 10vw;
     text-align: center;
 }
 .wrapped {
