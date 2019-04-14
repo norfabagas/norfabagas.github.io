@@ -1,0 +1,25 @@
+html, body {
+    font-size: 20px;
+    font-family: cursive;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, #b4004e, #38006b);
+}
+.white-text {
+    color: #fff;
+}
+.center-vertical {
+    position: fixed;
+    top: 50vh;
+    left: 40%;
+    text-align: center;
+}
+.wrapped {
+    border: 0.2em solid #ffffff;
+    padding: 0.5em;
+    border-top-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    transition: 0.2s ease-in;
+}
+.wrapped:hover {
+    
+}
