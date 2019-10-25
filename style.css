@@ -1,25 +1,33 @@
 html, body {
-    font-size: 20px;
-    font-family: cursive;
-    height: 100%;
-    background-image: linear-gradient(to bottom right, #b4004e, #38006b);
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: white;
 }
 .white-text {
     color: #fff;
 }
-.center-vertical {
-    position: fixed;
-    top: 50vh;
-    left: 10vw;
+.dark-text {
+    color: #4d4d4d;
+}
+.darker-text {
+    color: #2d2d2d;
+}
+.bold-text {
+    font-weight: bold;
+}
+.big-text {
+    font-size: 1.2em;
+}
+.medium-text {
+    font-size: 1em;
+}
+.small-text {
+    font-size: 0.8em;
+}
+.header {
     text-align: center;
+    padding-top: 1em;
 }
-.wrapped {
-    border: 0.2em solid #ffffff;
-    padding: 0.5em;
-    border-top-left-radius: 1em;
-    border-bottom-right-radius: 1em;
-    transition: 0.2s ease-in;
-}
-.wrapped:hover {
-    
+.container {
+    margin: 2em;
 }
