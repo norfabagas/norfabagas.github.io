@@ -21,8 +21,26 @@
       content="Portofolio rekayasa perangkat lunak Norfa Bagas: arsitektur backend, sistem data warehouse OLAP, pipeline data terdistribusi, dan repositori open source."
     />
     <meta property="og:image" content="/favicon.png" />
-    <script type="module" crossorigin src="/assets/index-DRW5XSd5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DnMpRTUO.css">
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('nb_portfolio_theme');
+          var isDark = saved ? saved === 'dark' : true;
+          var root = document.documentElement;
+          if (isDark) {
+            root.classList.add('dark');
+            root.setAttribute('data-theme', 'dark');
+            root.style.colorScheme = 'dark';
+          } else {
+            root.classList.remove('dark');
+            root.setAttribute('data-theme', 'light');
+            root.style.colorScheme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BIEiCyCW.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BNzzgYWF.css">
   </head>
   <body>
     <div id="root"></div>
