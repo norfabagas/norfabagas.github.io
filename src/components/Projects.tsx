@@ -29,8 +29,12 @@ export function Projects({ isDark }: ProjectsProps) {
   }, [searchQuery, selectedLanguage]);
 
   return (
-    <Section id="proyek" paddingBlock={6}>
-      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
+    <Section
+      id="proyek"
+      paddingBlock={0}
+      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-20 sm:py-24"
+    >
+      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
         {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="w-full text-left">
           <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">

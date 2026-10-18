@@ -10,12 +10,16 @@ export function Hero({ isDark }: HeroProps) {
   const { profile, socials } = PORTFOLIO_DATA;
 
   return (
-    <Section id="tentang" paddingBlockStart={8} paddingBlockEnd={4} className="pt-24 sm:pt-28">
-      <VStack gap={4} className="max-w-6xl mx-auto px-4 sm:px-6">
+    <Section
+      id="tentang"
+      paddingBlock={0}
+      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center pt-20 pb-12 sm:pt-24 sm:pb-16"
+    >
+      <VStack gap={4} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
         {/* Main Hero Card in Kreativa Slate Theme */}
         <Card
           padding={6}
-          className={`relative rounded-2xl transition-colors duration-200 ${
+          className={`relative rounded-2xl transition-colors duration-200 w-full ${
             isDark
               ? "border border-slate-800 bg-slate-900/90 shadow-md backdrop-blur-sm"
               : "border border-slate-200 bg-white/95 shadow-sm backdrop-blur-sm"
@@ -153,7 +157,7 @@ export function Hero({ isDark }: HeroProps) {
                   <img
                     src={profile.avatar}
                     alt={profile.name}
-                    className="w-32 h-32 sm:w-36 sm:h-36 rounded-xl object-cover"
+                    className="w-28 h-28 sm:w-36 sm:h-36 rounded-xl object-cover"
                   />
                 </HStack>
 
@@ -174,7 +178,7 @@ export function Hero({ isDark }: HeroProps) {
             </HStack>
 
             {/* Scope Pillars Grid */}
-            <Grid columns={{ minWidth: 220, max: 3, repeat: "fit" }} gap={3} className="w-full pt-4 border-t border-slate-200 dark:border-slate-800">
+            <Grid columns={{ minWidth: 260, max: 3, repeat: "fit" }} gap={3} className="w-full pt-4 border-t border-slate-200 dark:border-slate-800">
               <Card
                 padding={3}
                 className={`rounded-xl border ${

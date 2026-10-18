@@ -10,8 +10,12 @@ export function Experience({ isDark }: ExperienceProps) {
   const { experience, projectScopes } = PORTFOLIO_DATA;
 
   return (
-    <Section id="pengalaman" paddingBlock={6}>
-      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
+    <Section
+      id="pengalaman"
+      paddingBlock={0}
+      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-20 sm:py-24"
+    >
+      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
         {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="w-full text-left">
           <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>

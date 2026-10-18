@@ -10,8 +10,12 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
   const { socials } = PORTFOLIO_DATA;
 
   return (
-    <Section id="dukungan" paddingBlock={6}>
-      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
+    <Section
+      id="dukungan"
+      paddingBlock={0}
+      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-20 sm:py-24"
+    >
+      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
         <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
           {/* Buy Me A Coffee Block */}
           <Card
@@ -116,7 +120,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
               </Text>
 
               {/* Mobile-First Grid for Social Shortcuts */}
-              <Grid columns={{ minWidth: 140, max: 2, repeat: "fit" }} gap={2} className="w-full">
+              <Grid columns={{ minWidth: 130, max: 2, repeat: "fit" }} gap={2} className="w-full">
                 <a
                   href={socials.medium}
                   target="_blank"
