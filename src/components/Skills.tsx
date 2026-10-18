@@ -26,11 +26,11 @@ export function Skills({ isDark }: SkillsProps) {
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
         {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="text-left w-full">
-          <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+          <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
             {t.skills.title}
           </Heading>
           <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
-          <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+          <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-300" : "text-slate-700"}`}>
             {t.skills.subtitle}
           </Text>
         </VStack>
@@ -43,8 +43,8 @@ export function Skills({ isDark }: SkillsProps) {
               padding={5}
               className={`rounded-xl transition-all duration-300 ${
                 isDark
-                  ? "border border-slate-800 bg-slate-900/80 hover:border-slate-700 shadow-sm backdrop-blur-sm"
-                  : "border border-slate-200 bg-white/95 hover:border-slate-300 shadow-sm backdrop-blur-sm"
+                  ? "border border-slate-700 bg-slate-900/90 hover:border-slate-500 shadow-sm"
+                  : "border border-slate-300 bg-white hover:border-slate-400 shadow-sm"
               }`}
             >
               <VStack gap={4} className="w-full text-left">
@@ -53,16 +53,16 @@ export function Skills({ isDark }: SkillsProps) {
                     className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
                       isDark
                         ? "bg-slate-100 text-slate-900"
-                        : "bg-slate-900 text-slate-100"
+                        : "bg-slate-900 text-white"
                     }`}
                   >
                     {categoryIcons[index % categoryIcons.length]}
                   </div>
                   <VStack gap={0.5}>
-                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-white" : "text-slate-900"}`}>
                       {skillGroup.category}
                     </Heading>
-                    <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                    <Text type="supporting" className={`text-xs ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                       {skillGroup.description}
                     </Text>
                   </VStack>
@@ -74,10 +74,10 @@ export function Skills({ isDark }: SkillsProps) {
                     <Text
                       key={item}
                       type="label"
-                      className={`px-2.5 py-1 rounded-md text-xs font-medium border ${
+                      className={`px-2.5 py-1 rounded-md text-xs font-semibold border ${
                         isDark
-                          ? "bg-slate-800 border-slate-700 text-slate-200"
-                          : "bg-slate-100 border-slate-200 text-slate-800"
+                          ? "bg-slate-800 border-slate-600 text-slate-100"
+                          : "bg-slate-100 border-slate-300 text-slate-900"
                       }`}
                     >
                       {item}

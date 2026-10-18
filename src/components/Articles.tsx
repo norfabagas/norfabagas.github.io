@@ -21,11 +21,11 @@ export function Articles({ isDark }: ArticlesProps) {
         <VStack gap={1} className="w-full text-left">
           <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">
             <VStack gap={1}>
-              <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+              <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
                 {t.articles.title}
               </Heading>
               <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
-              <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+              <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                 {t.articles.subtitle}
               </Text>
             </VStack>
@@ -34,8 +34,8 @@ export function Articles({ isDark }: ArticlesProps) {
               href={socials.medium}
               target="_blank"
               rel="noreferrer"
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 p-1 shrink-0 ${
-                isDark ? "text-slate-400 hover:text-slate-100" : "text-slate-600 hover:text-slate-900"
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white p-1 shrink-0 ${
+                isDark ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-slate-950"
               }`}
             >
               <span>{t.articles.visitMedium}</span>
@@ -52,8 +52,8 @@ export function Articles({ isDark }: ArticlesProps) {
               padding={5}
               className={`rounded-xl transition-all duration-300 flex flex-col justify-between ${
                 isDark
-                  ? "border border-slate-800 bg-slate-900/80 hover:border-slate-700 shadow-sm backdrop-blur-sm"
-                  : "border border-slate-200 bg-white/95 hover:border-slate-300 shadow-sm backdrop-blur-sm"
+                  ? "border border-slate-700 bg-slate-900/90 hover:border-slate-500 shadow-sm"
+                  : "border border-slate-300 bg-white hover:border-slate-400 shadow-sm"
               }`}
             >
               <VStack gap={3} className="w-full text-left">
@@ -61,34 +61,34 @@ export function Articles({ isDark }: ArticlesProps) {
                   <Text
                     type="label"
                     className={`text-xs px-2.5 py-0.5 rounded-md font-semibold border ${
-                      isDark ? "bg-slate-800 border-slate-700 text-slate-300" : "bg-slate-100 border-slate-200 text-slate-800"
+                      isDark ? "bg-slate-800 border-slate-600 text-slate-100" : "bg-slate-100 border-slate-300 text-slate-900"
                     }`}
                   >
                     {art.category}
                   </Text>
 
-                  <HStack gap={1} vAlign="center" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                  <HStack gap={1} vAlign="center" className={`text-xs font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                     <Clock className="w-3.5 h-3.5" />
                     <span>{art.readTime}</span>
                   </HStack>
                 </HStack>
 
-                <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
                   {art.title}
                 </Heading>
 
-                <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                   {art.snippet}
                 </Text>
               </VStack>
 
-              <HStack hAlign="between" vAlign="center" className={`pt-4 border-t mt-4 w-full ${isDark ? "border-slate-800" : "border-slate-200"}`}>
+              <HStack hAlign="between" vAlign="center" className={`pt-4 border-t mt-4 w-full ${isDark ? "border-slate-700" : "border-slate-300"}`}>
                 <a
                   href={art.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex items-center gap-1.5 text-xs font-semibold min-h-[44px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded-lg ${
-                    isDark ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-slate-900"
+                  className={`inline-flex items-center gap-1.5 text-xs font-semibold min-h-[44px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white rounded-lg ${
+                    isDark ? "text-slate-100 hover:text-white" : "text-slate-900 hover:text-slate-950"
                   }`}
                 >
                   <span>{t.articles.readArticle}</span>

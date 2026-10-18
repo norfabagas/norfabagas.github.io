@@ -20,7 +20,7 @@ export function Footer({ isDark }: FooterProps) {
   return (
     <footer
       className={`border-t transition-colors duration-300 py-10 ${
-        isDark ? "border-slate-800 bg-slate-950 text-slate-400" : "border-slate-200 bg-slate-900 text-slate-300"
+        isDark ? "border-slate-700 bg-slate-950 text-slate-200" : "border-slate-300 bg-slate-900 text-slate-100"
       }`}
     >
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -30,11 +30,11 @@ export function Footer({ isDark }: FooterProps) {
               <Text type="large" className="font-bold text-base text-white">
                 {profile.name}
               </Text>
-              <Text type="code" className="text-xs text-slate-400">
+              <Text type="code" className="text-xs text-slate-300">
                 (&ldquo;{profile.tagline}&rdquo;)
               </Text>
             </HStack>
-            <Text type="supporting" className="text-xs text-slate-400">
+            <Text type="supporting" className="text-xs text-slate-300">
               {t.footer.tagline}
             </Text>
           </VStack>
@@ -46,7 +46,7 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Profil GitHub Norfa Bagas"
-              className="p-2 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+              className="p-2 rounded-lg border border-slate-600 bg-slate-800 text-slate-100 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <Github className="w-4 h-4" />
             </a>
@@ -56,7 +56,7 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Profil LinkedIn Norfa Bagas"
-              className="p-2 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+              className="p-2 rounded-lg border border-slate-600 bg-slate-800 text-slate-100 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <Linkedin className="w-4 h-4" />
             </a>
@@ -66,7 +66,7 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Profil Medium bgsnorfa"
-              className="p-2 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+              className="p-2 rounded-lg border border-slate-600 bg-slate-800 text-slate-100 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <BookOpen className="w-4 h-4" />
             </a>
@@ -76,7 +76,7 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Dukung bgsnorfa di Buy Me a Coffee"
-              className="p-2 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+              className="p-2 rounded-lg border border-amber-600 bg-amber-500 text-slate-950 hover:bg-amber-400 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 font-bold"
             >
               <Coffee className="w-4 h-4" />
             </a>
@@ -86,14 +86,14 @@ export function Footer({ isDark }: FooterProps) {
               variant="secondary"
               size="sm"
               onClick={scrollToTop}
-              className="p-2 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors"
+              className="p-2 rounded-lg border border-slate-600 bg-slate-800 text-slate-100 hover:text-white hover:bg-slate-700 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <ArrowUp className="w-4 h-4" />
             </Button>
           </HStack>
         </HStack>
 
-        <Text type="supporting" className="text-center text-xs text-slate-500 pt-4 border-t border-slate-800 w-full">
+        <Text type="supporting" className="text-center text-xs text-slate-300 pt-4 border-t border-slate-800 w-full">
           {t.footer.credit}
         </Text>
       </VStack>

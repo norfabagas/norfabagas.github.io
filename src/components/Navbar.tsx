@@ -78,20 +78,20 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           <button
             type="button"
             onClick={(e) => handleNavClick(e, "tentang")}
-            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer"
+            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer"
           >
             <img
               src="/favicon.png"
               alt={data.profile.name}
               className={`w-9 h-9 rounded-xl object-cover border ${
-                isDark ? "border-slate-700 shadow-sm" : "border-slate-200 shadow-sm"
+                isDark ? "border-slate-700 shadow-sm" : "border-slate-300 shadow-sm"
               }`}
             />
             <VStack gap={0}>
-              <Heading level={3} className={`text-sm sm:text-base font-bold leading-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+              <Heading level={3} className={`text-sm sm:text-base font-bold leading-tight ${isDark ? "text-white" : "text-slate-900"}`}>
                 {data.profile.name}
               </Heading>
-              <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+              <Text type="supporting" className={`text-xs ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                 {data.profile.title}
               </Text>
             </VStack>
@@ -104,10 +104,10 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 key={link.id}
                 type="button"
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 cursor-pointer bg-transparent border-0 ${
+                className={`px-3 py-2 rounded-lg text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white cursor-pointer bg-transparent border-0 ${
                   isDark
-                    ? "text-slate-300 hover:text-slate-100 hover:bg-slate-800/70"
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                    ? "text-slate-200 hover:text-white hover:bg-slate-800"
+                    : "text-slate-800 hover:text-slate-950 hover:bg-slate-100"
                 }`}
               >
                 {link.label}
@@ -118,14 +118,14 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           {/* Header Controls */}
           <HStack gap={2} vAlign="center">
             {/* Quick social shortcuts (Desktop) */}
-            <HStack gap={1} vAlign="center" className="hidden lg:flex pr-2 border-r border-slate-200 dark:border-slate-800">
+            <HStack gap={1} vAlign="center" className="hidden lg:flex pr-2 border-r border-slate-300 dark:border-slate-700">
               <a
                 href={data.socials.github}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Kunjungi profil GitHub Norfa Bagas"
-                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
-                  isDark ? "text-slate-400 hover:text-slate-100 hover:bg-slate-800" : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
+                  isDark ? "text-slate-300 hover:text-white hover:bg-slate-800" : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
                 }`}
               >
                 <Github className="w-4 h-4" />
@@ -135,8 +135,8 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Kunjungi profil LinkedIn Norfa Bagas"
-                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
-                  isDark ? "text-slate-400 hover:text-slate-100 hover:bg-slate-800" : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
+                  isDark ? "text-slate-300 hover:text-white hover:bg-slate-800" : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
                 }`}
               >
                 <Linkedin className="w-4 h-4" />
@@ -146,8 +146,8 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Kunjungi profil Medium bgsnorfa"
-                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
-                  isDark ? "text-slate-400 hover:text-slate-100 hover:bg-slate-800" : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
+                  isDark ? "text-slate-300 hover:text-white hover:bg-slate-800" : "text-slate-700 hover:text-slate-950 hover:bg-slate-100"
                 }`}
               >
                 <BookOpen className="w-4 h-4" />
@@ -157,8 +157,8 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Dukung bgsnorfa di Buy Me a Coffee"
-                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
-                  isDark ? "text-amber-400 hover:text-amber-300 hover:bg-slate-800" : "text-amber-700 hover:text-amber-800 hover:bg-amber-50"
+                className={`p-2 rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 ${
+                  isDark ? "text-amber-400 hover:text-amber-300 hover:bg-slate-800" : "text-amber-700 hover:text-amber-900 hover:bg-amber-100/70"
                 }`}
               >
                 <Coffee className="w-4 h-4" />
@@ -171,14 +171,14 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               variant="ghost"
               size="md"
               onClick={toggleLocale}
-              className={`px-2.5 py-2 rounded-lg border min-h-[44px] flex items-center gap-1.5 font-bold text-xs transition-colors ${
+              className={`px-2.5 py-2 rounded-lg border min-h-[44px] flex items-center gap-1.5 font-bold text-xs transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
                 isDark
-                  ? "bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-slate-600"
-                  : "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200 hover:border-slate-400"
+                  ? "bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-slate-500"
+                  : "bg-slate-100 border-slate-300 text-slate-950 hover:bg-slate-200 hover:border-slate-400"
               }`}
             >
               <Globe className="w-3.5 h-3.5" />
-              <span className="font-mono text-xs font-semibold tracking-wider">
+              <span className="font-mono text-xs font-bold tracking-wider">
                 {locale === "id-ID" ? "ID" : "EN"}
               </span>
             </Button>
@@ -189,13 +189,13 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               variant="ghost"
               size="md"
               onClick={toggleTheme}
-              className={`p-2.5 rounded-lg border min-h-[44px] min-w-[44px] flex items-center justify-center ${
+              className={`p-2.5 rounded-lg border min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
                 isDark
-                  ? "bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-slate-600"
-                  : "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200 hover:border-slate-400"
+                  ? "bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-slate-500"
+                  : "bg-slate-100 border-slate-300 text-slate-950 hover:bg-slate-200 hover:border-slate-400"
               }`}
             >
-              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4 text-slate-900" />}
             </Button>
 
             {/* Mobile Menu Toggler */}
@@ -204,10 +204,10 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               variant="ghost"
               size="md"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2.5 rounded-lg border min-h-[44px] min-w-[44px] flex items-center justify-center ${
+              className={`md:hidden p-2.5 rounded-lg border min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
                 isDark
-                  ? "bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800"
-                  : "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200"
+                  ? "bg-slate-900 border-slate-700 text-white hover:bg-slate-800"
+                  : "bg-slate-100 border-slate-300 text-slate-950 hover:bg-slate-200"
               }`}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -220,7 +220,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           <VStack
             gap={2}
             className={`md:hidden border-t py-4 w-full transition-all ${
-              isDark ? "border-slate-800 text-slate-100" : "border-slate-200 text-slate-900"
+              isDark ? "border-slate-700 text-slate-100" : "border-slate-300 text-slate-900"
             }`}
           >
             {navLinks.map((link) => (
@@ -228,20 +228,20 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 key={link.id}
                 type="button"
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium flex items-center transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 cursor-pointer w-full text-left bg-transparent border-0 ${
-                  isDark ? "text-slate-200 hover:bg-slate-800/80" : "text-slate-800 hover:bg-slate-100"
+                className={`px-4 py-3 rounded-lg text-sm font-semibold flex items-center transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white cursor-pointer w-full text-left bg-transparent border-0 ${
+                  isDark ? "text-slate-100 hover:bg-slate-800" : "text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 {link.label}
               </button>
             ))}
 
-            <HStack hAlign="between" vAlign="center" className="pt-3 border-t border-slate-800/60 w-full">
+            <HStack hAlign="between" vAlign="center" className="pt-3 border-t border-slate-700 w-full">
               <a
                 href={data.socials.github}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 p-2 text-xs font-medium text-slate-400 hover:text-slate-200 min-h-[44px]"
+                className="flex items-center gap-1.5 p-2 text-xs font-semibold text-slate-300 hover:text-white dark:text-slate-300 dark:hover:text-white min-h-[44px]"
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub</span>
@@ -250,7 +250,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 href={data.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 p-2 text-xs font-medium text-slate-400 hover:text-slate-200 min-h-[44px]"
+                className="flex items-center gap-1.5 p-2 text-xs font-semibold text-slate-300 hover:text-white dark:text-slate-300 dark:hover:text-white min-h-[44px]"
               >
                 <Linkedin className="w-4 h-4" />
                 <span>LinkedIn</span>
@@ -259,7 +259,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 href={data.socials.medium}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 p-2 text-xs font-medium text-slate-400 hover:text-slate-200 min-h-[44px]"
+                className="flex items-center gap-1.5 p-2 text-xs font-semibold text-slate-300 hover:text-white dark:text-slate-300 dark:hover:text-white min-h-[44px]"
               >
                 <BookOpen className="w-4 h-4" />
                 <span>Medium</span>
@@ -268,7 +268,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 href={data.socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 p-2 text-xs font-medium text-amber-500 hover:text-amber-400 min-h-[44px]"
+                className="flex items-center gap-1.5 p-2 text-xs font-semibold text-amber-500 hover:text-amber-400 min-h-[44px]"
               >
                 <Coffee className="w-4 h-4" />
                 <span>{t.nav.kopi}</span>
