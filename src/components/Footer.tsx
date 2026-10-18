@@ -1,3 +1,4 @@
+import { VStack, HStack, Text, Button } from "@astryxdesign/core";
 import { ArrowUp, Github, Linkedin, Coffee, BookOpen } from "lucide-react";
 import { PORTFOLIO_DATA } from "../data/portfolioData";
 
@@ -12,38 +13,35 @@ export function Footer({ isDark }: FooterProps) {
 
   return (
     <footer
-      className={`border-t transition-colors duration-300 py-12 ${
-        isDark
-          ? "border-white/15 bg-[#0a0518]/90 text-purple-200"
-          : "border-purple-200 bg-white/90 text-gray-700"
+      className={`border-t transition-colors duration-300 py-10 ${
+        isDark ? "border-white/15 bg-[#0a0518]/95 text-purple-200" : "border-purple-200 bg-white/95 text-gray-700"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start gap-2">
-              <span className={`font-bold text-base ${isDark ? "text-white" : "text-gray-900"}`}>
+      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
+        <HStack hAlign="between" vAlign="center" className="flex-col sm:flex-row gap-6 w-full text-center sm:text-left">
+          <VStack gap={1}>
+            <HStack gap={2} vAlign="center" hAlign="center" className="sm:justify-start">
+              <Text type="large" className={`font-bold text-base ${isDark ? "text-white" : "text-gray-900"}`}>
                 {PORTFOLIO_DATA.profile.name}
-              </span>
-              <span className="text-xs text-purple-400 font-mono">
+              </Text>
+              <Text type="code" className="text-xs text-purple-400">
                 (&ldquo;{PORTFOLIO_DATA.profile.tagline}&rdquo;)
-              </span>
-            </div>
-            <p className="text-xs text-purple-300/70 mt-1">
+              </Text>
+            </HStack>
+            <Text type="supporting" className="text-xs text-purple-300/70">
               Software Engineer & IT Specialist. Seluruh repositori dan data terverifikasi publik.
-            </p>
-          </div>
+            </Text>
+          </VStack>
 
-          <div className="flex items-center gap-3">
+          {/* Social Buttons and Back-to-Top */}
+          <HStack gap={2} vAlign="center">
             <a
               href={PORTFOLIO_DATA.socials.github}
               target="_blank"
               rel="noreferrer"
               aria-label="Profil GitHub Norfa Bagas"
-              className={`p-2 rounded-lg border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
-                isDark
-                  ? "bg-[#180e38] border-white/20 text-purple-200 hover:text-white hover:border-white/40"
-                  : "bg-purple-50 border-purple-200 text-gray-700 hover:text-purple-900 hover:border-purple-300"
+              className={`p-2 rounded-xl border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                isDark ? "bg-[#180e38] border-white/20 text-purple-200 hover:text-white" : "bg-purple-50 border-purple-200 text-gray-700 hover:text-purple-900"
               }`}
             >
               <Github className="w-4 h-4" />
@@ -54,10 +52,8 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Profil LinkedIn Norfa Bagas"
-              className={`p-2 rounded-lg border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
-                isDark
-                  ? "bg-[#180e38] border-white/20 text-purple-200 hover:text-white hover:border-white/40"
-                  : "bg-purple-50 border-purple-200 text-gray-700 hover:text-purple-900 hover:border-purple-300"
+              className={`p-2 rounded-xl border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                isDark ? "bg-[#180e38] border-white/20 text-purple-200 hover:text-white" : "bg-purple-50 border-purple-200 text-gray-700 hover:text-purple-900"
               }`}
             >
               <Linkedin className="w-4 h-4" />
@@ -68,10 +64,8 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Profil Medium bgsnorfa"
-              className={`p-2 rounded-lg border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
-                isDark
-                  ? "bg-[#180e38] border-white/20 text-purple-200 hover:text-white hover:border-white/40"
-                  : "bg-purple-50 border-purple-200 text-gray-700 hover:text-purple-900 hover:border-purple-300"
+              className={`p-2 rounded-xl border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                isDark ? "bg-[#180e38] border-white/20 text-purple-200 hover:text-white" : "bg-purple-50 border-purple-200 text-gray-700 hover:text-purple-900"
               }`}
             >
               <BookOpen className="w-4 h-4" />
@@ -82,34 +76,31 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Dukung bgsnorfa di Buy Me a Coffee"
-              className={`p-2 rounded-lg border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
-                isDark
-                  ? "bg-[#180e38] border-white/20 text-amber-300 hover:text-amber-200 hover:border-white/40"
-                  : "bg-purple-50 border-purple-200 text-amber-800 hover:text-amber-900 hover:border-purple-300"
+              className={`p-2 rounded-xl border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
+                isDark ? "bg-[#180e38] border-white/20 text-amber-300 hover:text-amber-200" : "bg-purple-50 border-purple-200 text-amber-800 hover:text-amber-900"
               }`}
             >
               <Coffee className="w-4 h-4" />
             </a>
 
-            <button
-              type="button"
+            <Button
+              label="Ke atas"
+              variant="secondary"
+              size="sm"
               onClick={scrollToTop}
-              aria-label="Kembali ke atas halaman"
-              className={`p-2 rounded-lg border transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
-                isDark
-                  ? "bg-purple-950/70 border-white/25 text-purple-200 hover:bg-purple-900 hover:text-white"
-                  : "bg-purple-100 border-purple-200 text-purple-900 hover:bg-purple-200"
+              className={`p-2 rounded-xl border min-h-[44px] min-w-[44px] flex items-center justify-center ${
+                isDark ? "bg-purple-950/70 border-white/25 text-purple-200 hover:bg-purple-900" : "bg-purple-100 border-purple-200 text-purple-900 hover:bg-purple-200"
               }`}
             >
               <ArrowUp className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+            </Button>
+          </HStack>
+        </HStack>
 
-        <div className="mt-8 pt-6 border-t border-white/10 text-center text-xs text-purple-400/80">
-          Dibuat dengan tema galaxy dan Single Page Application menggunakan React, TypeScript, dan Tailwind CSS.
-        </div>
-      </div>
+        <Text type="supporting" className="text-center text-xs text-purple-400/80 pt-4 border-t border-white/10 w-full">
+          Dibuat dengan tema galaxy dan Astryx Design System berbasis React, StyleX, dan Tailwind CSS.
+        </Text>
+      </VStack>
     </footer>
   );
 }

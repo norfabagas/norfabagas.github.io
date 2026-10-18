@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { VStack } from "@astryxdesign/core";
 import { GalaxyBackground } from "./components/GalaxyBackground";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -11,13 +12,12 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   const [isDark, setIsDark] = useState<boolean>(() => {
-    // Check saved local preference or default to dark (galaxy theme)
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("nb_portfolio_theme");
       if (savedTheme) {
         return savedTheme === "dark";
       }
-      return true; // Default to dark galaxy theme
+      return true;
     }
     return true;
   });
@@ -38,17 +38,20 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen relative font-sans transition-colors duration-500 selection:bg-purple-500 selection:text-white ${
-      isDark ? "text-purple-100" : "text-gray-900"
-    }`}>
-      {/* Background with Twinkling Starfield & Cosmic Nebulae */}
+    <VStack
+      gap={0}
+      className={`min-h-screen relative font-sans transition-colors duration-500 selection:bg-purple-500 selection:text-white w-full ${
+        isDark ? "text-purple-100" : "text-gray-900"
+      }`}
+    >
+      {/* Background Starfield & Cosmic Nebulae */}
       <GalaxyBackground isDark={isDark} />
 
-      {/* Fixed Navigation Bar */}
+      {/* Navigation Bar */}
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
-      {/* Main Single Page Content */}
-      <main id="main-content" tabIndex={-1} className="focus:outline-none">
+      {/* Single Page Content Sections */}
+      <main id="main-content" tabIndex={-1} className="focus:outline-none w-full">
         <Hero isDark={isDark} />
         <Skills isDark={isDark} />
         <Projects isDark={isDark} />
@@ -59,6 +62,6 @@ export default function App() {
 
       {/* Footer */}
       <Footer isDark={isDark} />
-    </div>
+    </VStack>
   );
 }
