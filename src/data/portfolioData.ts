@@ -696,81 +696,78 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
 export const UI_STRINGS = {
   "id-ID": {
     nav: {
-      home: "Home",
-      about: "About Us",
-      skills: "Services",
-      values: "Values",
-      projects: "Projects",
-      experience: "Experience",
-      articles: "Articles",
-      support: "Contact",
+      home: "Beranda",
+      experience: "Pengalaman",
+      projects: "Proyek",
+      skills: "Keahlian",
+      articles: "Tulisan",
+      support: "Kontak",
       toggleThemeDark: "Mode Gelap",
       toggleThemeLight: "Mode Terang",
       toggleLang: "Switch to English (en-US)",
       langShort: "ID",
       openMenu: "Buka Menu",
       closeMenu: "Tutup Menu",
-      kopi: "Kopi"
+      kopi: "Traktir Kopi"
     },
     hero: {
-      ctaProjects: "Lihat Proyek & Repositori",
-      ctaExperience: "Pengalaman & Scope",
+      statusBadge: "Terbuka untuk konsultasi & proyek rekayasa backend",
+      ctaProjects: "Lihat Repositori & Proyek",
+      ctaExperience: "Rekam Jejak Pengalaman",
       ctaMedium: "Medium",
       ctaCoffee: "Traktir Kopi",
       ctaLinkedin: "LinkedIn"
     },
-    skills: {
-      title: "Keahlian & Ekosistem Teknologi",
-      subtitle: "Teknologi dan kerangka kerja yang digunakan dalam arsitektur backend, pemrosesan data, dan eksperimen kecerdasan buatan."
+    experience: {
+      title: "Pengalaman Kerja & Cakupan Rekayasa",
+      subtitle: "Rekam jejak implementasi perangkat lunak pada sistem korporasi dan cakupan ranah arsitektur teknis yang ditangani.",
+      timelineTitle: "Timeline Karier",
+      scopeTitle: "Cakupan Rekayasa (Scope of Engineering)"
     },
     projects: {
-      title: "Proyek & Repositori Terpilih",
-      subtitle: "Koleksi repositori publik yang berfokus pada arsitektur backend, sistem data warehouse OLAP, dan implementasi machine learning.",
-      githubLink: "Repositori di GitHub",
-      searchPlaceholder: "Cari nama repositori atau topik...",
+      title: "Repositori & Proyek Open Source",
+      subtitle: "Koleksi implementasi perangkat lunak terbuka: arsitektur backend, sistem data warehouse OLAP, dan pipeline applied machine learning.",
+      githubLink: "Lihat Semua di GitHub",
+      searchPlaceholder: "Cari repositori atau topik teknis...",
       searchAria: "Cari repositori berdasarkan nama atau topik",
       allFilter: "Semua",
-      viewOnGithub: "Lihat di GitHub",
+      viewOnGithub: "Buka di GitHub",
       emptyTitle: "Tidak ada repositori yang cocok",
-      emptyDesc: "Pencarian tidak menemukan hasil.",
-      resetFilter: "Reset Filter Pencarian"
+      emptyDesc: "Coba ubah kata kunci pencarian atau pilih kategori bahasa pemrograman lain.",
+      resetFilter: "Reset Pencarian"
     },
-    experience: {
-      title: "Pengalaman Kerja & Scope Proyek",
-      subtitle: "Rekam jejak implementasi perangkat lunak pada sistem korporasi dan cakupan ranah arsitektur teknis yang ditangani.",
-      timelineTitle: "Timeline Pengalaman Kerja",
-      scopeTitle: "Scope of Projects (Cakupan Rekayasa)"
+    skills: {
+      title: "Keahlian & Ekosistem Teknologi",
+      subtitle: "Spesialisasi teknis dan perangkat yang digunakan sehari-hari dalam merancang arsitektur backend, pemrosesan data, dan infrastruktur sistem."
     },
     articles: {
-      title: "Artikel & Tutorial Rekayasa",
-      subtitle: "Catatan pemikiran teknis, tutorial instalasi, dan panduan praktis seputar rekayasa sistem di platform Medium @bgsnorfa.",
-      visitMedium: "Kunjungi medium.com/@bgsnorfa",
-      readArticle: "Baca artikel di Medium"
+      title: "Tulisan & Panduan Teknis",
+      subtitle: "Catatan rekayasa sistem, tutorial konfigurasi, dan panduan praktis yang dipublikasikan di platform Medium @bgsnorfa.",
+      visitMedium: "Kunjungi Profil Medium",
+      readArticle: "Baca Tulisan"
     },
     support: {
-      coffeeTitle: "Dukung Karya & Riset",
+      coffeeTitle: "Dukung Riset & Open Source",
       coffeeSubtitle: "Buy Me a Coffee: @bgsnorfa",
-      coffeeBody: "Jika Anda menyukai artikel teknis di Medium, repositori open source, atau eksperimen machine learning yang saya bagikan, Anda dapat memberikan apresiasi dan traktir kopi virtual untuk mendukung kontinuitas riset.",
-      coffeeHeart: "Setiap dukungan sangat berarti untuk menjaga proyek dan tulisan teknologi tetap terbuka dan bermanfaat bagi komunitas developer.",
+      coffeeBody: "Jika tulisan teknis di Medium atau repositori open source yang saya bagikan membantu pekerjaan Anda, Anda dapat memberikan dukungan apresiasi secangkir kopi virtual.",
+      coffeeHeart: "Setiap dukungan membantu menjaga riset teknologi dan modul open source tetap dapat diakses publik.",
       coffeeButton: "Traktir Kopi di buymeacoffee.com/bgsnorfa",
-      connectTitle: "Terhubung & Kolaborasi",
-      connectSubtitle: "Saluran Komunikasi Resmi Norfa Bagas",
-      connectBody: "Terbuka untuk diskusi arsitektur perangkat lunak, sistem data warehouse, pengembangan backend terdistribusi, serta kolaborasi riset kecerdasan buatan."
+      connectTitle: "Mari Terhubung",
+      connectSubtitle: "Saluran Komunikasi Profesional",
+      connectBody: "Terbuka untuk diskusi seputar arsitektur backend terdistribusi, optimasi database warehouse, migrasi microservices, atau peluang konsultasi teknis."
     },
     footer: {
       tagline: "Software Engineer & IT Specialist. Seluruh repositori dan data terverifikasi publik.",
-      backToTop: "Ke atas",
-      credit: "Dibuat dengan tema Kreativa Slate dan Astryx Design System berbasis React, StyleX, dan Tailwind CSS."
+      backToTop: "Kembali ke Atas",
+      credit: "Dibangun dengan Astryx Design System dan Tailwind CSS."
     }
   },
   "en-US": {
     nav: {
       home: "Home",
-      about: "About Us",
-      skills: "Services",
-      values: "Values",
-      projects: "Projects",
       experience: "Experience",
+      projects: "Projects",
+      skills: "Skills",
       articles: "Articles",
       support: "Contact",
       toggleThemeDark: "Dark Mode",
@@ -779,57 +776,58 @@ export const UI_STRINGS = {
       langShort: "EN",
       openMenu: "Open Menu",
       closeMenu: "Close Menu",
-      kopi: "Coffee"
+      kopi: "Buy Coffee"
     },
     hero: {
-      ctaProjects: "View Projects & Repositories",
-      ctaExperience: "Experience & Scope",
+      statusBadge: "Available for backend engineering & technical consulting",
+      ctaProjects: "Explore Repositories",
+      ctaExperience: "Work Experience",
       ctaMedium: "Medium",
       ctaCoffee: "Buy a Coffee",
       ctaLinkedin: "LinkedIn"
     },
-    skills: {
-      title: "Skills & Technical Stack",
-      subtitle: "Technologies and tools used for backend systems, data warehouses, and machine learning experiments."
+    experience: {
+      title: "Work Experience & Engineering Scope",
+      subtitle: "Engineering track record across enterprise production systems and technical architecture domains.",
+      timelineTitle: "Career Timeline",
+      scopeTitle: "Scope of Engineering"
     },
     projects: {
-      title: "Selected Projects & Repositories",
-      subtitle: "Public repositories focused on backend architectures, OLAP data warehouses, and applied machine learning.",
-      githubLink: "Repositories on GitHub",
+      title: "Repositories & Open Source Work",
+      subtitle: "Public codebases focused on distributed backend architectures, OLAP data warehouses, and applied machine learning pipelines.",
+      githubLink: "View All on GitHub",
       searchPlaceholder: "Search repository name or topic...",
       searchAria: "Search repositories by name or topic",
       allFilter: "All",
       viewOnGithub: "View on GitHub",
       emptyTitle: "No matching repositories",
-      emptyDesc: "Search returned no results.",
-      resetFilter: "Reset Search Filter"
+      emptyDesc: "Try adjusting your search terms or selecting a different language filter.",
+      resetFilter: "Reset Filter"
     },
-    experience: {
-      title: "Work Experience & Project Scope",
-      subtitle: "Engineering track record across enterprise production systems and technical architecture domains.",
-      timelineTitle: "Work Experience Timeline",
-      scopeTitle: "Scope of Projects (Engineering Focus)"
+    skills: {
+      title: "Skills & Technical Ecosystem",
+      subtitle: "Core languages, frameworks, and engineering tools applied across backend architecture, data warehousing, and infrastructure."
     },
     articles: {
       title: "Articles & Engineering Guides",
-      subtitle: "Technical writeups, setup walkthroughs, and practical systems engineering guides published on Medium @bgsnorfa.",
-      visitMedium: "Visit medium.com/@bgsnorfa",
-      readArticle: "Read article on Medium"
+      subtitle: "Systems engineering walkthroughs, environment setup guides, and technical deep-dives published on Medium @bgsnorfa.",
+      visitMedium: "Visit Medium Profile",
+      readArticle: "Read Article"
     },
     support: {
-      coffeeTitle: "Support Work & Research",
+      coffeeTitle: "Support Research & Open Source",
       coffeeSubtitle: "Buy Me a Coffee: @bgsnorfa",
-      coffeeBody: "If you find value in my technical writeups on Medium, open source repositories, or machine learning experiments, you can buy me a virtual coffee to support ongoing technical research.",
-      coffeeHeart: "Every contribution helps keep technical articles and open source experiments accessible for the developer community.",
+      coffeeBody: "If my technical write-ups on Medium or open source modules have helped your work, you can buy me a virtual coffee to support ongoing technical research.",
+      coffeeHeart: "Every contribution helps maintain technical articles and open-source experiments accessible for developers.",
       coffeeButton: "Buy a Coffee at buymeacoffee.com/bgsnorfa",
-      connectTitle: "Connect & Collaborate",
-      connectSubtitle: "Official Communication Channels",
-      connectBody: "Open for discussions on software architecture, data warehouse engineering, distributed backend services, and machine learning collaboration."
+      connectTitle: "Let's Connect",
+      connectSubtitle: "Professional Communication Channels",
+      connectBody: "Open for discussions on distributed backend architectures, data warehouse engineering, microservices migration, or technical consulting."
     },
     footer: {
       tagline: "Software Engineer & IT Specialist. All public repositories and verified data.",
-      backToTop: "Back to top",
-      credit: "Built with Kreativa Slate theme and Astryx Design System on React, StyleX, and Tailwind CSS."
+      backToTop: "Back to Top",
+      credit: "Built with Astryx Design System and Tailwind CSS."
     }
   }
 };

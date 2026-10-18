@@ -1,5 +1,5 @@
-import { Section, HStack, Heading, Text, Button } from "@astryxdesign/core";
-import { Coffee, Github, Linkedin, BookOpen, Mail, ArrowRight } from "lucide-react";
+import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
+import { Coffee, Github, Linkedin, BookOpen, ExternalLink, MessageSquare, Terminal } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface SupportConnectProps {
@@ -7,138 +7,197 @@ interface SupportConnectProps {
 }
 
 export function SupportConnect({ isDark }: SupportConnectProps) {
-  const { locale, data } = useLanguage();
+  const { t, data } = useLanguage();
   const { socials } = data;
 
   return (
     <Section
-      id="dukungan"
+      id="kontak"
       paddingBlock={0}
-      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-16 sm:py-24 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300"
+      className="w-full flex flex-col justify-center py-16 sm:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
-        {/* Exact Kreativa CTA Banner Card */}
-        <div className="bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
-          <div className="px-6 py-12 sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between text-left">
-            <div className="mb-8 lg:mb-0 max-w-2xl">
-              <Heading
-                level={2}
-                className={`text-3xl font-extrabold tracking-tight sm:text-4xl ${isDark ? "text-slate-100" : "text-slate-900"}`}
-              >
-                <span className="block">
-                  {locale === "id-ID"
-                    ? "Siap mentransformasikan arsitektur digital Anda?"
-                    : "Ready to elevate your engineering architecture?"}
+      <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
+        {/* Section Header */}
+        <VStack gap={2} hAlign="center" className="text-center mb-8 w-full">
+          <Heading
+            level={2}
+            className={`text-2xl sm:text-3xl font-bold tracking-tight ${
+              isDark ? "text-slate-100" : "text-slate-900"
+            }`}
+          >
+            {t.support.connectTitle}
+          </Heading>
+          <Text
+            type="supporting"
+            className={`text-sm sm:text-base max-w-2xl mx-auto leading-relaxed ${
+              isDark ? "text-slate-300" : "text-slate-600"
+            }`}
+          >
+            {t.support.connectBody}
+          </Text>
+        </VStack>
+
+        {/* 2-Card Layout: Professional Channels + Coffee Support */}
+        <Grid columns={{ minWidth: 320, max: 2, repeat: "fit" }} gap={6} className="w-full">
+          {/* Card 1: Official Communication Channels */}
+          <Card
+            padding={6}
+            className={`rounded-xl border flex flex-col justify-between ${
+              isDark
+                ? "border-slate-800 bg-slate-950/80 shadow-sm"
+                : "border-slate-200 bg-slate-50/80 shadow-sm"
+            }`}
+          >
+            <VStack gap={4} className="w-full">
+              <HStack gap={3} vAlign="center" className="w-full">
+                <span
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border ${
+                    isDark
+                      ? "bg-slate-900 border-slate-800 text-slate-100"
+                      : "bg-white border-slate-200 text-slate-900 shadow-sm"
+                  }`}
+                >
+                  <MessageSquare className="w-5 h-5" />
                 </span>
-                <span className="block text-slate-700 dark:text-slate-300 mt-2">
-                  {locale === "id-ID"
-                    ? "Mari wujudkan solusi sistem yang teruji dan tangguh bersama."
-                    : "Let's bring your technical vision to life."}
-                </span>
-              </Heading>
-              <Text
-                type="body"
-                className={`mt-4 text-base sm:text-lg leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}
-              >
-                {locale === "id-ID"
-                  ? "Tersedia untuk konsultasi arsitektur perangkat lunak, optimasi database warehouse, atau diskusi kolaborasi proyek skala korporasi."
-                  : "Available for software architecture consulting, database warehouse optimization, and high-impact enterprise engineering collaborations."}
+                <VStack gap={0.5}>
+                  <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                    {t.support.connectSubtitle}
+                  </Heading>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                    LinkedIn · GitHub · Stack Overflow
+                  </Text>
+                </VStack>
+              </HStack>
+
+              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                {t.support.connectBody}
               </Text>
-            </div>
 
-            {/* Action Buttons in Kreativa Banner */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start lg:flex-shrink-0">
-              <Button
-                label={locale === "id-ID" ? "Traktir Kopi" : "Buy Me a Coffee"}
-                variant="primary"
-                size="lg"
-                href={socials.buymeacoffee}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 h-11 px-8 shadow"
-              >
-                <HStack gap={2} vAlign="center">
-                  <Coffee className="w-4 h-4" />
-                  <span>{locale === "id-ID" ? "Traktir Kopi" : "Buy Me a Coffee"}</span>
-                  <ArrowRight className="w-4 h-4" />
+              {/* Action Buttons */}
+              <VStack gap={3} className="pt-2 w-full">
+                <Button
+                  label="LinkedIn @norfabagas"
+                  variant="primary"
+                  size="md"
+                  href={socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-colors bg-slate-900 text-slate-50 dark:bg-slate-100 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 h-10 px-4 shadow-sm"
+                >
+                  <HStack gap={2} vAlign="center">
+                    <Linkedin className="w-4 h-4" />
+                    <span>LinkedIn: /in/norfabagas</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </HStack>
+                </Button>
+
+                <HStack gap={2} className="w-full">
+                  <a
+                    href={socials.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-semibold border transition-colors ${
+                      isDark
+                        ? "border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white"
+                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                    }`}
+                  >
+                    <Github className="w-3.5 h-3.5" />
+                    <span>GitHub</span>
+                  </a>
+
+                  <a
+                    href={socials.stackoverflow}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-semibold border transition-colors ${
+                      isDark
+                        ? "border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white"
+                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                    }`}
+                  >
+                    <Terminal className="w-3.5 h-3.5" />
+                    <span>Stack Overflow</span>
+                  </a>
+
+                  <a
+                    href={socials.medium}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-semibold border transition-colors ${
+                      isDark
+                        ? "border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white"
+                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                    }`}
+                  >
+                    <BookOpen className="w-3.5 h-3.5" />
+                    <span>Medium</span>
+                  </a>
                 </HStack>
-              </Button>
+              </VStack>
+            </VStack>
+          </Card>
 
-              <Button
-                label={locale === "id-ID" ? "Hubungi LinkedIn" : "Connect on LinkedIn"}
-                variant="secondary"
-                size="lg"
-                href={socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 h-11 px-8"
-              >
-                <HStack gap={2} vAlign="center">
-                  <Linkedin className="w-4 h-4" />
-                  <span>LinkedIn</span>
-                </HStack>
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Supporting Channels Strip */}
-        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <a
-            href={socials.github}
-            target="_blank"
-            rel="noreferrer"
-            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
+          {/* Card 2: Buy Me a Coffee / Support */}
+          <Card
+            padding={6}
+            className={`rounded-xl border flex flex-col justify-between ${
               isDark
-                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
-                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
+                ? "border-slate-800 bg-slate-950/80 shadow-sm"
+                : "border-slate-200 bg-slate-50/80 shadow-sm"
             }`}
           >
-            <Github className="w-4 h-4" />
-            <span className="text-sm font-semibold">GitHub</span>
-          </a>
+            <VStack gap={4} className="w-full">
+              <HStack gap={3} vAlign="center" className="w-full">
+                <span
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border ${
+                    isDark
+                      ? "bg-slate-900 border-slate-800 text-amber-400"
+                      : "bg-white border-slate-200 text-amber-600 shadow-sm"
+                  }`}
+                >
+                  <Coffee className="w-5 h-5" />
+                </span>
+                <VStack gap={0.5}>
+                  <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                    {t.support.coffeeTitle}
+                  </Heading>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                    {t.support.coffeeSubtitle}
+                  </Text>
+                </VStack>
+              </HStack>
 
-          <a
-            href={socials.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
-              isDark
-                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
-                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
-            }`}
-          >
-            <Linkedin className="w-4 h-4" />
-            <span className="text-sm font-semibold">LinkedIn</span>
-          </a>
+              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                {t.support.coffeeBody}
+              </Text>
 
-          <a
-            href={socials.medium}
-            target="_blank"
-            rel="noreferrer"
-            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
-              isDark
-                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
-                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
-            }`}
-          >
-            <BookOpen className="w-4 h-4" />
-            <span className="text-sm font-semibold">Medium</span>
-          </a>
+              <Text type="supporting" className={`text-xs italic leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                {t.support.coffeeHeart}
+              </Text>
 
-          <a
-            href="mailto:contact@norfabagas.com"
-            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
-              isDark
-                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
-                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
-            }`}
-          >
-            <Mail className="w-4 h-4" />
-            <span className="text-sm font-semibold">Email</span>
-          </a>
-        </div>
-      </div>
+              {/* Action Button */}
+              <VStack gap={0} className="pt-2 w-full mt-auto">
+                <Button
+                  label={t.support.coffeeButton}
+                  variant="primary"
+                  size="md"
+                  href={socials.buymeacoffee}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-colors bg-amber-500 text-slate-950 hover:bg-amber-400 h-10 px-4 shadow-sm"
+                >
+                  <HStack gap={2} vAlign="center">
+                    <Coffee className="w-4 h-4" />
+                    <span>{t.support.coffeeButton}</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </HStack>
+                </Button>
+              </VStack>
+            </VStack>
+          </Card>
+        </Grid>
+      </VStack>
     </Section>
   );
 }

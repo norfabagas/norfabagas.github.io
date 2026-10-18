@@ -38,14 +38,11 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: t.nav.home || "Home", id: "tentang" },
-    { label: t.nav.about || "About Us", id: "ringkasan" },
-    { label: t.nav.skills || "Services", id: "keahlian" },
-    { label: t.nav.values || "Values", id: "nilai" },
-    { label: t.nav.experience || "Experience", id: "pengalaman" },
-    { label: t.nav.projects || "Projects", id: "proyek" },
-    { label: t.nav.articles || "Articles", id: "artikel" },
-    { label: t.nav.support || "Contact", id: "dukungan" }
+    { label: t.nav.experience, id: "pengalaman" },
+    { label: t.nav.projects, id: "proyek" },
+    { label: t.nav.skills, id: "keahlian" },
+    { label: t.nav.articles, id: "artikel" },
+    { label: t.nav.support, id: "kontak" }
   ];
 
   const handleNavClick = (e: React.MouseEvent, targetId: string) => {
@@ -61,42 +58,47 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   };
 
   return (
-    <nav className="bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200/60 dark:border-slate-800/60 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white/95 dark:bg-slate-950/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300 w-full">
+      <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <HStack hAlign="between" vAlign="center" className="h-16 w-full">
-          {/* Logo Brand in exact Kreativa 40x40 rx-8 style */}
+          {/* Logo Brand: avatar/initials badge */}
           <button
             type="button"
-            onClick={(e) => handleNavClick(e, "tentang")}
+            onClick={(e) => handleNavClick(e, "beranda")}
             className="flex-shrink-0 flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white rounded-lg p-1 text-left bg-transparent border-0 cursor-pointer"
-            aria-label="Kreativa Norfa Bagas Home"
+            aria-label="Norfa Bagas Portfolio Home"
           >
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-10 sm:h-10">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-9 sm:h-9">
               <rect width="40" height="40" rx="8" className="fill-slate-900 dark:fill-slate-100" />
               <path d="M11 29V11H16V20.5L25 11H29L20 20.5L29 29H25L16 22.5V29H11Z" className="fill-slate-100 dark:fill-slate-900" />
             </svg>
-            <Heading level={3} className={`text-lg sm:text-xl font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
-              {data.profile.name}
-            </Heading>
+            <VStack gap={0} className="text-left">
+              <Heading level={3} className={`text-base sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                {data.profile.name}
+              </Heading>
+              <span className={`text-[11px] font-mono leading-none ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                Software Engineer
+              </span>
+            </VStack>
           </button>
 
-          {/* Desktop Nav Links in exact Kreativa style */}
-          <div className="hidden lg:flex lg:space-x-6 lg:items-center">
+          {/* Desktop Nav Links */}
+          <HStack gap={1} vAlign="center" className="hidden md:flex">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 type="button"
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white cursor-pointer bg-transparent border-0 py-1.5 px-2 rounded-md ${
+                className={`text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white cursor-pointer bg-transparent border-0 py-2 px-3 rounded-md ${
                   isDark
-                    ? "text-slate-300 hover:text-white"
-                    : "text-slate-600 hover:text-slate-900"
+                    ? "text-slate-300 hover:text-white hover:bg-slate-900/60"
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 {link.label}
               </button>
             ))}
-          </div>
+          </HStack>
 
           {/* Header Controls (Right side) */}
           <HStack gap={2} vAlign="center">
@@ -133,18 +135,20 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-800" />}
             </Button>
 
-            {/* Hire Me / Primary Action Button */}
+            {/* Traktir Kopi / Coffee Action Button */}
             <Button
-              label={locale === "id-ID" ? "Traktir Kopi" : "Hire Me"}
+              label={t.nav.kopi}
               variant="primary"
               size="sm"
               href={data.socials.buymeacoffee}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md text-sm font-medium transition-colors bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900 shadow hover:bg-slate-800 dark:hover:bg-slate-200 h-9 px-4 py-2"
+              className="hidden sm:inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md text-sm font-semibold transition-colors bg-slate-900 text-slate-50 dark:bg-slate-100 dark:text-slate-900 shadow hover:bg-slate-800 dark:hover:bg-slate-200 h-9 px-3.5 py-2"
             >
-              <Coffee className="w-3.5 h-3.5" />
-              <span>{locale === "id-ID" ? "Traktir Kopi" : "Hire Me"}</span>
+              <HStack gap={1.5} vAlign="center">
+                <Coffee className="w-3.5 h-3.5" />
+                <span>{t.nav.kopi}</span>
+              </HStack>
             </Button>
 
             {/* Mobile Menu Toggler */}
@@ -153,7 +157,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-md border min-h-[36px] min-w-[36px] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
+              className={`md:hidden p-2 rounded-md border min-h-[36px] min-w-[36px] flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
                 isDark
                   ? "bg-slate-900 border-slate-700 text-white hover:bg-slate-800"
                   : "bg-white border-slate-300 text-slate-900 hover:bg-slate-100"
@@ -168,7 +172,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
         {isMobileMenuOpen && (
           <VStack
             gap={1}
-            className={`lg:hidden border-t py-4 w-full transition-all ${
+            className={`md:hidden border-t py-4 w-full transition-all ${
               isDark ? "border-slate-800 text-slate-100" : "border-slate-200 text-slate-900"
             }`}
           >
@@ -185,20 +189,20 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               </button>
             ))}
 
-            <div className="pt-2 px-4">
+            <VStack gap={0} className="pt-2 px-4 w-full">
               <a
                 href={data.socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium transition-colors bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900 shadow hover:bg-slate-800 dark:hover:bg-slate-200 h-10 px-4"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-colors bg-slate-900 text-slate-50 dark:bg-slate-100 dark:text-slate-900 shadow hover:bg-slate-800 dark:hover:bg-slate-200 h-11 px-4"
               >
                 <Coffee className="w-4 h-4" />
-                <span>{locale === "id-ID" ? "Traktir Kopi di BuyMeACoffee" : "Hire Me / Buy Me a Coffee"}</span>
+                <span>{locale === "id-ID" ? "Traktir Kopi di BuyMeACoffee" : "Support on BuyMeACoffee"}</span>
               </a>
-            </div>
+            </VStack>
           </VStack>
         )}
-      </div>
+      </VStack>
     </nav>
   );
 }
