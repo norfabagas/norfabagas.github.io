@@ -299,10 +299,10 @@ export const PORTFOLIO_DATA = {
     },
     {
       role: "Fullstack / Backend Developer",
-      company: "Geekseat",
+      company: "Stealth Startup",
       period: "Pengalaman Profesional",
       description:
-        "Berkolaborasi dalam tim pengembang perangkat lunak lintas negara untuk merancang API modular, optimasi performa backend Ruby on Rails, dan antarmuka web modern.",
+        "Berkolaborasi dalam tim pengembang perangkat lunak lintas batas untuk merancang arsitektur API modular, optimasi performa backend Ruby on Rails, dan antarmuka web modern.",
       skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
     },
     {

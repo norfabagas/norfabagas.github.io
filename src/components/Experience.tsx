@@ -22,66 +22,93 @@ export function Experience({ isDark }: ExperienceProps) {
           </Text>
         </VStack>
 
-        {/* Work Experience Block */}
+        {/* Work Experience Timeline Block */}
         <VStack gap={4} className="w-full text-left">
           <HStack gap={2} vAlign="center" className="pb-1">
             <Building2 className="w-5 h-5 text-purple-400" />
             <Heading level={3} className={`text-lg font-bold ${isDark ? "text-purple-200" : "text-purple-900"}`}>
-              Riwayat Pengalaman Kerja
+              Timeline Pengalaman Kerja
             </Heading>
           </HStack>
 
-          <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
-            {experience.map((exp) => (
-              <Card
-                key={exp.company}
-                padding={5}
-                className={`rounded-2xl transition-colors duration-200 w-full ${
-                  isDark
-                    ? "border border-white/15 bg-[#150c2e]/80 shadow-md shadow-purple-950/20"
-                    : "border border-purple-200 bg-white/95 shadow-sm"
-                }`}
-              >
-                <VStack gap={2} className="w-full text-left">
-                  <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-1">
-                    <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
-                      {exp.role}
-                    </Heading>
-                    <Text
-                      type="label"
-                      className={`text-xs px-2.5 py-0.5 rounded-md border ${
-                        isDark ? "bg-purple-950/60 border-white/15 text-purple-300" : "bg-purple-50 border-purple-200 text-purple-800"
-                      }`}
-                    >
-                      {exp.period}
-                    </Text>
-                  </HStack>
+          {/* Timeline Container */}
+          <div className="relative pl-6 sm:pl-8 w-full">
+            {/* Timeline Vertical Spine Line */}
+            <div
+              className={`absolute left-2.5 sm:left-3 top-3 bottom-3 w-0.5 ${
+                isDark
+                  ? "bg-gradient-to-b from-purple-500 via-purple-500/40 to-white/10"
+                  : "bg-gradient-to-b from-purple-600 via-purple-300 to-purple-100"
+              }`}
+            />
 
-                  <Text type="large" className={`text-xs sm:text-sm font-semibold ${isDark ? "text-purple-300" : "text-purple-700"}`}>
-                    {exp.company}
-                  </Text>
+            <VStack gap={4} className="w-full">
+              {experience.map((exp, index) => (
+                <div key={exp.company} className="relative w-full">
+                  {/* Timeline Node Marker */}
+                  <div
+                    className={`absolute -left-[19px] sm:-left-[25px] top-5 w-4 h-4 rounded-full border-2 transition-transform ${
+                      index === 0
+                        ? isDark
+                          ? "bg-purple-500 border-white shadow-sm shadow-purple-500"
+                          : "bg-purple-600 border-white shadow-sm shadow-purple-600"
+                        : isDark
+                          ? "bg-[#110726] border-purple-400"
+                          : "bg-white border-purple-500"
+                    }`}
+                  />
 
-                  <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-purple-100/80" : "text-gray-600"}`}>
-                    {exp.description}
-                  </Text>
+                  {/* Timeline Entry Card */}
+                  <Card
+                    padding={5}
+                    className={`rounded-2xl transition-colors duration-200 w-full ${
+                      isDark
+                        ? "border border-white/15 bg-[#150c2e]/85 shadow-md shadow-purple-950/20"
+                        : "border border-purple-200 bg-white/95 shadow-sm"
+                    }`}
+                  >
+                    <VStack gap={2} className="w-full text-left">
+                      <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-1">
+                        <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                          {exp.role}
+                        </Heading>
+                        <Text
+                          type="label"
+                          className={`text-xs px-2.5 py-0.5 rounded-md border ${
+                            isDark ? "bg-purple-950/60 border-white/15 text-purple-300" : "bg-purple-50 border-purple-200 text-purple-800"
+                          }`}
+                        >
+                          {exp.period}
+                        </Text>
+                      </HStack>
 
-                  <HStack gap={1} vAlign="center" className="flex-wrap pt-1">
-                    {exp.skills.map((s) => (
-                      <Text
-                        key={s}
-                        type="supporting"
-                        className={`text-[11px] px-2 py-0.5 rounded border ${
-                          isDark ? "bg-[#1f103f] border-white/10 text-purple-200" : "bg-purple-50 border-purple-200 text-purple-800"
-                        }`}
-                      >
-                        {s}
+                      <Text type="large" className={`text-xs sm:text-sm font-semibold ${isDark ? "text-purple-300" : "text-purple-700"}`}>
+                        {exp.company}
                       </Text>
-                    ))}
-                  </HStack>
-                </VStack>
-              </Card>
-            ))}
-          </Grid>
+
+                      <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-purple-100/80" : "text-gray-600"}`}>
+                        {exp.description}
+                      </Text>
+
+                      <HStack gap={1} vAlign="center" className="flex-wrap pt-1">
+                        {exp.skills.map((s) => (
+                          <Text
+                            key={s}
+                            type="supporting"
+                            className={`text-[11px] px-2 py-0.5 rounded border ${
+                              isDark ? "bg-[#1f103f] border-white/10 text-purple-200" : "bg-purple-50 border-purple-200 text-purple-800"
+                            }`}
+                          >
+                            {s}
+                          </Text>
+                        ))}
+                      </HStack>
+                    </VStack>
+                  </Card>
+                </div>
+              ))}
+            </VStack>
+          </div>
         </VStack>
 
         {/* Scope of Projects Block */}
