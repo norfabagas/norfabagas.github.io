@@ -345,12 +345,12 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
       },
       {
-        role: "Chief Technology Officer (CTO)",
+        role: "IT Consultant",
         company: "BRCODE",
-        period: "Leadership & Tech Direction",
+        period: "Pengalaman Profesional",
         description:
-          "Memimpin arah teknis perangkat lunak, menentukan arsitektur sistem, memandu tim rekayasa, serta mengisi sesi workshop teknologi untuk komunitas pengembang.",
-        skills: ["Tech Leadership", "System Architecture", "Software Strategy"]
+          "Memberikan konsultasi arsitektur perangkat lunak, evaluasi infrastruktur sistem, bimbingan teknis tim rekayasa, serta mengisi workshop teknologi untuk komunitas pengembang.",
+        skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
       }
     ],
     articles: [
@@ -652,12 +652,12 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
       },
       {
-        role: "Chief Technology Officer (CTO)",
+        role: "IT Consultant",
         company: "BRCODE",
-        period: "Leadership & Tech Direction",
+        period: "Professional Experience",
         description:
-          "Led software technical direction, defined system architectures, mentored engineering teams, and delivered technical workshops for developer communities.",
-        skills: ["Tech Leadership", "System Architecture", "Software Strategy"]
+          "Provided software architecture consulting, system infrastructure evaluations, technical engineering advisory, and developer community workshops.",
+        skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
       }
     ],
     articles: [
