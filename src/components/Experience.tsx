@@ -1,13 +1,14 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text } from "@astryxdesign/core";
 import { Building2, Layers, CheckCircle2 } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ExperienceProps {
   isDark: boolean;
 }
 
 export function Experience({ isDark }: ExperienceProps) {
-  const { experience, projectScopes } = PORTFOLIO_DATA;
+  const { t, data } = useLanguage();
+  const { experience, projectScopes } = data;
 
   return (
     <Section
@@ -19,11 +20,11 @@ export function Experience({ isDark }: ExperienceProps) {
         {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="w-full text-left">
           <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-            Pengalaman Kerja & Scope Proyek
+            {t.experience.title}
           </Heading>
           <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
           <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-            Rekam jejak implementasi perangkat lunak pada sistem korporasi dan cakupan ranah arsitektur teknis yang ditangani.
+            {t.experience.subtitle}
           </Text>
         </VStack>
 
@@ -36,7 +37,7 @@ export function Experience({ isDark }: ExperienceProps) {
               <Building2 className="w-4 h-4" />
             </div>
             <Heading level={3} className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-              Timeline Pengalaman Kerja
+              {t.experience.timelineTitle}
             </Heading>
           </HStack>
 
@@ -127,7 +128,7 @@ export function Experience({ isDark }: ExperienceProps) {
               <Layers className="w-4 h-4" />
             </div>
             <Heading level={3} className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-              Scope of Projects (Cakupan Rekayasa)
+              {t.experience.scopeTitle}
             </Heading>
           </HStack>
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { VStack } from "@astryxdesign/core";
+import { LanguageProvider } from "./context/LanguageContext";
 import { GalaxyBackground } from "./components/GalaxyBackground";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
@@ -10,7 +11,7 @@ import { Articles } from "./components/Articles";
 import { SupportConnect } from "./components/SupportConnect";
 import { Footer } from "./components/Footer";
 
-export default function App() {
+function PortfolioContent() {
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("nb_portfolio_theme");
@@ -78,5 +79,13 @@ export default function App() {
       {/* Footer */}
       <Footer isDark={isDark} />
     </VStack>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <PortfolioContent />
+    </LanguageProvider>
   );
 }

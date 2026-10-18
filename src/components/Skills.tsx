@@ -1,13 +1,14 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text } from "@astryxdesign/core";
 import { Code2, Database, Brain, Cpu } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface SkillsProps {
   isDark: boolean;
 }
 
 export function Skills({ isDark }: SkillsProps) {
-  const { skills } = PORTFOLIO_DATA;
+  const { t, data } = useLanguage();
+  const { skills } = data;
 
   const categoryIcons = [
     <Code2 key="code" className="w-5 h-5" />,
@@ -26,11 +27,11 @@ export function Skills({ isDark }: SkillsProps) {
         {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="text-left w-full">
           <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-            Keahlian & Ekosistem Teknologi
+            {t.skills.title}
           </Heading>
           <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
           <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-            Teknologi dan kerangka kerja yang digunakan dalam arsitektur backend, pemrosesan data, dan eksperimen kecerdasan buatan.
+            {t.skills.subtitle}
           </Text>
         </VStack>
 

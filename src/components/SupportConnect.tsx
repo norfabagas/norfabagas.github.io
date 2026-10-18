@@ -1,13 +1,14 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
 import { Coffee, Github, Linkedin, BookOpen, MessageSquare, Heart, ExternalLink } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface SupportConnectProps {
   isDark: boolean;
 }
 
 export function SupportConnect({ isDark }: SupportConnectProps) {
-  const { socials } = PORTFOLIO_DATA;
+  const { t, data } = useLanguage();
+  const { socials } = data;
 
   return (
     <Section
@@ -37,16 +38,16 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </div>
                 <VStack gap={0.5}>
                   <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                    Dukung Karya & Riset
+                    {t.support.coffeeTitle}
                   </Heading>
                   <Text type="supporting" className={`text-xs font-semibold ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    Buy Me a Coffee: @bgsnorfa
+                    {t.support.coffeeSubtitle}
                   </Text>
                 </VStack>
               </HStack>
 
               <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                Jika Anda menyukai artikel teknis di Medium, repositori open source, atau eksperimen machine learning yang saya bagikan, Anda dapat memberikan apresiasi dan traktir kopi virtual untuk mendukung kontinuitas riset.
+                {t.support.coffeeBody}
               </Text>
 
               <Card
@@ -58,7 +59,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 <HStack gap={2} vAlign="center">
                   <Heart className="w-4 h-4 text-rose-500 shrink-0" />
                   <Text type="supporting" className="text-xs leading-normal">
-                    Setiap dukungan sangat berarti untuk menjaga proyek dan tulisan teknologi tetap terbuka dan bermanfaat bagi komunitas developer.
+                    {t.support.coffeeHeart}
                   </Text>
                 </HStack>
               </Card>
@@ -66,7 +67,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
 
             <VStack gap={0} className="w-full pt-6">
               <Button
-                label="Traktir Kopi di buymeacoffee.com/bgsnorfa"
+                label={t.support.coffeeButton}
                 variant="primary"
                 size="lg"
                 href={socials.buymeacoffee}
@@ -80,7 +81,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
               >
                 <HStack gap={2} hAlign="center" vAlign="center">
                   <Coffee className="w-4 h-4" />
-                  <span>Traktir Kopi di buymeacoffee.com/bgsnorfa</span>
+                  <span>{t.support.coffeeButton}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </HStack>
               </Button>
@@ -107,16 +108,16 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </div>
                 <VStack gap={0.5}>
                   <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                    Terhubung & Kolaborasi
+                    {t.support.connectTitle}
                   </Heading>
                   <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
-                    Saluran Komunikasi Resmi Norfa Bagas
+                    {t.support.connectSubtitle}
                   </Text>
                 </VStack>
               </HStack>
 
               <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                Terbuka untuk diskusi arsitektur perangkat lunak, sistem data warehouse, pengembangan backend terdistribusi, serta kolaborasi riset kecerdasan buatan.
+                {t.support.connectBody}
               </Text>
 
               {/* Mobile-First Grid for Social Shortcuts */}

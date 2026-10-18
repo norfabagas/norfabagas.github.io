@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { HStack, VStack, Button, Heading, Text } from "@astryxdesign/core";
-import { Moon, Sun, Menu, X, Github, Linkedin, Coffee, BookOpen } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { Moon, Sun, Menu, X, Github, Linkedin, Coffee, BookOpen, Globe } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 interface NavbarProps {
   isDark: boolean;
@@ -9,6 +9,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ isDark, toggleTheme }: NavbarProps) {
+  const { locale, toggleLocale, t, data } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -39,12 +40,12 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: "Tentang", id: "tentang" },
-    { label: "Keahlian", id: "keahlian" },
-    { label: "Proyek", id: "proyek" },
-    { label: "Pengalaman", id: "pengalaman" },
-    { label: "Artikel", id: "artikel" },
-    { label: "Dukungan", id: "dukungan" }
+    { label: t.nav.about, id: "tentang" },
+    { label: t.nav.skills, id: "keahlian" },
+    { label: t.nav.projects, id: "proyek" },
+    { label: t.nav.experience, id: "pengalaman" },
+    { label: t.nav.articles, id: "artikel" },
+    { label: t.nav.support, id: "dukungan" }
   ];
 
   const handleNavClick = (e: React.MouseEvent, targetId: string) => {
@@ -81,17 +82,17 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           >
             <img
               src="/favicon.png"
-              alt={PORTFOLIO_DATA.profile.name}
+              alt={data.profile.name}
               className={`w-9 h-9 rounded-xl object-cover border ${
                 isDark ? "border-slate-700 shadow-sm" : "border-slate-200 shadow-sm"
               }`}
             />
             <VStack gap={0}>
               <Heading level={3} className={`text-sm sm:text-base font-bold leading-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                {PORTFOLIO_DATA.profile.name}
+                {data.profile.name}
               </Heading>
               <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
-                Software Engineer
+                {data.profile.title}
               </Text>
             </VStack>
           </button>
@@ -119,7 +120,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             {/* Quick social shortcuts (Desktop) */}
             <HStack gap={1} vAlign="center" className="hidden lg:flex pr-2 border-r border-slate-200 dark:border-slate-800">
               <a
-                href={PORTFOLIO_DATA.socials.github}
+                href={data.socials.github}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Kunjungi profil GitHub Norfa Bagas"
@@ -130,7 +131,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <Github className="w-4 h-4" />
               </a>
               <a
-                href={PORTFOLIO_DATA.socials.linkedin}
+                href={data.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Kunjungi profil LinkedIn Norfa Bagas"
@@ -141,7 +142,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href={PORTFOLIO_DATA.socials.medium}
+                href={data.socials.medium}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Kunjungi profil Medium bgsnorfa"
@@ -152,7 +153,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <BookOpen className="w-4 h-4" />
               </a>
               <a
-                href={PORTFOLIO_DATA.socials.buymeacoffee}
+                href={data.socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Dukung bgsnorfa di Buy Me a Coffee"
@@ -164,9 +165,27 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               </a>
             </HStack>
 
+            {/* Language Switcher Button (en-US <-> id-ID) */}
+            <Button
+              label={t.nav.toggleLang}
+              variant="ghost"
+              size="md"
+              onClick={toggleLocale}
+              className={`px-2.5 py-2 rounded-lg border min-h-[44px] flex items-center gap-1.5 font-bold text-xs transition-colors ${
+                isDark
+                  ? "bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800 hover:border-slate-600"
+                  : "bg-slate-100 border-slate-300 text-slate-800 hover:bg-slate-200 hover:border-slate-400"
+              }`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span className="font-mono text-xs font-semibold tracking-wider">
+                {locale === "id-ID" ? "ID" : "EN"}
+              </span>
+            </Button>
+
             {/* Dark / Light Mode Toggler */}
             <Button
-              label={isDark ? "Mode Terang" : "Mode Gelap"}
+              label={isDark ? t.nav.toggleThemeLight : t.nav.toggleThemeDark}
               variant="ghost"
               size="md"
               onClick={toggleTheme}
@@ -181,7 +200,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
 
             {/* Mobile Menu Toggler */}
             <Button
-              label={isMobileMenuOpen ? "Tutup Menu" : "Buka Menu"}
+              label={isMobileMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
               variant="ghost"
               size="md"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -219,7 +238,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
 
             <HStack hAlign="between" vAlign="center" className="pt-3 border-t border-slate-800/60 w-full">
               <a
-                href={PORTFOLIO_DATA.socials.github}
+                href={data.socials.github}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 p-2 text-xs font-medium text-slate-400 hover:text-slate-200 min-h-[44px]"
@@ -228,7 +247,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <span>GitHub</span>
               </a>
               <a
-                href={PORTFOLIO_DATA.socials.linkedin}
+                href={data.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 p-2 text-xs font-medium text-slate-400 hover:text-slate-200 min-h-[44px]"
@@ -237,7 +256,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <span>LinkedIn</span>
               </a>
               <a
-                href={PORTFOLIO_DATA.socials.medium}
+                href={data.socials.medium}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 p-2 text-xs font-medium text-slate-400 hover:text-slate-200 min-h-[44px]"
@@ -246,13 +265,13 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 <span>Medium</span>
               </a>
               <a
-                href={PORTFOLIO_DATA.socials.buymeacoffee}
+                href={data.socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-1.5 p-2 text-xs font-medium text-amber-500 hover:text-amber-400 min-h-[44px]"
               >
                 <Coffee className="w-4 h-4" />
-                <span>Kopi</span>
+                <span>{t.nav.kopi}</span>
               </a>
             </HStack>
           </VStack>

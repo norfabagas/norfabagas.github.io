@@ -1,32 +1,35 @@
 import { useState, useMemo } from "react";
 import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
 import { Search, Star, ExternalLink, GitFork } from "lucide-react";
-import { PORTFOLIO_DATA, Repository } from "../data/portfolioData";
+import { Repository } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ProjectsProps {
   isDark: boolean;
 }
 
 export function Projects({ isDark }: ProjectsProps) {
+  const { t, data, locale } = useLanguage();
+  const { repositories, socials } = data;
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState("Semua");
+  const [selectedLanguage, setSelectedLanguage] = useState("ALL");
 
-  const languages = ["Semua", "Go", "Ruby", "Python", "TypeScript", "PHP", "TSQL"];
+  const techLanguages = ["Go", "Ruby", "Python", "TypeScript", "PHP", "TSQL"];
 
   const filteredRepositories = useMemo(() => {
-    return PORTFOLIO_DATA.repositories.filter((repo: Repository) => {
+    return repositories.filter((repo: Repository) => {
       const matchesSearch =
         repo.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         repo.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        repo.topics.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
+        repo.topics.some((tItem) => tItem.toLowerCase().includes(searchQuery.toLowerCase()));
 
       const matchesLang =
-        selectedLanguage === "Semua" ||
+        selectedLanguage === "ALL" ||
         repo.language.toLowerCase() === selectedLanguage.toLowerCase();
 
       return matchesSearch && matchesLang;
     });
-  }, [searchQuery, selectedLanguage]);
+  }, [repositories, searchQuery, selectedLanguage]);
 
   return (
     <Section
@@ -40,23 +43,23 @@ export function Projects({ isDark }: ProjectsProps) {
           <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">
             <VStack gap={1}>
               <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                Proyek & Repositori Terpilih
+                {t.projects.title}
               </Heading>
               <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
               <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                Koleksi repositori publik yang berfokus pada arsitektur backend, sistem data warehouse OLAP, dan implementasi machine learning.
+                {t.projects.subtitle}
               </Text>
             </VStack>
 
             <a
-              href={PORTFOLIO_DATA.socials.github}
+              href={socials.github}
               target="_blank"
               rel="noreferrer"
               className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 p-1 shrink-0 ${
                 isDark ? "text-slate-400 hover:text-slate-100" : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <span>Repositori di GitHub</span>
+              <span>{t.projects.githubLink}</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </HStack>
@@ -79,8 +82,8 @@ export function Projects({ isDark }: ProjectsProps) {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Cari nama repositori atau topik..."
-                aria-label="Cari repositori berdasarkan nama atau topik"
+                placeholder={t.projects.searchPlaceholder}
+                aria-label={t.projects.searchAria}
                 className={`w-full pl-10 pr-4 py-2.5 text-sm rounded-lg border transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                   isDark
                     ? "bg-slate-950 border-slate-800 text-slate-100 placeholder-slate-500 focus:border-slate-600"
@@ -91,7 +94,25 @@ export function Projects({ isDark }: ProjectsProps) {
 
             {/* Language Filter Buttons */}
             <HStack gap={1.5} vAlign="center" className="flex-wrap overflow-x-auto w-full pb-1">
-              {languages.map((lang) => (
+              <Button
+                label={t.projects.allFilter}
+                variant={selectedLanguage === "ALL" ? "primary" : "secondary"}
+                size="sm"
+                onClick={() => setSelectedLanguage("ALL")}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium min-h-[44px] transition-colors ${
+                  selectedLanguage === "ALL"
+                    ? isDark
+                      ? "bg-slate-100 text-slate-900 border border-slate-200"
+                      : "bg-slate-900 text-slate-50 border border-slate-900"
+                    : isDark
+                      ? "bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-100"
+                      : "bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200 hover:text-slate-900"
+                }`}
+              >
+                {t.projects.allFilter}
+              </Button>
+
+              {techLanguages.map((lang) => (
                 <Button
                   key={lang}
                   label={lang}
@@ -161,9 +182,9 @@ export function Projects({ isDark }: ProjectsProps) {
 
                   {/* Topics Tags */}
                   <HStack gap={1} vAlign="center" className="flex-wrap pt-1">
-                    {repo.topics.map((t) => (
+                    {repo.topics.map((tItem) => (
                       <Text
-                        key={t}
+                        key={tItem}
                         type="supporting"
                         className={`text-[11px] px-2 py-0.5 rounded border ${
                           isDark
@@ -171,7 +192,7 @@ export function Projects({ isDark }: ProjectsProps) {
                             : "bg-slate-100 border-slate-200 text-slate-600"
                         }`}
                       >
-                        #{t}
+                        #{tItem}
                       </Text>
                     ))}
                   </HStack>
@@ -180,7 +201,7 @@ export function Projects({ isDark }: ProjectsProps) {
                 {/* Card Action Link */}
                 <VStack gap={0} className="w-full pt-4">
                   <Button
-                    label="Lihat di GitHub"
+                    label={t.projects.viewOnGithub}
                     variant="secondary"
                     size="sm"
                     href={repo.url}
@@ -193,7 +214,7 @@ export function Projects({ isDark }: ProjectsProps) {
                     }`}
                   >
                     <HStack gap={1.5} hAlign="center" vAlign="center">
-                      <span>Lihat di GitHub</span>
+                      <span>{t.projects.viewOnGithub}</span>
                       <ExternalLink className="w-3.5 h-3.5" />
                     </HStack>
                   </Button>
@@ -212,24 +233,26 @@ export function Projects({ isDark }: ProjectsProps) {
             <VStack gap={2} hAlign="center">
               <GitFork className="w-8 h-8 text-slate-500 opacity-60" />
               <Heading level={4} className="text-base font-bold">
-                Tidak ada repositori yang cocok
+                {t.projects.emptyTitle}
               </Heading>
               <Text type="supporting" className="text-xs max-w-md text-slate-400">
-                Pencarian untuk &ldquo;{searchQuery}&rdquo; dengan filter &ldquo;{selectedLanguage}&rdquo; tidak menemukan hasil.
+                {locale === "id-ID"
+                  ? `Pencarian untuk "${searchQuery}" tidak menemukan repositori yang cocok.`
+                  : `Search for "${searchQuery}" did not return any matching repositories.`}
               </Text>
               <Button
-                label="Reset Filter"
+                label={t.projects.resetFilter}
                 variant="primary"
                 size="sm"
                 onClick={() => {
                   setSearchQuery("");
-                  setSelectedLanguage("Semua");
+                  setSelectedLanguage("ALL");
                 }}
                 className={`mt-2 min-h-[44px] font-medium px-4 rounded-lg ${
                   isDark ? "bg-slate-100 text-slate-900 hover:bg-slate-200" : "bg-slate-900 text-slate-50 hover:bg-slate-800"
                 }`}
               >
-                Reset Filter Pencarian
+                {t.projects.resetFilter}
               </Button>
             </VStack>
           </Card>

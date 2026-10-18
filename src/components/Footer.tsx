@@ -1,14 +1,20 @@
 import { VStack, HStack, Text, Button } from "@astryxdesign/core";
 import { ArrowUp, Github, Linkedin, Coffee, BookOpen } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface FooterProps {
   isDark: boolean;
 }
 
 export function Footer({ isDark }: FooterProps) {
+  const { t, data } = useLanguage();
+  const { profile, socials } = data;
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
   };
 
   return (
@@ -22,21 +28,21 @@ export function Footer({ isDark }: FooterProps) {
           <VStack gap={1}>
             <HStack gap={2} vAlign="center" hAlign="center" className="sm:justify-start">
               <Text type="large" className="font-bold text-base text-white">
-                {PORTFOLIO_DATA.profile.name}
+                {profile.name}
               </Text>
               <Text type="code" className="text-xs text-slate-400">
-                (&ldquo;{PORTFOLIO_DATA.profile.tagline}&rdquo;)
+                (&ldquo;{profile.tagline}&rdquo;)
               </Text>
             </HStack>
             <Text type="supporting" className="text-xs text-slate-400">
-              Software Engineer & IT Specialist. Seluruh repositori dan data terverifikasi publik.
+              {t.footer.tagline}
             </Text>
           </VStack>
 
           {/* Social Buttons and Back-to-Top */}
           <HStack gap={2} vAlign="center">
             <a
-              href={PORTFOLIO_DATA.socials.github}
+              href={socials.github}
               target="_blank"
               rel="noreferrer"
               aria-label="Profil GitHub Norfa Bagas"
@@ -46,7 +52,7 @@ export function Footer({ isDark }: FooterProps) {
             </a>
 
             <a
-              href={PORTFOLIO_DATA.socials.linkedin}
+              href={socials.linkedin}
               target="_blank"
               rel="noreferrer"
               aria-label="Profil LinkedIn Norfa Bagas"
@@ -56,7 +62,7 @@ export function Footer({ isDark }: FooterProps) {
             </a>
 
             <a
-              href={PORTFOLIO_DATA.socials.medium}
+              href={socials.medium}
               target="_blank"
               rel="noreferrer"
               aria-label="Profil Medium bgsnorfa"
@@ -66,7 +72,7 @@ export function Footer({ isDark }: FooterProps) {
             </a>
 
             <a
-              href={PORTFOLIO_DATA.socials.buymeacoffee}
+              href={socials.buymeacoffee}
               target="_blank"
               rel="noreferrer"
               aria-label="Dukung bgsnorfa di Buy Me a Coffee"
@@ -76,7 +82,7 @@ export function Footer({ isDark }: FooterProps) {
             </a>
 
             <Button
-              label="Ke atas"
+              label={t.footer.backToTop}
               variant="secondary"
               size="sm"
               onClick={scrollToTop}
@@ -88,7 +94,7 @@ export function Footer({ isDark }: FooterProps) {
         </HStack>
 
         <Text type="supporting" className="text-center text-xs text-slate-500 pt-4 border-t border-slate-800 w-full">
-          Dibuat dengan tema Kreativa Slate dan Astryx Design System berbasis React, StyleX, dan Tailwind CSS.
+          {t.footer.credit}
         </Text>
       </VStack>
     </footer>

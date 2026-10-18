@@ -1,13 +1,14 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text } from "@astryxdesign/core";
 import { ExternalLink, Clock } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface ArticlesProps {
   isDark: boolean;
 }
 
 export function Articles({ isDark }: ArticlesProps) {
-  const { articles, socials } = PORTFOLIO_DATA;
+  const { t, data } = useLanguage();
+  const { articles, socials } = data;
 
   return (
     <Section
@@ -21,11 +22,11 @@ export function Articles({ isDark }: ArticlesProps) {
           <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">
             <VStack gap={1}>
               <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                Artikel & Tutorial Rekayasa
+                {t.articles.title}
               </Heading>
               <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
               <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                Catatan pemikiran teknis, tutorial instalasi, dan panduan praktis seputar rekayasa sistem di platform Medium @bgsnorfa.
+                {t.articles.subtitle}
               </Text>
             </VStack>
 
@@ -37,7 +38,7 @@ export function Articles({ isDark }: ArticlesProps) {
                 isDark ? "text-slate-400 hover:text-slate-100" : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              <span>Kunjungi medium.com/@bgsnorfa</span>
+              <span>{t.articles.visitMedium}</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </HStack>
@@ -90,7 +91,7 @@ export function Articles({ isDark }: ArticlesProps) {
                     isDark ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-slate-900"
                   }`}
                 >
-                  <span>Baca artikel di Medium</span>
+                  <span>{t.articles.readArticle}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               </HStack>

@@ -1,13 +1,14 @@
 import { Section, Card, VStack, HStack, Grid, Heading, Text, Button } from "@astryxdesign/core";
 import { ArrowDown, Briefcase, BookOpen, Coffee, Linkedin, Github, Server, Database, Cpu } from "lucide-react";
-import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
   isDark: boolean;
 }
 
 export function Hero({ isDark }: HeroProps) {
-  const { profile, socials } = PORTFOLIO_DATA;
+  const { t, data } = useLanguage();
+  const { profile, socials, projectScopes } = data;
 
   const scrollToSection = (targetId: string) => {
     const el = document.getElementById(targetId);
@@ -18,6 +19,12 @@ export function Hero({ isDark }: HeroProps) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
   };
+
+  const pillarIcons = [
+    <Server key="backend" className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+    <Database key="data" className="w-4 h-4 text-slate-700 dark:text-slate-300" />,
+    <Cpu key="ai" className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+  ];
 
   return (
     <Section
@@ -55,13 +62,13 @@ export function Hero({ isDark }: HeroProps) {
 
                 {/* Summary */}
                 <Text type="body" className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                  Software Engineer dengan keahlian dalam arsitektur backend, pemrosesan data warehouse OLAP, pipeline data terdistribusi, serta riset applied machine learning. Berpengalaman membangun sistem perbankan institusional, modul SIMRS rumah sakit, dan layanan API skala korporasi.
+                  {profile.summary}
                 </Text>
 
                 {/* Action Buttons: Mobile-first full-width wrap */}
                 <HStack gap={2} vAlign="center" className="flex-wrap pt-2 w-full">
                   <Button
-                    label="Lihat Proyek & Repositori"
+                    label={t.hero.ctaProjects}
                     variant="primary"
                     size="md"
                     onClick={() => scrollToSection("proyek")}
@@ -72,13 +79,13 @@ export function Hero({ isDark }: HeroProps) {
                     }`}
                   >
                     <HStack gap={1.5} vAlign="center">
-                      <span>Lihat Proyek & Repositori</span>
+                      <span>{t.hero.ctaProjects}</span>
                       <ArrowDown className="w-3.5 h-3.5" />
                     </HStack>
                   </Button>
 
                   <Button
-                    label="Pengalaman & Scope Kerja"
+                    label={t.hero.ctaExperience}
                     variant="secondary"
                     size="md"
                     onClick={() => scrollToSection("pengalaman")}
@@ -90,12 +97,12 @@ export function Hero({ isDark }: HeroProps) {
                   >
                     <HStack gap={1.5} vAlign="center">
                       <Briefcase className="w-3.5 h-3.5" />
-                      <span>Pengalaman & Scope</span>
+                      <span>{t.hero.ctaExperience}</span>
                     </HStack>
                   </Button>
 
                   <Button
-                    label="Medium bgsnorfa"
+                    label={t.hero.ctaMedium}
                     variant="ghost"
                     size="md"
                     href={socials.medium}
@@ -109,12 +116,12 @@ export function Hero({ isDark }: HeroProps) {
                   >
                     <HStack gap={1.5} vAlign="center">
                       <BookOpen className="w-3.5 h-3.5" />
-                      <span>Medium</span>
+                      <span>{t.hero.ctaMedium}</span>
                     </HStack>
                   </Button>
 
                   <Button
-                    label="Buy Me a Coffee bgsnorfa"
+                    label={t.hero.ctaCoffee}
                     variant="ghost"
                     size="md"
                     href={socials.buymeacoffee}
@@ -128,12 +135,12 @@ export function Hero({ isDark }: HeroProps) {
                   >
                     <HStack gap={1.5} vAlign="center">
                       <Coffee className="w-3.5 h-3.5" />
-                      <span>Traktir Kopi</span>
+                      <span>{t.hero.ctaCoffee}</span>
                     </HStack>
                   </Button>
 
                   <Button
-                    label="LinkedIn norfabagas"
+                    label={t.hero.ctaLinkedin}
                     variant="ghost"
                     size="md"
                     href={socials.linkedin}
@@ -147,7 +154,7 @@ export function Hero({ isDark }: HeroProps) {
                   >
                     <HStack gap={1.5} vAlign="center">
                       <Linkedin className="w-3.5 h-3.5" />
-                      <span>LinkedIn</span>
+                      <span>{t.hero.ctaLinkedin}</span>
                     </HStack>
                   </Button>
                 </HStack>
@@ -189,62 +196,27 @@ export function Hero({ isDark }: HeroProps) {
 
             {/* Scope Pillars Grid */}
             <Grid columns={{ minWidth: 260, max: 3, repeat: "fit" }} gap={3} className="w-full pt-4 border-t border-slate-200 dark:border-slate-800">
-              <Card
-                padding={3}
-                className={`rounded-xl border ${
-                  isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
-                }`}
-              >
-                <VStack gap={1}>
-                  <HStack gap={1.5} vAlign="center">
-                    <Server className="w-4 h-4 text-slate-700 dark:text-slate-300" />
-                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                      Backend & Architecture
-                    </Heading>
-                  </HStack>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    Core banking services, SIMRS, dan microservices modular (Go, Rails, TypeScript).
-                  </Text>
-                </VStack>
-              </Card>
-
-              <Card
-                padding={3}
-                className={`rounded-xl border ${
-                  isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
-                }`}
-              >
-                <VStack gap={1}>
-                  <HStack gap={1.5} vAlign="center">
-                    <Database className="w-4 h-4 text-slate-700 dark:text-slate-300" />
-                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                      Data Warehouse & OLAP
-                    </Heading>
-                  </HStack>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    Skema bintang analitik (Star Schema), pipeline ETL, dan optimasi query dimensi data (T-SQL).
-                  </Text>
-                </VStack>
-              </Card>
-
-              <Card
-                padding={3}
-                className={`rounded-xl border ${
-                  isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
-                }`}
-              >
-                <VStack gap={1}>
-                  <HStack gap={1.5} vAlign="center">
-                    <Cpu className="w-4 h-4 text-slate-700 dark:text-slate-300" />
-                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                      Applied Machine Learning
-                    </Heading>
-                  </HStack>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
-                    Deep learning CNN (FER2013), klasifikasi otomatis REST API, dan integrasi dialog Watson.
-                  </Text>
-                </VStack>
-              </Card>
+              {projectScopes.slice(0, 3).map((scope, index) => (
+                <Card
+                  key={scope.title}
+                  padding={3}
+                  className={`rounded-xl border ${
+                    isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
+                  }`}
+                >
+                  <VStack gap={1}>
+                    <HStack gap={1.5} vAlign="center">
+                      {pillarIcons[index]}
+                      <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                        {scope.title}
+                      </Heading>
+                    </HStack>
+                    <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
+                      {scope.description}
+                    </Text>
+                  </VStack>
+                </Card>
+              ))}
             </Grid>
           </VStack>
         </Card>
