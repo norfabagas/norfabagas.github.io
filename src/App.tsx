@@ -26,9 +26,13 @@ function PortfolioContent() {
     const root = document.documentElement;
     if (isDark) {
       root.classList.add("dark");
+      root.setAttribute("data-theme", "dark");
+      root.style.colorScheme = "dark";
       localStorage.setItem("nb_portfolio_theme", "dark");
     } else {
       root.classList.remove("dark");
+      root.setAttribute("data-theme", "light");
+      root.style.colorScheme = "light";
       localStorage.setItem("nb_portfolio_theme", "light");
     }
   }, [isDark]);

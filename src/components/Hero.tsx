@@ -25,8 +25,9 @@ export function Hero({ isDark }: HeroProps) {
   return (
     <Section
       id="beranda"
+      variant="transparent"
       paddingBlock={0}
-      className="relative w-full flex flex-col justify-center py-16 sm:py-24 md:py-32 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="relative w-full min-h-[calc(100vh-4rem)] flex flex-col justify-center py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
     >
       <VStack gap={0} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         {/* Status indicator & location pill */}
@@ -34,10 +35,10 @@ export function Hero({ isDark }: HeroProps) {
           <HStack
             gap={2}
             vAlign="center"
-            className={`px-3 py-1.5 rounded-full border text-xs font-medium shadow-sm ${
+            className={`px-3.5 py-1.5 rounded-full border text-xs font-semibold shadow-sm ${
               isDark
-                ? "bg-slate-900 border-slate-800 text-slate-300"
-                : "bg-white border-slate-200 text-slate-700"
+                ? "bg-slate-900 border-slate-800 text-slate-200"
+                : "bg-white border-slate-200 text-slate-800"
             }`}
           >
             <span className="relative flex h-2 w-2">
@@ -50,13 +51,13 @@ export function Hero({ isDark }: HeroProps) {
           <HStack
             gap={1}
             vAlign="center"
-            className={`px-3 py-1.5 rounded-full border text-xs font-medium shadow-sm ${
+            className={`px-3.5 py-1.5 rounded-full border text-xs font-semibold shadow-sm ${
               isDark
-                ? "bg-slate-900 border-slate-800 text-slate-400"
-                : "bg-white border-slate-200 text-slate-600"
+                ? "bg-slate-900 border-slate-800 text-slate-300"
+                : "bg-white border-slate-200 text-slate-700"
             }`}
           >
-            <MapPin className="w-3 h-3 text-slate-500" />
+            <MapPin className="w-3.5 h-3.5 text-slate-500" />
             <span>{profile.location}</span>
           </HStack>
         </HStack>
@@ -84,7 +85,7 @@ export function Hero({ isDark }: HeroProps) {
         <Text
           type="large"
           className={`mt-2 text-lg sm:text-xl font-semibold ${
-            isDark ? "text-slate-300" : "text-slate-700"
+            isDark ? "text-slate-200" : "text-slate-800"
           }`}
         >
           {profile.title}
@@ -94,7 +95,7 @@ export function Hero({ isDark }: HeroProps) {
         <Text
           type="body"
           className={`mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed ${
-            isDark ? "text-slate-300" : "text-slate-600"
+            isDark ? "text-slate-300" : "text-slate-700"
           }`}
         >
           {profile.summary}
@@ -107,8 +108,8 @@ export function Hero({ isDark }: HeroProps) {
               key={tech}
               className={`text-xs px-2.5 py-1 rounded-md border font-mono font-medium ${
                 isDark
-                  ? "bg-slate-900/80 border-slate-800 text-slate-300"
-                  : "bg-white border-slate-200 text-slate-700 shadow-sm"
+                  ? "bg-slate-900 border-slate-800 text-slate-200"
+                  : "bg-white border-slate-200 text-slate-800 shadow-sm"
               }`}
             >
               {tech}

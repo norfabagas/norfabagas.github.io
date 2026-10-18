@@ -23,10 +23,11 @@ export function Footer({ isDark }: FooterProps) {
         {/* Top Row: Brand & Back to Top */}
         <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-4">
           <HStack gap={3} vAlign="center">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-7 h-7">
-              <rect width="40" height="40" rx="8" className="fill-slate-900 dark:fill-slate-100" />
-              <path d="M11 29V11H16V20.5L25 11H29L20 20.5L29 29H25L16 22.5V29H11Z" className="fill-slate-100 dark:fill-slate-900" />
-            </svg>
+            <img
+              src="/favicon.png"
+              alt={profile.name}
+              className="w-8 h-8 rounded-lg object-cover border border-slate-300 dark:border-slate-700 shadow-sm"
+            />
             <VStack gap={0} className="text-left">
               <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                 {profile.name}

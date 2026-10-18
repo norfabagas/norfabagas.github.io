@@ -68,10 +68,11 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             className="flex-shrink-0 flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white rounded-lg p-1 text-left bg-transparent border-0 cursor-pointer"
             aria-label="Norfa Bagas Portfolio Home"
           >
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 sm:w-9 sm:h-9">
-              <rect width="40" height="40" rx="8" className="fill-slate-900 dark:fill-slate-100" />
-              <path d="M11 29V11H16V20.5L25 11H29L20 20.5L29 29H25L16 22.5V29H11Z" className="fill-slate-100 dark:fill-slate-900" />
-            </svg>
+            <img
+              src="/favicon.png"
+              alt={data.profile.name}
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-cover border border-slate-300 dark:border-slate-700 shadow-sm"
+            />
             <VStack gap={0} className="text-left">
               <Heading level={3} className={`text-base sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                 {data.profile.name}

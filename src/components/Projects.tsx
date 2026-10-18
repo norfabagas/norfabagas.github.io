@@ -20,8 +20,9 @@ export function Projects({ isDark }: ProjectsProps) {
   return (
     <Section
       id="proyek"
+      variant="transparent"
       paddingBlock={0}
-      className="w-full flex flex-col justify-center py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
     >
       <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
@@ -37,7 +38,7 @@ export function Projects({ isDark }: ProjectsProps) {
           <Text
             type="supporting"
             className={`text-sm sm:text-base max-w-2xl mx-auto leading-relaxed ${
-              isDark ? "text-slate-300" : "text-slate-600"
+              isDark ? "text-slate-300" : "text-slate-700"
             }`}
           >
             {t.projects.subtitle}
@@ -49,8 +50,8 @@ export function Projects({ isDark }: ProjectsProps) {
           padding={6}
           className={`rounded-xl border mb-8 w-full shadow-sm ${
             isDark
-              ? "border-slate-800 bg-slate-900/90 text-slate-100"
-              : "border-slate-200 bg-white/95 text-slate-900"
+              ? "border-slate-800 bg-slate-900 text-slate-100"
+              : "border-slate-200 bg-white text-slate-900"
           }`}
         >
           <VStack gap={3} className="w-full">
@@ -72,7 +73,7 @@ export function Projects({ isDark }: ProjectsProps) {
             <Text
               type="body"
               className={`text-sm sm:text-base leading-relaxed text-justify sm:text-left ${
-                isDark ? "text-slate-300" : "text-slate-700"
+                isDark ? "text-slate-200" : "text-slate-800"
               }`}
             >
               {projectResearchSummary}
@@ -123,8 +124,8 @@ export function Projects({ isDark }: ProjectsProps) {
                         key={item}
                         className={`text-xs px-2.5 py-1 rounded-md border font-mono font-medium ${
                           isDark
-                            ? "bg-slate-950 border-slate-800 text-slate-300"
-                            : "bg-slate-50 border-slate-200 text-slate-700"
+                            ? "bg-slate-950 border-slate-700 text-slate-200"
+                            : "bg-slate-50 border-slate-300 text-slate-800"
                         }`}
                       >
                         {item}
@@ -142,14 +143,14 @@ export function Projects({ isDark }: ProjectsProps) {
           padding={4}
           className={`rounded-xl border w-full ${
             isDark
-              ? "border-slate-800 bg-slate-900/60"
-              : "border-slate-200 bg-white/80 shadow-sm"
+              ? "border-slate-800 bg-slate-900"
+              : "border-slate-200 bg-white shadow-sm"
           }`}
         >
           <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-4">
             <HStack gap={2} vAlign="center" className="max-w-xl">
               <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
-              <Text type="supporting" className={`text-xs leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+              <Text type="supporting" className={`text-xs leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
                 {t.projects.githubNotice}
               </Text>
             </HStack>

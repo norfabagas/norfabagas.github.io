@@ -13,8 +13,9 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
   return (
     <Section
       id="kontak"
+      variant="transparent"
       paddingBlock={0}
-      className="w-full flex flex-col justify-center py-16 sm:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
     >
       <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
@@ -30,7 +31,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           <Text
             type="supporting"
             className={`text-sm sm:text-base max-w-2xl mx-auto leading-relaxed ${
-              isDark ? "text-slate-300" : "text-slate-600"
+              isDark ? "text-slate-300" : "text-slate-700"
             }`}
           >
             {t.support.connectHeaderDesc}
@@ -69,7 +70,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </VStack>
               </HStack>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
                 {t.support.connectCardBody}
               </Text>
 
@@ -168,11 +169,11 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </VStack>
               </HStack>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
                 {t.support.coffeeBody}
               </Text>
 
-              <Text type="supporting" className={`text-xs italic leading-relaxed ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+              <Text type="supporting" className={`text-xs italic leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                 {t.support.coffeeHeart}
               </Text>
 

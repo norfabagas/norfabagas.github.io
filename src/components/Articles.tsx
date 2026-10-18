@@ -13,8 +13,9 @@ export function Articles({ isDark }: ArticlesProps) {
   return (
     <Section
       id="artikel"
+      variant="transparent"
       paddingBlock={0}
-      className="w-full flex flex-col justify-center py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
@@ -30,7 +31,7 @@ export function Articles({ isDark }: ArticlesProps) {
           <Text
             type="supporting"
             className={`text-sm sm:text-base max-w-2xl mx-auto leading-relaxed ${
-              isDark ? "text-slate-300" : "text-slate-600"
+              isDark ? "text-slate-300" : "text-slate-700"
             }`}
           >
             {t.articles.subtitle}
@@ -45,8 +46,8 @@ export function Articles({ isDark }: ArticlesProps) {
               padding={5}
               className={`rounded-xl border transition-all duration-200 flex flex-col justify-between text-left ${
                 isDark
-                  ? "border-slate-800 bg-slate-900/90 shadow-sm hover:border-slate-700"
-                  : "border-slate-200 bg-white/95 shadow-sm hover:border-slate-300"
+                  ? "border-slate-800 bg-slate-900 text-slate-100 shadow-sm hover:border-slate-700"
+                  : "border-slate-200 bg-white text-slate-900 shadow-sm hover:border-slate-300"
               }`}
             >
               <VStack gap={3} className="w-full">
@@ -54,14 +55,14 @@ export function Articles({ isDark }: ArticlesProps) {
                   <span
                     className={`text-xs px-2.5 py-0.5 rounded-md font-semibold border ${
                       isDark
-                        ? "bg-slate-950 border-slate-800 text-slate-200"
-                        : "bg-slate-100 border-slate-200 text-slate-800"
+                        ? "bg-slate-950 border-slate-700 text-slate-200"
+                        : "bg-slate-100 border-slate-300 text-slate-800"
                     }`}
                   >
                     {art.category}
                   </span>
 
-                  <HStack gap={1} vAlign="center" className={`text-xs font-medium ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                  <HStack gap={1} vAlign="center" className={`text-xs font-semibold ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                     <Clock className="w-3.5 h-3.5" />
                     <span>{art.readTime}</span>
                   </HStack>
@@ -71,7 +72,7 @@ export function Articles({ isDark }: ArticlesProps) {
                   {art.title}
                 </Heading>
 
-                <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
                   {art.snippet}
                 </Text>
               </VStack>
