@@ -1,5 +1,5 @@
-import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
-import { Coffee, Github, Linkedin, BookOpen, MessageSquare, Heart, ExternalLink } from "lucide-react";
+import { Section, HStack, Heading, Text, Button } from "@astryxdesign/core";
+import { Coffee, Github, Linkedin, BookOpen, Mail, ArrowRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface SupportConnectProps {
@@ -7,193 +7,138 @@ interface SupportConnectProps {
 }
 
 export function SupportConnect({ isDark }: SupportConnectProps) {
-  const { t, data } = useLanguage();
+  const { locale, data } = useLanguage();
   const { socials } = data;
 
   return (
     <Section
       id="dukungan"
       paddingBlock={0}
-      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-20 sm:py-24"
+      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-16 sm:py-24 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 dark:from-slate-800 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300"
     >
-      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
-        <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
-          {/* Buy Me A Coffee Block */}
-          <Card
-            padding={6}
-            className={`rounded-xl flex flex-col justify-between transition-colors duration-200 ${
-              isDark
-                ? "border border-slate-700 bg-slate-900/90 shadow-sm"
-                : "border border-slate-300 bg-white shadow-sm"
-            }`}
-          >
-            <VStack gap={4} className="w-full text-left">
-              <HStack gap={3} vAlign="center">
-                <div
-                  className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
-                    isDark ? "bg-amber-400 text-slate-950" : "bg-amber-500 text-slate-950"
-                  }`}
-                >
-                  <Coffee className="w-5 h-5" />
-                </div>
-                <VStack gap={0.5}>
-                  <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
-                    {t.support.coffeeTitle}
-                  </Heading>
-                  <Text type="supporting" className={`text-xs font-semibold ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                    {t.support.coffeeSubtitle}
-                  </Text>
-                </VStack>
-              </HStack>
-
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                {t.support.coffeeBody}
-              </Text>
-
-              <Card
-                padding={3}
-                className={`rounded-lg border ${
-                  isDark ? "bg-slate-950 border-slate-700 text-slate-200 text-xs" : "bg-slate-50 border-slate-300 text-slate-800 text-xs"
-                }`}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+        {/* Exact Kreativa CTA Banner Card */}
+        <div className="bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800 rounded-2xl shadow-xl overflow-hidden border border-slate-300/60 dark:border-slate-700/60">
+          <div className="px-6 py-12 sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between text-left">
+            <div className="mb-8 lg:mb-0 max-w-2xl">
+              <Heading
+                level={2}
+                className={`text-3xl font-extrabold tracking-tight sm:text-4xl ${isDark ? "text-slate-100" : "text-slate-900"}`}
               >
-                <HStack gap={2} vAlign="center">
-                  <Heart className="w-4 h-4 text-rose-500 shrink-0" />
-                  <Text type="supporting" className={`text-xs leading-normal font-medium ${isDark ? "text-slate-200" : "text-slate-800"}`}>
-                    {t.support.coffeeHeart}
-                  </Text>
-                </HStack>
-              </Card>
-            </VStack>
+                <span className="block">
+                  {locale === "id-ID"
+                    ? "Siap mentransformasikan arsitektur digital Anda?"
+                    : "Ready to elevate your engineering architecture?"}
+                </span>
+                <span className="block text-slate-700 dark:text-slate-300 mt-2">
+                  {locale === "id-ID"
+                    ? "Mari wujudkan solusi sistem yang teruji dan tangguh bersama."
+                    : "Let's bring your technical vision to life."}
+                </span>
+              </Heading>
+              <Text
+                type="body"
+                className={`mt-4 text-base sm:text-lg leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}
+              >
+                {locale === "id-ID"
+                  ? "Tersedia untuk konsultasi arsitektur perangkat lunak, optimasi database warehouse, atau diskusi kolaborasi proyek skala korporasi."
+                  : "Available for software architecture consulting, database warehouse optimization, and high-impact enterprise engineering collaborations."}
+              </Text>
+            </div>
 
-            <VStack gap={0} className="w-full pt-6">
+            {/* Action Buttons in Kreativa Banner */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start lg:flex-shrink-0">
               <Button
-                label={t.support.coffeeButton}
+                label={locale === "id-ID" ? "Traktir Kopi" : "Buy Me a Coffee"}
                 variant="primary"
                 size="lg"
                 href={socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
-                className={`w-full py-3 rounded-lg font-bold text-xs sm:text-sm min-h-[44px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
-                  isDark
-                    ? "bg-amber-400 text-slate-950 hover:bg-amber-300 border border-amber-400 focus-visible:ring-amber-300"
-                    : "bg-amber-500 text-slate-950 hover:bg-amber-400 border border-amber-500 focus-visible:ring-amber-600"
-                }`}
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 h-11 px-8 shadow"
               >
-                <HStack gap={2} hAlign="center" vAlign="center">
+                <HStack gap={2} vAlign="center">
                   <Coffee className="w-4 h-4" />
-                  <span>{t.support.coffeeButton}</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>{locale === "id-ID" ? "Traktir Kopi" : "Buy Me a Coffee"}</span>
+                  <ArrowRight className="w-4 h-4" />
                 </HStack>
               </Button>
-            </VStack>
-          </Card>
 
-          {/* Social Links & Collaboration Block */}
-          <Card
-            padding={6}
-            className={`rounded-xl flex flex-col justify-between transition-colors duration-200 ${
+              <Button
+                label={locale === "id-ID" ? "Hubungi LinkedIn" : "Connect on LinkedIn"}
+                variant="secondary"
+                size="lg"
+                href={socials.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-semibold transition-colors border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 h-11 px-8"
+              >
+                <HStack gap={2} vAlign="center">
+                  <Linkedin className="w-4 h-4" />
+                  <span>LinkedIn</span>
+                </HStack>
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Supporting Channels Strip */}
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <a
+            href={socials.github}
+            target="_blank"
+            rel="noreferrer"
+            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
               isDark
-                ? "border border-slate-700 bg-slate-900/90 shadow-sm"
-                : "border border-slate-300 bg-white shadow-sm"
+                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
+                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
             }`}
           >
-            <VStack gap={4} className="w-full text-left">
-              <HStack gap={3} vAlign="center">
-                <div
-                  className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
-                    isDark ? "bg-slate-100 text-slate-950" : "bg-slate-900 text-white"
-                  }`}
-                >
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <VStack gap={0.5}>
-                  <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
-                    {t.support.connectTitle}
-                  </Heading>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                    {t.support.connectSubtitle}
-                  </Text>
-                </VStack>
-              </HStack>
+            <Github className="w-4 h-4" />
+            <span className="text-sm font-semibold">GitHub</span>
+          </a>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                {t.support.connectBody}
-              </Text>
+          <a
+            href={socials.linkedin}
+            target="_blank"
+            rel="noreferrer"
+            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
+              isDark
+                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
+                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
+            }`}
+          >
+            <Linkedin className="w-4 h-4" />
+            <span className="text-sm font-semibold">LinkedIn</span>
+          </a>
 
-              {/* Mobile-First Grid for Social Shortcuts */}
-              <Grid columns={{ minWidth: 130, max: 2, repeat: "fit" }} gap={2} className="w-full">
-                <a
-                  href={socials.medium}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
-                    isDark
-                      ? "bg-slate-950 border-slate-700 text-slate-100 hover:border-slate-500 hover:bg-slate-800"
-                      : "bg-slate-50 border-slate-300 text-slate-900 hover:border-slate-400 hover:bg-slate-100"
-                  }`}
-                >
-                  <BookOpen className={`w-4 h-4 shrink-0 ${isDark ? "text-slate-300" : "text-slate-700"}`} />
-                  <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className={`text-xs font-bold leading-tight ${isDark ? "text-white" : "text-slate-900"}`}>Medium</Text>
-                    <Text type="supporting" className={`text-[11px] truncate font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>@bgsnorfa</Text>
-                  </VStack>
-                </a>
+          <a
+            href={socials.medium}
+            target="_blank"
+            rel="noreferrer"
+            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
+              isDark
+                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
+                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
+            }`}
+          >
+            <BookOpen className="w-4 h-4" />
+            <span className="text-sm font-semibold">Medium</span>
+          </a>
 
-                <a
-                  href={socials.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
-                    isDark
-                      ? "bg-slate-950 border-slate-700 text-slate-100 hover:border-slate-500 hover:bg-slate-800"
-                      : "bg-slate-50 border-slate-300 text-slate-900 hover:border-slate-400 hover:bg-slate-100"
-                  }`}
-                >
-                  <Linkedin className={`w-4 h-4 shrink-0 ${isDark ? "text-slate-300" : "text-slate-700"}`} />
-                  <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className={`text-xs font-bold leading-tight ${isDark ? "text-white" : "text-slate-900"}`}>LinkedIn</Text>
-                    <Text type="supporting" className={`text-[11px] truncate font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>in/norfabagas</Text>
-                  </VStack>
-                </a>
-
-                <a
-                  href={socials.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
-                    isDark
-                      ? "bg-slate-950 border-slate-700 text-slate-100 hover:border-slate-500 hover:bg-slate-800"
-                      : "bg-slate-50 border-slate-300 text-slate-900 hover:border-slate-400 hover:bg-slate-100"
-                  }`}
-                >
-                  <Github className={`w-4 h-4 shrink-0 ${isDark ? "text-slate-300" : "text-slate-700"}`} />
-                  <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className={`text-xs font-bold leading-tight ${isDark ? "text-white" : "text-slate-900"}`}>GitHub</Text>
-                    <Text type="supporting" className={`text-[11px] truncate font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>norfabagas</Text>
-                  </VStack>
-                </a>
-
-                <a
-                  href={socials.buymeacoffee}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white ${
-                    isDark
-                      ? "bg-slate-950 border-slate-700 text-slate-100 hover:border-slate-500 hover:bg-slate-800"
-                      : "bg-slate-50 border-slate-300 text-slate-900 hover:border-slate-400 hover:bg-slate-100"
-                  }`}
-                >
-                  <Coffee className={`w-4 h-4 shrink-0 ${isDark ? "text-slate-300" : "text-slate-700"}`} />
-                  <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className={`text-xs font-bold leading-tight ${isDark ? "text-white" : "text-slate-900"}`}>Buy Me a Coffee</Text>
-                    <Text type="supporting" className={`text-[11px] truncate font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>bgsnorfa</Text>
-                  </VStack>
-                </a>
-              </Grid>
-            </VStack>
-          </Card>
-        </Grid>
-      </VStack>
+          <a
+            href="mailto:contact@norfabagas.com"
+            className={`p-4 rounded-xl border flex items-center justify-center gap-2.5 transition-all shadow-sm ${
+              isDark
+                ? "bg-slate-800/80 border-slate-700 text-slate-200 hover:bg-slate-800 hover:text-white"
+                : "bg-white/80 border-slate-200 text-slate-800 hover:bg-white hover:text-slate-950"
+            }`}
+          >
+            <Mail className="w-4 h-4" />
+            <span className="text-sm font-semibold">Email</span>
+          </a>
+        </div>
+      </div>
     </Section>
   );
 }

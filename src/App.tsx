@@ -4,9 +4,11 @@ import { LanguageProvider } from "./context/LanguageContext";
 import { GalaxyBackground } from "./components/GalaxyBackground";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { About } from "./components/About";
 import { Skills } from "./components/Skills";
-import { Projects } from "./components/Projects";
+import { Values } from "./components/Values";
 import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
 import { Articles } from "./components/Articles";
 import { SupportConnect } from "./components/SupportConnect";
 import { Footer } from "./components/Footer";
@@ -60,18 +62,20 @@ function PortfolioContent() {
         isDark ? "text-slate-100" : "text-slate-900"
       }`}
     >
-      {/* Background Starfield & Cosmic Nebulae */}
+      {/* Background Interactive Spotlight Canvas */}
       <GalaxyBackground isDark={isDark} />
 
       {/* Navigation Bar */}
       <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
-      {/* Single Page Content Sections */}
+      {/* Single Page Content Sections matching Kreativa */}
       <main id="main-content" tabIndex={-1} className="focus:outline-none w-full">
         <Hero isDark={isDark} />
+        <About isDark={isDark} />
         <Skills isDark={isDark} />
-        <Projects isDark={isDark} />
+        <Values isDark={isDark} />
         <Experience isDark={isDark} />
+        <Projects isDark={isDark} />
         <Articles isDark={isDark} />
         <SupportConnect isDark={isDark} />
       </main>

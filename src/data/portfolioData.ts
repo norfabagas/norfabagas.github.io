@@ -696,12 +696,14 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
 export const UI_STRINGS = {
   "id-ID": {
     nav: {
-      about: "Tentang",
-      skills: "Keahlian",
-      projects: "Proyek",
-      experience: "Pengalaman",
-      articles: "Artikel",
-      support: "Dukungan",
+      home: "Home",
+      about: "About Us",
+      skills: "Services",
+      values: "Values",
+      projects: "Projects",
+      experience: "Experience",
+      articles: "Articles",
+      support: "Contact",
       toggleThemeDark: "Mode Gelap",
       toggleThemeLight: "Mode Terang",
       toggleLang: "Switch to English (en-US)",
@@ -763,12 +765,14 @@ export const UI_STRINGS = {
   },
   "en-US": {
     nav: {
-      about: "About",
-      skills: "Skills",
+      home: "Home",
+      about: "About Us",
+      skills: "Services",
+      values: "Values",
       projects: "Projects",
       experience: "Experience",
       articles: "Articles",
-      support: "Support",
+      support: "Contact",
       toggleThemeDark: "Dark Mode",
       toggleThemeLight: "Light Mode",
       toggleLang: "Ganti ke Bahasa Indonesia (id-ID)",

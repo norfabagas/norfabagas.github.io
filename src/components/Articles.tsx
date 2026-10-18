@@ -1,5 +1,5 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text } from "@astryxdesign/core";
-import { ExternalLink, Clock } from "lucide-react";
+import { ExternalLink, Clock, BookOpen } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface ArticlesProps {
@@ -14,91 +14,94 @@ export function Articles({ isDark }: ArticlesProps) {
     <Section
       id="artikel"
       paddingBlock={0}
-      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-20 sm:py-24"
+      className="min-h-screen min-h-[100dvh] w-full flex flex-col justify-center py-16 sm:py-24 bg-gradient-to-b from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 transition-colors duration-300"
     >
-      <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6 w-full my-auto">
-        {/* Section Header with Kreativa accent bar */}
-        <VStack gap={1} className="w-full text-left">
-          <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">
-            <VStack gap={1}>
-              <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
-                {t.articles.title}
-              </Heading>
-              <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
-              <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                {t.articles.subtitle}
-              </Text>
-            </VStack>
-
-            <a
-              href={socials.medium}
-              target="_blank"
-              rel="noreferrer"
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white p-1 shrink-0 ${
-                isDark ? "text-slate-300 hover:text-white" : "text-slate-700 hover:text-slate-950"
-              }`}
-            >
-              <span>{t.articles.visitMedium}</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          </HStack>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+        {/* Section Header with Kreativa Signature Accent Bar */}
+        <VStack gap={1} hAlign="center" className="text-center mb-12 w-full">
+          <Heading level={2} className={`text-3xl font-bold tracking-tight sm:text-4xl ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+            {t.articles.title}
+          </Heading>
+          <div className="mt-2 h-1 w-24 bg-slate-900 dark:bg-slate-100 mx-auto rounded-full" />
+          <Text type="supporting" className={`mt-4 text-base sm:text-lg leading-8 max-w-3xl mx-auto ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+            {t.articles.subtitle}
+          </Text>
         </VStack>
 
-        {/* Mobile-First Responsive Grid */}
+        {/* Mobile-First Responsive Grid in Kreativa Card Style */}
         <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
           {articles.map((art) => (
             <Card
               key={art.title}
-              padding={5}
-              className={`rounded-xl transition-all duration-300 flex flex-col justify-between ${
+              padding={6}
+              className={`rounded-xl border transition-all duration-300 flex flex-col justify-between text-left ${
                 isDark
-                  ? "border border-slate-700 bg-slate-900/90 hover:border-slate-500 shadow-sm"
-                  : "border border-slate-300 bg-white hover:border-slate-400 shadow-sm"
+                  ? "border-slate-700 bg-slate-800/90 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-slate-600"
+                  : "border-slate-200 bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl hover:border-slate-300"
               }`}
             >
-              <VStack gap={3} className="w-full text-left">
+              <VStack gap={3} className="w-full">
                 <HStack hAlign="between" vAlign="center" className="w-full">
-                  <Text
-                    type="label"
+                  <span
                     className={`text-xs px-2.5 py-0.5 rounded-md font-semibold border ${
-                      isDark ? "bg-slate-800 border-slate-600 text-slate-100" : "bg-slate-100 border-slate-300 text-slate-900"
+                      isDark
+                        ? "bg-slate-900 border-slate-700 text-slate-200"
+                        : "bg-slate-100 border-slate-200 text-slate-800"
                     }`}
                   >
                     {art.category}
-                  </Text>
+                  </span>
 
-                  <HStack gap={1} vAlign="center" className={`text-xs font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>
+                  <HStack gap={1} vAlign="center" className={`text-xs font-medium ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                     <Clock className="w-3.5 h-3.5" />
                     <span>{art.readTime}</span>
                   </HStack>
                 </HStack>
 
-                <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-white" : "text-slate-900"}`}>
+                <Heading level={3} className={`text-lg sm:text-xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                   {art.title}
                 </Heading>
 
-                <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-slate-300" : "text-slate-700"}`}>
+                <Text type="body" className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                   {art.snippet}
                 </Text>
               </VStack>
 
-              <HStack hAlign="between" vAlign="center" className={`pt-4 border-t mt-4 w-full ${isDark ? "border-slate-700" : "border-slate-300"}`}>
+              <div className="pt-4 border-t border-slate-200/60 dark:border-slate-700/60 mt-4 w-full">
                 <a
                   href={art.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex items-center gap-1.5 text-xs font-semibold min-h-[44px] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white rounded-lg ${
-                    isDark ? "text-slate-100 hover:text-white" : "text-slate-900 hover:text-slate-950"
+                  className={`inline-flex items-center gap-1.5 text-xs font-semibold py-2 transition-colors ${
+                    isDark ? "text-slate-200 hover:text-white" : "text-slate-800 hover:text-slate-950"
                   }`}
                 >
+                  <BookOpen className="w-3.5 h-3.5" />
                   <span>{t.articles.readArticle}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
-              </HStack>
+              </div>
             </Card>
           ))}
         </Grid>
-      </VStack>
+
+        {/* Medium Profile Link */}
+        <div className="mt-10 text-center">
+          <a
+            href={socials.medium}
+            target="_blank"
+            rel="noreferrer"
+            className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors px-5 py-2.5 rounded-md border ${
+              isDark
+                ? "border-slate-700 bg-slate-800 text-slate-200 hover:bg-slate-700 hover:text-white"
+                : "border-slate-300 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-950"
+            }`}
+          >
+            <span>{t.articles.visitMedium}</span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
     </Section>
   );
 }
