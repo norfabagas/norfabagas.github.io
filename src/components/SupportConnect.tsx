@@ -33,7 +33,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
               isDark ? "text-slate-300" : "text-slate-600"
             }`}
           >
-            {t.support.connectBody}
+            {t.support.connectHeaderDesc}
           </Text>
         </VStack>
 
@@ -70,7 +70,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
               </HStack>
 
               <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                {t.support.connectBody}
+                {t.support.connectCardBody}
               </Text>
 
               {/* Action Buttons */}

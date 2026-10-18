@@ -188,7 +188,7 @@ export function Experience({ isDark }: ExperienceProps) {
                   {/* Deliverables checklist */}
                   <VStack gap={1.5} className="pt-2 border-t border-slate-200/60 dark:border-slate-800/60 w-full">
                     <Text type="supporting" className={`text-xs font-semibold ${isDark ? "text-slate-400" : "text-slate-500"}`}>
-                      Key Deliverables:
+                      {t.experience.keyDeliverablesLabel}
                     </Text>
                     {scope.deliverables.map((item) => (
                       <HStack key={item} gap={2} vAlign="start" className="w-full">

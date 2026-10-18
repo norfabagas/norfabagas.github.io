@@ -90,7 +90,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       title: "Software Engineer & IT Specialist",
       tagline: "All of my experiments",
       summary:
-        "Software Engineer dengan keahlian dalam arsitektur backend, pemrosesan data warehouse OLAP, pipeline data terdistribusi, serta riset applied machine learning. Berpengalaman membangun sistem perbankan institusional, modul SIMRS rumah sakit, dan layanan API skala korporasi.",
+        "Software engineer yang berfokus pada arsitektur backend, data warehouse OLAP, dan pipeline data. Pernah mengerjakan sistem transaksi perbankan, modul SIMRS rumah sakit, dan layanan API produksi.",
       location: "Indonesia",
       avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
       githubUsername: "norfabagas"
@@ -101,82 +101,82 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Enterprise Core & Financial Systems",
         area: "Core Services",
         description:
-          "Pengembangan modul perangkat lunak terintegrasi untuk sektor perbankan dan penjaminan keuangan dengan standar keamanan institusional, keandalan data, dan ketersediaan tinggi.",
+          "Modul transaksi perbankan dan penjaminan simpanan, dengan fokus pada keamanan bertingkat, pencatatan audit trail, dan keabsahan data transaksi.",
         technologies: ["Go", "T-SQL", "Enterprise Security", "Microservices", "REST API"],
         deliverables: [
-          "Arsitektur modul transaksi perbankan",
-          "Mekanisme audit trail dan verifikasi integritas data",
-          "Otentikasi terpusat dan manajemen otorisasi berjenjang"
+          "Modul pemrosesan transaksi perbankan",
+          "Pencatatan audit trail dan verifikasi integritas data",
+          "Otentikasi terpusat dan otorisasi bertingkat"
         ]
       },
       {
         title: "Healthcare Systems & SIMRS",
         area: "Healthcare Information",
         description:
-          "Perancangan modul Sistem Informasi Manajemen Rumah Sakit (SIMRS) yang mengintegrasikan alur operasional klinis, pencatatan rekam medis, dan sinkronisasi data antar unit.",
+          "Modul SIMRS untuk operasional rumah sakit, mencakup alur rekam medis elektronik dan pertukaran data antar-instalasi medis.",
         technologies: ["PostgreSQL", "PHP", "Database Optimization", "System Integration"],
         deliverables: [
-          "Otomatisasi alur kerja operasional antar instalasi medis",
-          "Sinkronisasi data rekam medis terpadu",
-          "Optimasi query basis data transaksional berkecepatan tinggi"
+          "Integrasi alur kerja antar-departemen rumah sakit",
+          "Sinkronisasi data rekam medis elektronik",
+          "Optimasi query database transaksional"
         ]
       },
       {
         title: "Data Warehouse & OLAP Pipelines",
         area: "Data Engineering",
         description:
-          "Perancangan skema analitik data warehouse (Star Schema), pipeline ETL transaksi point-of-sale, dan pengolahan query multidimensi untuk kebutuhan analitik pelaporan.",
+          "Perancangan data warehouse skema bintang (star schema) dan pipeline ETL untuk agregasi analitik transaksi multi-cabang.",
         technologies: ["T-SQL", "OLAP Data Warehouse", "ETL Pipelines", "PostgreSQL"],
         deliverables: [
-          "Desain skema bintang (fact table dan dimension tables)",
-          "Pipeline ekstraksi, transformasi, dan pemuatan data transaksi",
-          "Agregasi analitik data penjualan multi-cabang"
+          "Skema bintang (fact table dan dimension tables)",
+          "Pipeline ETL untuk pembersihan dan pemuatan data transaksi",
+          "Query agregasi analitik performa penjualan"
         ]
       },
       {
         title: "Microservices & Distributed APIs",
         area: "Backend Architecture",
         description:
-          "Pembangunan service backend modular, implementasi auth global multi-tenant, serta penerapan prinsip Test-Driven Development (TDD) untuk keandalan API.",
+          "Layanan backend terpisah dan API modular dengan Go dan Ruby on Rails, dilengkapi pengujian otomatis.",
         technologies: ["Go", "Ruby on Rails", "TypeScript", "Node.js", "Docker", "TDD"],
         deliverables: [
-          "Layanan otentikasi terpusat berbasis JWT",
-          "Pemisahan modular service arsitektur backend",
-          "Pengujian otomatis dan integrasi berkelanjutan"
+          "Service otentikasi JWT terpusat",
+          "Arsitektur API modular berbasis domain",
+          "Rangkaian pengujian otomatis (TDD)"
         ]
       },
       {
         title: "Applied Machine Learning & AI Integration",
         area: "Applied AI",
         description:
-          "Eksperimen arsitektur deep learning Convolutional Neural Network (CNN) untuk Facial Expression Recognition (FER2013), API klasifikasi keluhan jaringan, dan integrasi IBM Watson.",
+          "Eksperimen model deep learning CNN untuk pengenalan ekspresi wajah, API klasifikasi gangguan jaringan, dan chatbot NLP.",
         technologies: ["Python", "TensorFlow", "Keras", "Flask", "IBM Watson"],
         deliverables: [
-          "Arsitektur deep learning klasifikasi citra ekspresi wajah",
-          "REST API klasifikasi otomatis gangguan jaringan",
-          "Integrasi antarmuka chatbot NLP cerdas"
+          "Model CNN deteksi ekspresi wajah pada dataset FER2013",
+          "REST API Flask untuk klasifikasi otomatis gangguan jaringan",
+          "Integrasi percakapan chatbot dengan IBM Watson Assistant"
         ]
       }
     ],
     skills: [
       {
         category: "Backend & Systems",
-        description: "Pondasi arsitektur API terdistribusi, microservices, dan performa tinggi",
+        description: "Pengembangan API, microservices, dan sistem berbasis konkurensi",
         items: ["Go (Golang)", "Ruby on Rails", "PHP (Laravel)", "TypeScript", "Node.js", "Python"]
       },
       {
         category: "Data & OLAP",
-        description: "Desain skema analitik data warehouse, ETL pipeline, dan pemrosesan query",
+        description: "Desain skema bintang data warehouse, pipeline ETL, dan penulisan query analitik",
         items: ["T-SQL (OLAP DW)", "PostgreSQL", "MySQL", "MongoDB", "Apache Spark", "Firebase"]
       },
       {
         category: "AI & Machine Learning",
-        description: "Riset computer vision, arsitektur deep learning CNN, dan integrasi asisten cerdas",
+        description: "Pelatihan model CNN pengenal citra dan pembuatan API inferensi",
         items: ["TensorFlow", "Keras (CNN)", "FER2013 Facial Recognition", "IBM Watson Assistant", "Data Augmentation"]
       },
       {
         category: "DevOps & Tooling",
-        description: "Automasi alur kerja, kontainerisasi terisolasi, dan pengujian berbasis TDD",
+        description: "Kontainerisasi Docker, automasi testing TDD, dan manajemen server Linux",
         items: ["Docker", "Linux / Bash", "DigitalOcean", "Git", "TDD & Jest", "Tailwind CSS"]
       }
     ],
@@ -332,32 +332,32 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Lembaga Penjamin Simpanan (LPS)",
         period: "Pengalaman Profesional",
         description:
-          "Membangun dan memelihara modul perangkat lunak perbankan terintegrasi dengan standar keamanan institusional, manajemen data terpusat, dan keandalan sistem penjaminan simpanan.",
-        skills: ["Backend Architecture", "Enterprise Security", "Database Systems", "API Integration"]
+          "Mengembangkan modul backend untuk sistem transaksi perbankan dan pencatatan audit data penjaminan simpanan, dengan fokus pada integritas data dan keamanan akses.",
+        skills: ["Go", "T-SQL", "Sistem Perbankan", "Audit Trail", "REST API"]
       },
       {
         role: "Software Engineer",
         company: "Eka Hospital",
         period: "Pengalaman Profesional",
         description:
-          "Mengembangkan modul Sistem Informasi Manajemen Rumah Sakit (SIMRS), otomatisasi alur kerja klinis, serta integrasi pertukaran data antar instalasi medis.",
-        skills: ["Healthcare Systems", "Relational Database", "System Integration", "Data Reliability"]
+          "Mengembangkan modul SIMRS (Sistem Informasi Manajemen Rumah Sakit) untuk operasional rekam medis elektronik dan pertukaran data antar-instalasi kesehatan.",
+        skills: ["PHP", "PostgreSQL", "SIMRS", "Integrasi Sistem", "Database Tuning"]
       },
       {
-        role: "Fullstack / Backend Developer",
+        role: "Software Engineer",
         company: "Stealth Startup",
         period: "Pengalaman Profesional",
         description:
-          "Berkolaborasi dalam tim pengembang perangkat lunak lintas batas untuk merancang arsitektur API modular, optimasi performa backend Ruby on Rails, dan antarmuka web modern.",
-        skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
+          "Membangun API modular dan layanan backend menggunakan Ruby on Rails dan TypeScript, serta mengoptimalkan respons endpoint untuk aplikasi web.",
+        skills: ["Ruby on Rails", "TypeScript", "REST API", "Docker", "TDD"]
       },
       {
         role: "IT Consultant",
         company: "BRCODE",
         period: "Pengalaman Profesional",
         description:
-          "Memberikan konsultasi arsitektur perangkat lunak, evaluasi infrastruktur sistem, bimbingan teknis tim rekayasa, serta mengisi workshop teknologi untuk komunitas pengembang.",
-        skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
+          "Memberikan konsultasi arsitektur software, evaluasi infrastruktur server, dan pendampingan teknis bagi tim pengembang.",
+        skills: ["Konsultasi IT", "Arsitektur Software", "Evaluasi Infrastruktur", "Mentoring"]
       }
     ],
     articles: [
@@ -366,32 +366,32 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         url: "https://medium.com/@bgsnorfa",
         category: "DevOps & Tooling",
         readTime: "5 min baca",
-        snippet: "Panduan praktis mengisolasi dependensi aplikasi dan menyusun konfigurasi container multi-layanan untuk lingkungan pengembangan konsisten."
+        snippet: "Panduan praktis mengisolasi dependensi aplikasi dan menyusun konfigurasi Docker compose untuk lingkungan development."
       },
       {
         title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
         url: "https://medium.com/@bgsnorfa",
         category: "Development Setup",
         readTime: "6 min baca",
-        snippet: "Langkah optimal mengatur ekosistem pengembangan Ruby on Rails di Windows melalui integrasi native Windows Subsystem for Linux (WSL)."
+        snippet: "Langkah mengatur environment development Ruby on Rails di Windows melalui WSL secara cepat dan stabil."
       },
       {
         title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
         url: "https://medium.com/@bgsnorfa",
         category: "Computer Science",
         readTime: "7 min baca",
-        snippet: "Tinjauan mendalam perbandingan efisiensi algoritma pengurutan data beserta implikasi performa pada kasus nyata rekayasa data."
+        snippet: "Perbandingan performa berbagai algoritma sorting beserta efisiensi waktu dan memorinya pada data nyata."
       },
       {
         title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
         url: "https://medium.com/@bgsnorfa",
         category: "Artificial Intelligence",
         readTime: "4 min baca",
-        snippet: "Membangun antarmuka percakapan interaktif dengan mendefinisikan intent, entity, dan dialog trees pada layanan cloud Watson."
+        snippet: "Cara merancang dialog interaktif dengan mendefinisikan intent, entity, dan dialog tree di IBM Watson."
       }
     ],
     projectResearchSummary:
-      "Rekam jejak implementasi perangkat lunak dan riset teknis yang telah dikerjakan mencakup perancangan modul transaksi perbankan institusional dengan standar keamanan multi-tier, modernisasi arsitektur SIMRS rumah sakit yang terintegrasi langsung dengan API BPJS dan SATUSEHAT Kemenkes, pembangunan arsitektur OLAP Data Warehouse berbasis star schema untuk analitik transaksi multi-cabang berkinerja tinggi, serta riset applied machine learning mencakup eksperimen model Convolutional Neural Network (CNN) pada dataset FER2013 untuk Facial Expression Recognition, integrasi conversational chatbot IBM Watson, dan pembuatan REST API otomatisasi klasifikasi insiden jaringan.",
+      "Sebagai software engineer, saya fokus membangun sistem backend dan arsitektur data. Di sektor perbankan dan kesehatan, saya mengembangkan modul transaksi perbankan serta mengintegrasikan SIMRS rumah sakit dengan API BPJS dan SATUSEHAT. Di sisi data, saya merancang data warehouse OLAP berskema bintang untuk analitik transaksi penjualan. Saya juga melakukan riset machine learning terapan, seperti melatih model CNN untuk pengenalan ekspresi wajah pada dataset FER2013, membuat API klasifikasi gangguan jaringan dengan Flask dan Keras, serta mengintegrasikan chatbot IBM Watson.",
     techTools: [
       {
         category: "Bahasa Pemrograman",
@@ -417,7 +417,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       title: "Software Engineer & IT Specialist",
       tagline: "All of my experiments",
       summary:
-        "Software Engineer with expertise in backend architecture, OLAP data warehouses, distributed data pipelines, and applied machine learning. Experienced in building institutional banking modules, hospital SIMRS services, and production REST APIs.",
+        "Software engineer working on backend systems, OLAP data warehouses, and data pipelines. Experienced with core banking services, hospital clinical systems, and production APIs.",
       location: "Indonesia",
       avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
       githubUsername: "norfabagas"
@@ -428,82 +428,82 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Enterprise Core & Financial Systems",
         area: "Core Services",
         description:
-          "Development of integrated banking and financial guarantee software modules adhering to institutional security standards, data integrity, and high availability.",
+          "Core banking and deposit insurance transaction modules, focusing on multi-tier security, audit trail logging, and transaction integrity.",
         technologies: ["Go", "T-SQL", "Enterprise Security", "Microservices", "REST API"],
         deliverables: [
-          "Banking transaction module architecture",
-          "Audit trail mechanisms and data integrity verification",
-          "Centralized authentication and tiered authorization management"
+          "Banking transaction processing module",
+          "Audit trail logging and data integrity verification",
+          "Centralized authentication and tiered authorization"
         ]
       },
       {
         title: "Healthcare Systems & SIMRS",
         area: "Healthcare Information",
         description:
-          "Design of hospital information system (SIMRS) modules integrating clinical workflows, medical records, and synchronization across hospital units.",
+          "Hospital information system (SIMRS) modules for clinical workflows, electronic medical records, and data exchange between healthcare units.",
         technologies: ["PostgreSQL", "PHP", "Database Optimization", "System Integration"],
         deliverables: [
-          "Workflow automation across clinical departments",
-          "Integrated electronic medical records synchronization",
-          "High-throughput transactional database query optimization"
+          "Workflow integration across hospital departments",
+          "Electronic medical record synchronization",
+          "Transactional database query optimization"
         ]
       },
       {
         title: "Data Warehouse & OLAP Pipelines",
         area: "Data Engineering",
         description:
-          "Design of analytical star schemas, Point of Sale ETL pipelines, and multidimensional query processing for business intelligence reporting.",
+          "Star schema data warehouse design and ETL pipelines for multi-branch retail transaction analytics.",
         technologies: ["T-SQL", "OLAP Data Warehouse", "ETL Pipelines", "PostgreSQL"],
         deliverables: [
-          "Star schema design (fact tables and dimension tables)",
-          "Extraction, transformation, and load pipelines for sales data",
-          "Multidimensional sales aggregation across regional branches"
+          "Star schema design (fact and dimension tables)",
+          "ETL pipeline for cleaning and loading transaction data",
+          "Analytical aggregation queries for sales metrics"
         ]
       },
       {
         title: "Microservices & Distributed APIs",
         area: "Backend Architecture",
         description:
-          "Development of modular backend services, global multitenant authentication, and test-driven development (TDD) for reliable APIs.",
+          "Modular backend services and APIs using Go and Ruby on Rails, supported by automated testing suites.",
         technologies: ["Go", "Ruby on Rails", "TypeScript", "Node.js", "Docker", "TDD"],
         deliverables: [
-          "Centralized JWT authentication services",
-          "Modular service decoupling for backend architecture",
-          "Automated test suites and continuous integration pipelines"
+          "Centralized JWT authentication service",
+          "Domain-driven modular API architecture",
+          "Automated test suites (TDD)"
         ]
       },
       {
         title: "Applied Machine Learning & AI Integration",
         area: "Applied AI",
         description:
-          "Deep learning Convolutional Neural Network (CNN) experiments for Facial Expression Recognition (FER2013), automated ticket classification APIs, and IBM Watson integration.",
+          "Applied deep learning CNN experiments for facial expression detection, network trouble classification API, and conversational chatbot NLP.",
         technologies: ["Python", "TensorFlow", "Keras", "Flask", "IBM Watson"],
         deliverables: [
-          "Deep learning image classification for facial expressions",
-          "Automated network trouble ticket classification REST API",
-          "Intelligent NLP chatbot interface integration"
+          "CNN model for facial expression detection on FER2013",
+          "Flask REST API for automated network trouble classification",
+          "Chatbot conversation integration with IBM Watson Assistant"
         ]
       }
     ],
     skills: [
       {
         category: "Backend & Systems",
-        description: "Distributed backend services, microservices, and high-throughput APIs",
+        description: "API design, microservices, and concurrent backend services",
         items: ["Go (Golang)", "Ruby on Rails", "PHP (Laravel)", "TypeScript", "Node.js", "Python"]
       },
       {
         category: "Data & OLAP",
-        description: "Data warehouse star schema design, ETL pipelines, and query optimization",
+        description: "Star schema data warehouses, ETL pipelines, and analytical queries",
         items: ["T-SQL (OLAP DW)", "PostgreSQL", "MySQL", "MongoDB", "Apache Spark", "Firebase"]
       },
       {
         category: "AI & Machine Learning",
-        description: "Computer vision research, CNN deep learning models, and conversational assistants",
+        description: "CNN image classification training and inference API endpoints",
         items: ["TensorFlow", "Keras (CNN)", "FER2013 Facial Recognition", "IBM Watson Assistant", "Data Augmentation"]
       },
       {
         category: "DevOps & Tooling",
-        description: "Workflow automation, containerized environments, and test-driven development",
+        description: "Docker containerization, automated TDD test suites, and Linux servers",
         items: ["Docker", "Linux / Bash", "DigitalOcean", "Git", "TDD & Jest", "Tailwind CSS"]
       }
     ],
@@ -659,7 +659,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Lembaga Penjamin Simpanan (LPS)",
         period: "Professional Experience",
         description:
-          "Built and maintained integrated banking software modules meeting institutional security standards, centralized data management, and deposit guarantee reliability.",
+          "I built banking transaction modules and internal APIs for deposit insurance operations, focusing on secure data exchange and transaction integrity.",
         skills: ["Backend Architecture", "Enterprise Security", "Database Systems", "API Integration"]
       },
       {
@@ -667,7 +667,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Eka Hospital",
         period: "Professional Experience",
         description:
-          "Developed Hospital Management Information System (SIMRS) modules, automated clinical workflows, and integrated data exchange across medical units.",
+          "I developed SIMRS modules for outpatient, inpatient, and pharmacy workflows, connecting medical data exchange between hospital units.",
         skills: ["Healthcare Systems", "Relational Database", "System Integration", "Data Reliability"]
       },
       {
@@ -675,7 +675,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Stealth Startup",
         period: "Professional Experience",
         description:
-          "Collaborated with a cross-border engineering team to design modular API architectures, optimize Ruby on Rails backend performance, and build modern web interfaces.",
+          "I worked with an international engineering team to build Ruby on Rails backend services, optimize database queries, and deliver React interfaces.",
         skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
       },
       {
@@ -683,7 +683,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "BRCODE",
         period: "Professional Experience",
         description:
-          "Provided software architecture consulting, system infrastructure evaluations, technical engineering advisory, and developer community workshops.",
+          "I advised on backend architecture, reviewed system infrastructure, and ran technical workshops for development teams.",
         skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
       }
     ],
@@ -693,32 +693,32 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         url: "https://medium.com/@bgsnorfa",
         category: "DevOps & Tooling",
         readTime: "5 min read",
-        snippet: "A practical guide to isolating application dependencies and configuring multi-service containers for consistent development environments."
+        snippet: "How to package application dependencies with Docker and run multi-container setups for consistent local environments."
       },
       {
         title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
         url: "https://medium.com/@bgsnorfa",
         category: "Development Setup",
         readTime: "6 min read",
-        snippet: "Optimal steps for configuring a Ruby on Rails development ecosystem on Windows via Windows Subsystem for Linux (WSL)."
+        snippet: "Step-by-step setup for running Ruby on Rails on Windows using WSL without native dependency friction."
       },
       {
         title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
         url: "https://medium.com/@bgsnorfa",
         category: "Computer Science",
         readTime: "7 min read",
-        snippet: "A thorough comparison of sorting algorithm efficiency and performance implications in real-world data engineering scenarios."
+        snippet: "Comparing time and space complexity across sorting algorithms and what each means for data processing performance."
       },
       {
         title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
         url: "https://medium.com/@bgsnorfa",
         category: "Artificial Intelligence",
         readTime: "4 min read",
-        snippet: "Building conversational interfaces by defining intents, entities, and dialog trees within IBM Watson cloud services."
+        snippet: "Setting up intents, entities, and dialog trees for chatbot workflows in IBM Watson Assistant."
       }
     ],
     projectResearchSummary:
-      "Engineering projects and applied research encompass architecting high-security institutional banking transaction modules, modernizing hospital clinical information systems (SIMRS) with real-time integrations to national health and insurance APIs (BPJS & SATUSEHAT), designing high-performance star-schema OLAP Data Warehouses for multidimensional multi-branch retail analytics, and conducting applied machine learning research including Convolutional Neural Network (CNN) architectures on the FER2013 facial expression recognition dataset, IBM Watson conversational NLP integration, and automated network incident classification REST APIs.",
+      "Most of my work centers on backend engineering, data systems, and applied machine learning. In banking and healthcare, I built transaction modules at LPS and hospital management (SIMRS) modules at Eka Hospital, integrating national BPJS and SATUSEHAT services. For analytical data, I designed an OLAP data warehouse using a star schema to aggregate multi-branch retail transactions. On the research side, I trained CNN models for facial expression recognition (FER2013), integrated conversational NLP with IBM Watson Assistant, and built network incident classification APIs.",
     techTools: [
       {
         category: "Programming Languages",
@@ -758,49 +758,51 @@ export const UI_STRINGS = {
       kopi: "Traktir Kopi"
     },
     hero: {
-      statusBadge: "Terbuka untuk konsultasi & proyek rekayasa backend",
-      ctaProjects: "Proyek & Riset Rekayasa",
-      ctaExperience: "Rekam Jejak Pengalaman",
+      statusBadge: "Terbuka untuk konsultasi & proyek backend",
+      ctaProjects: "Lihat Proyek & Riset",
+      ctaExperience: "Riwayat Pengalaman",
       ctaMedium: "Medium",
       ctaCoffee: "Traktir Kopi",
       ctaLinkedin: "LinkedIn"
     },
     experience: {
-      title: "Pengalaman Kerja & Cakupan Rekayasa",
-      subtitle: "Rekam jejak implementasi perangkat lunak pada sistem korporasi dan cakupan ranah arsitektur teknis yang ditangani.",
-      timelineTitle: "Timeline Karier",
-      scopeTitle: "Cakupan Rekayasa (Scope of Engineering)"
+      title: "Pengalaman Kerja & Cakupan Teknis",
+      subtitle: "Pengalaman membangun sistem backend dan cakupan teknis yang saya tangani sehari-hari.",
+      timelineTitle: "Riwayat Karier",
+      scopeTitle: "Cakupan Rekayasa",
+      keyDeliverablesLabel: "Hasil Pekerjaan:"
     },
     projects: {
-      title: "Proyek & Riset Rekayasa",
-      subtitle: "Ringkasan implementasi sistem, riset kecerdasan buatan terapan, dan ekosistem tools yang digunakan.",
+      title: "Proyek & Riset",
+      subtitle: "Ringkasan sistem yang pernah saya bangun, riset kecerdasan buatan, dan tools yang saya gunakan.",
       summaryCardTitle: "Ringkasan Proyek & Riset",
-      toolsCardTitle: "Ekosistem Teknologi & Tools",
-      githubNotice: "Beberapa repositori sistem korporasi dan modul institusional bersifat private demi kepatuhan kerahasiaan. Eksperimen open source publik dapat diakses langsung di GitHub.",
-      viewGithubProfile: "Kunjungi GitHub Profil @norfabagas"
+      toolsCardTitle: "Bahasa, Database & Tools",
+      githubNotice: "Sebagian repositori untuk klien dan institusi bersifat privat demi menjaga kerahasiaan kode. Proyek open source publik dapat dilihat langsung di GitHub.",
+      viewGithubProfile: "Buka GitHub @norfabagas"
     },
     skills: {
-      title: "Keahlian & Ekosistem Teknologi",
-      subtitle: "Spesialisasi teknis dan perangkat yang digunakan sehari-hari dalam merancang arsitektur backend, pemrosesan data, dan infrastruktur sistem."
+      title: "Keahlian Teknis",
+      subtitle: "Bahasa pemrograman, database, dan tools yang saya gunakan untuk backend dan pengolahan data."
     },
     articles: {
-      title: "Tulisan & Panduan Teknis",
-      subtitle: "Catatan rekayasa sistem, tutorial konfigurasi, dan panduan praktis yang dipublikasikan di platform Medium @bgsnorfa.",
-      visitMedium: "Kunjungi Profil Medium",
+      title: "Tulisan Teknis",
+      subtitle: "Catatan rekayasa sistem, tutorial setup, dan artikel teknis yang saya tulis di Medium @bgsnorfa.",
+      visitMedium: "Buka Profil Medium",
       readArticle: "Baca Tulisan"
     },
     support: {
-      coffeeTitle: "Dukung Riset & Open Source",
+      coffeeTitle: "Dukungan Kopi",
       coffeeSubtitle: "Buy Me a Coffee: @bgsnorfa",
-      coffeeBody: "Jika tulisan teknis di Medium atau repositori open source yang saya bagikan membantu pekerjaan Anda, Anda dapat memberikan dukungan apresiasi secangkir kopi virtual.",
-      coffeeHeart: "Setiap dukungan membantu menjaga riset teknologi dan modul open source tetap dapat diakses publik.",
+      coffeeBody: "Jika artikel teknis di Medium atau repositori open source saya bermanfaat untuk pekerjaan Anda, Anda bisa mengirim apresiasi lewat secangkir kopi virtual.",
+      coffeeHeart: "Dukungan Anda membantu saya meluangkan waktu menulis artikel teknis dan merilis modul open source baru.",
       coffeeButton: "Traktir Kopi di buymeacoffee.com/bgsnorfa",
-      connectTitle: "Mari Terhubung",
-      connectSubtitle: "Saluran Komunikasi Profesional",
-      connectBody: "Terbuka untuk diskusi seputar arsitektur backend terdistribusi, optimasi database warehouse, migrasi microservices, atau peluang konsultasi teknis."
+      connectTitle: "Kontak & Diskusi",
+      connectSubtitle: "Kanal Komunikasi",
+      connectHeaderDesc: "Silakan hubungi saya untuk diskusi teknis, peluang konsultasi, atau kolaborasi proyek backend.",
+      connectCardBody: "Saya terbuka untuk diskusi teknis seputar arsitektur sistem, data warehouse, atau kebutuhan konsultasi rekayasa perangkat lunak."
     },
     footer: {
-      tagline: "Software Engineer & IT Specialist. Seluruh repositori dan data terverifikasi publik.",
+      tagline: "Software Engineer & IT Specialist. Portofolio dan rekam jejak terverifikasi.",
       backToTop: "Kembali ke Atas",
       credit: "Dibangun dengan Astryx Design System dan Tailwind CSS."
     }
@@ -822,49 +824,51 @@ export const UI_STRINGS = {
       kopi: "Buy Coffee"
     },
     hero: {
-      statusBadge: "Available for backend engineering & technical consulting",
-      ctaProjects: "Projects & Applied Research",
+      statusBadge: "Available for backend engineering & consulting",
+      ctaProjects: "View Projects & Research",
       ctaExperience: "Work Experience",
       ctaMedium: "Medium",
-      ctaCoffee: "Buy a Coffee",
+      ctaCoffee: "Buy Coffee",
       ctaLinkedin: "LinkedIn"
     },
     experience: {
       title: "Work Experience & Engineering Scope",
-      subtitle: "Engineering track record across enterprise production systems and technical architecture domains.",
+      subtitle: "Work history across backend systems and the technical areas I handle.",
       timelineTitle: "Career Timeline",
-      scopeTitle: "Scope of Engineering"
+      scopeTitle: "Scope of Engineering",
+      keyDeliverablesLabel: "Key Deliverables:"
     },
     projects: {
-      title: "Projects & Applied Research",
-      subtitle: "Overview of enterprise systems engineering, applied AI research, and technical tooling leveraged in production.",
+      title: "Projects & Research",
+      subtitle: "Summary of systems I have built, applied machine learning research, and the tools I use.",
       summaryCardTitle: "Projects & Research Summary",
-      toolsCardTitle: "Technology Stack & Tools",
-      githubNotice: "Several enterprise repositories and institutional modules are private for confidentiality. Public open-source experiments can be viewed directly on GitHub.",
-      viewGithubProfile: "Visit Public GitHub @norfabagas"
+      toolsCardTitle: "Languages, Databases & Tools",
+      githubNotice: "Some repositories for client and institutional systems are private to protect source confidentiality. Public open source code is available on GitHub.",
+      viewGithubProfile: "Open GitHub @norfabagas"
     },
     skills: {
-      title: "Skills & Technical Ecosystem",
-      subtitle: "Core languages, frameworks, and engineering tools applied across backend architecture, data warehousing, and infrastructure."
+      title: "Technical Skills",
+      subtitle: "Programming languages, databases, and tools I use for backend development and data processing."
     },
     articles: {
-      title: "Articles & Engineering Guides",
-      subtitle: "Systems engineering walkthroughs, environment setup guides, and technical deep-dives published on Medium @bgsnorfa.",
-      visitMedium: "Visit Medium Profile",
+      title: "Technical Articles",
+      subtitle: "Engineering notes, setup tutorials, and technical articles published on Medium @bgsnorfa.",
+      visitMedium: "Open Medium Profile",
       readArticle: "Read Article"
     },
     support: {
-      coffeeTitle: "Support Research & Open Source",
+      coffeeTitle: "Buy Me a Coffee",
       coffeeSubtitle: "Buy Me a Coffee: @bgsnorfa",
-      coffeeBody: "If my technical write-ups on Medium or open source modules have helped your work, you can buy me a virtual coffee to support ongoing technical research.",
-      coffeeHeart: "Every contribution helps maintain technical articles and open-source experiments accessible for developers.",
-      coffeeButton: "Buy a Coffee at buymeacoffee.com/bgsnorfa",
-      connectTitle: "Let's Connect",
-      connectSubtitle: "Professional Communication Channels",
-      connectBody: "Open for discussions on distributed backend architectures, data warehouse engineering, microservices migration, or technical consulting."
+      coffeeBody: "If my technical articles on Medium or open source repositories have been helpful to your work, you can send support with a virtual coffee.",
+      coffeeHeart: "Your support helps me spend time writing engineering write-ups and publishing open source experiments.",
+      coffeeButton: "Buy a coffee at buymeacoffee.com/bgsnorfa",
+      connectTitle: "Contact & Connect",
+      connectSubtitle: "Communication Channels",
+      connectHeaderDesc: "Get in touch for technical discussions, consulting opportunities, or backend engineering projects.",
+      connectCardBody: "I am open to discussing backend architecture, data warehouses, and software engineering consulting."
     },
     footer: {
-      tagline: "Software Engineer & IT Specialist. All public repositories and verified data.",
+      tagline: "Software Engineer & IT Specialist. Verified portfolio and project history.",
       backToTop: "Back to Top",
       credit: "Built with Astryx Design System and Tailwind CSS."
     }
