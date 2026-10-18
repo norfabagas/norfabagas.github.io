@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 
-interface GalaxyBackgroundProps {
+interface BackgroundProps {
   isDark: boolean;
 }
 
-export function GalaxyBackground({ isDark }: GalaxyBackgroundProps) {
+export function GalaxyBackground({ isDark }: BackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -18,15 +18,15 @@ export function GalaxyBackground({ isDark }: GalaxyBackgroundProps) {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // Generate fixed stars
-    const starCount = Math.floor((width * height) / 10000);
-    const stars = Array.from({ length: Math.min(starCount, 120) }, () => ({
+    // Subtle ambient particles matching Kreativa's interactive canvas
+    const particleCount = Math.floor((width * height) / 22000);
+    const particles = Array.from({ length: Math.min(particleCount, 45) }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 1.4 + 0.3,
-      alpha: Math.random() * 0.7 + 0.2,
-      speed: Math.random() * 0.008 + 0.003,
-      direction: Math.random() > 0.5 ? 1 : -1
+      radius: Math.random() * 1.5 + 0.5,
+      alpha: Math.random() * 0.4 + 0.1,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25
     }));
 
     const handleResize = () => {
@@ -42,28 +42,24 @@ export function GalaxyBackground({ isDark }: GalaxyBackgroundProps) {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw celestial stars
-      for (const star of stars) {
-        if (!checkReducedMotion) {
-          star.alpha += star.speed * star.direction;
-          if (star.alpha > 0.85) {
-            star.alpha = 0.85;
-            star.direction = -1;
-          } else if (star.alpha < 0.2) {
-            star.alpha = 0.2;
-            star.direction = 1;
-          }
+      if (!checkReducedMotion) {
+        for (const p of particles) {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0) p.x = width;
+          if (p.x > width) p.x = 0;
+          if (p.y < 0) p.y = height;
+          if (p.y > height) p.y = 0;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = isDark
+            ? `rgba(203, 213, 225, ${p.alpha * 0.6})`
+            : `rgba(71, 85, 105, ${p.alpha * 0.4})`;
+          ctx.fill();
         }
 
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = isDark
-          ? `rgba(235, 230, 255, ${star.alpha})`
-          : `rgba(120, 80, 200, ${star.alpha * 0.55})`;
-        ctx.fill();
-      }
-
-      if (!checkReducedMotion) {
         animationFrameId = requestAnimationFrame(render);
       }
     };
@@ -80,33 +76,34 @@ export function GalaxyBackground({ isDark }: GalaxyBackgroundProps) {
 
   return (
     <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-      {/* Nebula ambient gradients */}
+      {/* Base Slate Background with Kreativa subtle gradient */}
       <div
-        className={`absolute inset-0 transition-colors duration-700 ${
+        className={`absolute inset-0 transition-colors duration-500 ${
           isDark
-            ? "bg-[#0a0518]"
-            : "bg-gradient-to-b from-[#f9f8fe] via-[#f3f0fb] to-[#ece8f7]"
+            ? "bg-slate-950"
+            : "bg-slate-50"
         }`}
       />
 
-      {/* Cosmic dust and nebula clouds */}
+      {/* Subtle Slate Radial Ambient Glow (Kreativa style) */}
       <div
-        className={`absolute -top-48 -left-48 w-[550px] h-[550px] rounded-full blur-[140px] opacity-40 transition-opacity duration-700 ${
-          isDark ? "bg-[#7928ca]/35" : "bg-[#9333ea]/15"
-        }`}
-      />
-      <div
-        className={`absolute top-1/3 -right-36 w-[600px] h-[600px] rounded-full blur-[160px] opacity-35 transition-opacity duration-700 ${
-          isDark ? "bg-[#3b0764]/40" : "bg-[#c084fc]/15"
-        }`}
-      />
-      <div
-        className={`absolute -bottom-48 left-1/4 w-[650px] h-[650px] rounded-full blur-[160px] opacity-30 transition-opacity duration-700 ${
-          isDark ? "bg-[#4c1d95]/35" : "bg-[#a855f7]/15"
+        className={`absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full blur-[140px] transition-opacity duration-700 pointer-events-none ${
+          isDark
+            ? "bg-slate-800/40 opacity-70"
+            : "bg-slate-200/70 opacity-80"
         }`}
       />
 
-      {/* Interactive twinkling starfield canvas */}
+      {/* Kreativa Signature Subtle Grid Overlay */}
+      <div
+        className={`absolute inset-0 opacity-[0.45] pointer-events-none [mask-image:linear-gradient(to_bottom,white,transparent_85%)] ${
+          isDark
+            ? "bg-[linear-gradient(to_right,#33415525_1px,transparent_1px),linear-gradient(to_bottom,#33415525_1px,transparent_1px)] bg-[size:32px_32px]"
+            : "bg-[linear-gradient(to_right,#cbd5e150_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e150_1px,transparent_1px)] bg-[size:32px_32px]"
+        }`}
+      />
+
+      {/* Interactive Subtle Canvas */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
     </div>
   );

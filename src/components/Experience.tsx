@@ -12,12 +12,13 @@ export function Experience({ isDark }: ExperienceProps) {
   return (
     <Section id="pengalaman" paddingBlock={6}>
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
+        {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="w-full text-left">
-          <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+          <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
             Pengalaman Kerja & Scope Proyek
           </Heading>
-          <Text type="supporting" className={`text-sm ${isDark ? "text-purple-200/80" : "text-gray-600"}`}>
+          <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
+          <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
             Rekam jejak implementasi perangkat lunak pada sistem korporasi dan cakupan ranah arsitektur teknis yang ditangani.
           </Text>
         </VStack>
@@ -25,8 +26,12 @@ export function Experience({ isDark }: ExperienceProps) {
         {/* Work Experience Timeline Block */}
         <VStack gap={4} className="w-full text-left">
           <HStack gap={2} vAlign="center" className="pb-1">
-            <Building2 className="w-5 h-5 text-purple-400" />
-            <Heading level={3} className={`text-lg font-bold ${isDark ? "text-purple-200" : "text-purple-900"}`}>
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+              isDark ? "bg-slate-800 text-slate-100" : "bg-slate-100 text-slate-900"
+            }`}>
+              <Building2 className="w-4 h-4" />
+            </div>
+            <Heading level={3} className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
               Timeline Pengalaman Kerja
             </Heading>
           </HStack>
@@ -36,9 +41,7 @@ export function Experience({ isDark }: ExperienceProps) {
             {/* Timeline Vertical Spine Line */}
             <div
               className={`absolute left-2.5 sm:left-3 top-3 bottom-3 w-0.5 ${
-                isDark
-                  ? "bg-gradient-to-b from-purple-500 via-purple-500/40 to-white/10"
-                  : "bg-gradient-to-b from-purple-600 via-purple-300 to-purple-100"
+                isDark ? "bg-slate-800" : "bg-slate-200"
               }`}
             />
 
@@ -50,43 +53,43 @@ export function Experience({ isDark }: ExperienceProps) {
                     className={`absolute -left-[19px] sm:-left-[25px] top-5 w-4 h-4 rounded-full border-2 transition-transform ${
                       index === 0
                         ? isDark
-                          ? "bg-purple-500 border-white shadow-sm shadow-purple-500"
-                          : "bg-purple-600 border-white shadow-sm shadow-purple-600"
+                          ? "bg-slate-100 border-slate-900 shadow-sm ring-2 ring-slate-100/20"
+                          : "bg-slate-900 border-white shadow-sm ring-2 ring-slate-900/20"
                         : isDark
-                          ? "bg-[#110726] border-purple-400"
-                          : "bg-white border-purple-500"
+                          ? "bg-slate-950 border-slate-600"
+                          : "bg-white border-slate-400"
                     }`}
                   />
 
                   {/* Timeline Entry Card */}
                   <Card
                     padding={5}
-                    className={`rounded-2xl transition-colors duration-200 w-full ${
+                    className={`rounded-xl transition-colors duration-200 w-full ${
                       isDark
-                        ? "border border-white/15 bg-[#150c2e]/85 shadow-md shadow-purple-950/20"
-                        : "border border-purple-200 bg-white/95 shadow-sm"
+                        ? "border border-slate-800 bg-slate-900/80 shadow-sm"
+                        : "border border-slate-200 bg-white/95 shadow-sm"
                     }`}
                   >
                     <VStack gap={2} className="w-full text-left">
                       <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-1">
-                        <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                        <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                           {exp.role}
                         </Heading>
                         <Text
                           type="label"
-                          className={`text-xs px-2.5 py-0.5 rounded-md border ${
-                            isDark ? "bg-purple-950/60 border-white/15 text-purple-300" : "bg-purple-50 border-purple-200 text-purple-800"
+                          className={`text-xs px-2.5 py-0.5 rounded-md border font-medium ${
+                            isDark ? "bg-slate-800 border-slate-700 text-slate-300" : "bg-slate-100 border-slate-200 text-slate-700"
                           }`}
                         >
                           {exp.period}
                         </Text>
                       </HStack>
 
-                      <Text type="large" className={`text-xs sm:text-sm font-semibold ${isDark ? "text-purple-300" : "text-purple-700"}`}>
+                      <Text type="large" className={`text-xs sm:text-sm font-semibold ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                         {exp.company}
                       </Text>
 
-                      <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-purple-100/80" : "text-gray-600"}`}>
+                      <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                         {exp.description}
                       </Text>
 
@@ -96,7 +99,7 @@ export function Experience({ isDark }: ExperienceProps) {
                             key={s}
                             type="supporting"
                             className={`text-[11px] px-2 py-0.5 rounded border ${
-                              isDark ? "bg-[#1f103f] border-white/10 text-purple-200" : "bg-purple-50 border-purple-200 text-purple-800"
+                              isDark ? "bg-slate-950/60 border-slate-800 text-slate-300" : "bg-slate-100 border-slate-200 text-slate-700"
                             }`}
                           >
                             {s}
@@ -112,10 +115,14 @@ export function Experience({ isDark }: ExperienceProps) {
         </VStack>
 
         {/* Scope of Projects Block */}
-        <VStack gap={4} className="w-full text-left pt-6 border-t border-white/10">
+        <VStack gap={4} className={`w-full text-left pt-6 border-t ${isDark ? "border-slate-800" : "border-slate-200"}`}>
           <HStack gap={2} vAlign="center" className="pb-1">
-            <Layers className="w-5 h-5 text-purple-400" />
-            <Heading level={3} className={`text-lg font-bold ${isDark ? "text-purple-200" : "text-purple-900"}`}>
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
+              isDark ? "bg-slate-800 text-slate-100" : "bg-slate-100 text-slate-900"
+            }`}>
+              <Layers className="w-4 h-4" />
+            </div>
+            <Heading level={3} className={`text-lg font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
               Scope of Projects (Cakupan Rekayasa)
             </Heading>
           </HStack>
@@ -125,28 +132,28 @@ export function Experience({ isDark }: ExperienceProps) {
               <Card
                 key={scope.title}
                 padding={5}
-                className={`rounded-2xl transition-colors duration-200 w-full ${
+                className={`rounded-xl transition-colors duration-200 w-full ${
                   isDark
-                    ? "border border-white/15 bg-[#150c2e]/80 shadow-md shadow-purple-950/20"
-                    : "border border-purple-200 bg-white/95 shadow-sm"
+                    ? "border border-slate-800 bg-slate-900/80 shadow-sm"
+                    : "border border-slate-200 bg-white/95 shadow-sm"
                 }`}
               >
                 <VStack gap={3} className="w-full text-left">
                   <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-1">
-                    <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                    <Heading level={4} className={`text-sm sm:text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                       {scope.title}
                     </Heading>
                     <Text
                       type="label"
-                      className={`text-xs px-2.5 py-0.5 rounded-md border ${
-                        isDark ? "bg-[#221045] border-white/15 text-purple-300" : "bg-purple-100 border-purple-200 text-purple-900"
+                      className={`text-xs px-2.5 py-0.5 rounded-md border font-medium ${
+                        isDark ? "bg-slate-800 border-slate-700 text-slate-300" : "bg-slate-100 border-slate-200 text-slate-800"
                       }`}
                     >
                       {scope.area}
                     </Text>
                   </HStack>
 
-                  <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-purple-100/80" : "text-gray-600"}`}>
+                  <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     {scope.description}
                   </Text>
 
@@ -154,8 +161,10 @@ export function Experience({ isDark }: ExperienceProps) {
                   <VStack gap={1.5} className="pt-1">
                     {scope.deliverables.map((item) => (
                       <HStack key={item} gap={1.5} vAlign="start">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-purple-400 shrink-0 mt-0.5" />
-                        <Text type="supporting" className={`text-xs leading-tight ${isDark ? "text-purple-200/90" : "text-gray-700"}`}>
+                        <CheckCircle2 className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${
+                          isDark ? "text-slate-300" : "text-slate-700"
+                        }`} />
+                        <Text type="supporting" className={`text-xs leading-tight ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                           {item}
                         </Text>
                       </HStack>
@@ -163,13 +172,15 @@ export function Experience({ isDark }: ExperienceProps) {
                   </VStack>
 
                   {/* Tech stack badges */}
-                  <HStack gap={1} vAlign="center" className="flex-wrap pt-2 border-t border-white/10">
+                  <HStack gap={1} vAlign="center" className={`flex-wrap pt-2 border-t ${
+                    isDark ? "border-slate-800" : "border-slate-200"
+                  }`}>
                     {scope.technologies.map((tech) => (
                       <Text
                         key={tech}
                         type="supporting"
                         className={`text-[11px] px-2 py-0.5 rounded border ${
-                          isDark ? "bg-[#1d0e3b] border-white/10 text-purple-300" : "bg-purple-50 border-purple-200 text-purple-800"
+                          isDark ? "bg-slate-950/60 border-slate-800 text-slate-300" : "bg-slate-100 border-slate-200 text-slate-700"
                         }`}
                       >
                         {tech}

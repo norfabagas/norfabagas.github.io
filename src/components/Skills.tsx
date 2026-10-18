@@ -19,12 +19,13 @@ export function Skills({ isDark }: SkillsProps) {
   return (
     <Section id="keahlian" paddingBlock={6}>
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
+        {/* Section Header with Kreativa accent bar */}
         <VStack gap={1} className="text-left w-full">
-          <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+          <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
             Keahlian & Ekosistem Teknologi
           </Heading>
-          <Text type="supporting" className={`text-sm ${isDark ? "text-purple-200/80" : "text-gray-600"}`}>
+          <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
+          <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
             Teknologi dan kerangka kerja yang digunakan dalam arsitektur backend, pemrosesan data, dan eksperimen kecerdasan buatan.
           </Text>
         </VStack>
@@ -35,30 +36,28 @@ export function Skills({ isDark }: SkillsProps) {
             <Card
               key={skillGroup.category}
               padding={5}
-              className={`rounded-2xl transition-all duration-300 ${
+              className={`rounded-xl transition-all duration-300 ${
                 isDark
-                  ? "border border-white/20 bg-[#160d2e]/80 hover:border-white/40 shadow-[0_4px_24px_-4px_rgba(147,51,234,0.15)] backdrop-blur-sm"
-                  : "border border-purple-200/90 bg-white/90 hover:border-purple-300 shadow-[0_4px_20px_-4px_rgba(107,33,168,0.08)] backdrop-blur-sm"
+                  ? "border border-slate-800 bg-slate-900/80 hover:border-slate-700 shadow-sm backdrop-blur-sm"
+                  : "border border-slate-200 bg-white/95 hover:border-slate-300 shadow-sm backdrop-blur-sm"
               }`}
             >
-              <VStack gap={4} className="w-full">
+              <VStack gap={4} className="w-full text-left">
                 <HStack gap={3} vAlign="center">
-                  <HStack
-                    hAlign="center"
-                    vAlign="center"
-                    className={`p-2.5 rounded-xl border ${
+                  <div
+                    className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
                       isDark
-                        ? "bg-purple-900/60 border-white/20 text-purple-200"
-                        : "bg-purple-100 border-purple-200 text-purple-800"
+                        ? "bg-slate-100 text-slate-900"
+                        : "bg-slate-900 text-slate-100"
                     }`}
                   >
                     {categoryIcons[index % categoryIcons.length]}
-                  </HStack>
+                  </div>
                   <VStack gap={0.5}>
-                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                       {skillGroup.category}
                     </Heading>
-                    <Text type="supporting" className={`text-xs ${isDark ? "text-purple-300/70" : "text-gray-500"}`}>
+                    <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                       {skillGroup.description}
                     </Text>
                   </VStack>
@@ -70,10 +69,10 @@ export function Skills({ isDark }: SkillsProps) {
                     <Text
                       key={item}
                       type="label"
-                      className={`px-3 py-1.5 rounded-lg text-xs font-medium border ${
+                      className={`px-2.5 py-1 rounded-md text-xs font-medium border ${
                         isDark
-                          ? "bg-[#211244] border-white/20 text-purple-200"
-                          : "bg-purple-50 border-purple-200 text-purple-900"
+                          ? "bg-slate-800 border-slate-700 text-slate-200"
+                          : "bg-slate-100 border-slate-200 text-slate-800"
                       }`}
                     >
                       {item}

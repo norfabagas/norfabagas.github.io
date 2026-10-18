@@ -40,8 +40,8 @@ export default function App() {
   return (
     <VStack
       gap={0}
-      className={`min-h-screen relative font-sans transition-colors duration-500 selection:bg-purple-500 selection:text-white w-full ${
-        isDark ? "text-purple-100" : "text-gray-900"
+      className={`min-h-screen relative font-sans transition-colors duration-500 selection:bg-slate-900 selection:text-white dark:selection:bg-slate-100 dark:selection:text-slate-900 w-full ${
+        isDark ? "text-slate-100" : "text-slate-900"
       }`}
     >
       {/* Background Starfield & Cosmic Nebulae */}

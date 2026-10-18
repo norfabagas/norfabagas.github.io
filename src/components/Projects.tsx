@@ -31,14 +31,15 @@ export function Projects({ isDark }: ProjectsProps) {
   return (
     <Section id="proyek" paddingBlock={6}>
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
-        <VStack gap={2} className="w-full text-left">
+        {/* Section Header with Kreativa accent bar */}
+        <VStack gap={1} className="w-full text-left">
           <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">
-            <VStack gap={0.5}>
-              <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+            <VStack gap={1}>
+              <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                 Proyek & Repositori Terpilih
               </Heading>
-              <Text type="supporting" className={`text-sm ${isDark ? "text-purple-200/80" : "text-gray-600"}`}>
+              <div className="mt-1 h-1 w-20 bg-slate-900 dark:bg-slate-100 rounded-full" />
+              <Text type="supporting" className={`text-sm pt-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 Koleksi repositori publik yang berfokus pada arsitektur backend, sistem data warehouse OLAP, dan implementasi machine learning.
               </Text>
             </VStack>
@@ -47,8 +48,8 @@ export function Projects({ isDark }: ProjectsProps) {
               href={PORTFOLIO_DATA.socials.github}
               target="_blank"
               rel="noreferrer"
-              className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 p-1 ${
-                isDark ? "text-purple-300 hover:text-white" : "text-purple-700 hover:text-purple-900"
+              className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 p-1 shrink-0 ${
+                isDark ? "text-slate-400 hover:text-slate-100" : "text-slate-600 hover:text-slate-900"
               }`}
             >
               <span>Repositori di GitHub</span>
@@ -60,24 +61,26 @@ export function Projects({ isDark }: ProjectsProps) {
         {/* Mobile-First Search & Filter Controls */}
         <Card
           padding={4}
-          className={`rounded-2xl w-full ${
-            isDark ? "bg-[#140b2b]/90 border border-white/20" : "bg-white/95 border border-purple-200 shadow-sm"
+          className={`rounded-xl w-full ${
+            isDark ? "bg-slate-900/80 border border-slate-800" : "bg-white/95 border border-slate-200 shadow-sm"
           }`}
         >
           <VStack gap={3} className="w-full">
             {/* Search Input using relative input container */}
             <div className="relative w-full">
-              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-purple-400 pointer-events-none" />
+              <Search className={`w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none ${
+                isDark ? "text-slate-500" : "text-slate-400"
+              }`} />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari nama repositori atau topik..."
                 aria-label="Cari repositori berdasarkan nama atau topik"
-                className={`w-full pl-10 pr-4 py-2.5 text-sm rounded-xl border transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                className={`w-full pl-10 pr-4 py-2.5 text-sm rounded-lg border transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                   isDark
-                    ? "bg-[#1d103d] border-white/20 text-white placeholder-purple-300/40 focus:border-white/50"
-                    : "bg-purple-50/50 border-purple-200 text-gray-900 placeholder-gray-400 focus:border-purple-400"
+                    ? "bg-slate-950 border-slate-800 text-slate-100 placeholder-slate-500 focus:border-slate-600"
+                    : "bg-slate-50 border-slate-200 text-slate-900 placeholder-slate-400 focus:border-slate-400"
                 }`}
               />
             </div>
@@ -91,14 +94,14 @@ export function Projects({ isDark }: ProjectsProps) {
                   variant={selectedLanguage === lang ? "primary" : "secondary"}
                   size="sm"
                   onClick={() => setSelectedLanguage(lang)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium min-h-[44px] ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium min-h-[44px] transition-colors ${
                     selectedLanguage === lang
                       ? isDark
-                        ? "bg-purple-600 text-white border border-white/40"
-                        : "bg-purple-700 text-white border border-purple-400"
+                        ? "bg-slate-100 text-slate-900 border border-slate-200"
+                        : "bg-slate-900 text-slate-50 border border-slate-900"
                       : isDark
-                        ? "bg-[#1b0f38] border border-white/10 text-purple-200 hover:border-white/30"
-                        : "bg-purple-50 border border-purple-200 text-purple-900 hover:bg-purple-100"
+                        ? "bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-slate-100"
+                        : "bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200 hover:text-slate-900"
                   }`}
                 >
                   {lang}
@@ -115,10 +118,10 @@ export function Projects({ isDark }: ProjectsProps) {
               <Card
                 key={repo.name}
                 padding={5}
-                className={`rounded-2xl transition-all duration-300 flex flex-col justify-between ${
+                className={`rounded-xl transition-all duration-300 flex flex-col justify-between ${
                   isDark
-                    ? "border border-white/20 bg-[#160d2e]/80 hover:border-white/45 shadow-[0_4px_24px_-4px_rgba(147,51,234,0.15)] backdrop-blur-sm"
-                    : "border border-purple-200/90 bg-white/90 hover:border-purple-300 shadow-[0_4px_20px_-4px_rgba(107,33,168,0.08)] backdrop-blur-sm"
+                    ? "border border-slate-800 bg-slate-900/80 hover:border-slate-700 shadow-sm backdrop-blur-sm"
+                    : "border border-slate-200 bg-white/95 hover:border-slate-300 shadow-sm backdrop-blur-sm"
                 }`}
               >
                 <VStack gap={3} className="w-full text-left">
@@ -128,27 +131,27 @@ export function Projects({ isDark }: ProjectsProps) {
                       type="label"
                       className={`px-2.5 py-1 rounded-md text-xs font-semibold border ${
                         isDark
-                          ? "bg-purple-950/70 border-white/20 text-purple-200"
-                          : "bg-purple-100 border-purple-200 text-purple-800"
+                          ? "bg-slate-800 border-slate-700 text-slate-200"
+                          : "bg-slate-100 border-slate-200 text-slate-800"
                       }`}
                     >
                       {repo.language}
                     </Text>
 
                     <HStack gap={1} vAlign="center" className="text-xs">
-                      <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                      <Text type="supporting" className={isDark ? "text-purple-200" : "text-gray-600"}>
+                      <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
+                      <Text type="supporting" className={isDark ? "text-slate-300" : "text-slate-600"}>
                         {repo.stars}
                       </Text>
                     </HStack>
                   </HStack>
 
                   {/* Title & Description */}
-                  <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+                  <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                     {repo.name}
                   </Heading>
 
-                  <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-purple-200/80" : "text-gray-600"}`}>
+                  <Text type="body" className={`text-xs leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     {repo.description}
                   </Text>
 
@@ -160,8 +163,8 @@ export function Projects({ isDark }: ProjectsProps) {
                         type="supporting"
                         className={`text-[11px] px-2 py-0.5 rounded border ${
                           isDark
-                            ? "bg-[#201242] border-white/10 text-purple-300"
-                            : "bg-purple-50 border-purple-200 text-purple-700"
+                            ? "bg-slate-950/60 border-slate-800 text-slate-400"
+                            : "bg-slate-100 border-slate-200 text-slate-600"
                         }`}
                       >
                         #{t}
@@ -179,10 +182,10 @@ export function Projects({ isDark }: ProjectsProps) {
                     href={repo.url}
                     target="_blank"
                     rel="noreferrer"
-                    className={`w-full py-2.5 rounded-xl text-xs font-semibold min-h-[44px] ${
+                    className={`w-full py-2.5 rounded-lg text-xs font-semibold min-h-[44px] transition-colors ${
                       isDark
-                        ? "bg-[#1c103a] border border-white/20 text-purple-100 hover:bg-[#25154d]"
-                        : "bg-purple-50 border border-purple-200 text-purple-900 hover:bg-purple-100"
+                        ? "bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white"
+                        : "bg-slate-100 border border-slate-200 text-slate-800 hover:bg-slate-200 hover:text-slate-900"
                     }`}
                   >
                     <HStack gap={1.5} hAlign="center" vAlign="center">
@@ -195,19 +198,19 @@ export function Projects({ isDark }: ProjectsProps) {
             ))}
           </Grid>
         ) : (
-          /* Empty State (R-27) */
+          /* Empty State */
           <Card
             padding={8}
-            className={`rounded-2xl text-center w-full ${
-              isDark ? "bg-[#140b2a] border border-white/20" : "bg-white border border-purple-200"
+            className={`rounded-xl text-center w-full ${
+              isDark ? "bg-slate-900/80 border border-slate-800" : "bg-white border border-slate-200"
             }`}
           >
             <VStack gap={2} hAlign="center">
-              <GitFork className="w-8 h-8 text-purple-400 opacity-60" />
+              <GitFork className="w-8 h-8 text-slate-500 opacity-60" />
               <Heading level={4} className="text-base font-bold">
                 Tidak ada repositori yang cocok
               </Heading>
-              <Text type="supporting" className="text-xs max-w-md text-purple-300/80">
+              <Text type="supporting" className="text-xs max-w-md text-slate-400">
                 Pencarian untuk &ldquo;{searchQuery}&rdquo; dengan filter &ldquo;{selectedLanguage}&rdquo; tidak menemukan hasil.
               </Text>
               <Button
@@ -218,7 +221,9 @@ export function Projects({ isDark }: ProjectsProps) {
                   setSearchQuery("");
                   setSelectedLanguage("Semua");
                 }}
-                className="mt-2 min-h-[44px] bg-purple-600 text-white border border-white/30"
+                className={`mt-2 min-h-[44px] font-medium px-4 rounded-lg ${
+                  isDark ? "bg-slate-100 text-slate-900 hover:bg-slate-200" : "bg-slate-900 text-slate-50 hover:bg-slate-800"
+                }`}
               >
                 Reset Filter Pencarian
               </Button>

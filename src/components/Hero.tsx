@@ -12,13 +12,13 @@ export function Hero({ isDark }: HeroProps) {
   return (
     <Section id="tentang" paddingBlockStart={8} paddingBlockEnd={4} className="pt-24 sm:pt-28">
       <VStack gap={4} className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Main Hero Card with Clean White Border & Subtle Galaxy Backing */}
+        {/* Main Hero Card in Kreativa Slate Theme */}
         <Card
           padding={6}
-          className={`relative rounded-3xl transition-colors duration-200 ${
+          className={`relative rounded-2xl transition-colors duration-200 ${
             isDark
-              ? "border border-white/15 bg-[#120926]/90 shadow-lg shadow-purple-950/30"
-              : "border border-purple-200 bg-white/95 shadow-sm"
+              ? "border border-slate-800 bg-slate-900/90 shadow-md backdrop-blur-sm"
+              : "border border-slate-200 bg-white/95 shadow-sm backdrop-blur-sm"
           }`}
         >
           {/* Mobile-first Stack: vertical on mobile, horizontal on lg screens */}
@@ -26,18 +26,21 @@ export function Hero({ isDark }: HeroProps) {
             <HStack hAlign="between" vAlign="center" className="flex-col-reverse sm:flex-row gap-6 w-full">
               {/* Text Information Stack */}
               <VStack gap={4} className="flex-1 w-full text-left">
-                {/* Name & Title */}
-                <VStack gap={1}>
-                  <Heading level={1} className={`text-3xl sm:text-5xl font-extrabold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+                {/* Name & Title with Kreativa gradient text */}
+                <VStack gap={1.5}>
+                  <Heading
+                    level={1}
+                    className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight block text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-500 dark:from-slate-100 dark:via-slate-300 dark:to-slate-400"
+                  >
                     {profile.name}
                   </Heading>
-                  <Text type="large" className={`text-base sm:text-xl font-medium ${isDark ? "text-purple-300" : "text-purple-700"}`}>
+                  <Text type="large" className={`text-base sm:text-xl font-medium ${isDark ? "text-slate-300" : "text-slate-700"}`}>
                     {profile.title}
                   </Text>
                 </VStack>
 
                 {/* Summary */}
-                <Text type="body" className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-purple-100/90" : "text-gray-700"}`}>
+                <Text type="body" className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                   Software Engineer dengan keahlian dalam arsitektur backend, pemrosesan data warehouse OLAP, pipeline data terdistribusi, serta riset applied machine learning. Berpengalaman membangun sistem perbankan institusional, modul SIMRS rumah sakit, dan layanan API skala korporasi.
                 </Text>
 
@@ -48,10 +51,10 @@ export function Hero({ isDark }: HeroProps) {
                     variant="primary"
                     size="md"
                     href="#proyek"
-                    className={`px-5 py-3 rounded-xl font-semibold text-xs min-h-[44px] flex items-center gap-2 ${
+                    className={`px-5 py-2.5 rounded-lg font-medium text-xs sm:text-sm min-h-[44px] flex items-center gap-2 shadow-sm ${
                       isDark
-                        ? "bg-purple-600 hover:bg-purple-500 text-white border border-white/20"
-                        : "bg-purple-700 hover:bg-purple-800 text-white border border-purple-400"
+                        ? "bg-slate-50 hover:bg-slate-200 text-slate-900 border border-slate-200"
+                        : "bg-slate-900 hover:bg-slate-800 text-slate-50 border border-slate-900"
                     }`}
                   >
                     <HStack gap={1.5} vAlign="center">
@@ -65,10 +68,10 @@ export function Hero({ isDark }: HeroProps) {
                     variant="secondary"
                     size="md"
                     href="#pengalaman"
-                    className={`px-4 py-3 rounded-xl font-medium text-xs min-h-[44px] ${
+                    className={`px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm min-h-[44px] border ${
                       isDark
-                        ? "bg-[#1d0f3a] hover:bg-[#26154c] text-purple-100 border border-white/15"
-                        : "bg-purple-50 hover:bg-purple-100 text-purple-900 border border-purple-200"
+                        ? "border-slate-700 text-slate-200 hover:bg-slate-800"
+                        : "border-slate-300 text-slate-800 hover:bg-slate-100"
                     }`}
                   >
                     <HStack gap={1.5} vAlign="center">
@@ -84,10 +87,10 @@ export function Hero({ isDark }: HeroProps) {
                     href={socials.medium}
                     target="_blank"
                     rel="noreferrer"
-                    className={`px-3 py-3 rounded-xl font-medium text-xs min-h-[44px] ${
+                    className={`px-3 py-2.5 rounded-lg font-medium text-xs min-h-[44px] ${
                       isDark
-                        ? "text-purple-200 hover:text-white hover:bg-white/10"
-                        : "text-purple-800 hover:text-purple-950 hover:bg-purple-100"
+                        ? "text-slate-300 hover:text-slate-100 hover:bg-slate-800"
+                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                     }`}
                   >
                     <HStack gap={1.5} vAlign="center">
@@ -103,10 +106,10 @@ export function Hero({ isDark }: HeroProps) {
                     href={socials.buymeacoffee}
                     target="_blank"
                     rel="noreferrer"
-                    className={`px-3 py-3 rounded-xl font-medium text-xs min-h-[44px] ${
+                    className={`px-3 py-2.5 rounded-lg font-medium text-xs min-h-[44px] ${
                       isDark
-                        ? "text-amber-300 hover:text-amber-200 hover:bg-white/10"
-                        : "text-amber-800 hover:text-amber-950 hover:bg-amber-100"
+                        ? "text-amber-400 hover:text-amber-300 hover:bg-slate-800"
+                        : "text-amber-700 hover:text-amber-800 hover:bg-amber-50"
                     }`}
                   >
                     <HStack gap={1.5} vAlign="center">
@@ -122,10 +125,10 @@ export function Hero({ isDark }: HeroProps) {
                     href={socials.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className={`px-3 py-3 rounded-xl font-medium text-xs min-h-[44px] ${
+                    className={`px-3 py-2.5 rounded-lg font-medium text-xs min-h-[44px] ${
                       isDark
-                        ? "text-purple-200 hover:text-white hover:bg-white/10"
-                        : "text-purple-800 hover:text-purple-950 hover:bg-purple-100"
+                        ? "text-slate-300 hover:text-slate-100 hover:bg-slate-800"
+                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                     }`}
                   >
                     <HStack gap={1.5} vAlign="center">
@@ -143,8 +146,8 @@ export function Hero({ isDark }: HeroProps) {
                   vAlign="center"
                   className={`p-2 rounded-2xl border ${
                     isDark
-                      ? "border-white/20 bg-[#1a0c35]/80"
-                      : "border-purple-200 bg-purple-50/80"
+                      ? "border-slate-700 bg-slate-800/80 shadow-sm"
+                      : "border-slate-200 bg-slate-100 shadow-sm"
                   }`}
                 >
                   <img
@@ -158,10 +161,10 @@ export function Hero({ isDark }: HeroProps) {
                   href={socials.github}
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                     isDark
-                      ? "bg-[#180d32] border-white/15 text-purple-200 hover:text-white hover:border-white/30"
-                      : "bg-white border-purple-200 text-gray-700 hover:text-purple-900"
+                      ? "bg-slate-800/80 border-slate-700 text-slate-300 hover:text-white hover:border-slate-600"
+                      : "bg-white border-slate-200 text-slate-700 hover:text-slate-900 hover:border-slate-300"
                   }`}
                 >
                   <Github className="w-3.5 h-3.5" />
@@ -170,22 +173,22 @@ export function Hero({ isDark }: HeroProps) {
               </VStack>
             </HStack>
 
-            {/* Scope Pillars Grid (Replaces AI slop metric boxes) */}
-            <Grid columns={{ minWidth: 220, max: 3, repeat: "fit" }} gap={3} className="w-full pt-4 border-t border-white/10">
+            {/* Scope Pillars Grid */}
+            <Grid columns={{ minWidth: 220, max: 3, repeat: "fit" }} gap={3} className="w-full pt-4 border-t border-slate-200 dark:border-slate-800">
               <Card
                 padding={3}
                 className={`rounded-xl border ${
-                  isDark ? "bg-[#170c32]/80 border-white/10 text-left" : "bg-purple-50/60 border-purple-200/70 text-left"
+                  isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
                 }`}
               >
                 <VStack gap={1}>
                   <HStack gap={1.5} vAlign="center">
-                    <Server className="w-4 h-4 text-purple-400" />
-                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                    <Server className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                       Backend & Architecture
                     </Heading>
                   </HStack>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-purple-300/80" : "text-gray-600"}`}>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     Core banking services, SIMRS, dan microservices modular (Go, Rails, TypeScript).
                   </Text>
                 </VStack>
@@ -194,17 +197,17 @@ export function Hero({ isDark }: HeroProps) {
               <Card
                 padding={3}
                 className={`rounded-xl border ${
-                  isDark ? "bg-[#170c32]/80 border-white/10 text-left" : "bg-purple-50/60 border-purple-200/70 text-left"
+                  isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
                 }`}
               >
                 <VStack gap={1}>
                   <HStack gap={1.5} vAlign="center">
-                    <Database className="w-4 h-4 text-purple-400" />
-                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                    <Database className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                       Data Warehouse & OLAP
                     </Heading>
                   </HStack>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-purple-300/80" : "text-gray-600"}`}>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     Skema bintang analitik (Star Schema), pipeline ETL, dan optimasi query dimensi data (T-SQL).
                   </Text>
                 </VStack>
@@ -213,17 +216,17 @@ export function Hero({ isDark }: HeroProps) {
               <Card
                 padding={3}
                 className={`rounded-xl border ${
-                  isDark ? "bg-[#170c32]/80 border-white/10 text-left" : "bg-purple-50/60 border-purple-200/70 text-left"
+                  isDark ? "bg-slate-950/60 border-slate-800 text-left" : "bg-slate-50/70 border-slate-200 text-left"
                 }`}
               >
                 <VStack gap={1}>
                   <HStack gap={1.5} vAlign="center">
-                    <Cpu className="w-4 h-4 text-purple-400" />
-                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+                    <Cpu className="w-4 h-4 text-slate-700 dark:text-slate-300" />
+                    <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                       Applied Machine Learning
                     </Heading>
                   </HStack>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-purple-300/80" : "text-gray-600"}`}>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     Deep learning CNN (FER2013), klasifikasi otomatis REST API, dan integrasi dialog Watson.
                   </Text>
                 </VStack>

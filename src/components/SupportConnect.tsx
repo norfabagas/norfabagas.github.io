@@ -13,50 +13,46 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
     <Section id="dukungan" paddingBlock={6}>
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
         <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
-          {/* Buy Me A Coffee Galaxy Block */}
+          {/* Buy Me A Coffee Block */}
           <Card
             padding={6}
-            className={`rounded-3xl flex flex-col justify-between transition-colors duration-200 ${
+            className={`rounded-xl flex flex-col justify-between transition-colors duration-200 ${
               isDark
-                ? "border border-white/15 bg-[#140b2a]/90 shadow-md shadow-purple-950/20"
-                : "border border-purple-200 bg-white/95 shadow-sm"
+                ? "border border-slate-800 bg-slate-900/80 shadow-sm"
+                : "border border-slate-200 bg-white/95 shadow-sm"
             }`}
           >
             <VStack gap={4} className="w-full text-left">
               <HStack gap={3} vAlign="center">
-                <HStack
-                  hAlign="center"
-                  vAlign="center"
-                  className={`p-3 rounded-2xl border ${
-                    isDark
-                      ? "bg-amber-950/60 border-amber-400/30 text-amber-300"
-                      : "bg-amber-100 border-amber-300 text-amber-800"
+                <div
+                  className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
+                    isDark ? "bg-slate-100 text-slate-900" : "bg-slate-900 text-slate-100"
                   }`}
                 >
-                  <Coffee className="w-6 h-6" />
-                </HStack>
+                  <Coffee className="w-5 h-5" />
+                </div>
                 <VStack gap={0.5}>
-                  <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+                  <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                     Dukung Karya & Riset
                   </Heading>
-                  <Text type="supporting" className="text-xs text-amber-400 font-semibold">
+                  <Text type="supporting" className={`text-xs font-semibold ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     Buy Me a Coffee: @bgsnorfa
                   </Text>
                 </VStack>
               </HStack>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-purple-100/90" : "text-gray-700"}`}>
+              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 Jika Anda menyukai artikel teknis di Medium, repositori open source, atau eksperimen machine learning yang saya bagikan, Anda dapat memberikan apresiasi dan traktir kopi virtual untuk mendukung kontinuitas riset.
               </Text>
 
               <Card
                 padding={3}
-                className={`rounded-xl border ${
-                  isDark ? "bg-[#211145] border-white/15 text-purple-200 text-xs" : "bg-purple-50 border-purple-200 text-gray-700 text-xs"
+                className={`rounded-lg border ${
+                  isDark ? "bg-slate-950/60 border-slate-800 text-slate-400 text-xs" : "bg-slate-100/80 border-slate-200 text-slate-600 text-xs"
                 }`}
               >
                 <HStack gap={2} vAlign="center">
-                  <Heart className="w-5 h-5 text-rose-400 shrink-0" />
+                  <Heart className="w-4 h-4 text-rose-500 shrink-0" />
                   <Text type="supporting" className="text-xs leading-normal">
                     Setiap dukungan sangat berarti untuk menjaga proyek dan tulisan teknologi tetap terbuka dan bermanfaat bagi komunitas developer.
                   </Text>
@@ -72,10 +68,10 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 href={socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
-                className={`w-full py-3.5 rounded-xl font-bold text-xs sm:text-sm border min-h-[44px] ${
+                className={`w-full py-3 rounded-lg font-semibold text-xs sm:text-sm min-h-[44px] transition-colors ${
                   isDark
-                    ? "bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 border-white/30 shadow-lg shadow-amber-950/40"
-                    : "bg-amber-400 hover:bg-amber-500 text-slate-950 border-amber-500 shadow-md shadow-amber-300/40"
+                    ? "bg-slate-100 text-slate-900 hover:bg-slate-200"
+                    : "bg-slate-900 text-slate-50 hover:bg-slate-800"
                 }`}
               >
                 <HStack gap={2} hAlign="center" vAlign="center">
@@ -87,39 +83,35 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
             </VStack>
           </Card>
 
-          {/* Social Links & Collaboration Galaxy Block */}
+          {/* Social Links & Collaboration Block */}
           <Card
             padding={6}
-            className={`rounded-3xl flex flex-col justify-between transition-colors duration-200 ${
+            className={`rounded-xl flex flex-col justify-between transition-colors duration-200 ${
               isDark
-                ? "border border-white/15 bg-[#140b2a]/90 shadow-md shadow-purple-950/20"
-                : "border border-purple-200 bg-white/95 shadow-sm"
+                ? "border border-slate-800 bg-slate-900/80 shadow-sm"
+                : "border border-slate-200 bg-white/95 shadow-sm"
             }`}
           >
             <VStack gap={4} className="w-full text-left">
               <HStack gap={3} vAlign="center">
-                <HStack
-                  hAlign="center"
-                  vAlign="center"
-                  className={`p-3 rounded-2xl border ${
-                    isDark
-                      ? "bg-purple-950/60 border-white/20 text-purple-200"
-                      : "bg-purple-100 border-purple-200 text-purple-800"
+                <div
+                  className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 shadow-sm ${
+                    isDark ? "bg-slate-100 text-slate-900" : "bg-slate-900 text-slate-100"
                   }`}
                 >
-                  <MessageSquare className="w-6 h-6" />
-                </HStack>
+                  <MessageSquare className="w-5 h-5" />
+                </div>
                 <VStack gap={0.5}>
-                  <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
+                  <Heading level={3} className={`text-xl font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                     Terhubung & Kolaborasi
                   </Heading>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-purple-300/80" : "text-gray-500"}`}>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
                     Saluran Komunikasi Resmi Norfa Bagas
                   </Text>
                 </VStack>
               </HStack>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-purple-100/90" : "text-gray-700"}`}>
+              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                 Terbuka untuk diskusi arsitektur perangkat lunak, sistem data warehouse, pengembangan backend terdistribusi, serta kolaborasi riset kecerdasan buatan.
               </Text>
 
@@ -129,16 +121,16 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.medium}
                   target="_blank"
                   rel="noreferrer"
-                  className={`p-3 rounded-xl border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                     isDark
-                      ? "bg-[#201243] border-white/20 text-purple-100 hover:border-white/40 hover:bg-[#281754]"
-                      : "bg-purple-50/80 border-purple-200 text-gray-800 hover:border-purple-300 hover:bg-purple-100"
+                      ? "bg-slate-950/60 border-slate-800 text-slate-200 hover:border-slate-700 hover:bg-slate-800"
+                      : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-100"
                   }`}
                 >
-                  <BookOpen className="w-4 h-4 text-purple-400 shrink-0" />
+                  <BookOpen className="w-4 h-4 text-slate-400 shrink-0" />
                   <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className="text-xs font-bold leading-tight">Medium</Text>
-                    <Text type="supporting" className="text-[11px] text-purple-400 truncate">@bgsnorfa</Text>
+                    <Text type="label" className="text-xs font-semibold leading-tight">Medium</Text>
+                    <Text type="supporting" className={`text-[11px] truncate ${isDark ? "text-slate-400" : "text-slate-500"}`}>@bgsnorfa</Text>
                   </VStack>
                 </a>
 
@@ -146,16 +138,16 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className={`p-3 rounded-xl border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                     isDark
-                      ? "bg-[#201243] border-white/20 text-purple-100 hover:border-white/40 hover:bg-[#281754]"
-                      : "bg-purple-50/80 border-purple-200 text-gray-800 hover:border-purple-300 hover:bg-purple-100"
+                      ? "bg-slate-950/60 border-slate-800 text-slate-200 hover:border-slate-700 hover:bg-slate-800"
+                      : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-100"
                   }`}
                 >
-                  <Linkedin className="w-4 h-4 text-blue-400 shrink-0" />
+                  <Linkedin className="w-4 h-4 text-slate-400 shrink-0" />
                   <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className="text-xs font-bold leading-tight">LinkedIn</Text>
-                    <Text type="supporting" className="text-[11px] text-purple-400 truncate">in/norfabagas</Text>
+                    <Text type="label" className="text-xs font-semibold leading-tight">LinkedIn</Text>
+                    <Text type="supporting" className={`text-[11px] truncate ${isDark ? "text-slate-400" : "text-slate-500"}`}>in/norfabagas</Text>
                   </VStack>
                 </a>
 
@@ -163,16 +155,16 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.github}
                   target="_blank"
                   rel="noreferrer"
-                  className={`p-3 rounded-xl border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${
+                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                     isDark
-                      ? "bg-[#201243] border-white/20 text-purple-100 hover:border-white/40 hover:bg-[#281754]"
-                      : "bg-purple-50/80 border-purple-200 text-gray-800 hover:border-purple-300 hover:bg-purple-100"
+                      ? "bg-slate-950/60 border-slate-800 text-slate-200 hover:border-slate-700 hover:bg-slate-800"
+                      : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-100"
                   }`}
                 >
-                  <Github className="w-4 h-4 text-purple-300 shrink-0" />
+                  <Github className="w-4 h-4 text-slate-400 shrink-0" />
                   <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className="text-xs font-bold leading-tight">GitHub</Text>
-                    <Text type="supporting" className="text-[11px] text-purple-400 truncate">norfabagas</Text>
+                    <Text type="label" className="text-xs font-semibold leading-tight">GitHub</Text>
+                    <Text type="supporting" className={`text-[11px] truncate ${isDark ? "text-slate-400" : "text-slate-500"}`}>norfabagas</Text>
                   </VStack>
                 </a>
 
@@ -180,16 +172,16 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.buymeacoffee}
                   target="_blank"
                   rel="noreferrer"
-                  className={`p-3 rounded-xl border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 ${
+                  className={`p-3 rounded-lg border flex items-center gap-2.5 transition-all min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
                     isDark
-                      ? "bg-[#201243] border-white/20 text-amber-200 hover:border-white/40 hover:bg-[#281754]"
-                      : "bg-purple-50/80 border-purple-200 text-amber-800 hover:border-purple-300 hover:bg-purple-100"
+                      ? "bg-slate-950/60 border-slate-800 text-slate-200 hover:border-slate-700 hover:bg-slate-800"
+                      : "bg-slate-50 border-slate-200 text-slate-800 hover:border-slate-300 hover:bg-slate-100"
                   }`}
                 >
-                  <Coffee className="w-4 h-4 text-amber-400 shrink-0" />
+                  <Coffee className="w-4 h-4 text-slate-400 shrink-0" />
                   <VStack gap={0} className="overflow-hidden text-left">
-                    <Text type="label" className="text-xs font-bold leading-tight">Buy Me a Coffee</Text>
-                    <Text type="supporting" className="text-[11px] text-amber-400 truncate">bgsnorfa</Text>
+                    <Text type="label" className="text-xs font-semibold leading-tight">Buy Me a Coffee</Text>
+                    <Text type="supporting" className={`text-[11px] truncate ${isDark ? "text-slate-400" : "text-slate-500"}`}>bgsnorfa</Text>
                   </VStack>
                 </a>
               </Grid>
