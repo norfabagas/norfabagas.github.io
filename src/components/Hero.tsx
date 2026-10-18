@@ -9,6 +9,16 @@ interface HeroProps {
 export function Hero({ isDark }: HeroProps) {
   const { profile, socials } = PORTFOLIO_DATA;
 
+  const scrollToSection = (targetId: string) => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  };
+
   return (
     <Section
       id="tentang"
@@ -54,7 +64,7 @@ export function Hero({ isDark }: HeroProps) {
                     label="Lihat Proyek & Repositori"
                     variant="primary"
                     size="md"
-                    href="#proyek"
+                    onClick={() => scrollToSection("proyek")}
                     className={`px-5 py-2.5 rounded-lg font-medium text-xs sm:text-sm min-h-[44px] flex items-center gap-2 shadow-sm ${
                       isDark
                         ? "bg-slate-50 hover:bg-slate-200 text-slate-900 border border-slate-200"
@@ -71,7 +81,7 @@ export function Hero({ isDark }: HeroProps) {
                     label="Pengalaman & Scope Kerja"
                     variant="secondary"
                     size="md"
-                    href="#pengalaman"
+                    onClick={() => scrollToSection("pengalaman")}
                     className={`px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm min-h-[44px] border ${
                       isDark
                         ? "border-slate-700 text-slate-200 hover:bg-slate-800"

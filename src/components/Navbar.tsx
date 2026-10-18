@@ -15,8 +15,16 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,13 +39,25 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: "Tentang", href: "#tentang" },
-    { label: "Keahlian", href: "#keahlian" },
-    { label: "Proyek", href: "#proyek" },
-    { label: "Pengalaman", href: "#pengalaman" },
-    { label: "Artikel", href: "#artikel" },
-    { label: "Dukungan", href: "#dukungan" }
+    { label: "Tentang", id: "tentang" },
+    { label: "Keahlian", id: "keahlian" },
+    { label: "Proyek", id: "proyek" },
+    { label: "Pengalaman", id: "pengalaman" },
+    { label: "Artikel", id: "artikel" },
+    { label: "Dukungan", id: "dukungan" }
   ];
+
+  const handleNavClick = (e: React.MouseEvent, targetId: string) => {
+    e.preventDefault();
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  };
 
   return (
     <header
@@ -54,9 +74,10 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       <VStack gap={0} className="max-w-6xl mx-auto px-4 sm:px-6">
         <HStack hAlign="between" vAlign="center" className="h-16 w-full">
           {/* Logo Brand with avatar */}
-          <a
-            href="#tentang"
-            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded-xl p-1"
+          <button
+            type="button"
+            onClick={(e) => handleNavClick(e, "tentang")}
+            className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer"
           >
             <img
               src="/favicon.png"
@@ -73,22 +94,23 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 Software Engineer
               </Text>
             </VStack>
-          </a>
+          </button>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Navigasi Utama">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
+              <button
+                key={link.id}
+                type="button"
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`px-3 py-2 rounded-lg text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 cursor-pointer bg-transparent border-0 ${
                   isDark
                     ? "text-slate-300 hover:text-slate-100 hover:bg-slate-800/70"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </nav>
 
@@ -183,16 +205,16 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             }`}
           >
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`px-4 py-3 rounded-lg text-sm font-medium flex items-center transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 ${
+              <button
+                key={link.id}
+                type="button"
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`px-4 py-3 rounded-lg text-sm font-medium flex items-center transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 cursor-pointer w-full text-left bg-transparent border-0 ${
                   isDark ? "text-slate-200 hover:bg-slate-800/80" : "text-slate-800 hover:bg-slate-100"
                 }`}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
 
             <HStack hAlign="between" vAlign="center" className="pt-3 border-t border-slate-800/60 w-full">

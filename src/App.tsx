@@ -33,6 +33,21 @@ export default function App() {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    };
+
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
   };
