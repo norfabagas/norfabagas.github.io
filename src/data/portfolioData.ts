@@ -58,6 +58,11 @@ export interface Socials {
   stackoverflow: string;
 }
 
+export interface TechToolGroup {
+  category: string;
+  items: string[];
+}
+
 export interface LocalizedPortfolioData {
   profile: Profile;
   socials: Socials;
@@ -66,6 +71,8 @@ export interface LocalizedPortfolioData {
   repositories: Repository[];
   experience: Experience[];
   articles: Article[];
+  projectResearchSummary: string;
+  techTools: TechToolGroup[];
 }
 
 const COMMON_SOCIALS: Socials = {
@@ -382,6 +389,26 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         readTime: "4 min baca",
         snippet: "Membangun antarmuka percakapan interaktif dengan mendefinisikan intent, entity, dan dialog trees pada layanan cloud Watson."
       }
+    ],
+    projectResearchSummary:
+      "Rekam jejak implementasi perangkat lunak dan riset teknis yang telah dikerjakan mencakup perancangan modul transaksi perbankan institusional dengan standar keamanan multi-tier, modernisasi arsitektur SIMRS rumah sakit yang terintegrasi langsung dengan API BPJS dan SATUSEHAT Kemenkes, pembangunan arsitektur OLAP Data Warehouse berbasis star schema untuk analitik transaksi multi-cabang berkinerja tinggi, serta riset applied machine learning mencakup eksperimen model Convolutional Neural Network (CNN) pada dataset FER2013 untuk Facial Expression Recognition, integrasi conversational chatbot IBM Watson, dan pembuatan REST API otomatisasi klasifikasi insiden jaringan.",
+    techTools: [
+      {
+        category: "Bahasa Pemrograman",
+        items: ["Go (Golang)", "Ruby", "Python", "TypeScript", "PHP", "T-SQL / SQL", "Bash"]
+      },
+      {
+        category: "Framework & Library",
+        items: ["Ruby on Rails", "Flask", "Laravel", "Express.js / Node.js", "TensorFlow & Keras", "React"]
+      },
+      {
+        category: "Database & Data Warehouse",
+        items: ["Microsoft SQL Server (OLAP)", "PostgreSQL", "MySQL", "Redis", "Star Schema (Fact & Dim)"]
+      },
+      {
+        category: "Tools, DevOps & Infrastruktur",
+        items: ["Docker", "Linux (Ubuntu / Debian)", "Git & GitHub", "Postman", "Jest & RSpec", "DigitalOcean / VPS", "CI/CD Actions"]
+      }
     ]
   },
   "en-US": {
@@ -689,6 +716,26 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         readTime: "4 min read",
         snippet: "Building conversational interfaces by defining intents, entities, and dialog trees within IBM Watson cloud services."
       }
+    ],
+    projectResearchSummary:
+      "Engineering projects and applied research encompass architecting high-security institutional banking transaction modules, modernizing hospital clinical information systems (SIMRS) with real-time integrations to national health and insurance APIs (BPJS & SATUSEHAT), designing high-performance star-schema OLAP Data Warehouses for multidimensional multi-branch retail analytics, and conducting applied machine learning research including Convolutional Neural Network (CNN) architectures on the FER2013 facial expression recognition dataset, IBM Watson conversational NLP integration, and automated network incident classification REST APIs.",
+    techTools: [
+      {
+        category: "Programming Languages",
+        items: ["Go (Golang)", "Ruby", "Python", "TypeScript", "PHP", "T-SQL / SQL", "Bash"]
+      },
+      {
+        category: "Frameworks & Libraries",
+        items: ["Ruby on Rails", "Flask", "Laravel", "Express.js / Node.js", "TensorFlow & Keras", "React"]
+      },
+      {
+        category: "Database & Data Warehousing",
+        items: ["Microsoft SQL Server (OLAP)", "PostgreSQL", "MySQL", "Redis", "Star Schema (Fact & Dim)"]
+      },
+      {
+        category: "Tools, DevOps & Infrastructure",
+        items: ["Docker", "Linux (Ubuntu / Debian)", "Git & GitHub", "Postman", "Jest & RSpec", "DigitalOcean / VPS", "CI/CD Actions"]
+      }
     ]
   }
 };
@@ -698,7 +745,7 @@ export const UI_STRINGS = {
     nav: {
       home: "Beranda",
       experience: "Pengalaman",
-      projects: "Proyek",
+      projects: "Proyek & Riset",
       skills: "Keahlian",
       articles: "Tulisan",
       support: "Kontak",
@@ -712,7 +759,7 @@ export const UI_STRINGS = {
     },
     hero: {
       statusBadge: "Terbuka untuk konsultasi & proyek rekayasa backend",
-      ctaProjects: "Lihat Repositori & Proyek",
+      ctaProjects: "Proyek & Riset Rekayasa",
       ctaExperience: "Rekam Jejak Pengalaman",
       ctaMedium: "Medium",
       ctaCoffee: "Traktir Kopi",
@@ -725,16 +772,12 @@ export const UI_STRINGS = {
       scopeTitle: "Cakupan Rekayasa (Scope of Engineering)"
     },
     projects: {
-      title: "Repositori & Proyek Open Source",
-      subtitle: "Koleksi implementasi perangkat lunak terbuka: arsitektur backend, sistem data warehouse OLAP, dan pipeline applied machine learning.",
-      githubLink: "Lihat Semua di GitHub",
-      searchPlaceholder: "Cari repositori atau topik teknis...",
-      searchAria: "Cari repositori berdasarkan nama atau topik",
-      allFilter: "Semua",
-      viewOnGithub: "Buka di GitHub",
-      emptyTitle: "Tidak ada repositori yang cocok",
-      emptyDesc: "Coba ubah kata kunci pencarian atau pilih kategori bahasa pemrograman lain.",
-      resetFilter: "Reset Pencarian"
+      title: "Proyek & Riset Rekayasa",
+      subtitle: "Ringkasan implementasi sistem, riset kecerdasan buatan terapan, dan ekosistem tools yang digunakan.",
+      summaryCardTitle: "Ringkasan Proyek & Riset",
+      toolsCardTitle: "Ekosistem Teknologi & Tools",
+      githubNotice: "Beberapa repositori sistem korporasi dan modul institusional bersifat private demi kepatuhan kerahasiaan. Eksperimen open source publik dapat diakses langsung di GitHub.",
+      viewGithubProfile: "Kunjungi GitHub Profil @norfabagas"
     },
     skills: {
       title: "Keahlian & Ekosistem Teknologi",
@@ -766,7 +809,7 @@ export const UI_STRINGS = {
     nav: {
       home: "Home",
       experience: "Experience",
-      projects: "Projects",
+      projects: "Projects & Research",
       skills: "Skills",
       articles: "Articles",
       support: "Contact",
@@ -780,7 +823,7 @@ export const UI_STRINGS = {
     },
     hero: {
       statusBadge: "Available for backend engineering & technical consulting",
-      ctaProjects: "Explore Repositories",
+      ctaProjects: "Projects & Applied Research",
       ctaExperience: "Work Experience",
       ctaMedium: "Medium",
       ctaCoffee: "Buy a Coffee",
@@ -793,16 +836,12 @@ export const UI_STRINGS = {
       scopeTitle: "Scope of Engineering"
     },
     projects: {
-      title: "Repositories & Open Source Work",
-      subtitle: "Public codebases focused on distributed backend architectures, OLAP data warehouses, and applied machine learning pipelines.",
-      githubLink: "View All on GitHub",
-      searchPlaceholder: "Search repository name or topic...",
-      searchAria: "Search repositories by name or topic",
-      allFilter: "All",
-      viewOnGithub: "View on GitHub",
-      emptyTitle: "No matching repositories",
-      emptyDesc: "Try adjusting your search terms or selecting a different language filter.",
-      resetFilter: "Reset Filter"
+      title: "Projects & Applied Research",
+      subtitle: "Overview of enterprise systems engineering, applied AI research, and technical tooling leveraged in production.",
+      summaryCardTitle: "Projects & Research Summary",
+      toolsCardTitle: "Technology Stack & Tools",
+      githubNotice: "Several enterprise repositories and institutional modules are private for confidentiality. Public open-source experiments can be viewed directly on GitHub.",
+      viewGithubProfile: "Visit Public GitHub @norfabagas"
     },
     skills: {
       title: "Skills & Technical Ecosystem",
