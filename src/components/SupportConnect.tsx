@@ -7,7 +7,7 @@ interface SupportConnectProps {
 }
 
 export function SupportConnect({ isDark }: SupportConnectProps) {
-  const { socials, profile } = PORTFOLIO_DATA;
+  const { socials } = PORTFOLIO_DATA;
 
   return (
     <Section id="dukungan" paddingBlock={6}>
@@ -16,10 +16,10 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           {/* Buy Me A Coffee Galaxy Block */}
           <Card
             padding={6}
-            className={`rounded-3xl flex flex-col justify-between transition-all duration-300 ${
+            className={`rounded-3xl flex flex-col justify-between transition-colors duration-200 ${
               isDark
-                ? "border border-white/25 bg-[#170c32]/85 shadow-[0_8px_32px_-4px_rgba(147,51,234,0.2)] backdrop-blur-md"
-                : "border border-purple-200/90 bg-white/90 shadow-[0_8px_30px_-4px_rgba(107,33,168,0.1)] backdrop-blur-md"
+                ? "border border-white/15 bg-[#140b2a]/90 shadow-md shadow-purple-950/20"
+                : "border border-purple-200 bg-white/95 shadow-sm"
             }`}
           >
             <VStack gap={4} className="w-full text-left">
@@ -90,10 +90,10 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           {/* Social Links & Collaboration Galaxy Block */}
           <Card
             padding={6}
-            className={`rounded-3xl flex flex-col justify-between transition-all duration-300 ${
+            className={`rounded-3xl flex flex-col justify-between transition-colors duration-200 ${
               isDark
-                ? "border border-white/25 bg-[#170c32]/85 shadow-[0_8px_32px_-4px_rgba(147,51,234,0.2)] backdrop-blur-md"
-                : "border border-purple-200/90 bg-white/90 shadow-[0_8px_30px_-4px_rgba(107,33,168,0.1)] backdrop-blur-md"
+                ? "border border-white/15 bg-[#140b2a]/90 shadow-md shadow-purple-950/20"
+                : "border border-purple-200 bg-white/95 shadow-sm"
             }`}
           >
             <VStack gap={4} className="w-full text-left">
@@ -194,17 +194,6 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </a>
               </Grid>
             </VStack>
-
-            <Card
-              padding={3}
-              className={`rounded-xl border text-center mt-4 ${
-                isDark ? "bg-[#1f1042] border-white/10 text-purple-300/80" : "bg-purple-50 border-purple-200 text-gray-600"
-              }`}
-            >
-              <Text type="supporting" className="text-xs">
-                Berdomisili di {profile.location} (Waktu Indonesia Barat / UTC+7)
-              </Text>
-            </Card>
           </Card>
         </Grid>
       </VStack>

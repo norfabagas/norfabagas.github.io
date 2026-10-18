@@ -16,6 +16,14 @@ export interface Experience {
   skills: string[];
 }
 
+export interface ProjectScope {
+  title: string;
+  area: string;
+  description: string;
+  technologies: string[];
+  deliverables: string[];
+}
+
 export interface Article {
   title: string;
   url: string;
@@ -27,20 +35,13 @@ export interface Article {
 export const PORTFOLIO_DATA = {
   profile: {
     name: "Norfa Bagas",
-    fullName: "Norfa Bagas Nurhuda Sukowati",
     title: "Software Engineer & IT Specialist",
     tagline: "All of my experiments",
     summary:
-      "Software Engineer berbasis di Jakarta, Indonesia dengan pengalaman membangun layanan backend berkinerja tinggi, sistem data warehouse OLAP, arsitektur microservices, serta eksplorasi riset applied machine learning dan computer vision.",
-    location: "Jakarta, Indonesia",
+      "Software Engineer dengan pengalaman merancang arsitektur backend, sistem data warehouse OLAP, pipeline data terdistribusi, serta implementasi applied machine learning.",
+    location: "Indonesia",
     avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
-    yearsActive: "Sejak 2016",
-    githubUsername: "norfabagas",
-    stats: {
-      publicRepos: 56,
-      publicGists: 4,
-      experienceYears: "8+ tahun di open source"
-    }
+    githubUsername: "norfabagas"
   },
   socials: {
     github: "https://github.com/norfabagas",
@@ -49,11 +50,73 @@ export const PORTFOLIO_DATA = {
     buymeacoffee: "https://buymeacoffee.com/bgsnorfa",
     stackoverflow: "https://stackoverflow.com/users/17166221/norfa-bagas"
   },
+  projectScopes: [
+    {
+      title: "Enterprise Core & Financial Systems",
+      area: "Core Services",
+      description:
+        "Pengembangan modul perangkat lunak terintegrasi untuk sektor perbankan dan penjaminan keuangan dengan standar keamanan institusional, keandalan data, dan ketersediaan tinggi.",
+      technologies: ["Go", "T-SQL", "Enterprise Security", "Microservices", "REST API"],
+      deliverables: [
+        "Arsitektur modul transaksi perbankan",
+        "Mekanisme audit trail dan verifikasi integritas data",
+        "Otentikasi terpusat dan manajemen otorisasi berjenjang"
+      ]
+    },
+    {
+      title: "Healthcare Systems & SIMRS",
+      area: "Healthcare Information",
+      description:
+        "Perancangan modul Sistem Informasi Manajemen Rumah Sakit (SIMRS) yang mengintegrasikan alur operasional klinis, pencatatan rekam medis, dan sinkronisasi data antar unit.",
+      technologies: ["PostgreSQL", "PHP", "Database Optimization", "System Integration"],
+      deliverables: [
+        "Otomatisasi alur kerja operasional antar instalasi medis",
+        "Sinkronisasi data rekam medis terpadu",
+        "Optimasi query basis data transaksional berkecepatan tinggi"
+      ]
+    },
+    {
+      title: "Data Warehouse & OLAP Pipelines",
+      area: "Data Engineering",
+      description:
+        "Perancangan skema analitik data warehouse (Star Schema), pipeline ETL transaksi point-of-sale, dan pengolahan query multidimensi untuk kebutuhan analitik pelaporan.",
+      technologies: ["T-SQL", "OLAP Data Warehouse", "ETL Pipelines", "PostgreSQL"],
+      deliverables: [
+        "Desain skema bintang (fact table dan dimension tables)",
+        "Pipeline ekstraksi, transformasi, dan pemuatan data transaksi",
+        "Agregasi analitik data penjualan multi-cabang"
+      ]
+    },
+    {
+      title: "Microservices & Distributed APIs",
+      area: "Backend Architecture",
+      description:
+        "Pembangunan service backend modular, implementasi auth global multi-tenant, serta penerapan prinsip Test-Driven Development (TDD) untuk keandalan API.",
+      technologies: ["Go", "Ruby on Rails", "TypeScript", "Node.js", "Docker", "TDD"],
+      deliverables: [
+        "Layanan otentikasi terpusat berbasis JWT",
+        "Pemisahan modular service arsitektur backend",
+        "Pengujian otomatis dan integrasi berkelanjutan"
+      ]
+    },
+    {
+      title: "Applied Machine Learning & AI Integration",
+      area: "Applied AI",
+      description:
+        "Eksperimen arsitektur deep learning Convolutional Neural Network (CNN) untuk Facial Expression Recognition (FER2013), API klasifikasi keluhan jaringan, dan integrasi IBM Watson.",
+      technologies: ["Python", "TensorFlow", "Keras", "Flask", "IBM Watson"],
+      deliverables: [
+        "Arsitektur deep learning klasifikasi citra ekspresi wajah",
+        "REST API klasifikasi otomatis gangguan jaringan",
+        "Integrasi antarmuka chatbot NLP cerdas"
+      ]
+    }
+  ] as ProjectScope[],
   skills: [
     {
       category: "Backend & Systems",
       description: "Pondasi arsitektur API terdistribusi, microservices, dan performa tinggi",
-      items: ["Go (Golang)", "Ruby on Rails", "PHP (Laravel)", "TypeScript", "Node.js (Express)", "Python (Flask)"]
+      items: ["Go (Golang)", "Ruby on Rails", "PHP (Laravel)", "TypeScript", "Node.js", "Python"]
     },
     {
       category: "Data & OLAP",
@@ -223,7 +286,7 @@ export const PORTFOLIO_DATA = {
       company: "Lembaga Penjamin Simpanan (LPS)",
       period: "Pengalaman Profesional",
       description:
-        "Membangun dan memelihara modul perangkat lunak perbankan terintegrasi dengan standar keamanan institusional tinggi, manajemen data terpusat, dan ketersediaan layanan sistem keuangan.",
+        "Membangun dan memelihara modul perangkat lunak perbankan terintegrasi dengan standar keamanan institusional, manajemen data terpusat, dan keandalan sistem penjaminan simpanan.",
       skills: ["Backend Architecture", "Enterprise Security", "Database Systems", "API Integration"]
     },
     {
@@ -231,7 +294,7 @@ export const PORTFOLIO_DATA = {
       company: "Eka Hospital",
       period: "Pengalaman Profesional",
       description:
-        "Mengembangkan solusi sistem informasi manajemen rumah sakit (SIMRS), otomatisasi alur kerja klinis, dan integrasi pertukaran data antar instalasi medis secara real-time.",
+        "Mengembangkan modul Sistem Informasi Manajemen Rumah Sakit (SIMRS), otomatisasi alur kerja klinis, serta integrasi pertukaran data antar instalasi medis.",
       skills: ["Healthcare Systems", "Relational Database", "System Integration", "Data Reliability"]
     },
     {
@@ -239,7 +302,7 @@ export const PORTFOLIO_DATA = {
       company: "Geekseat",
       period: "Pengalaman Profesional",
       description:
-        "Berkolaborasi dalam tim pengembang perangkat lunak lintas negara untuk merancang API modular, optimasi performa backend Ruby on Rails, dan komponen UI modern.",
+        "Berkolaborasi dalam tim pengembang perangkat lunak lintas negara untuk merancang API modular, optimasi performa backend Ruby on Rails, dan antarmuka web modern.",
       skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
     },
     {
@@ -247,16 +310,10 @@ export const PORTFOLIO_DATA = {
       company: "BRCODE",
       period: "Leadership & Tech Direction",
       description:
-        "Memimpin visi teknologi perusahaan, menentukan arsitektur sistem, memandu tim rekayasa perangkat lunak, dan mengisi sesi workshop teknologi komunitas.",
-      skills: ["Tech Leadership", "System Architecture", "Public Speaking", "Software Strategy"]
+        "Memimpin arah teknis perangkat lunak, menentukan arsitektur sistem, memandu tim rekayasa, serta mengisi sesi workshop teknologi untuk komunitas pengembang.",
+      skills: ["Tech Leadership", "System Architecture", "Software Strategy"]
     }
   ] as Experience[],
-  education: {
-    institution: "BINUS University (Bina Nusantara)",
-    degree: "Bachelor of Science (S.Kom.) in Computer Science",
-    highlight:
-      "Fokus pada rekayasa perangkat lunak dan kecerdasan buatan. Mempublikasikan penelitian akademik terkait klasifikasi motif Batik Nusantara menggunakan model Deep Learning Convolutional Neural Network (CNN) dengan teknik data augmentation dan hyperparameter tuning."
-  },
   articles: [
     {
       title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",

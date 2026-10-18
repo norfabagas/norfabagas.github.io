@@ -58,17 +58,13 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             href="#tentang"
             className="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded-xl p-1"
           >
-            <HStack
-              hAlign="center"
-              vAlign="center"
-              className={`w-9 h-9 rounded-xl font-bold text-sm ${
-                isDark
-                  ? "bg-gradient-to-tr from-purple-700 to-indigo-600 text-white border border-white/30"
-                  : "bg-gradient-to-tr from-purple-600 to-indigo-500 text-white border border-purple-300"
+            <img
+              src="/favicon.png"
+              alt={PORTFOLIO_DATA.profile.name}
+              className={`w-9 h-9 rounded-xl object-cover border ${
+                isDark ? "border-white/25 shadow-sm" : "border-purple-300 shadow-sm"
               }`}
-            >
-              NB
-            </HStack>
+            />
             <VStack gap={0}>
               <Heading level={3} className={`text-sm sm:text-base font-bold leading-tight ${isDark ? "text-white" : "text-gray-900"}`}>
                 {PORTFOLIO_DATA.profile.name}

@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
-import { Search, Star, ExternalLink, GitFork, Sparkles } from "lucide-react";
+import { Search, Star, ExternalLink, GitFork } from "lucide-react";
 import { PORTFOLIO_DATA, Repository } from "../data/portfolioData";
 
 interface ProjectsProps {
@@ -33,30 +33,13 @@ export function Projects({ isDark }: ProjectsProps) {
       <VStack gap={6} className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <VStack gap={2} className="w-full text-left">
-          <HStack gap={1.5} vAlign="center" className="w-fit">
-            <HStack
-              gap={1.5}
-              vAlign="center"
-              className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                isDark
-                  ? "bg-purple-900/60 text-purple-200 border border-white/20"
-                  : "bg-purple-100 text-purple-800 border border-purple-200"
-              }`}
-            >
-              <Sparkles className="w-3.5 h-3.5" />
-              <Text type="label" className="text-xs font-semibold">
-                Scanning github.com/norfabagas
-              </Text>
-            </HStack>
-          </HStack>
-
           <HStack hAlign="between" vAlign="end" className="flex-col sm:flex-row gap-2 w-full">
             <VStack gap={0.5}>
               <Heading level={2} className={`text-2xl sm:text-3xl font-bold tracking-tight ${isDark ? "text-white" : "text-gray-900"}`}>
                 Proyek & Repositori Terpilih
               </Heading>
               <Text type="supporting" className={`text-sm ${isDark ? "text-purple-200/80" : "text-gray-600"}`}>
-                Menampilkan karya rekayasa nyata dari 56 repositori publik yang dikembangkan sejak 2016.
+                Koleksi repositori publik yang berfokus pada arsitektur backend, sistem data warehouse OLAP, dan implementasi machine learning.
               </Text>
             </VStack>
 
@@ -68,7 +51,7 @@ export function Projects({ isDark }: ProjectsProps) {
                 isDark ? "text-purple-300 hover:text-white" : "text-purple-700 hover:text-purple-900"
               }`}
             >
-              <span>Seluruh 56 Repo di GitHub</span>
+              <span>Repositori di GitHub</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </HStack>
