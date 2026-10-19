@@ -59,8 +59,8 @@ function PortfolioContent() {
   return (
     <VStack
       gap={0}
-      className={`min-h-screen relative font-sans transition-colors duration-300 selection:bg-slate-900 selection:text-white dark:selection:bg-slate-100 dark:selection:text-slate-900 w-full ${
-        isDark ? "bg-slate-950 text-slate-100" : "bg-slate-50 text-slate-900"
+      className={`min-h-screen relative font-sans transition-colors duration-300 selection:bg-sky-500 selection:text-white w-full ${
+        isDark ? "aero-bg-dark text-slate-100" : "aero-bg-light text-slate-900"
       }`}
     >
       {/* Navigation Bar */}

@@ -27,7 +27,7 @@ export function Hero({ isDark }: HeroProps) {
       id="beranda"
       variant="transparent"
       paddingBlock={0}
-      className="relative w-full min-h-[calc(100vh-4rem)] flex flex-col justify-center py-16 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="relative w-full min-h-[calc(100vh-4rem)] flex flex-col justify-center py-16 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         {/* Status indicator & location pill */}
@@ -35,39 +35,39 @@ export function Hero({ isDark }: HeroProps) {
           <HStack
             gap={2}
             vAlign="center"
-            className={`px-3.5 py-1.5 rounded-full border text-xs font-semibold shadow-sm ${
-              isDark
-                ? "bg-slate-900 border-slate-800 text-slate-200"
-                : "bg-white border-slate-200 text-slate-800"
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md ${
+              isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
             }`}
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
             </span>
             <span>{t.hero.statusBadge}</span>
           </HStack>
 
           <HStack
-            gap={1}
+            gap={1.5}
             vAlign="center"
-            className={`px-3.5 py-1.5 rounded-full border text-xs font-semibold shadow-sm ${
-              isDark
-                ? "bg-slate-900 border-slate-800 text-slate-300"
-                : "bg-white border-slate-200 text-slate-700"
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md ${
+              isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
             }`}
           >
-            <MapPin className="w-3.5 h-3.5 text-slate-500" />
+            <MapPin className="w-3.5 h-3.5 text-sky-500" />
             <span>{profile.location}</span>
           </HStack>
         </HStack>
 
-        {/* Profile Avatar Frame */}
+        {/* Profile Avatar Frame with Frutiger Aero Glass Ring */}
         <VStack gap={0} hAlign="center" className="mb-6">
           <img
             src={profile.avatar}
             alt={profile.name}
-            className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white dark:border-slate-800 shadow-lg object-cover"
+            className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 object-cover transition-all duration-300 hover:scale-105 ${
+              isDark
+                ? "border-white/40 ring-4 ring-sky-500/30 shadow-[0_0_30px_rgba(14,165,233,0.45)]"
+                : "border-white ring-4 ring-sky-200/80 shadow-[0_0_30px_rgba(56,189,248,0.35)]"
+            }`}
             loading="eager"
           />
         </VStack>
@@ -85,7 +85,7 @@ export function Hero({ isDark }: HeroProps) {
         <Text
           type="large"
           className={`mt-2 text-lg sm:text-xl font-semibold ${
-            isDark ? "text-slate-200" : "text-slate-800"
+            isDark ? "text-sky-300" : "text-sky-700"
           }`}
         >
           {profile.title}
@@ -95,7 +95,7 @@ export function Hero({ isDark }: HeroProps) {
         <Text
           type="body"
           className={`mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed ${
-            isDark ? "text-slate-300" : "text-slate-700"
+            isDark ? "text-slate-200" : "text-slate-700"
           }`}
         >
           {profile.summary}
@@ -106,10 +106,8 @@ export function Hero({ isDark }: HeroProps) {
           {coreTech.map((tech) => (
             <span
               key={tech}
-              className={`text-xs px-2.5 py-1 rounded-md border font-mono font-medium ${
-                isDark
-                  ? "bg-slate-900 border-slate-800 text-slate-200"
-                  : "bg-white border-slate-200 text-slate-800 shadow-sm"
+              className={`text-xs px-3 py-1 rounded-lg font-mono font-medium backdrop-blur-md ${
+                isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
               }`}
             >
               {tech}
@@ -124,7 +122,7 @@ export function Hero({ isDark }: HeroProps) {
             variant="primary"
             size="lg"
             onClick={() => scrollToSection("proyek")}
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold transition-colors bg-slate-900 text-slate-50 hover:bg-slate-800 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 shadow h-11 rounded-md px-6 w-full sm:w-auto min-h-[44px]"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold aero-btn-primary rounded-xl px-6 w-full sm:w-auto min-h-[44px]"
           >
             <HStack gap={2} vAlign="center">
               <span>{t.hero.ctaProjects}</span>
@@ -137,10 +135,8 @@ export function Hero({ isDark }: HeroProps) {
             variant="secondary"
             size="lg"
             onClick={() => scrollToSection("pengalaman")}
-            className={`inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold transition-colors border shadow-sm h-11 rounded-md px-6 w-full sm:w-auto min-h-[44px] ${
-              isDark
-                ? "border-slate-700 bg-slate-900 text-slate-200 hover:bg-slate-800"
-                : "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
+            className={`inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold rounded-xl px-6 w-full sm:w-auto min-h-[44px] ${
+              isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
             }`}
           >
             <HStack gap={2} vAlign="center">
@@ -157,10 +153,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub @norfabagas"
-            className={`p-2.5 rounded-lg border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
               isDark
-                ? "border-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800"
-                : "border-slate-200 bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100"
+                ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
+                : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
             }`}
           >
             <Github className="w-4 h-4" />
@@ -171,10 +167,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn @norfabagas"
-            className={`p-2.5 rounded-lg border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
               isDark
-                ? "border-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800"
-                : "border-slate-200 bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100"
+                ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
+                : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
             }`}
           >
             <Linkedin className="w-4 h-4" />
@@ -185,10 +181,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="Medium @bgsnorfa"
-            className={`p-2.5 rounded-lg border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
               isDark
-                ? "border-slate-800 bg-slate-900 text-slate-300 hover:text-white hover:bg-slate-800"
-                : "border-slate-200 bg-white text-slate-700 hover:text-slate-950 hover:bg-slate-100"
+                ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
+                : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
             }`}
           >
             <BookOpen className="w-4 h-4" />
@@ -199,10 +195,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="Buy Me a Coffee @bgsnorfa"
-            className={`p-2.5 rounded-lg border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 dark:focus-visible:ring-white min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
               isDark
-                ? "border-slate-800 bg-slate-900 text-amber-400 hover:bg-slate-800"
-                : "border-slate-200 bg-white text-amber-600 hover:bg-slate-100"
+                ? "aero-glass-badge-dark text-amber-300 hover:border-white/30 hover:scale-105"
+                : "aero-glass-badge-light text-amber-600 hover:border-amber-300 hover:scale-105"
             }`}
           >
             <Coffee className="w-4 h-4" />

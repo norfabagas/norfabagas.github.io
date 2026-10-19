@@ -22,7 +22,7 @@ export function Projects({ isDark }: ProjectsProps) {
       id="proyek"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
@@ -48,19 +48,15 @@ export function Projects({ isDark }: ProjectsProps) {
         {/* 1-Paragraph Project & Research Summary Card */}
         <Card
           padding={6}
-          className={`rounded-xl border mb-8 w-full shadow-sm ${
-            isDark
-              ? "border-slate-800 bg-slate-900 text-slate-100"
-              : "border-slate-200 bg-white text-slate-900"
+          className={`rounded-2xl border mb-8 w-full aero-glass-card ${
+            isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
           }`}
         >
           <VStack gap={3} className="w-full">
             <HStack gap={2} vAlign="center" className="w-full">
               <span
-                className={`p-2 rounded-lg border flex items-center justify-center shrink-0 ${
-                  isDark
-                    ? "bg-slate-950 border-slate-800 text-slate-200"
-                    : "bg-slate-100 border-slate-200 text-slate-800"
+                className={`p-2.5 rounded-xl flex items-center justify-center shrink-0 ${
+                  isDark ? "aero-icon-dark" : "aero-icon-light"
                 }`}
               >
                 <FolderGit2 className="w-5 h-5" />
@@ -73,7 +69,7 @@ export function Projects({ isDark }: ProjectsProps) {
             <Text
               type="body"
               className={`text-sm sm:text-base leading-relaxed text-justify sm:text-left ${
-                isDark ? "text-slate-200" : "text-slate-800"
+                isDark ? "text-slate-200" : "text-slate-700"
               }`}
             >
               {projectResearchSummary}
@@ -84,7 +80,7 @@ export function Projects({ isDark }: ProjectsProps) {
         {/* List of Technology & Tools Grid */}
         <VStack gap={4} className="w-full mb-8">
           <HStack gap={2} vAlign="center" className="w-full">
-            <Wrench className={`w-4 h-4 ${isDark ? "text-slate-400" : "text-slate-600"}`} />
+            <Wrench className="w-4 h-4 text-sky-500" />
             <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
               {t.projects.toolsCardTitle}
             </Heading>
@@ -95,24 +91,20 @@ export function Projects({ isDark }: ProjectsProps) {
               <Card
                 key={group.category}
                 padding={5}
-                className={`rounded-xl border transition-all duration-200 flex flex-col justify-between ${
-                  isDark
-                    ? "border-slate-800 bg-slate-900/90 shadow-sm"
-                    : "border-slate-200 bg-white/95 shadow-sm"
+                className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
+                  isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
                 }`}
               >
                 <VStack gap={3} className="w-full">
                   <HStack gap={2} vAlign="center" className="w-full">
                     <span
-                      className={`p-1.5 rounded-md border flex items-center justify-center shrink-0 ${
-                        isDark
-                          ? "bg-slate-950 border-slate-800 text-slate-300"
-                          : "bg-slate-100 border-slate-200 text-slate-700"
+                      className={`p-2 rounded-lg flex items-center justify-center shrink-0 ${
+                        isDark ? "aero-icon-dark" : "aero-icon-light"
                       }`}
                     >
                       {categoryIcons[index % categoryIcons.length]}
                     </span>
-                    <Heading level={4} className={`text-sm font-bold tracking-tight ${isDark ? "text-slate-200" : "text-slate-800"}`}>
+                    <Heading level={4} className={`text-sm font-bold tracking-tight ${isDark ? "text-sky-300" : "text-sky-800"}`}>
                       {group.category}
                     </Heading>
                   </HStack>
@@ -122,10 +114,8 @@ export function Projects({ isDark }: ProjectsProps) {
                     {group.items.map((item) => (
                       <span
                         key={item}
-                        className={`text-xs px-2.5 py-1 rounded-md border font-mono font-medium ${
-                          isDark
-                            ? "bg-slate-950 border-slate-700 text-slate-200"
-                            : "bg-slate-50 border-slate-300 text-slate-800"
+                        className={`text-xs px-2.5 py-1 rounded-md font-mono font-medium ${
+                          isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
                         }`}
                       >
                         {item}
@@ -141,15 +131,13 @@ export function Projects({ isDark }: ProjectsProps) {
         {/* Private Repo Notice & Public GitHub Profile Link */}
         <Card
           padding={4}
-          className={`rounded-xl border w-full ${
-            isDark
-              ? "border-slate-800 bg-slate-900"
-              : "border-slate-200 bg-white shadow-sm"
+          className={`rounded-2xl border w-full aero-glass-card ${
+            isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
           }`}
         >
           <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-4">
             <HStack gap={2} vAlign="center" className="max-w-xl">
-              <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
+              <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
               <Text type="supporting" className={`text-xs leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
                 {t.projects.githubNotice}
               </Text>
@@ -162,10 +150,8 @@ export function Projects({ isDark }: ProjectsProps) {
               href={socials.github}
               target="_blank"
               rel="noreferrer"
-              className={`rounded-md text-xs font-semibold px-4 h-9 min-h-[36px] transition-colors border shadow-sm ${
-                isDark
-                  ? "border-slate-800 bg-slate-950 text-slate-200 hover:bg-slate-800 hover:text-white"
-                  : "border-slate-300 bg-white text-slate-800 hover:bg-slate-100"
+              className={`rounded-xl text-xs font-semibold px-4 h-9 min-h-[36px] transition-all duration-150 ${
+                isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
               }`}
             >
               <HStack gap={1.5} vAlign="center">

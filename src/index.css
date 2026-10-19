@@ -85,3 +85,182 @@
     background: rgba(148, 163, 184, 0.7);
   }
 }
+
+/* ==========================================================================
+   Frutiger Aero Design System & Glassmorphism Utilities
+   ========================================================================== */
+@layer components {
+  /* Ambient Sky & Water Atmospheres */
+  .aero-bg-light {
+    background-color: #f1f7fd;
+    background-image: 
+      radial-gradient(ellipse 65% 45% at 85% 8%, rgba(56, 189, 248, 0.22) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 55% at 10% 45%, rgba(52, 211, 153, 0.16) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 45% at 80% 85%, rgba(14, 165, 233, 0.18) 0%, transparent 65%),
+      linear-gradient(180deg, #f0f7fe 0%, #eaf4fd 50%, #f3faf8 100%);
+    background-attachment: fixed;
+  }
+
+  .aero-bg-dark {
+    background-color: #030712;
+    background-image: 
+      radial-gradient(ellipse 65% 45% at 85% 8%, rgba(14, 165, 233, 0.15) 0%, transparent 65%),
+      radial-gradient(ellipse 55% 55% at 10% 45%, rgba(16, 185, 129, 0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 45% at 80% 85%, rgba(2, 132, 199, 0.12) 0%, transparent 65%),
+      linear-gradient(180deg, #030712 0%, #091222 50%, #030712 100%);
+    background-attachment: fixed;
+  }
+
+  /* Aero Glass Card - Core Glassmorphism */
+  .aero-glass-card {
+    position: relative;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .aero-glass-card-light {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.58) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.7);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.95),
+      0 10px 25px -5px rgba(15, 23, 42, 0.06),
+      0 4px 6px -2px rgba(15, 23, 42, 0.02);
+  }
+
+  .aero-glass-card-light:hover {
+    border-color: rgba(56, 189, 248, 0.6);
+    border-top-color: rgba(255, 255, 255, 1);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 1),
+      0 16px 36px -4px rgba(14, 165, 233, 0.15),
+      0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  }
+
+  .aero-glass-card-dark {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.55) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1.5px solid rgba(255, 255, 255, 0.28);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+      0 12px 30px -4px rgba(0, 0, 0, 0.5),
+      0 4px 8px -2px rgba(0, 0, 0, 0.3);
+  }
+
+  .aero-glass-card-dark:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+    border-top-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.28),
+      0 16px 36px -4px rgba(2, 132, 199, 0.28),
+      0 4px 12px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Aero Glass Badges / Chips */
+  .aero-glass-badge-light {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.75) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.8);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 1px 2px rgba(0, 0, 0, 0.04);
+    color: #0f172a;
+  }
+
+  .aero-glass-badge-dark {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 1px 3px rgba(0, 0, 0, 0.4);
+    color: #e2e8f0;
+  }
+
+  /* Glossy Tactile Aero Primary Button */
+  .aero-btn-primary {
+    background: linear-gradient(180deg, #38bdf8 0%, #0284c7 50%, #0369a1 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(2, 132, 199, 0.9);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2),
+      0 4px 14px 0 rgba(2, 132, 199, 0.35);
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .aero-btn-primary:hover {
+    background: linear-gradient(180deg, #7dd3fc 0%, #0ea5e9 50%, #0284c7 100%);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.9),
+      0 6px 18px 0 rgba(14, 165, 233, 0.45);
+    transform: translateY(-1px);
+  }
+
+  .aero-btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(0, 0, 0, 0.3),
+      0 2px 6px 0 rgba(2, 132, 199, 0.3);
+  }
+
+  /* Frosted Glass Aero Secondary Button */
+  .aero-btn-secondary-light {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.75) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(203, 213, 225, 0.8);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+      0 2px 6px rgba(15, 23, 42, 0.05);
+    color: #0f172a;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .aero-btn-secondary-light:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(241, 245, 249, 0.9) 100%);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 1),
+      0 4px 12px rgba(14, 165, 233, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .aero-btn-secondary-dark {
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.75) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+      0 3px 8px rgba(0, 0, 0, 0.35);
+    color: #f8fafc;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .aero-btn-secondary-dark:hover {
+    background: linear-gradient(180deg, rgba(51, 65, 85, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.28),
+      0 6px 14px rgba(2, 132, 199, 0.25);
+    transform: translateY(-1px);
+  }
+
+  /* Aero Icon Holder */
+  .aero-icon-light {
+    background: linear-gradient(135deg, rgba(224, 242, 254, 0.9) 0%, rgba(186, 230, 253, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(186, 230, 253, 0.8);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9), 0 2px 4px rgba(14, 165, 233, 0.1);
+    color: #0284c7;
+  }
+
+  .aero-icon-dark {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(2, 132, 199, 0.1) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: #38bdf8;
+  }
+}

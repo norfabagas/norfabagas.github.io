@@ -66,7 +66,7 @@ export function Skills({ isDark }: SkillsProps) {
       id="keahlian"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
@@ -95,19 +95,15 @@ export function Skills({ isDark }: SkillsProps) {
             <Card
               key={domain.title}
               padding={5}
-              className={`rounded-xl border transition-all duration-200 flex flex-col justify-between ${
-                isDark
-                  ? "border-slate-800 bg-slate-950/80 shadow-sm"
-                  : "border-slate-200 bg-slate-50/80 shadow-sm"
+              className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
+                isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
               }`}
             >
               <VStack gap={3} className="w-full text-left">
                 <HStack gap={3} vAlign="center" className="w-full">
                   <span
-                    className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border ${
-                      isDark
-                        ? "bg-slate-900 border-slate-800 text-slate-100"
-                        : "bg-white border-slate-200 text-slate-900 shadow-sm"
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                      isDark ? "aero-icon-dark" : "aero-icon-light"
                     }`}
                   >
                     {domain.icon}
@@ -122,14 +118,12 @@ export function Skills({ isDark }: SkillsProps) {
                 </Text>
 
                 {/* Skill Chips */}
-                <HStack gap={1.5} vAlign="center" className="flex-wrap pt-3 border-t border-slate-200/60 dark:border-slate-800/60">
+                <HStack gap={1.5} vAlign="center" className="flex-wrap pt-3 border-t border-white/30 dark:border-white/10">
                   {domain.skills.map((skill) => (
                     <span
                       key={skill}
-                      className={`text-xs px-2.5 py-1 rounded-md border font-mono font-medium ${
-                        isDark
-                          ? "bg-slate-900 border-slate-700 text-slate-200"
-                          : "bg-white border-slate-300 text-slate-800 shadow-sm"
+                      className={`text-xs px-2.5 py-1 rounded-md font-mono font-medium ${
+                        isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
                       }`}
                     >
                       {skill}

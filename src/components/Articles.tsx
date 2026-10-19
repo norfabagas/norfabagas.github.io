@@ -15,7 +15,7 @@ export function Articles({ isDark }: ArticlesProps) {
       id="artikel"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
@@ -44,26 +44,22 @@ export function Articles({ isDark }: ArticlesProps) {
             <Card
               key={art.title}
               padding={5}
-              className={`rounded-xl border transition-all duration-200 flex flex-col justify-between text-left ${
-                isDark
-                  ? "border-slate-800 bg-slate-900 text-slate-100 shadow-sm hover:border-slate-700"
-                  : "border-slate-200 bg-white text-slate-900 shadow-sm hover:border-slate-300"
+              className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between text-left aero-glass-card ${
+                isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
               }`}
             >
               <VStack gap={3} className="w-full">
                 <HStack hAlign="between" vAlign="center" className="w-full">
                   <span
-                    className={`text-xs px-2.5 py-0.5 rounded-md font-semibold border ${
-                      isDark
-                        ? "bg-slate-950 border-slate-700 text-slate-200"
-                        : "bg-slate-100 border-slate-300 text-slate-800"
+                    className={`text-xs px-3 py-0.5 rounded-lg font-semibold ${
+                      isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
                     }`}
                   >
                     {art.category}
                   </span>
 
                   <HStack gap={1} vAlign="center" className={`text-xs font-semibold ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                    <Clock className="w-3.5 h-3.5" />
+                    <Clock className="w-3.5 h-3.5 text-sky-500" />
                     <span>{art.readTime}</span>
                   </HStack>
                 </HStack>
@@ -77,18 +73,18 @@ export function Articles({ isDark }: ArticlesProps) {
                 </Text>
               </VStack>
 
-              <VStack gap={0} className="pt-4 border-t border-slate-200/60 dark:border-slate-800/60 mt-4 w-full">
+              <VStack gap={0} className="pt-4 border-t border-white/30 dark:border-white/10 mt-4 w-full">
                 <a
                   href={art.url}
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex items-center gap-1.5 text-xs font-semibold py-1.5 transition-colors ${
-                    isDark ? "text-slate-200 hover:text-white" : "text-slate-800 hover:text-slate-950"
+                  className={`inline-flex items-center gap-1.5 text-xs font-semibold py-1.5 transition-colors group ${
+                    isDark ? "text-sky-300 hover:text-sky-200" : "text-sky-700 hover:text-sky-800"
                   }`}
                 >
-                  <BookOpen className="w-3.5 h-3.5" />
+                  <BookOpen className="w-3.5 h-3.5 text-sky-500" />
                   <span>{t.articles.readArticle}</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                 </a>
               </VStack>
             </Card>
@@ -101,10 +97,8 @@ export function Articles({ isDark }: ArticlesProps) {
             href={socials.medium}
             target="_blank"
             rel="noreferrer"
-            className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors px-5 py-2.5 rounded-md border ${
-              isDark
-                ? "border-slate-800 bg-slate-900 text-slate-200 hover:bg-slate-800 hover:text-white"
-                : "border-slate-200 bg-white text-slate-800 hover:bg-slate-100 hover:text-slate-950 shadow-sm"
+            className={`inline-flex items-center gap-2 text-sm font-semibold transition-all duration-150 px-6 py-2.5 rounded-xl ${
+              isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
             }`}
           >
             <span>{t.articles.visitMedium}</span>

@@ -15,7 +15,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
       id="kontak"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-white dark:bg-slate-900 transition-colors duration-300 border-b border-slate-200/80 dark:border-slate-800/80"
+      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
@@ -43,19 +43,15 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           {/* Card 1: Official Communication Channels */}
           <Card
             padding={6}
-            className={`rounded-xl border flex flex-col justify-between ${
-              isDark
-                ? "border-slate-800 bg-slate-950/80 shadow-sm"
-                : "border-slate-200 bg-slate-50/80 shadow-sm"
+            className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
+              isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
             }`}
           >
             <VStack gap={4} className="w-full">
               <HStack gap={3} vAlign="center" className="w-full">
                 <span
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border ${
-                    isDark
-                      ? "bg-slate-900 border-slate-800 text-slate-100"
-                      : "bg-white border-slate-200 text-slate-900 shadow-sm"
+                  className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
+                    isDark ? "aero-icon-dark" : "aero-icon-light"
                   }`}
                 >
                   <MessageSquare className="w-5 h-5" />
@@ -64,7 +60,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                     {t.support.connectSubtitle}
                   </Heading>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-sky-300" : "text-sky-700"}`}>
                     LinkedIn · GitHub · Stack Overflow
                   </Text>
                 </VStack>
@@ -83,7 +79,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-colors bg-slate-900 text-slate-50 dark:bg-slate-100 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-200 h-10 px-4 shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary h-10 px-4"
                 >
                   <HStack gap={2} vAlign="center">
                     <Linkedin className="w-4 h-4" />
@@ -97,10 +93,8 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     href={socials.github}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-semibold border transition-colors ${
-                      isDark
-                        ? "border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white"
-                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold border transition-all duration-150 ${
+                      isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                     }`}
                   >
                     <Github className="w-3.5 h-3.5" />
@@ -111,10 +105,8 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     href={socials.stackoverflow}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-semibold border transition-colors ${
-                      isDark
-                        ? "border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white"
-                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold border transition-all duration-150 ${
+                      isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                     }`}
                   >
                     <Terminal className="w-3.5 h-3.5" />
@@ -125,10 +117,8 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     href={socials.medium}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-semibold border transition-colors ${
-                      isDark
-                        ? "border-slate-800 bg-slate-900 text-slate-300 hover:bg-slate-800 hover:text-white"
-                        : "border-slate-200 bg-white text-slate-700 hover:bg-slate-100 shadow-sm"
+                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold border transition-all duration-150 ${
+                      isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                     }`}
                   >
                     <BookOpen className="w-3.5 h-3.5" />
@@ -142,19 +132,17 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           {/* Card 2: Buy Me a Coffee / Support */}
           <Card
             padding={6}
-            className={`rounded-xl border flex flex-col justify-between ${
-              isDark
-                ? "border-slate-800 bg-slate-950/80 shadow-sm"
-                : "border-slate-200 bg-slate-50/80 shadow-sm"
+            className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
+              isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
             }`}
           >
             <VStack gap={4} className="w-full">
               <HStack gap={3} vAlign="center" className="w-full">
                 <span
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 border ${
+                  className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border ${
                     isDark
-                      ? "bg-slate-900 border-slate-800 text-amber-400"
-                      : "bg-white border-slate-200 text-amber-600 shadow-sm"
+                      ? "bg-amber-400/15 border-amber-400/30 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.25)]"
+                      : "bg-amber-100/80 border-amber-300 text-amber-700 shadow-[0_0_12px_rgba(245,158,11,0.15)]"
                   }`}
                 >
                   <Coffee className="w-5 h-5" />
@@ -163,7 +151,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                     {t.support.coffeeTitle}
                   </Heading>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-400" : "text-slate-500"}`}>
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-amber-300" : "text-amber-700"}`}>
                     {t.support.coffeeSubtitle}
                   </Text>
                 </VStack>
@@ -186,7 +174,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.buymeacoffee}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-semibold transition-colors bg-amber-500 text-slate-950 hover:bg-amber-400 h-10 px-4 shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-bold bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600 text-slate-950 border border-white/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.7),0_4px_14px_rgba(245,158,11,0.35)] hover:from-amber-300 hover:to-amber-500 h-10 px-4 transition-all duration-150"
                 >
                   <HStack gap={2} vAlign="center">
                     <Coffee className="w-4 h-4" />
