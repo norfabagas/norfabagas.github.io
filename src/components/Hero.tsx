@@ -1,5 +1,5 @@
 import { Section, VStack, HStack, Heading, Text, Button } from "@astryxdesign/core";
-import { ArrowRight, Briefcase, Github, Linkedin, BookOpen, Coffee, MapPin } from "lucide-react";
+import { ArrowRight, Briefcase, Github, Linkedin, BookOpen, Coffee } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
@@ -30,34 +30,6 @@ export function Hero({ isDark }: HeroProps) {
       className="relative w-full min-h-[calc(100vh-4rem)] flex flex-col justify-center py-16 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
-        {/* Status indicator & location pill */}
-        <HStack gap={2} hAlign="center" vAlign="center" className="mb-6 flex-wrap justify-center">
-          <HStack
-            gap={2}
-            vAlign="center"
-            className={`px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md ${
-              isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
-            }`}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
-            </span>
-            <span>{t.hero.statusBadge}</span>
-          </HStack>
-
-          <HStack
-            gap={1.5}
-            vAlign="center"
-            className={`px-4 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md ${
-              isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
-            }`}
-          >
-            <MapPin className="w-3.5 h-3.5 text-sky-500" />
-            <span>{profile.location}</span>
-          </HStack>
-        </HStack>
-
         {/* Profile Avatar Frame with Frutiger Aero Glass Ring */}
         <VStack gap={0} hAlign="center" className="mb-6">
           <img

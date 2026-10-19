@@ -90,24 +90,14 @@
    Frutiger Aero Design System & Glassmorphism Utilities
    ========================================================================== */
 @layer components {
-  /* Ambient Sky & Water Atmospheres */
+  /* 2-Color Frutiger Aero Gradient Atmospheres */
   .aero-bg-light {
-    background-color: #f1f7fd;
-    background-image: 
-      radial-gradient(ellipse 65% 45% at 85% 8%, rgba(56, 189, 248, 0.22) 0%, transparent 65%),
-      radial-gradient(ellipse 55% 55% at 10% 45%, rgba(52, 211, 153, 0.16) 0%, transparent 65%),
-      radial-gradient(ellipse 60% 45% at 80% 85%, rgba(14, 165, 233, 0.18) 0%, transparent 65%),
-      linear-gradient(180deg, #f0f7fe 0%, #eaf4fd 50%, #f3faf8 100%);
+    background: linear-gradient(160deg, #bae6fd 0%, #dcfce7 100%);
     background-attachment: fixed;
   }
 
   .aero-bg-dark {
-    background-color: #030712;
-    background-image: 
-      radial-gradient(ellipse 65% 45% at 85% 8%, rgba(14, 165, 233, 0.15) 0%, transparent 65%),
-      radial-gradient(ellipse 55% 55% at 10% 45%, rgba(16, 185, 129, 0.10) 0%, transparent 65%),
-      radial-gradient(ellipse 60% 45% at 80% 85%, rgba(2, 132, 199, 0.12) 0%, transparent 65%),
-      linear-gradient(180deg, #030712 0%, #091222 50%, #030712 100%);
+    background: linear-gradient(160deg, #020617 0%, #0c4a6e 100%);
     background-attachment: fixed;
   }
 
