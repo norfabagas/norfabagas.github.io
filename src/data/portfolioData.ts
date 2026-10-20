@@ -745,13 +745,13 @@ export const UI_STRINGS = {
     nav: {
       home: "Beranda",
       experience: "Pengalaman",
-      projects: "Proyek & Riset",
+      projects: "Proyek",
       skills: "Keahlian",
-      articles: "Tulisan",
+      articles: "Artikel",
       support: "Kontak",
       toggleThemeDark: "Mode Gelap",
       toggleThemeLight: "Mode Terang",
-      toggleLang: "Switch to English (en-US)",
+      toggleLang: "English",
       langShort: "ID",
       openMenu: "Buka Menu",
       closeMenu: "Tutup Menu",
@@ -759,8 +759,8 @@ export const UI_STRINGS = {
     },
     hero: {
       statusBadge: "Terbuka untuk konsultasi & proyek backend",
-      ctaProjects: "Lihat Proyek & Riset",
-      ctaExperience: "Riwayat Pengalaman",
+      ctaProjects: "Lihat Proyek",
+      ctaExperience: "Pengalaman Kerja",
       ctaMedium: "Medium",
       ctaCoffee: "Traktir Kopi",
       ctaLinkedin: "LinkedIn"
@@ -811,24 +811,24 @@ export const UI_STRINGS = {
     nav: {
       home: "Home",
       experience: "Experience",
-      projects: "Projects & Research",
+      projects: "Projects",
       skills: "Skills",
       articles: "Articles",
       support: "Contact",
       toggleThemeDark: "Dark Mode",
       toggleThemeLight: "Light Mode",
-      toggleLang: "Ganti ke Bahasa Indonesia (id-ID)",
+      toggleLang: "Bahasa Indonesia",
       langShort: "EN",
       openMenu: "Open Menu",
       closeMenu: "Close Menu",
-      kopi: "Buy Coffee"
+      kopi: "Buy Me a Coffee"
     },
     hero: {
       statusBadge: "Available for backend engineering & consulting",
-      ctaProjects: "View Projects & Research",
+      ctaProjects: "View Projects",
       ctaExperience: "Work Experience",
       ctaMedium: "Medium",
-      ctaCoffee: "Buy Coffee",
+      ctaCoffee: "Buy Me a Coffee",
       ctaLinkedin: "LinkedIn"
     },
     experience: {

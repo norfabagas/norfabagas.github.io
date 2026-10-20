@@ -86,7 +86,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 {data.profile.name}
               </Heading>
               <span className={`text-[11px] font-mono leading-none ${isDark ? "text-sky-400" : "text-sky-600"}`}>
-                Software Engineer
+                Product Engineer
               </span>
             </VStack>
           </button>
@@ -206,7 +206,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary h-11 px-4"
               >
                 <Coffee className="w-4 h-4" />
-                <span>{locale === "id-ID" ? "Traktir Kopi di BuyMeACoffee" : "Support on BuyMeACoffee"}</span>
+                <span>{locale === "id-ID" ? "Traktir Kopi di BuyMeACoffee" : "Buy Me a Coffee"}</span>
               </a>
             </VStack>
           </VStack>
