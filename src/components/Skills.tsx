@@ -13,50 +13,50 @@ export function Skills({ isDark }: SkillsProps) {
     {
       title: "Backend & Layanan Terdistribusi",
       icon: <Server className="h-5 w-5" />,
-      description: "Merancang API modular, menangani permintaan konkuren, dan menyusun autentikasi serta logika bisnis backend.",
+      description: "Arsitektur REST API modular, orkestrasi microservices, autentikasi berbasis JWT, serta penanganan request konkuren tinggi dengan Go dan Ruby on Rails.",
       skills: ["Go (Golang)", "Ruby on Rails", "PHP & Laravel", "TypeScript / Node.js", "RESTful API", "Domain-Driven Design (DDD)", "Microservices Architecture", "JWT & Auth Security"]
     },
     {
       title: "Data Warehouse & Pipeline OLAP",
       icon: <Database className="h-5 w-5" />,
-      description: "Menyusun skema bintang (star schema) untuk data warehouse, membuat pipeline ETL, dan mengoptimalkan query analitik.",
+      description: "Pemodelan data warehouse skema bintang (fact & dimension tables), pipeline ekstraksi dan pembersihan ETL, serta penulisan query agregasi analitik pada SQL Server dan PostgreSQL.",
       skills: ["T-SQL OLAP DWH", "Star Schema (Fact & Dim)", "Pipeline ETL", "PostgreSQL", "MySQL", "Indexing & Query Tuning", "Data Aggregation", "Relational Modeling"]
     },
     {
       title: "Machine Learning Terapan",
       icon: <Brain className="h-5 w-5" />,
-      description: "Melatih model deep learning CNN untuk klasifikasi citra dan membangun REST API untuk inferensi model di server.",
+      description: "Pelatihan model arsitektur CNN pada dataset citra (FER2013), pembuatan backend REST API Flask untuk inferensi klasifikasi tiket gangguan, dan perancangan dialog NLP IBM Watson.",
       skills: ["Deep Learning CNN", "TensorFlow & Keras", "Python & Flask API", "FER2013 Dataset", "IBM Watson Assistant", "Natural Language Processing (NLP)", "Computer Vision", "Model Deployment"]
     },
     {
       title: "DevOps & Infrastruktur",
       icon: <Cpu className="h-5 w-5" />,
-      description: "Menulis pengujian otomatis (TDD), mengemas layanan dengan Docker, dan mengelola konfigurasi server Linux.",
+      description: "Kontainerisasi layanan multi-service dengan Docker, otomatisasi pengujian unit dan integrasi (TDD), konfigurasi server Linux VPS, dan implementasi CI/CD workflow.",
       skills: ["Docker & Containers", "Linux / Bash Scripting", "Test-Driven Development (TDD)", "Git & Version Control", "DigitalOcean / VPS", "API Hardening", "CI/CD Workflows", "Tailwind CSS"]
     }
   ] : [
     {
       title: "Backend & Distributed Services",
       icon: <Server className="h-5 w-5" />,
-      description: "Designing modular APIs, handling concurrent requests, and implementing authentication and backend business logic.",
+      description: "Modular REST APIs, microservice orchestration, JWT token authentication, and concurrent request handling built with Go and Ruby on Rails.",
       skills: ["Go (Golang)", "Ruby on Rails", "PHP & Laravel", "TypeScript / Node.js", "RESTful API", "Domain-Driven Design (DDD)", "Microservices Architecture", "JWT & Auth Security"]
     },
     {
       title: "Data Warehouse & OLAP Pipelines",
       icon: <Database className="h-5 w-5" />,
-      description: "Structuring star-schema data warehouses, building ETL pipelines, and optimizing analytical queries.",
+      description: "Star-schema dimensional modeling (facts and dimensions), scheduled ETL pipelines, and analytical aggregation query tuning on Microsoft SQL Server and PostgreSQL.",
       skills: ["T-SQL OLAP DWH", "Star Schema (Fact & Dim)", "ETL Pipelines", "PostgreSQL", "MySQL", "Indexing & Query Tuning", "Data Aggregation", "Relational Modeling"]
     },
     {
       title: "Applied Machine Learning",
       icon: <Brain className="h-5 w-5" />,
-      description: "Training deep learning CNN models for image classification and deploying REST APIs for model inference.",
+      description: "CNN computer vision training on image datasets (FER2013), Flask REST inference API deployment for issue classification, and IBM Watson conversational NLP dialogs.",
       skills: ["Deep Learning CNN", "TensorFlow & Keras", "Python & Flask API", "FER2013 Dataset", "IBM Watson Assistant", "Natural Language Processing (NLP)", "Computer Vision", "Model Deployment"]
     },
     {
       title: "DevOps & Infrastructure",
       icon: <Cpu className="h-5 w-5" />,
-      description: "Writing automated tests with TDD, containerizing services with Docker, and managing Linux server setups.",
+      description: "Multi-container Docker setups, automated unit and integration test suites (TDD), Linux VPS administration, and CI/CD workflow pipelines.",
       skills: ["Docker & Containers", "Linux / Bash Scripting", "Test-Driven Development (TDD)", "Git & Version Control", "DigitalOcean / VPS", "API Hardening", "CI/CD Workflows", "Tailwind CSS"]
     }
   ];
