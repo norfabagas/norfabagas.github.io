@@ -20,7 +20,7 @@ export function Hero({ isDark }: HeroProps) {
     }
   };
 
-  const coreTech = ["Go (Golang)", "Ruby on Rails", "Python", "T-SQL / OLAP", "PostgreSQL", "Docker"];
+  const focusAreas = ["Product Engineer", "IT Infrastructure"];
 
   return (
     <Section
@@ -73,16 +73,16 @@ export function Hero({ isDark }: HeroProps) {
           {profile.summary}
         </Text>
 
-        {/* Core Technology Chips */}
-        <HStack gap={1.5} hAlign="center" vAlign="center" className="mt-6 flex-wrap justify-center max-w-xl mx-auto">
-          {coreTech.map((tech) => (
+        {/* Focus Areas Chips */}
+        <HStack gap={2} hAlign="center" vAlign="center" className="mt-6 flex-wrap justify-center max-w-xl mx-auto">
+          {focusAreas.map((area) => (
             <span
-              key={tech}
-              className={`text-xs px-3 py-1 rounded-lg font-mono font-medium backdrop-blur-md ${
+              key={area}
+              className={`text-xs sm:text-sm px-4 py-1.5 rounded-xl font-medium tracking-wide backdrop-blur-md ${
                 isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
               }`}
             >
-              {tech}
+              {area}
             </span>
           ))}
         </HStack>
