@@ -27,7 +27,7 @@ export function Footer({ isDark }: FooterProps) {
     >
       <VStack gap={6} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Top Row: Brand & Back to Top */}
-        <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-4">
+        <HStack hAlign="between" vAlign="center" className="w-full flex-col sm:flex-row items-center sm:justify-between gap-4">
           <HStack gap={3} vAlign="center">
             <img
               src="/favicon.png"
@@ -46,16 +46,16 @@ export function Footer({ isDark }: FooterProps) {
             </VStack>
           </HStack>
 
-          <HStack gap={2} vAlign="center">
+          <HStack gap={2} vAlign="center" className="flex-wrap justify-center">
             <a
               href={socials.github}
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub Norfa Bagas"
-              className={`p-2 rounded-xl transition-all duration-150 ${
+              className={`p-2.5 rounded-xl border transition-all duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95 ${
                 isDark
-                  ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
-                  : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
+                  ? "aero-glass-badge-dark hover:border-white/30"
+                  : "aero-glass-badge-light hover:border-sky-300"
               }`}
             >
               <Github className="w-4 h-4" />
@@ -66,10 +66,10 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn Norfa Bagas"
-              className={`p-2 rounded-xl transition-all duration-150 ${
+              className={`p-2.5 rounded-xl border transition-all duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95 ${
                 isDark
-                  ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
-                  : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
+                  ? "aero-glass-badge-dark hover:border-white/30"
+                  : "aero-glass-badge-light hover:border-sky-300"
               }`}
             >
               <Linkedin className="w-4 h-4" />
@@ -80,10 +80,10 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Medium @bgsnorfa"
-              className={`p-2 rounded-xl transition-all duration-150 ${
+              className={`p-2.5 rounded-xl border transition-all duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95 ${
                 isDark
-                  ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
-                  : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
+                  ? "aero-glass-badge-dark hover:border-white/30"
+                  : "aero-glass-badge-light hover:border-sky-300"
               }`}
             >
               <BookOpen className="w-4 h-4" />
@@ -94,10 +94,10 @@ export function Footer({ isDark }: FooterProps) {
               target="_blank"
               rel="noreferrer"
               aria-label="Buy Me a Coffee @bgsnorfa"
-              className={`p-2 rounded-xl transition-all duration-150 ${
+              className={`p-2.5 rounded-xl border transition-all duration-150 min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95 ${
                 isDark
-                  ? "aero-glass-badge-dark text-amber-300 hover:border-white/30 hover:scale-105"
-                  : "aero-glass-badge-light text-amber-600 hover:border-amber-300 hover:scale-105"
+                  ? "aero-glass-badge-dark text-amber-300 hover:border-white/30"
+                  : "aero-glass-badge-light text-amber-700 hover:border-amber-300"
               }`}
             >
               <Coffee className="w-4 h-4" />
@@ -108,7 +108,7 @@ export function Footer({ isDark }: FooterProps) {
               variant="ghost"
               size="sm"
               onClick={scrollToTop}
-              className={`ml-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all duration-150 ${
+              className={`ml-1 px-3.5 py-2 rounded-xl text-xs font-semibold min-h-[44px] flex items-center gap-1.5 transition-all duration-150 active:scale-95 ${
                 isDark
                   ? "aero-glass-badge-dark hover:border-white/30"
                   : "aero-glass-badge-light hover:border-sky-300"
@@ -124,7 +124,7 @@ export function Footer({ isDark }: FooterProps) {
         <HStack
           hAlign="between"
           vAlign="center"
-          className="w-full flex-wrap gap-2 pt-6 border-t border-white/30 dark:border-white/10 text-xs text-slate-500 dark:text-slate-400"
+          className="w-full flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-2 pt-6 border-t border-white/30 dark:border-white/10 text-xs text-slate-500 dark:text-slate-400"
         >
           <span>{t.footer.tagline}</span>
           <span>{t.footer.credit}</span>

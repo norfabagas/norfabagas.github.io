@@ -22,11 +22,11 @@ export function Projects({ isDark }: ProjectsProps) {
       id="proyek"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
+      className="w-full flex flex-col justify-center py-10 sm:py-16 md:py-20 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
-        <VStack gap={2} hAlign="center" className="text-center mb-8 w-full">
+        <VStack gap={2} hAlign="center" className="text-center mb-6 sm:mb-8 w-full">
           <Heading
             level={2}
             className={`text-2xl sm:text-3xl font-bold tracking-tight ${
@@ -48,8 +48,8 @@ export function Projects({ isDark }: ProjectsProps) {
         {/* 1-Paragraph Project & Research Summary Card */}
         <Card
           variant="transparent"
-          padding={6}
-          className={`rounded-2xl border mb-8 w-full aero-glass-card ${
+          padding={4}
+          className={`rounded-2xl border mb-6 sm:mb-8 w-full aero-glass-card ${
             isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
           }`}
         >
@@ -87,12 +87,12 @@ export function Projects({ isDark }: ProjectsProps) {
             </Heading>
           </HStack>
 
-          <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
+          <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
             {techTools.map((group, index) => (
               <Card
                 variant="transparent"
                 key={group.category}
-                padding={5}
+                padding={4}
                 className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
                   isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
                 }`}
@@ -138,7 +138,7 @@ export function Projects({ isDark }: ProjectsProps) {
             isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
           }`}
         >
-          <HStack hAlign="between" vAlign="center" className="w-full flex-wrap gap-4">
+          <HStack hAlign="between" vAlign="center" className="w-full flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <HStack gap={2} vAlign="center" className="max-w-xl">
               <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
               <Text type="supporting" className={`text-xs leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
@@ -153,7 +153,7 @@ export function Projects({ isDark }: ProjectsProps) {
               href={socials.github}
               target="_blank"
               rel="noreferrer"
-              className={`rounded-xl text-xs font-semibold px-4 h-9 min-h-[36px] transition-all duration-150 ${
+              className={`w-full sm:w-auto inline-flex items-center justify-center rounded-xl text-xs sm:text-sm font-semibold px-4 min-h-[44px] active:scale-95 transition-all duration-150 ${
                 isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
               }`}
             >

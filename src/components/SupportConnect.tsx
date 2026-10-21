@@ -15,11 +15,11 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
       id="kontak"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
+      className="w-full flex flex-col justify-center py-10 sm:py-16 md:py-20 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
-        <VStack gap={2} hAlign="center" className="text-center mb-8 w-full">
+        <VStack gap={2} hAlign="center" className="text-center mb-6 sm:mb-8 w-full">
           <Heading
             level={2}
             className={`text-2xl sm:text-3xl font-bold tracking-tight ${
@@ -39,11 +39,11 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
         </VStack>
 
         {/* 2-Card Layout: Professional Channels + Coffee Support */}
-        <Grid columns={{ minWidth: 320, max: 2, repeat: "fit" }} gap={6} className="w-full">
+        <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
           {/* Card 1: Official Communication Channels */}
           <Card
             variant="transparent"
-            padding={6}
+            padding={4}
             className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
               isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
             }`}
@@ -84,7 +84,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary h-10 px-4"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary min-h-[44px] h-11 px-4 active:scale-95"
                 >
                   <HStack gap={2} vAlign="center">
                     <Linkedin className="w-4 h-4" />
@@ -93,12 +93,12 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   </HStack>
                 </Button>
 
-                <HStack gap={2} className="w-full">
+                <Grid columns={{ minWidth: 120, max: 3, repeat: "fit" }} gap={2} className="w-full">
                   <a
                     href={socials.github}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold border transition-all duration-150 ${
+                    className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold border min-h-[44px] transition-all duration-150 active:scale-95 ${
                       isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                     }`}
                   >
@@ -110,7 +110,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     href={socials.stackoverflow}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold border transition-all duration-150 ${
+                    className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold border min-h-[44px] transition-all duration-150 active:scale-95 ${
                       isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                     }`}
                   >
@@ -122,14 +122,14 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     href={socials.medium}
                     target="_blank"
                     rel="noreferrer"
-                    className={`flex-1 inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-semibold border transition-all duration-150 ${
+                    className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold border min-h-[44px] transition-all duration-150 active:scale-95 ${
                       isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                     }`}
                   >
                     <BookOpen className="w-3.5 h-3.5" />
                     <span>Medium</span>
                   </a>
-                </HStack>
+                </Grid>
               </VStack>
             </VStack>
           </Card>
@@ -137,7 +137,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           {/* Card 2: Buy Me a Coffee / Support */}
           <Card
             variant="transparent"
-            padding={6}
+            padding={4}
             className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
               isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
             }`}
@@ -178,7 +178,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.buymeacoffee}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary h-10 px-4"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary min-h-[44px] h-11 px-4 active:scale-95"
                 >
                   <HStack gap={2} vAlign="center">
                     <Coffee className="w-4 h-4" />
@@ -190,7 +190,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 <HStack
                   hAlign="center"
                   vAlign="center"
-                  className={`w-full py-2 px-3 rounded-xl border text-center transition-all duration-150 min-h-[34px] ${
+                  className={`w-full py-2.5 px-3 rounded-xl border text-center transition-all duration-150 min-h-[44px] ${
                     isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
                   }`}
                 >

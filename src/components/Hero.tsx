@@ -27,15 +27,15 @@ export function Hero({ isDark }: HeroProps) {
       id="beranda"
       variant="transparent"
       paddingBlock={0}
-      className="relative w-full min-h-[calc(100vh-4rem)] flex flex-col justify-center py-16 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
+      className="relative w-full flex flex-col justify-center py-10 sm:py-20 md:py-24 sm:min-h-[calc(100vh-4rem)] bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
         {/* Profile Avatar Frame with Frutiger Aero Glass Ring */}
-        <VStack gap={0} hAlign="center" className="mb-6">
+        <VStack gap={0} hAlign="center" className="mb-4 sm:mb-6">
           <img
             src={profile.avatar}
             alt={profile.name}
-            className={`w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 object-cover transition-all duration-300 hover:scale-105 ${
+            className={`w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 object-cover transition-all duration-300 hover:scale-105 ${
               isDark
                 ? "border-white/40 ring-4 ring-sky-500/30 shadow-[0_0_30px_rgba(14,165,233,0.45)]"
                 : "border-white ring-4 ring-sky-200/80 shadow-[0_0_30px_rgba(56,189,248,0.35)]"
@@ -47,7 +47,7 @@ export function Hero({ isDark }: HeroProps) {
         {/* Name & Title with solid high-contrast type */}
         <Heading
           level={1}
-          className={`text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight ${
+          className={`text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight ${
             isDark ? "text-slate-100" : "text-slate-900"
           }`}
         >
@@ -56,7 +56,7 @@ export function Hero({ isDark }: HeroProps) {
 
         <Text
           type="large"
-          className={`mt-2 text-lg sm:text-xl font-semibold ${
+          className={`mt-2 text-base sm:text-xl font-semibold ${
             isDark ? "text-sky-300" : "text-sky-700"
           }`}
         >
@@ -66,7 +66,7 @@ export function Hero({ isDark }: HeroProps) {
         {/* Concrete Summary */}
         <Text
           type="body"
-          className={`mt-4 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed ${
+          className={`mt-3 sm:mt-4 max-w-2xl mx-auto text-xs sm:text-base leading-relaxed ${
             isDark ? "text-slate-200" : "text-slate-700"
           }`}
         >
@@ -74,11 +74,11 @@ export function Hero({ isDark }: HeroProps) {
         </Text>
 
         {/* Focus Areas Chips */}
-        <HStack gap={2} hAlign="center" vAlign="center" className="mt-6 flex-wrap justify-center max-w-xl mx-auto">
+        <HStack gap={1.5} hAlign="center" vAlign="center" className="mt-5 sm:mt-6 flex-wrap justify-center max-w-xl mx-auto">
           {focusAreas.map((area) => (
             <span
               key={area}
-              className={`text-xs sm:text-sm px-4 py-1.5 rounded-xl font-medium tracking-wide backdrop-blur-md ${
+              className={`text-xs sm:text-sm px-3.5 py-1.5 rounded-xl font-medium tracking-wide backdrop-blur-md ${
                 isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
               }`}
             >
@@ -88,7 +88,7 @@ export function Hero({ isDark }: HeroProps) {
         </HStack>
 
         {/* Primary and Secondary CTA Buttons */}
-        <HStack gap={3} hAlign="center" vAlign="center" className="mt-8 flex-col sm:flex-row gap-3 w-full justify-center">
+        <HStack gap={3} hAlign="center" vAlign="center" className="mt-6 sm:mt-8 flex-col sm:flex-row gap-2.5 sm:gap-3 w-full justify-center">
           <Button
             label={t.hero.ctaProjects}
             variant="primary"
@@ -119,16 +119,16 @@ export function Hero({ isDark }: HeroProps) {
         </HStack>
 
         {/* Quick Social & Contact Links */}
-        <HStack gap={2} hAlign="center" vAlign="center" className="mt-8 justify-center">
+        <HStack gap={2} hAlign="center" vAlign="center" className="mt-6 sm:mt-8 justify-center">
           <a
             href={socials.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub @norfabagas"
-            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
               isDark
-                ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
-                : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
+                ? "aero-glass-badge-dark hover:border-white/30"
+                : "aero-glass-badge-light hover:border-sky-300"
             }`}
           >
             <Github className="w-4 h-4" />
@@ -139,10 +139,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn @norfabagas"
-            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
               isDark
-                ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
-                : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
+                ? "aero-glass-badge-dark hover:border-white/30"
+                : "aero-glass-badge-light hover:border-sky-300"
             }`}
           >
             <Linkedin className="w-4 h-4" />
@@ -153,10 +153,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="Medium @bgsnorfa"
-            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
               isDark
-                ? "aero-glass-badge-dark hover:border-white/30 hover:scale-105"
-                : "aero-glass-badge-light hover:border-sky-300 hover:scale-105"
+                ? "aero-glass-badge-dark hover:border-white/30"
+                : "aero-glass-badge-light hover:border-sky-300"
             }`}
           >
             <BookOpen className="w-4 h-4" />
@@ -167,10 +167,10 @@ export function Hero({ isDark }: HeroProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="Buy Me a Coffee @bgsnorfa"
-            className={`p-2.5 rounded-xl border transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[40px] min-w-[40px] flex items-center justify-center ${
+            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
               isDark
-                ? "aero-glass-badge-dark text-amber-300 hover:border-white/30 hover:scale-105"
-                : "aero-glass-badge-light text-amber-600 hover:border-amber-300 hover:scale-105"
+                ? "aero-glass-badge-dark text-amber-300 hover:border-white/30"
+                : "aero-glass-badge-light text-amber-700 hover:border-amber-300"
             }`}
           >
             <Coffee className="w-4 h-4" />

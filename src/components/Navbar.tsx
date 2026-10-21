@@ -66,26 +66,26 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       }`}
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <HStack hAlign="between" vAlign="center" className="h-16 w-full">
+        <HStack hAlign="between" vAlign="center" className="h-14 sm:h-16 w-full">
           {/* Logo Brand: avatar/initials badge */}
           <button
             type="button"
             onClick={(e) => handleNavClick(e, "beranda")}
-            className="flex-shrink-0 flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer group"
+            className="flex-shrink-0 flex items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer group min-h-[44px]"
             aria-label="Norfa Bagas Portfolio Home"
           >
             <img
               src="/favicon.png"
               alt={data.profile.name}
-              className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl object-cover border-2 shadow-sm transition-transform duration-200 group-hover:scale-105 ${
+              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl object-cover border-2 shadow-sm transition-transform duration-200 group-hover:scale-105 ${
                 isDark ? "border-sky-500/40 shadow-sky-950/50" : "border-white shadow-sky-100"
               }`}
             />
             <VStack gap={0} className="text-left">
-              <Heading level={3} className={`text-base sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+              <Heading level={3} className={`text-sm sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
                 {data.profile.name}
               </Heading>
-              <span className={`text-[11px] font-mono leading-none ${isDark ? "text-sky-400" : "text-sky-600"}`}>
+              <span className={`text-[10px] sm:text-[11px] font-mono leading-none ${isDark ? "text-sky-400" : "text-sky-600"}`}>
                 Product Engineer
               </span>
             </VStack>
@@ -98,7 +98,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 key={link.id}
                 type="button"
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`text-sm font-semibold transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer bg-transparent border py-1.5 px-3 rounded-lg ${
+                className={`text-sm font-semibold transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer bg-transparent border py-1.5 px-3 rounded-lg min-h-[40px] ${
                   isDark
                     ? "text-slate-300 border-transparent hover:text-white hover:bg-slate-800/60 hover:border-white/15"
                     : "text-slate-700 border-transparent hover:text-slate-950 hover:bg-white/80 hover:border-white/90 hover:shadow-sm"
@@ -110,14 +110,14 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
           </HStack>
 
           {/* Header Controls (Right side) */}
-          <HStack gap={2} vAlign="center">
+          <HStack gap={1.5} vAlign="center">
             {/* Language Switcher Button (en-US <-> id-ID) */}
             <Button
               label={t.nav.toggleLang}
               variant="ghost"
               size="sm"
               onClick={toggleLocale}
-              className={`px-2.5 py-1.5 rounded-lg border min-h-[36px] flex items-center gap-1 font-bold text-xs transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+              className={`px-3 py-2 rounded-xl border min-h-[44px] min-w-[44px] flex items-center justify-center gap-1 font-bold text-xs transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
                 isDark
                   ? "aero-glass-badge-dark hover:border-white/25"
                   : "aero-glass-badge-light hover:border-sky-300"
@@ -135,7 +135,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
-              className={`p-2 rounded-lg border min-h-[36px] min-w-[36px] flex items-center justify-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+              className={`p-2.5 rounded-xl border min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
                 isDark
                   ? "aero-glass-badge-dark hover:border-white/25"
                   : "aero-glass-badge-light hover:border-sky-300"
@@ -152,7 +152,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               href={data.socials.buymeacoffee}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-xl text-sm font-semibold aero-btn-primary h-9 px-4 py-2"
+              className="hidden sm:inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-xl text-sm font-semibold aero-btn-primary min-h-[40px] px-4 py-2"
             >
               <HStack gap={1.5} vAlign="center">
                 <Coffee className="w-3.5 h-3.5" />
@@ -166,7 +166,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`md:hidden p-2 rounded-lg border min-h-[36px] min-w-[36px] flex items-center justify-center transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+              className={`md:hidden p-2.5 rounded-xl border min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
                 isDark
                   ? "aero-glass-badge-dark hover:border-white/25"
                   : "aero-glass-badge-light hover:border-sky-300"
@@ -181,7 +181,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
         {isMobileMenuOpen && (
           <VStack
             gap={1}
-            className={`md:hidden p-3 my-2 rounded-2xl border aero-glass-card ${
+            className={`md:hidden p-3 my-2 rounded-2xl border aero-glass-card shadow-2xl ${
               isDark ? "aero-glass-card-dark text-slate-100" : "aero-glass-card-light text-slate-900"
             }`}
           >
@@ -190,7 +190,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 key={link.id}
                 type="button"
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`px-4 py-2.5 rounded-xl text-sm font-semibold flex items-center transition-colors min-h-[44px] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer w-full text-left bg-transparent border-0 ${
+                className={`px-4 py-3 rounded-xl text-sm font-semibold flex items-center transition-all min-h-[48px] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer w-full text-left bg-transparent border-0 ${
                   isDark ? "text-slate-200 hover:bg-slate-800/70" : "text-slate-800 hover:bg-white/80"
                 }`}
               >
@@ -203,7 +203,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 href={data.socials.buymeacoffee}
                 target="_blank"
                 rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary h-11 px-4"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary min-h-[44px] px-4"
               >
                 <Coffee className="w-4 h-4" />
                 <span>{locale === "id-ID" ? "Traktir Kopi di BuyMeACoffee" : "Buy Me a Coffee"}</span>

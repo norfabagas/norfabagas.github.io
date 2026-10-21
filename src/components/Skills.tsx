@@ -66,11 +66,11 @@ export function Skills({ isDark }: SkillsProps) {
       id="keahlian"
       variant="transparent"
       paddingBlock={0}
-      className="w-full min-h-screen flex flex-col justify-center py-20 sm:py-24 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
+      className="w-full flex flex-col justify-center py-10 sm:py-16 md:py-20 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Section Header */}
-        <VStack gap={2} hAlign="center" className="text-center mb-8 w-full">
+        <VStack gap={2} hAlign="center" className="text-center mb-6 sm:mb-8 w-full">
           <Heading
             level={2}
             className={`text-2xl sm:text-3xl font-bold tracking-tight ${
@@ -90,12 +90,12 @@ export function Skills({ isDark }: SkillsProps) {
         </VStack>
 
         {/* 2x2 Clean Technical Domains Grid */}
-        <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
+        <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
           {skillDomains.map((domain) => (
             <Card
               variant="transparent"
               key={domain.title}
-              padding={5}
+              padding={4}
               className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
                 isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
               }`}
