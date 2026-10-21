@@ -105,6 +105,7 @@ export function Experience({ isDark }: ExperienceProps) {
                 />
 
                 <Card
+                  variant="transparent"
                   padding={5}
                   className={`rounded-2xl border transition-all duration-200 w-full aero-glass-card ${
                     isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
@@ -160,6 +161,7 @@ export function Experience({ isDark }: ExperienceProps) {
           <Grid columns={{ minWidth: 300, max: 2, repeat: "fit" }} gap={4} className="w-full">
             {projectScopes.map((scope) => (
               <Card
+                variant="transparent"
                 key={scope.title}
                 padding={5}
                 className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${

@@ -47,6 +47,7 @@ export function Projects({ isDark }: ProjectsProps) {
 
         {/* 1-Paragraph Project & Research Summary Card */}
         <Card
+          variant="transparent"
           padding={6}
           className={`rounded-2xl border mb-8 w-full aero-glass-card ${
             isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
@@ -89,6 +90,7 @@ export function Projects({ isDark }: ProjectsProps) {
           <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
             {techTools.map((group, index) => (
               <Card
+                variant="transparent"
                 key={group.category}
                 padding={5}
                 className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
@@ -130,6 +132,7 @@ export function Projects({ isDark }: ProjectsProps) {
 
         {/* Private Repo Notice & Public GitHub Profile Link */}
         <Card
+          variant="transparent"
           padding={4}
           className={`rounded-2xl border w-full aero-glass-card ${
             isDark ? "aero-glass-card-dark" : "aero-glass-card-light"

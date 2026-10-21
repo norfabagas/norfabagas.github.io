@@ -102,15 +102,17 @@
   }
 
   /* Aero Glass Card - Core Glassmorphism */
-  .aero-glass-card {
+  .aero-glass-card,
+  .aero-glass-card:not(#\#):not(#\#):not(#\#) {
     position: relative;
+    background-color: transparent !important;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .aero-glass-card-light {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.58) 100%);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.58) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.85);
     border-top: 1.5px solid rgba(255, 255, 255, 0.95);
     border-bottom: 1px solid rgba(203, 213, 225, 0.7);
@@ -130,7 +132,7 @@
   }
 
   .aero-glass-card-dark {
-    background: linear-gradient(145deg, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.55) 100%);
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.52) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-top: 1.5px solid rgba(255, 255, 255, 0.28);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);

@@ -42,36 +42,41 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
         <Grid columns={{ minWidth: 320, max: 2, repeat: "fit" }} gap={6} className="w-full">
           {/* Card 1: Official Communication Channels */}
           <Card
+            variant="transparent"
             padding={6}
             className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
               isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
             }`}
           >
-            <VStack gap={4} className="w-full">
-              <HStack gap={3} vAlign="center" className="w-full">
-                <span
-                  className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${
-                    isDark ? "aero-icon-dark" : "aero-icon-light"
-                  }`}
-                >
-                  <MessageSquare className="w-5 h-5" />
-                </span>
-                <VStack gap={0.5}>
-                  <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                    {t.support.connectSubtitle}
-                  </Heading>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-sky-300" : "text-sky-700"}`}>
-                    LinkedIn · GitHub · Stack Overflow
-                  </Text>
-                </VStack>
-              </HStack>
+            <VStack gap={4} className="w-full h-full justify-between">
+              <VStack gap={3} className="w-full">
+                <HStack gap={3} vAlign="center" className="w-full">
+                  <HStack
+                    hAlign="center"
+                    vAlign="center"
+                    className={`w-11 h-11 rounded-xl shrink-0 ${
+                      isDark ? "aero-icon-dark" : "aero-icon-light"
+                    }`}
+                  >
+                    <MessageSquare className="w-5 h-5" />
+                  </HStack>
+                  <VStack gap={0.5}>
+                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                      {t.support.connectSubtitle}
+                    </Heading>
+                    <Text type="supporting" className={`text-xs ${isDark ? "text-sky-300" : "text-sky-700"}`}>
+                      LinkedIn · GitHub · Stack Overflow
+                    </Text>
+                  </VStack>
+                </HStack>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                {t.support.connectCardBody}
-              </Text>
+                <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
+                  {t.support.connectCardBody}
+                </Text>
+              </VStack>
 
               {/* Action Buttons */}
-              <VStack gap={3} className="pt-2 w-full">
+              <VStack gap={2} className="pt-2 w-full">
                 <Button
                   label="LinkedIn @norfabagas"
                   variant="primary"
@@ -131,42 +136,41 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
 
           {/* Card 2: Buy Me a Coffee / Support */}
           <Card
+            variant="transparent"
             padding={6}
             className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
               isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
             }`}
           >
-            <VStack gap={4} className="w-full">
-              <HStack gap={3} vAlign="center" className="w-full">
-                <span
-                  className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 border ${
-                    isDark
-                      ? "bg-amber-400/15 border-amber-400/30 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.25)]"
-                      : "bg-amber-100/80 border-amber-300 text-amber-700 shadow-[0_0_12px_rgba(245,158,11,0.15)]"
-                  }`}
-                >
-                  <Coffee className="w-5 h-5" />
-                </span>
-                <VStack gap={0.5}>
-                  <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                    {t.support.coffeeTitle}
-                  </Heading>
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-amber-300" : "text-amber-700"}`}>
-                    {t.support.coffeeSubtitle}
-                  </Text>
-                </VStack>
-              </HStack>
+            <VStack gap={4} className="w-full h-full justify-between">
+              <VStack gap={3} className="w-full">
+                <HStack gap={3} vAlign="center" className="w-full">
+                  <HStack
+                    hAlign="center"
+                    vAlign="center"
+                    className={`w-11 h-11 rounded-xl shrink-0 ${
+                      isDark ? "aero-icon-dark" : "aero-icon-light"
+                    }`}
+                  >
+                    <Coffee className="w-5 h-5" />
+                  </HStack>
+                  <VStack gap={0.5}>
+                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                      {t.support.coffeeTitle}
+                    </Heading>
+                    <Text type="supporting" className={`text-xs ${isDark ? "text-sky-300" : "text-sky-700"}`}>
+                      {t.support.coffeeSubtitle}
+                    </Text>
+                  </VStack>
+                </HStack>
 
-              <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                {t.support.coffeeBody}
-              </Text>
+                <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
+                  {t.support.coffeeBody}
+                </Text>
+              </VStack>
 
-              <Text type="supporting" className={`text-xs italic leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
-                {t.support.coffeeHeart}
-              </Text>
-
-              {/* Action Button */}
-              <VStack gap={0} className="pt-2 w-full mt-auto">
+              {/* Action Buttons */}
+              <VStack gap={2} className="pt-2 w-full">
                 <Button
                   label={t.support.coffeeButton}
                   variant="primary"
@@ -174,7 +178,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   href={socials.buymeacoffee}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-bold bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600 text-slate-950 border border-white/50 shadow-[inset_0_1px_1px_rgba(255,255,255,0.7),0_4px_14px_rgba(245,158,11,0.35)] hover:from-amber-300 hover:to-amber-500 h-10 px-4 transition-all duration-150"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary h-10 px-4"
                 >
                   <HStack gap={2} vAlign="center">
                     <Coffee className="w-4 h-4" />
@@ -182,6 +186,18 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     <ExternalLink className="w-3.5 h-3.5" />
                   </HStack>
                 </Button>
+
+                <HStack
+                  hAlign="center"
+                  vAlign="center"
+                  className={`w-full py-2 px-3 rounded-xl border text-center transition-all duration-150 min-h-[34px] ${
+                    isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
+                  }`}
+                >
+                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-300" : "text-slate-700"}`}>
+                    {t.support.coffeeHeart}
+                  </Text>
+                </HStack>
               </VStack>
             </VStack>
           </Card>

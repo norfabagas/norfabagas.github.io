@@ -42,6 +42,7 @@ export function Articles({ isDark }: ArticlesProps) {
         <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={4} className="w-full">
           {articles.map((art) => (
             <Card
+              variant="transparent"
               key={art.title}
               padding={5}
               className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between text-left aero-glass-card ${
