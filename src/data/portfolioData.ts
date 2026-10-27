@@ -87,10 +87,10 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
   "id-ID": {
     profile: {
       name: "Norfa Bagas",
-      title: "Software Engineer & IT Specialist",
+      title: "Software Engineer",
       tagline: "All of my experiments",
       summary:
-        "Software engineer dengan spesialisasi backend, data warehouse OLAP, dan sistem terdistribusi. Menangani modul transaksi perbankan di LPS, integrasi SIMRS rumah sakit di Eka Hospital, serta arsitektur API produksi berbasis Go dan Ruby on Rails.",
+        "Saya mengembangkan backend dan sistem data, termasuk aplikasi perbankan di LPS dan SIMRS di Eka Hospital.",
       location: "Indonesia",
       avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
       githubUsername: "norfabagas"
@@ -101,7 +101,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Enterprise Core & Financial Systems",
         area: "Core Services",
         description:
-          "Modul transaksi perbankan dan operasional penjaminan simpanan nasabah, dengan verifikasi integritas data, pencatatan audit trail menyeluruh, dan kontrol akses berjenjang.",
+          "Modul transaksi perbankan, audit trail, dan kontrol akses.",
         technologies: ["Go", "T-SQL", "Enterprise Security", "Microservices", "REST API"],
         deliverables: [
           "Modul pemrosesan transaksi perbankan",
@@ -113,7 +113,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Healthcare Systems & SIMRS",
         area: "Healthcare Information",
         description:
-          "Sistem Informasi Manajemen Rumah Sakit (SIMRS) untuk alur kerja rawat jalan, rawat inap, dan farmasi, terintegrasi dengan standar rekam medis elektronik serta API SatuSehat dan BPJS.",
+          "Modul SIMRS untuk rawat jalan, rawat inap, farmasi, dan integrasi layanan kesehatan.",
         technologies: ["PostgreSQL", "PHP", "Database Optimization", "System Integration"],
         deliverables: [
           "Integrasi alur kerja antar-departemen rumah sakit",
@@ -125,7 +125,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Data Warehouse & OLAP Pipelines",
         area: "Data Engineering",
         description:
-          "Data warehouse berbasis skema bintang (star schema) dan pipeline ETL terjadwal untuk mengonsolidasi serta menganalisis volume transaksi ritel dari berbagai cabang.",
+          "Data warehouse skema bintang dan ETL untuk analisis transaksi lintas cabang.",
         technologies: ["T-SQL", "OLAP Data Warehouse", "ETL Pipelines", "PostgreSQL"],
         deliverables: [
           "Skema bintang (fact table dan dimension tables)",
@@ -137,7 +137,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Microservices & Distributed APIs",
         area: "Backend Architecture",
         description:
-          "Layanan backend terdistribusi dan REST API modular berbasis Go dan Ruby on Rails, dikemas dengan Docker dan divalidasi melalui automated unit testing.",
+          "REST API dengan Go dan Ruby on Rails, Docker, dan pengujian otomatis.",
         technologies: ["Go", "Ruby on Rails", "TypeScript", "Node.js", "Docker", "TDD"],
         deliverables: [
           "Service otentikasi JWT terpusat",
@@ -149,7 +149,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Applied Machine Learning & AI Integration",
         area: "Applied AI",
         description:
-          "Implementasi model deep learning CNN untuk klasifikasi ekspresi wajah pada FER2013, layanan REST API Flask untuk kategorisasi gangguan jaringan otomatis, dan integrasi dialog NLP IBM Watson.",
+          "Eksperimen CNN pada FER2013, API klasifikasi gangguan jaringan, dan chatbot IBM Watson.",
         technologies: ["Python", "TensorFlow", "Keras", "Flask", "IBM Watson"],
         deliverables: [
           "Model CNN deteksi ekspresi wajah pada dataset FER2013",
@@ -391,7 +391,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       }
     ],
     projectResearchSummary:
-      "Pekerjaan rekayasa saya berakar pada backend dan pengolahan data. Di Lembaga Penjamin Simpanan (LPS), saya membangun modul transaksi perbankan dan audit trail. Di Eka Hospital, saya mengembangkan modul SIMRS yang menghubungkan alur rekam medis elektronik dengan BPJS dan SATUSEHAT. Di bidang analitik, saya merancang data warehouse OLAP skema bintang untuk konsolidasi transaksi multi-cabang. Di ranah riset, saya melatih model CNN untuk deteksi ekspresi wajah (FER2013), membangun REST API klasifikasi gangguan jaringan dengan Keras, serta mengintegrasikan NLP interaktif IBM Watson Assistant.",
+      "Pekerjaan saya mencakup backend perbankan dan SIMRS, data warehouse OLAP, serta eksperimen machine learning dan chatbot.",
     techTools: [
       {
         category: "Bahasa Pemrograman",
@@ -414,10 +414,10 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
   "en-US": {
     profile: {
       name: "Norfa Bagas",
-      title: "Software Engineer & IT Specialist",
+      title: "Software Engineer",
       tagline: "All of my experiments",
       summary:
-        "Software engineer specializing in backend architecture, OLAP data warehouses, and distributed systems. Built banking transaction modules at LPS, hospital clinical integrations at Eka Hospital, and production APIs in Go and Ruby on Rails.",
+        "I build backend and data systems, including banking applications at LPS and hospital systems at Eka Hospital.",
       location: "Indonesia",
       avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
       githubUsername: "norfabagas"
@@ -428,7 +428,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Enterprise Core & Financial Systems",
         area: "Core Services",
         description:
-          "Core banking transaction processing and deposit insurance modules, with immutable audit trail logging, data validation, and tiered role-based access controls.",
+          "Banking transaction modules, audit logs, and access controls.",
         technologies: ["Go", "T-SQL", "Enterprise Security", "Microservices", "REST API"],
         deliverables: [
           "Banking transaction processing module",
@@ -440,7 +440,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Healthcare Systems & SIMRS",
         area: "Healthcare Information",
         description:
-          "Hospital management (SIMRS) modules handling inpatient, outpatient, and pharmacy workflows, integrated with electronic medical records and national SatuSehat/BPJS services.",
+          "SIMRS modules for clinical workflows, pharmacy, and healthcare integrations.",
         technologies: ["PostgreSQL", "PHP", "Database Optimization", "System Integration"],
         deliverables: [
           "Workflow integration across hospital departments",
@@ -452,7 +452,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Data Warehouse & OLAP Pipelines",
         area: "Data Engineering",
         description:
-          "Star-schema data warehouse modeling and scheduled ETL pipelines consolidating high-volume retail transactions across branches into analytical datamarts.",
+          "Star-schema data warehouse and ETL for multi-branch transaction analysis.",
         technologies: ["T-SQL", "OLAP Data Warehouse", "ETL Pipelines", "PostgreSQL"],
         deliverables: [
           "Star schema design (fact and dimension tables)",
@@ -464,7 +464,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Microservices & Distributed APIs",
         area: "Backend Architecture",
         description:
-          "Distributed backend services and modular REST APIs built with Go and Ruby on Rails, containerized with Docker and verified through automated test suites.",
+          "REST APIs in Go and Ruby on Rails, with Docker and automated tests.",
         technologies: ["Go", "Ruby on Rails", "TypeScript", "Node.js", "Docker", "TDD"],
         deliverables: [
           "Centralized JWT authentication service",
@@ -476,7 +476,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Applied Machine Learning & AI Integration",
         area: "Applied AI",
         description:
-          "Deep learning CNN models trained for facial emotion recognition (FER2013), Flask REST inference APIs for network issue ticketing, and conversational NLP via IBM Watson Assistant.",
+          "CNN experiments on FER2013, a network issue classification API, and an IBM Watson chatbot.",
         technologies: ["Python", "TensorFlow", "Keras", "Flask", "IBM Watson"],
         deliverables: [
           "CNN model for facial expression detection on FER2013",
@@ -718,7 +718,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       }
     ],
     projectResearchSummary:
-      "My core work spans backend systems and data engineering. At LPS (Indonesia Deposit Insurance Corporation), I built banking transaction modules and audit logging services. At Eka Hospital, I developed hospital management (SIMRS) systems linking electronic medical records with national BPJS and SATUSEHAT services. On data architecture, I designed star-schema OLAP data warehouses for multi-branch retail analytics. On research, I trained deep learning CNN models on FER2013, deployed network issue classification APIs with Keras, and integrated conversational NLP with IBM Watson Assistant.",
+      "My work covers banking backends, hospital systems, OLAP data warehouses, and ML experiments.",
     techTools: [
       {
         category: "Programming Languages",
@@ -758,7 +758,7 @@ export const UI_STRINGS = {
       kopi: "Traktir Kopi"
     },
     hero: {
-      statusBadge: "Terbuka untuk konsultasi & proyek backend",
+      statusBadge: "Backend & data systems",
       ctaProjects: "Lihat Proyek",
       ctaExperience: "Pengalaman Kerja",
       ctaMedium: "Medium",
@@ -767,44 +767,44 @@ export const UI_STRINGS = {
     },
     experience: {
       title: "Pengalaman Kerja",
-      subtitle: "Rekam jejak teknis di sektor perbankan, sistem informasi rumah sakit, dan produk digital.",
+      subtitle: "Perbankan, kesehatan, dan pengembangan aplikasi.",
       timelineTitle: "Riwayat Karier",
       scopeTitle: "Cakupan Sistem",
-      keyDeliverablesLabel: "Kontribusi Utama:"
+      keyDeliverablesLabel: "Kontribusi:"
     },
     projects: {
       title: "Proyek & Riset",
-      subtitle: "Sistem produksi, pipeline data analitik, dan eksperimen machine learning terapan.",
-      summaryCardTitle: "Ringkasan Proyek & Riset",
-      toolsCardTitle: "Teknologi & Lingkungan Kerja",
-      githubNotice: "Kode untuk sistem perbankan dan klien institusional disimpan di repositori privat. Eksplorasi teknis dan modul open source publik dapat dilihat di GitHub.",
+      subtitle: "Repositori publik dan eksperimen teknis.",
+      summaryCardTitle: "Ringkasan",
+      toolsCardTitle: "Teknologi",
+      githubNotice: "Kode pekerjaan institusional tidak dipublikasikan.",
       viewGithubProfile: "Lihat GitHub @norfabagas"
     },
     skills: {
       title: "Keahlian & Domain",
-      subtitle: "Peralatan dan domain teknis yang saya gunakan untuk membangun sistem backend skala produksi."
+      subtitle: "Bahasa, framework, dan tools yang saya gunakan."
     },
     articles: {
       title: "Tulisan Teknis",
-      subtitle: "Catatan implementasi rekayasa perangkat lunak, setup environment, dan analisis algoritma di Medium @bgsnorfa.",
+      subtitle: "Tulisan tentang pengembangan perangkat lunak.",
       visitMedium: "Buka Medium @bgsnorfa",
       readArticle: "Baca Tulisan"
     },
     support: {
-      coffeeTitle: "Apresiasi & Kopi",
+      coffeeTitle: "Dukungan",
       coffeeSubtitle: "Buy Me a Coffee · @bgsnorfa",
-      coffeeBody: "Jika artikel di Medium atau repositori publik saya membantu pekerjaan atau proyek Anda, secangkir kopi adalah bentuk apresiasi yang sangat saya hargai.",
-      coffeeHeart: "Setiap kopi menjadi penyemangat untuk terus mendokumentasikan riset teknis dan merilis modul open source.",
+      coffeeBody: "Dukung tulisan dan proyek open source saya melalui Buy Me a Coffee.",
+      coffeeHeart: "Terima kasih atas dukungannya.",
       coffeeButton: "Traktir Kopi di BuyMeACoffee",
       connectTitle: "Kontak Langsung",
-      connectSubtitle: "Saluran Komunikasi",
-      connectHeaderDesc: "Kirim pesan untuk kebutuhan konsultasi sistem backend, review arsitektur, atau sekadar berbagi pengalaman teknis.",
-      connectCardBody: "Paling responsif melalui LinkedIn untuk komunikasi profesional. Pertanyaan teknis atau diskusi seputar kode juga bisa disampaikan melalui GitHub."
+      connectSubtitle: "LinkedIn & GitHub",
+      connectHeaderDesc: "Hubungi saya melalui LinkedIn atau GitHub.",
+      connectCardBody: "LinkedIn untuk kerja sama; GitHub untuk diskusi kode."
     },
     footer: {
-      tagline: "Software Engineer & IT Specialist · Rekayasa backend, data warehouse, dan machine learning terapan.",
+      tagline: "Software Engineer · Rekayasa backend, data warehouse, dan machine learning terapan.",
       backToTop: "Kembali ke Atas",
-      credit: "Dibangun dengan Astryx Design System dan Tailwind CSS."
+      credit: "Astryx & Tailwind CSS"
     }
   },
   "en-US": {
@@ -824,7 +824,7 @@ export const UI_STRINGS = {
       kopi: "Buy Me a Coffee"
     },
     hero: {
-      statusBadge: "Available for backend engineering & consulting",
+      statusBadge: "Backend & data systems",
       ctaProjects: "View Projects",
       ctaExperience: "Work Experience",
       ctaMedium: "Medium",
@@ -833,44 +833,44 @@ export const UI_STRINGS = {
     },
     experience: {
       title: "Work Experience",
-      subtitle: "Engineering track record across banking, hospital information systems, and startup products.",
+      subtitle: "Banking, healthcare, and web applications.",
       timelineTitle: "Career Timeline",
       scopeTitle: "System Scope",
-      keyDeliverablesLabel: "Key Deliverables:"
+      keyDeliverablesLabel: "Contributions:"
     },
     projects: {
       title: "Projects & Research",
-      subtitle: "Production systems, analytical data pipelines, and applied machine learning work.",
-      summaryCardTitle: "Projects & Research Summary",
-      toolsCardTitle: "Tech Stack & Environments",
-      githubNotice: "Banking and enterprise codebases live in private repositories. Public experiments and open-source modules are available on GitHub.",
+      subtitle: "Public repositories and technical experiments.",
+      summaryCardTitle: "Overview",
+      toolsCardTitle: "Technologies",
+      githubNotice: "Institutional code is not public.",
       viewGithubProfile: "View GitHub @norfabagas"
     },
     skills: {
       title: "Technical Domains",
-      subtitle: "Tools and engineering domains I work with across production backend systems."
+      subtitle: "Languages, frameworks, and tools I use."
     },
     articles: {
       title: "Technical Articles",
-      subtitle: "Notes on software engineering implementations, environment setups, and algorithm analysis on Medium @bgsnorfa.",
+      subtitle: "Notes on software development.",
       visitMedium: "Open Medium @bgsnorfa",
       readArticle: "Read Article"
     },
     support: {
-      coffeeTitle: "Coffee Support",
+      coffeeTitle: "Support",
       coffeeSubtitle: "Buy Me a Coffee · @bgsnorfa",
-      coffeeBody: "If my technical articles on Medium or public repositories helped you solve a problem, a virtual coffee is always appreciated.",
-      coffeeHeart: "Every coffee fuels more time spent documenting engineering experiments and writing open-source modules.",
+      coffeeBody: "Support my writing and open-source projects on Buy Me a Coffee.",
+      coffeeHeart: "Thanks for your support.",
       coffeeButton: "Buy a Coffee on BuyMeACoffee",
       connectTitle: "Get in Touch",
-      connectSubtitle: "Direct Channels",
-      connectHeaderDesc: "Reach out for backend architecture consulting, code reviews, or technical discussions.",
-      connectCardBody: "I am most responsive on LinkedIn for professional inquiries. For code-specific topics or bug reports, feel free to open a discussion on GitHub."
+      connectSubtitle: "LinkedIn & GitHub",
+      connectHeaderDesc: "Find me on LinkedIn or GitHub.",
+      connectCardBody: "LinkedIn for work inquiries; GitHub for code discussions."
     },
     footer: {
-      tagline: "Software Engineer & IT Specialist · Backend architecture, data warehouses, and applied machine learning.",
+      tagline: "Software Engineer · Backend architecture, data warehouses, and applied machine learning.",
       backToTop: "Back to Top",
-      credit: "Built with Astryx Design System and Tailwind CSS."
+      credit: "Astryx & Tailwind CSS"
     }
   }
 };
