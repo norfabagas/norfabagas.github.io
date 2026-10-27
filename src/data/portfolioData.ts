@@ -161,29 +161,29 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
     skills: [
       {
         category: "Backend & Systems",
-        description: "Pengembangan API, microservices, dan sistem berbasis konkurensi",
+        description: "Backend API dan microservices",
         items: ["Go (Golang)", "Ruby on Rails", "PHP (Laravel)", "TypeScript", "Node.js", "Python"]
       },
       {
         category: "Data & OLAP",
-        description: "Desain skema bintang data warehouse, pipeline ETL, dan penulisan query analitik",
+        description: "Data warehouse, ETL, dan query analitik",
         items: ["T-SQL (OLAP DW)", "PostgreSQL", "MySQL", "MongoDB", "Apache Spark", "Firebase"]
       },
       {
         category: "AI & Machine Learning",
-        description: "Pelatihan model CNN pengenal citra dan pembuatan API inferensi",
+        description: "CNN dan API inferensi",
         items: ["TensorFlow", "Keras (CNN)", "FER2013 Facial Recognition", "IBM Watson Assistant", "Data Augmentation"]
       },
       {
         category: "DevOps & Tooling",
-        description: "Kontainerisasi Docker, automasi testing TDD, dan manajemen server Linux",
+        description: "Docker, testing, dan Linux",
         items: ["Docker", "Linux / Bash", "DigitalOcean", "Git", "TDD & Jest", "Tailwind CSS"]
       }
     ],
     repositories: [
       {
         name: "learn-olap-dwh",
-        description: "Implementasi sistem OLAP Data Warehouse untuk transaksi Point of Sale (POS) dengan skema bintang dan analitik dimensi data.",
+        description: "Data warehouse OLAP untuk transaksi POS dengan star schema.",
         language: "TSQL",
         stars: 1,
         url: "https://github.com/norfabagas/learn-olap-dwh",
@@ -192,7 +192,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "cnn-fer-architecture",
-        description: "Eksperimen arsitektur Convolutional Neural Network (CNN) untuk Facial Expression Recognition menggunakan dataset FER2013.",
+        description: "Eksperimen CNN untuk klasifikasi ekspresi wajah pada FER2013.",
         language: "Python",
         stars: 1,
         url: "https://github.com/norfabagas/cnn-fer-architecture",
@@ -201,7 +201,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "inet-trouble-ml-api",
-        description: "Service API klasifikasi otomatis keluhan gangguan jaringan internet berbasis framework Flask dan model deep learning Keras.",
+        description: "API Flask dan Keras untuk klasifikasi gangguan jaringan.",
         language: "Python",
         stars: 1,
         url: "https://github.com/norfabagas/inet-trouble-ml-api",
@@ -210,7 +210,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "rock-paper-scissors-watson-assistant",
-        description: "Integrasi sistem chatbot cerdas untuk permainan interaktif batu-gunting-kertas memanfaatkan layanan IBM Watson Assistant.",
+        description: "Permainan batu-gunting-kertas dengan IBM Watson Assistant.",
         language: "AI / Cloud",
         stars: 1,
         url: "https://github.com/norfabagas/rock-paper-scissors-watson-assistant",
@@ -219,7 +219,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "url-shortener-api",
-        description: "API pemendek URL berkecepatan tinggi yang dibangun menggunakan Ruby on Rails dengan pencatatan metrik pengalihan.",
+        description: "API pemendek URL dengan Ruby on Rails dan metrik redirect.",
         language: "Ruby",
         stars: 1,
         url: "https://github.com/norfabagas/url-shortener-api",
@@ -228,7 +228,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "auth-global",
-        description: "Layanan otentikasi terpusat berbasis Golang yang dirancang untuk mendukung ekosistem aplikasi multitenant.",
+        description: "Layanan autentikasi terpusat dengan Go.",
         language: "Go",
         stars: 1,
         url: "https://github.com/norfabagas/auth-global",
@@ -237,7 +237,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "watson-coffee-api",
-        description: "Backend service pemesanan kopi otomatis yang terhubung dengan dialog interaktif IBM Watson Assistant.",
+        description: "API pemesanan kopi terhubung ke IBM Watson Assistant.",
         language: "Ruby",
         stars: 1,
         url: "https://github.com/norfabagas/watson-coffee-api",
@@ -246,7 +246,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "inventory-management",
-        description: "Sistem inventaris terstruktur untuk monitoring stok, pergudangan, dan alur pergerakan logistik barang.",
+        description: "Pengelolaan stok dan pergerakan barang.",
         language: "PHP",
         stars: 1,
         url: "https://github.com/norfabagas/inventory-management",
@@ -255,7 +255,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "learn-datawarehouse",
-        description: "Kumpulan kode eksplorasi konsep arsitektur dan ekstraksi data untuk implementasi data warehouse modern.",
+        description: "Eksperimen ekstraksi data dan data warehouse.",
         language: "Ruby",
         stars: 1,
         url: "https://github.com/norfabagas/learn-datawarehouse",
@@ -264,7 +264,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "benchmark-oop-fp-node",
-        description: "Eksperimen komparasi pemakaian memori dan alokasi resource CPU antara paradigma Object-Oriented (OOP) dan Functional (FP) pada Node.js.",
+        description: "Benchmark penggunaan CPU dan memori: OOP vs FP di Node.js.",
         language: "JavaScript",
         stars: 0,
         url: "https://github.com/norfabagas/benchmark-oop-fp-node",
@@ -273,7 +273,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "go-drone-cli",
-        description: "Aplikasi simulasi navigasi pergerakan drone berbasis antarmuka baris perintah (CLI) yang ditulis dalam bahasa pemrograman Go.",
+        description: "Simulasi navigasi drone berbasis CLI dengan Go.",
         language: "Go",
         stars: 0,
         url: "https://github.com/norfabagas/go-drone-cli",
@@ -282,7 +282,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "norfabagas-betest",
-        description: "Implementasi backend microservice untuk user authentication dengan standar arsitektur RESTful API yang bersih.",
+        description: "Microservice autentikasi pengguna dengan TypeScript.",
         language: "TypeScript",
         stars: 0,
         url: "https://github.com/norfabagas/norfabagas-betest",
@@ -291,7 +291,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "learn-express-tdd",
-        description: "Praktek penerapan Test-Driven Development (TDD) pada pembangunan REST API dengan framework Express dan TypeScript.",
+        description: "Latihan TDD untuk REST API Express dan TypeScript.",
         language: "TypeScript",
         stars: 0,
         url: "https://github.com/norfabagas/learn-express-tdd",
@@ -300,7 +300,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "learn-go-design-patterns",
-        description: "Studi komprehensif implementasi pola desain perangkat lunak (GoF Design Patterns) menggunakan bahasa Go.",
+        description: "Contoh design pattern GoF dalam Go.",
         language: "Go",
         stars: 0,
         url: "https://github.com/norfabagas/learn-go-design-patterns",
@@ -309,7 +309,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "naive-bayes-ranking",
-        description: "Penerapan algoritma klasifikasi probabilistik Naive Bayes untuk penentuan peringkat otomatis pada hasil evaluasi data.",
+        description: "Pemeringkatan data menggunakan Naive Bayes.",
         language: "PHP",
         stars: 0,
         url: "https://github.com/norfabagas/naive-bayes-ranking",
@@ -318,7 +318,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "netracer-app",
-        description: "Aplikasi Android native menggunakan Kotlin untuk melakukan pelacakan rute koneksi dan diagnostik kestabilan jaringan.",
+        description: "Aplikasi Android Kotlin untuk traceroute jaringan.",
         language: "Kotlin",
         stars: 0,
         url: "https://github.com/norfabagas/netracer-app",
@@ -332,7 +332,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Lembaga Penjamin Simpanan (LPS)",
         period: "Pengalaman Profesional",
         description:
-          "Membangun modul backend transaksi perbankan dan pencatatan audit trail pada sistem penjaminan simpanan nasional, menjaga konsistensi data transaksi dan keamanan akses bertingkat.",
+          "Mengembangkan modul transaksi perbankan dan audit trail.",
         skills: ["Go", "T-SQL", "Sistem Perbankan", "Audit Trail", "REST API"]
       },
       {
@@ -340,7 +340,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Eka Hospital",
         period: "Pengalaman Profesional",
         description:
-          "Mengembangkan modul SIMRS untuk operasional rekam medis elektronik rawat jalan, rawat inap, dan farmasi, menghubungkan sinkronisasi data antar-instalasi medis dan interoperabilitas API kesehatan.",
+          "Mengembangkan modul SIMRS dan integrasi rekam medis.",
         skills: ["PHP", "PostgreSQL", "SIMRS", "Integrasi Sistem", "Database Tuning"]
       },
       {
@@ -348,7 +348,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Stealth Startup",
         period: "Pengalaman Profesional",
         description:
-          "Membangun API modular dan layanan backend dengan Ruby on Rails dan TypeScript, menerapkan pengujian otomatis (TDD), serta mengoptimalkan query database untuk aplikasi web.",
+          "Membangun API dengan Ruby on Rails dan TypeScript serta pengujian otomatis.",
         skills: ["Ruby on Rails", "TypeScript", "REST API", "Docker", "TDD"]
       },
       {
@@ -356,7 +356,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "BRCODE",
         period: "Pengalaman Profesional",
         description:
-          "Memberikan konsultasi arsitektur software, evaluasi infrastruktur server, dan panduan teknis implementasi best practices backend bagi tim pengembang.",
+          "Konsultasi arsitektur aplikasi dan infrastruktur server.",
         skills: ["Konsultasi IT", "Arsitektur Software", "Evaluasi Infrastruktur", "Mentoring"]
       }
     ],
@@ -366,28 +366,28 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         url: "https://medium.com/@bgsnorfa",
         category: "DevOps & Tooling",
         readTime: "5 min baca",
-        snippet: "Langkah mengisolasi dependensi aplikasi dan menyusun konfigurasi docker-compose multi-container untuk lingkungan development yang konsisten."
+        snippet: "Docker Compose untuk menjalankan beberapa container."
       },
       {
         title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
         url: "https://medium.com/@bgsnorfa",
         category: "Development Setup",
         readTime: "6 min baca",
-        snippet: "Setup environment development Ruby on Rails di Windows melalui WSL2 tanpa hambatan kompatibilitas gem native."
+        snippet: "Setup Ruby on Rails di Windows dengan WSL2."
       },
       {
         title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
         url: "https://medium.com/@bgsnorfa",
         category: "Computer Science",
         readTime: "7 min baca",
-        snippet: "Perbandingan efisiensi Big-O waktu dan memori pada algoritma sorting standar terhadap karakteristik dataset yang berbeda."
+        snippet: "Perbandingan kompleksitas waktu dan memori algoritma sorting."
       },
       {
         title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
         url: "https://medium.com/@bgsnorfa",
         category: "Artificial Intelligence",
         readTime: "4 min baca",
-        snippet: "Struktur perancangan dialog percakapan melalui definisi intent, entity recognition, dan percabangan dialog tree di IBM Watson Assistant."
+        snippet: "Membuat alur percakapan di IBM Watson Assistant."
       }
     ],
     projectResearchSummary:
@@ -488,29 +488,29 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
     skills: [
       {
         category: "Backend & Systems",
-        description: "API design, microservices, and concurrent backend services",
+        description: "Backend APIs and microservices",
         items: ["Go (Golang)", "Ruby on Rails", "PHP (Laravel)", "TypeScript", "Node.js", "Python"]
       },
       {
         category: "Data & OLAP",
-        description: "Star schema data warehouses, ETL pipelines, and analytical queries",
+        description: "Data warehouses, ETL, and analytics",
         items: ["T-SQL (OLAP DW)", "PostgreSQL", "MySQL", "MongoDB", "Apache Spark", "Firebase"]
       },
       {
         category: "AI & Machine Learning",
-        description: "CNN image classification training and inference API endpoints",
+        description: "CNN and inference APIs",
         items: ["TensorFlow", "Keras (CNN)", "FER2013 Facial Recognition", "IBM Watson Assistant", "Data Augmentation"]
       },
       {
         category: "DevOps & Tooling",
-        description: "Docker containerization, automated TDD test suites, and Linux servers",
+        description: "Docker, testing, and Linux",
         items: ["Docker", "Linux / Bash", "DigitalOcean", "Git", "TDD & Jest", "Tailwind CSS"]
       }
     ],
     repositories: [
       {
         name: "learn-olap-dwh",
-        description: "OLAP Data Warehouse implementation for Point of Sale (POS) transactions with star schema and dimensional data analytics.",
+        description: "OLAP data warehouse for POS transactions using a star schema.",
         language: "TSQL",
         stars: 1,
         url: "https://github.com/norfabagas/learn-olap-dwh",
@@ -519,7 +519,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "cnn-fer-architecture",
-        description: "Convolutional Neural Network (CNN) architecture experiment for Facial Expression Recognition using the FER2013 dataset.",
+        description: "CNN experiment for facial expression classification on FER2013.",
         language: "Python",
         stars: 1,
         url: "https://github.com/norfabagas/cnn-fer-architecture",
@@ -528,7 +528,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "inet-trouble-ml-api",
-        description: "Automated network issue classification REST API powered by Flask and Keras deep learning models.",
+        description: "Network issue classification API using Flask and Keras.",
         language: "Python",
         stars: 1,
         url: "https://github.com/norfabagas/inet-trouble-ml-api",
@@ -537,7 +537,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "rock-paper-scissors-watson-assistant",
-        description: "Interactive rock-paper-scissors game integrated with IBM Watson Assistant conversational dialogs.",
+        description: "Rock-paper-scissors game with IBM Watson Assistant.",
         language: "AI / Cloud",
         stars: 1,
         url: "https://github.com/norfabagas/rock-paper-scissors-watson-assistant",
@@ -546,7 +546,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "url-shortener-api",
-        description: "High-performance URL shortener REST API built with Ruby on Rails including redirect metric tracking.",
+        description: "URL shortener API in Ruby on Rails with redirect metrics.",
         language: "Ruby",
         stars: 1,
         url: "https://github.com/norfabagas/url-shortener-api",
@@ -555,7 +555,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "auth-global",
-        description: "Centralized Golang authentication service designed to support multitenant application ecosystems.",
+        description: "Centralized authentication service in Go.",
         language: "Go",
         stars: 1,
         url: "https://github.com/norfabagas/auth-global",
@@ -564,7 +564,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "watson-coffee-api",
-        description: "Automated coffee ordering backend service connected to IBM Watson Assistant dialog flows.",
+        description: "Coffee ordering API connected to IBM Watson Assistant.",
         language: "Ruby",
         stars: 1,
         url: "https://github.com/norfabagas/watson-coffee-api",
@@ -573,7 +573,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "inventory-management",
-        description: "Structured inventory system for stock tracking, warehouse management, and logistics flows.",
+        description: "Stock and inventory tracking system.",
         language: "PHP",
         stars: 1,
         url: "https://github.com/norfabagas/inventory-management",
@@ -582,7 +582,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "learn-datawarehouse",
-        description: "Architectural exploration and data extraction patterns for modern data warehouse implementations.",
+        description: "Data extraction and warehouse experiments.",
         language: "Ruby",
         stars: 1,
         url: "https://github.com/norfabagas/learn-datawarehouse",
@@ -591,7 +591,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "benchmark-oop-fp-node",
-        description: "Memory and CPU benchmark comparing Object-Oriented (OOP) and Functional Programming (FP) paradigms in Node.js.",
+        description: "CPU and memory benchmark: OOP vs FP in Node.js.",
         language: "JavaScript",
         stars: 0,
         url: "https://github.com/norfabagas/benchmark-oop-fp-node",
@@ -600,7 +600,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "go-drone-cli",
-        description: "Command-line interface (CLI) drone navigation simulation written in Go.",
+        description: "Drone navigation CLI in Go.",
         language: "Go",
         stars: 0,
         url: "https://github.com/norfabagas/go-drone-cli",
@@ -609,7 +609,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "norfabagas-betest",
-        description: "Backend microservice for user authentication built with clean RESTful architectural standards.",
+        description: "User authentication microservice in TypeScript.",
         language: "TypeScript",
         stars: 0,
         url: "https://github.com/norfabagas/norfabagas-betest",
@@ -618,7 +618,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "learn-express-tdd",
-        description: "Test-Driven Development (TDD) implementation for REST APIs using Express and TypeScript.",
+        description: "TDD practice with Express and TypeScript REST APIs.",
         language: "TypeScript",
         stars: 0,
         url: "https://github.com/norfabagas/learn-express-tdd",
@@ -627,7 +627,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "learn-go-design-patterns",
-        description: "Comprehensive implementation of Gang of Four (GoF) design patterns in Go.",
+        description: "GoF design pattern examples in Go.",
         language: "Go",
         stars: 0,
         url: "https://github.com/norfabagas/learn-go-design-patterns",
@@ -636,7 +636,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "naive-bayes-ranking",
-        description: "Naive Bayes probabilistic classification algorithm applied to automated ranking systems.",
+        description: "Data ranking with Naive Bayes.",
         language: "PHP",
         stars: 0,
         url: "https://github.com/norfabagas/naive-bayes-ranking",
@@ -645,7 +645,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       },
       {
         name: "netracer-app",
-        description: "Native Android application built with Kotlin for network route tracing and latency diagnostics.",
+        description: "Kotlin Android app for network traceroute.",
         language: "Kotlin",
         stars: 0,
         url: "https://github.com/norfabagas/netracer-app",
@@ -659,7 +659,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Lembaga Penjamin Simpanan (LPS)",
         period: "Professional Experience",
         description:
-          "Built banking transaction modules and audit trail logging services for national deposit insurance operations, maintaining transaction consistency and secure data access.",
+          "Developed banking transaction modules and audit logs.",
         skills: ["Backend Architecture", "Enterprise Security", "Database Systems", "API Integration"]
       },
       {
@@ -667,7 +667,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Eka Hospital",
         period: "Professional Experience",
         description:
-          "Developed hospital management (SIMRS) modules for outpatient, inpatient, and pharmacy operations, handling electronic medical record data exchange and healthcare API interoperability.",
+          "Developed SIMRS modules and medical record integrations.",
         skills: ["Healthcare Systems", "Relational Database", "System Integration", "Data Reliability"]
       },
       {
@@ -675,7 +675,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Stealth Startup",
         period: "Professional Experience",
         description:
-          "Engineered modular backend services and REST APIs with Ruby on Rails and TypeScript, implementing automated testing (TDD), query optimization, and Docker containerization.",
+          "Built APIs with Ruby on Rails and TypeScript, with automated tests.",
         skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
       },
       {
@@ -683,7 +683,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "BRCODE",
         period: "Professional Experience",
         description:
-          "Advised on backend software architecture, evaluated server infrastructure readiness, and provided technical guidance on engineering best practices for developer teams.",
+          "Consulted on application architecture and server infrastructure.",
         skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
       }
     ],
@@ -693,28 +693,28 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         url: "https://medium.com/@bgsnorfa",
         category: "DevOps & Tooling",
         readTime: "5 min read",
-        snippet: "Packaging application dependencies and configuring multi-container docker-compose setups for reproducible development environments."
+        snippet: "Running multiple containers with Docker Compose."
       },
       {
         title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
         url: "https://medium.com/@bgsnorfa",
         category: "Development Setup",
         readTime: "6 min read",
-        snippet: "Step-by-step Ruby on Rails setup on Windows via WSL2, avoiding native gem compatibility issues."
+        snippet: "Setting up Ruby on Rails on Windows with WSL2."
       },
       {
         title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
         url: "https://medium.com/@bgsnorfa",
         category: "Computer Science",
         readTime: "7 min read",
-        snippet: "Comparing Big-O time and memory complexity across standard sorting algorithms against varying dataset profiles."
+        snippet: "Time and space complexity of sorting algorithms."
       },
       {
         title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
         url: "https://medium.com/@bgsnorfa",
         category: "Artificial Intelligence",
         readTime: "4 min read",
-        snippet: "Structuring conversational flows with intent definitions, entity extraction, and dialog tree branching in IBM Watson Assistant."
+        snippet: "Building conversation flows in IBM Watson Assistant."
       }
     ],
     projectResearchSummary:
