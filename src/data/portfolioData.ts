@@ -329,32 +329,32 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
     experience: [
       {
         role: "Software Engineer",
-        company: "Lembaga Penjamin Simpanan (LPS)",
-        period: "Pengalaman Profesional",
+        company: "LPS (Lembaga Penjamin Simpanan)",
+        period: "2025 - Sekarang",
         description:
           "Mengembangkan modul transaksi perbankan dan audit trail.",
         skills: ["Go", "T-SQL", "Sistem Perbankan", "Audit Trail", "REST API"]
       },
       {
         role: "Software Engineer",
-        company: "Eka Hospital",
-        period: "Pengalaman Profesional",
+        company: "Sinarmas Healthcare",
+        period: "2022 - 2025",
         description:
-          "Mengembangkan modul SIMRS dan integrasi rekam medis.",
-        skills: ["PHP", "PostgreSQL", "SIMRS", "Integrasi Sistem", "Database Tuning"]
+          "Mengerjakan ERP untuk sistem healthcare pada Eka Hospital, dan mengembangkan healthcare application SehatQ.",
+        skills: ["PHP", "PostgreSQL", "ERP Healthcare", "SIMRS", "SehatQ", "Integrasi Sistem"]
       },
       {
         role: "Software Engineer",
         company: "Stealth Startup",
-        period: "Pengalaman Profesional",
+        period: "2019 - 2022",
         description:
-          "Membangun API dengan Ruby on Rails dan TypeScript serta pengujian otomatis.",
+          "Mengerjakan berbagai kebutuhan client, pada area Singapura, Australia, dan Indonesia.",
         skills: ["Ruby on Rails", "TypeScript", "REST API", "Docker", "TDD"]
       },
       {
         role: "IT Consultant",
-        company: "BRCODE",
-        period: "Pengalaman Profesional",
+        company: "IT Consulting",
+        period: "2017 - 2019",
         description:
           "Konsultasi arsitektur aplikasi dan infrastruktur server.",
         skills: ["Konsultasi IT", "Arsitektur Software", "Evaluasi Infrastruktur", "Mentoring"]
@@ -656,32 +656,32 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
     experience: [
       {
         role: "Software Engineer",
-        company: "Lembaga Penjamin Simpanan (LPS)",
-        period: "Professional Experience",
+        company: "LPS (Lembaga Penjamin Simpanan)",
+        period: "2025 - Present",
         description:
-          "Developed banking transaction modules and audit logs.",
-        skills: ["Backend Architecture", "Enterprise Security", "Database Systems", "API Integration"]
+          "Developing banking transaction modules and audit logs.",
+        skills: ["Go", "T-SQL", "Banking Systems", "Audit Trail", "REST API"]
       },
       {
         role: "Software Engineer",
-        company: "Eka Hospital",
-        period: "Professional Experience",
+        company: "Sinarmas Healthcare",
+        period: "2022 - 2025",
         description:
-          "Developed SIMRS modules and medical record integrations.",
-        skills: ["Healthcare Systems", "Relational Database", "System Integration", "Data Reliability"]
+          "Engineered ERP for hospital healthcare systems at Eka Hospital, and developed the SehatQ healthcare application.",
+        skills: ["PHP", "PostgreSQL", "Healthcare ERP", "SIMRS", "SehatQ", "System Integration"]
       },
       {
-        role: "Fullstack / Backend Developer",
+        role: "Software Engineer",
         company: "Stealth Startup",
-        period: "Professional Experience",
+        period: "2019 - 2022",
         description:
-          "Built APIs with Ruby on Rails and TypeScript, with automated tests.",
-        skills: ["Ruby on Rails", "React", "TypeScript", "Agile Development", "REST API"]
+          "Delivered diverse client solutions across Singapore, Australia, and Indonesia.",
+        skills: ["Ruby on Rails", "TypeScript", "REST API", "Docker", "TDD"]
       },
       {
         role: "IT Consultant",
-        company: "BRCODE",
-        period: "Professional Experience",
+        company: "IT Consulting",
+        period: "2017 - 2019",
         description:
           "Consulted on application architecture and server infrastructure.",
         skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
