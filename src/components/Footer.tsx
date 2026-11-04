@@ -1,4 +1,4 @@
-import { VStack, HStack, Heading, Text, Button } from "@astryxdesign/core";
+import { VStack, HStack, Heading, Text } from "@astryxdesign/core";
 import { ArrowUp, Github, Linkedin, Coffee, BookOpen } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -103,20 +103,27 @@ export function Footer({ isDark }: FooterProps) {
               <Coffee className="w-4 h-4" />
             </a>
 
-            <Button
-              label={t.footer.backToTop}
-              variant="ghost"
-              size="sm"
+            {/* Subtle Divider between Social Links and Page Navigation */}
+            <span
+              className={`w-px h-6 mx-1 self-center ${isDark ? "bg-white/15" : "bg-slate-300"}`}
+              aria-hidden="true"
+            />
+
+            {/* Back to Top Button */}
+            <button
+              type="button"
               onClick={scrollToTop}
-              className={`ml-1 px-3.5 py-2 rounded-xl text-xs font-semibold min-h-[44px] flex items-center gap-1.5 transition-all duration-150 active:scale-95 ${
+              title={t.footer.backToTop}
+              aria-label={t.footer.backToTop}
+              className={`group inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold min-h-[44px] border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer whitespace-nowrap ${
                 isDark
-                  ? "aero-glass-badge-dark hover:border-white/30"
-                  : "aero-glass-badge-light hover:border-sky-300"
+                  ? "aero-glass-badge-dark hover:border-white/30 text-slate-200 hover:text-white"
+                  : "aero-glass-badge-light hover:border-sky-300 text-slate-700 hover:text-slate-900"
               }`}
             >
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 shrink-0" />
               <span>{t.footer.backToTop}</span>
-            </Button>
+            </button>
           </HStack>
         </HStack>
 
