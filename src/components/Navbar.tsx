@@ -81,14 +81,9 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 isDark ? "border-sky-500/40 shadow-sky-950/50" : "border-white shadow-sky-100"
               }`}
             />
-            <VStack gap={0} className="text-left">
-              <Heading level={3} className={`text-sm sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                {data.profile.name}
-              </Heading>
-              <span className={`text-[10px] sm:text-[11px] font-mono leading-none ${isDark ? "text-sky-400" : "text-sky-600"}`}>
-                {data.profile.title}
-              </span>
-            </VStack>
+            <Heading level={3} className={`text-sm sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+              {data.profile.name}
+            </Heading>
           </button>
 
           {/* Desktop Nav Links */}
