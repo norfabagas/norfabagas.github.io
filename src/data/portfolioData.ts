@@ -348,16 +348,16 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Stealth Startup",
         period: "2019 - 2022",
         description:
-          "Mengerjakan berbagai kebutuhan client, pada area Singapura, Australia, dan Indonesia.",
-        skills: ["Ruby on Rails", "TypeScript", "REST API", "Docker", "TDD"]
+          "Mengerjakan berbagai kebutuhan client terkait pengembangan aplikasi. Mayoritas berada pada area Singapura, Australia, dan Indonesia.",
+        skills: ["Programming", "IT Consulting"]
       },
       {
         role: "IT Consultant",
         company: "IT Consulting",
         period: "2017 - 2019",
         description:
-          "Konsultasi arsitektur aplikasi dan infrastruktur server.",
-        skills: ["Konsultasi IT", "Arsitektur Software", "Evaluasi Infrastruktur", "Mentoring"]
+          "Menjual berbagai software berdasarkan kebutuhan klien.",
+        skills: ["Programming", "Tech Sales"]
       }
     ],
     articles: [
@@ -675,16 +675,16 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "Stealth Startup",
         period: "2019 - 2022",
         description:
-          "Delivered diverse client solutions across Singapore, Australia, and Indonesia.",
-        skills: ["Ruby on Rails", "TypeScript", "REST API", "Docker", "TDD"]
+          "Handled diverse client requirements for application development, primarily across Singapore, Australia, and Indonesia.",
+        skills: ["Programming", "IT Consulting"]
       },
       {
         role: "IT Consultant",
         company: "IT Consulting",
         period: "2017 - 2019",
         description:
-          "Consulted on application architecture and server infrastructure.",
-        skills: ["IT Consulting", "System Architecture", "Software Strategy", "Technical Mentoring"]
+          "Delivered and sold customized software solutions tailored to client needs.",
+        skills: ["Programming", "Tech Sales"]
       }
     ],
     articles: [
