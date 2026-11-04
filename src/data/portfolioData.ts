@@ -332,8 +332,8 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         company: "LPS (Lembaga Penjamin Simpanan)",
         period: "2025 - Sekarang",
         description:
-          "Mengembangkan modul transaksi perbankan dan audit trail.",
-        skills: ["Go", "T-SQL", "Sistem Perbankan", "Audit Trail", "REST API"]
+          "Melakukan manajemen server LPS, DevOps, dan software engineering untuk sistem core business serta supporting applications.",
+        skills: ["DevOps", "Server Management", "Software Engineering", "Go", "T-SQL", "Core Business"]
       },
       {
         role: "Software Engineer",
@@ -656,11 +656,11 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
     experience: [
       {
         role: "Software Engineer",
-        company: "LPS (Lembaga Penjamin Simpanan)",
+        company: "IDIC (Indonesia Deposit Insurance Corporation)",
         period: "2025 - Present",
         description:
-          "Developing banking transaction modules and audit logs.",
-        skills: ["Go", "T-SQL", "Banking Systems", "Audit Trail", "REST API"]
+          "Managing IDIC server infrastructure, DevOps, and software engineering for core business and supporting applications.",
+        skills: ["DevOps", "Server Management", "Software Engineering", "Go", "T-SQL", "Core Business"]
       },
       {
         role: "Software Engineer",
