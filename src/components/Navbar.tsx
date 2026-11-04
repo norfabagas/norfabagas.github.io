@@ -39,8 +39,8 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
 
   const navLinks = [
     { label: t.nav.experience, id: "pengalaman" },
-    { label: t.nav.projects, id: "proyek" },
-    { label: t.nav.skills, id: "keahlian" },
+
+
     { label: t.nav.articles, id: "artikel" },
     { label: t.nav.support, id: "kontak" }
   ];

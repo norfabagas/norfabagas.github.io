@@ -90,30 +90,31 @@ export function Hero({ isDark }: HeroProps) {
         {/* Primary and Secondary CTA Buttons */}
         <HStack gap={3} hAlign="center" vAlign="center" className="mt-6 sm:mt-8 flex-col sm:flex-row gap-2.5 sm:gap-3 w-full justify-center">
           <Button
-            label={t.hero.ctaProjects}
+            label={t.hero.ctaExperience}
             variant="primary"
             size="lg"
-            onClick={() => scrollToSection("proyek")}
+            onClick={() => scrollToSection("pengalaman")}
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold aero-btn-primary rounded-xl px-6 w-full sm:w-auto min-h-[44px]"
           >
             <HStack gap={2} vAlign="center">
-              <span>{t.hero.ctaProjects}</span>
+              <Briefcase className="w-4 h-4" />
+              <span>{t.hero.ctaExperience}</span>
               <ArrowRight className="w-4 h-4" />
             </HStack>
           </Button>
 
           <Button
-            label={t.hero.ctaExperience}
+            label={t.nav.articles}
             variant="secondary"
             size="lg"
-            onClick={() => scrollToSection("pengalaman")}
+            onClick={() => scrollToSection("artikel")}
             className={`inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold rounded-xl px-6 w-full sm:w-auto min-h-[44px] ${
               isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
             }`}
           >
             <HStack gap={2} vAlign="center">
-              <Briefcase className="w-4 h-4" />
-              <span>{t.hero.ctaExperience}</span>
+              <BookOpen className="w-4 h-4" />
+              <span>{t.nav.articles}</span>
             </HStack>
           </Button>
         </HStack>

@@ -1,6 +1,17 @@
 import { useState } from "react";
 import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
-import { Briefcase, Layers, CheckCircle2 } from "lucide-react";
+import {
+  Briefcase,
+  Layers,
+  CheckCircle2,
+  FolderGit2,
+  Wrench,
+  ExternalLink,
+  Github,
+  Code2,
+  Database,
+  Terminal
+} from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface ExperienceProps {
@@ -9,8 +20,15 @@ interface ExperienceProps {
 
 export function Experience({ isDark }: ExperienceProps) {
   const { t, data } = useLanguage();
-  const { experience, projectScopes } = data;
+  const { experience, projectScopes, projectResearchSummary, techTools, socials } = data;
   const [activeTab, setActiveTab] = useState<"timeline" | "scope">("timeline");
+
+  const categoryIcons = [
+    <Code2 key="code" className="w-4 h-4" />,
+    <Layers key="layers" className="w-4 h-4" />,
+    <Database key="db" className="w-4 h-4" />,
+    <Terminal key="term" className="w-4 h-4" />
+  ];
 
   return (
     <Section
@@ -39,7 +57,7 @@ export function Experience({ isDark }: ExperienceProps) {
             {t.experience.subtitle}
           </Text>
 
-          {/* Tab Switcher between Timeline and Scope */}
+          {/* Tab Switcher between Timeline and Projects & Domains */}
           <HStack
             gap={1.5}
             hAlign="center"
@@ -156,69 +174,184 @@ export function Experience({ isDark }: ExperienceProps) {
           </VStack>
         )}
 
-        {/* Tab 2: Scope of Projects */}
+        {/* Tab 2: Projects & Technical Domains */}
         {activeTab === "scope" && (
-          <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
-            {projectScopes.map((scope) => (
-              <Card
-                variant="transparent"
-                key={scope.title}
-                padding={5}
-                className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
-                  isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
-                }`}
-              >
-                <VStack gap={3} className="w-full text-left">
-                  <HStack hAlign="between" vAlign="center" className="w-full">
-                    <span
-                      className={`text-xs px-3 py-1 rounded-lg font-semibold ${
-                        isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
-                      }`}
-                    >
-                      {scope.area}
-                    </span>
-                  </HStack>
-
+          <VStack gap={6} className="w-full">
+            {/* 1-Paragraph Project & Research Summary Card */}
+            <Card
+              variant="transparent"
+              padding={4}
+              className={`rounded-2xl border w-full aero-glass-card ${
+                isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
+              }`}
+            >
+              <VStack gap={3} className="w-full text-left">
+                <HStack gap={2} vAlign="center" className="w-full">
+                  <span
+                    className={`p-2 rounded-lg flex items-center justify-center shrink-0 ${
+                      isDark ? "aero-icon-dark" : "aero-icon-light"
+                    }`}
+                  >
+                    <FolderGit2 className="w-4 h-4" />
+                  </span>
                   <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                    {scope.title}
+                    {t.projects.summaryCardTitle}
                   </Heading>
+                </HStack>
 
-                  <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                    {scope.description}
-                  </Text>
+                <Text
+                  type="body"
+                  className={`text-sm sm:text-base leading-relaxed ${
+                    isDark ? "text-slate-200" : "text-slate-700"
+                  }`}
+                >
+                  {projectResearchSummary}
+                </Text>
+              </VStack>
+            </Card>
 
-                  {/* Deliverables checklist */}
-                  <VStack gap={1.5} className="pt-2 border-t border-white/30 dark:border-white/10 w-full">
-                    <Text type="supporting" className={`text-xs font-semibold ${isDark ? "text-sky-300" : "text-sky-700"}`}>
-                      {t.experience.keyDeliverablesLabel}
-                    </Text>
-                    {scope.deliverables.map((item) => (
-                      <HStack key={item} gap={2} vAlign="start" className="w-full">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
-                        <span className={`text-xs leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                          {item}
-                        </span>
-                      </HStack>
-                    ))}
-                  </VStack>
-
-                  {/* Technologies */}
-                  <HStack gap={1} vAlign="center" className="flex-wrap pt-2">
-                    {scope.technologies.map((tItem) => (
+            {/* Scope of Systems & Projects Grid */}
+            <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
+              {projectScopes.map((scope) => (
+                <Card
+                  variant="transparent"
+                  key={scope.title}
+                  padding={5}
+                  className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
+                    isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
+                  }`}
+                >
+                  <VStack gap={3} className="w-full text-left">
+                    <HStack hAlign="between" vAlign="center" className="w-full">
                       <span
-                        key={tItem}
-                        className={`text-[11px] px-2.5 py-0.5 rounded-md font-mono ${
+                        className={`text-xs px-3 py-1 rounded-lg font-semibold ${
                           isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
                         }`}
                       >
-                        {tItem}
+                        {scope.area}
                       </span>
-                    ))}
-                  </HStack>
-                </VStack>
-              </Card>
-            ))}
-          </Grid>
+                    </HStack>
+
+                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                      {scope.title}
+                    </Heading>
+
+                    <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
+                      {scope.description}
+                    </Text>
+
+                    {/* Deliverables checklist */}
+                    <VStack gap={1.5} className="pt-2 border-t border-white/30 dark:border-white/10 w-full">
+                      <Text type="supporting" className={`text-xs font-semibold ${isDark ? "text-sky-300" : "text-sky-700"}`}>
+                        {t.experience.keyDeliverablesLabel}
+                      </Text>
+                      {scope.deliverables.map((item) => (
+                        <HStack key={item} gap={2} vAlign="start" className="w-full">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span className={`text-xs leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
+                            {item}
+                          </span>
+                        </HStack>
+                      ))}
+                    </VStack>
+
+                    {/* Technologies */}
+                    <HStack gap={1} vAlign="center" className="flex-wrap pt-2">
+                      {scope.technologies.map((tItem) => (
+                        <span
+                          key={tItem}
+                          className={`text-[11px] px-2.5 py-0.5 rounded-md font-mono ${
+                            isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
+                          }`}
+                        >
+                          {tItem}
+                        </span>
+                      ))}
+                    </HStack>
+                  </VStack>
+                </Card>
+              ))}
+            </Grid>
+
+            {/* List of Technology & Tools Grid */}
+            <VStack gap={4} className="w-full">
+              <HStack gap={2} vAlign="center" className="w-full">
+                <Wrench className="w-4 h-4 text-sky-500" />
+                <Heading level={3} className={`text-base font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                  {t.projects.toolsCardTitle}
+                </Heading>
+              </HStack>
+
+              <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
+                {techTools.map((group, index) => (
+                  <Card
+                    variant="transparent"
+                    key={group.category}
+                    padding={4}
+                    className={`rounded-2xl border transition-all duration-200 flex flex-col justify-between aero-glass-card ${
+                      isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
+                    }`}
+                  >
+                    <VStack gap={3} className="w-full">
+                      <HStack gap={2} vAlign="center" className="w-full">
+                        <span
+                          className={`p-2 rounded-lg flex items-center justify-center shrink-0 ${
+                            isDark ? "aero-icon-dark" : "aero-icon-light"
+                          }`}
+                        >
+                          {categoryIcons[index % categoryIcons.length]}
+                        </span>
+                        <Heading level={4} className={`text-sm font-bold tracking-tight ${isDark ? "text-sky-300" : "text-sky-800"}`}>
+                          {group.category}
+                        </Heading>
+                      </HStack>
+
+                      <HStack gap={1.5} vAlign="center" className="flex-wrap pt-1">
+                        {group.items.map((item) => (
+                          <span
+                            key={item}
+                            className={`text-xs px-2.5 py-1 rounded-md font-mono font-medium ${
+                              isDark ? "aero-glass-badge-dark" : "aero-glass-badge-light"
+                            }`}
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </HStack>
+                    </VStack>
+                  </Card>
+                ))}
+              </Grid>
+            </VStack>
+
+            {/* Public GitHub Link */}
+            <VStack gap={2} hAlign="center" className="mt-2 sm:mt-4 text-center w-full">
+              <Text
+                type="supporting"
+                className={`text-xs sm:text-sm max-w-md ${isDark ? "text-slate-300" : "text-slate-600"}`}
+              >
+                {t.projects.githubNotice}
+              </Text>
+
+              <Button
+                label={t.projects.viewGithubProfile}
+                variant="secondary"
+                size="md"
+                href={socials.github}
+                target="_blank"
+                rel="noreferrer"
+                className={`w-full sm:w-auto inline-flex items-center justify-center rounded-xl text-xs sm:text-sm font-semibold px-5 min-h-[44px] active:scale-95 transition-all duration-150 ${
+                  isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
+                }`}
+              >
+                <HStack gap={2} vAlign="center">
+                  <Github className="w-4 h-4" />
+                  <span>{t.projects.viewGithubProfile}</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                </HStack>
+              </Button>
+            </VStack>
+          </VStack>
         )}
       </VStack>
     </Section>

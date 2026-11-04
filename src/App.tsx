@@ -4,8 +4,6 @@ import { LanguageProvider } from "./context/LanguageContext";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Experience } from "./components/Experience";
-import { Projects } from "./components/Projects";
-import { Skills } from "./components/Skills";
 import { Articles } from "./components/Articles";
 import { SupportConnect } from "./components/SupportConnect";
 import { Footer } from "./components/Footer";
@@ -70,8 +68,6 @@ function PortfolioContent() {
       <main id="main-content" tabIndex={-1} className="focus:outline-none w-full">
         <Hero isDark={isDark} />
         <Experience isDark={isDark} />
-        <Projects isDark={isDark} />
-        <Skills isDark={isDark} />
         <Articles isDark={isDark} />
         <SupportConnect isDark={isDark} />
       </main>

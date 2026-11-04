@@ -769,7 +769,7 @@ export const UI_STRINGS = {
       title: "Pengalaman Kerja",
       subtitle: "Perbankan, kesehatan, dan pengembangan aplikasi.",
       timelineTitle: "Riwayat Karier",
-      scopeTitle: "Cakupan Sistem",
+      scopeTitle: "Proyek & Domain Teknis",
       keyDeliverablesLabel: "Kontribusi:"
     },
     projects: {
@@ -835,7 +835,7 @@ export const UI_STRINGS = {
       title: "Work Experience",
       subtitle: "Banking, healthcare, and web applications.",
       timelineTitle: "Career Timeline",
-      scopeTitle: "System Scope",
+      scopeTitle: "Projects & Technical Domains",
       keyDeliverablesLabel: "Contributions:"
     },
     projects: {
