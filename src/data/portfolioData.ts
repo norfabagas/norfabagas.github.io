@@ -777,7 +777,7 @@ export const UI_STRINGS = {
       subtitle: "Repositori publik dan eksperimen teknis.",
       summaryCardTitle: "Ringkasan",
       toolsCardTitle: "Teknologi",
-      githubNotice: "Kode pekerjaan institusional tidak dipublikasikan.",
+      githubNotice: "Repositori dan eksperimen kode terbuka dapat diakses di GitHub.",
       viewGithubProfile: "Lihat GitHub @norfabagas"
     },
     skills: {
@@ -843,7 +843,7 @@ export const UI_STRINGS = {
       subtitle: "Public repositories and technical experiments.",
       summaryCardTitle: "Overview",
       toolsCardTitle: "Technologies",
-      githubNotice: "Institutional code is not public.",
+      githubNotice: "Open-source repositories and code experiments are available on GitHub.",
       viewGithubProfile: "View GitHub @norfabagas"
     },
     skills: {

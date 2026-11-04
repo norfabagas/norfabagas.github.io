@@ -1,5 +1,5 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
-import { FolderGit2, Wrench, ExternalLink, ShieldCheck, Code2, Database, Terminal, Layers } from "lucide-react";
+import { FolderGit2, Wrench, ExternalLink, Github, Code2, Database, Terminal, Layers } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface ProjectsProps {
@@ -130,40 +130,33 @@ export function Projects({ isDark }: ProjectsProps) {
           </Grid>
         </VStack>
 
-        {/* Private Repo Notice & Public GitHub Profile Link */}
-        <Card
-          variant="transparent"
-          padding={4}
-          className={`rounded-2xl border w-full aero-glass-card ${
-            isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
-          }`}
-        >
-          <HStack hAlign="between" vAlign="center" className="w-full flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <HStack gap={2} vAlign="center" className="max-w-xl">
-              <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
-              <Text type="supporting" className={`text-xs leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                {t.projects.githubNotice}
-              </Text>
-            </HStack>
+        {/* Public GitHub Link */}
+        <VStack gap={2} hAlign="center" className="mt-6 sm:mt-8 text-center w-full">
+          <Text
+            type="supporting"
+            className={`text-xs sm:text-sm max-w-md ${isDark ? "text-slate-300" : "text-slate-600"}`}
+          >
+            {t.projects.githubNotice}
+          </Text>
 
-            <Button
-              label={t.projects.viewGithubProfile}
-              variant="secondary"
-              size="sm"
-              href={socials.github}
-              target="_blank"
-              rel="noreferrer"
-              className={`w-full sm:w-auto inline-flex items-center justify-center rounded-xl text-xs sm:text-sm font-semibold px-4 min-h-[44px] active:scale-95 transition-all duration-150 ${
-                isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
-              }`}
-            >
-              <HStack gap={1.5} vAlign="center">
-                <span>{t.projects.viewGithubProfile}</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </HStack>
-            </Button>
-          </HStack>
-        </Card>
+          <Button
+            label={t.projects.viewGithubProfile}
+            variant="secondary"
+            size="md"
+            href={socials.github}
+            target="_blank"
+            rel="noreferrer"
+            className={`w-full sm:w-auto inline-flex items-center justify-center rounded-xl text-xs sm:text-sm font-semibold px-5 min-h-[44px] active:scale-95 transition-all duration-150 ${
+              isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
+            }`}
+          >
+            <HStack gap={2} vAlign="center">
+              <Github className="w-4 h-4" />
+              <span>{t.projects.viewGithubProfile}</span>
+              <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+            </HStack>
+          </Button>
+        </VStack>
       </VStack>
     </Section>
   );
