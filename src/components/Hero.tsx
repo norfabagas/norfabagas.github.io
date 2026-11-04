@@ -1,5 +1,5 @@
 import { Section, VStack, HStack, Heading, Text, Button } from "@astryxdesign/core";
-import { ArrowRight, Briefcase, Github, Linkedin, BookOpen, Coffee } from "lucide-react";
+import { ArrowRight, Briefcase, BookOpen } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface HeroProps {
@@ -8,7 +8,7 @@ interface HeroProps {
 
 export function Hero({ isDark }: HeroProps) {
   const { data, t } = useLanguage();
-  const { profile, socials } = data;
+  const { profile } = data;
 
   const scrollToSection = (targetId: string) => {
     const el = document.getElementById(targetId);
@@ -117,65 +117,6 @@ export function Hero({ isDark }: HeroProps) {
               <span>{t.nav.articles}</span>
             </HStack>
           </Button>
-        </HStack>
-
-        {/* Quick Social & Contact Links */}
-        <HStack gap={2} hAlign="center" vAlign="center" className="mt-6 sm:mt-8 justify-center">
-          <a
-            href={socials.github}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub @norfabagas"
-            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
-              isDark
-                ? "aero-glass-badge-dark hover:border-white/30"
-                : "aero-glass-badge-light hover:border-sky-300"
-            }`}
-          >
-            <Github className="w-4 h-4" />
-          </a>
-
-          <a
-            href={socials.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn @norfabagas"
-            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
-              isDark
-                ? "aero-glass-badge-dark hover:border-white/30"
-                : "aero-glass-badge-light hover:border-sky-300"
-            }`}
-          >
-            <Linkedin className="w-4 h-4" />
-          </a>
-
-          <a
-            href={socials.medium}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Medium @bgsnorfa"
-            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
-              isDark
-                ? "aero-glass-badge-dark hover:border-white/30"
-                : "aero-glass-badge-light hover:border-sky-300"
-            }`}
-          >
-            <BookOpen className="w-4 h-4" />
-          </a>
-
-          <a
-            href={socials.buymeacoffee}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Buy Me a Coffee @bgsnorfa"
-            className={`p-2.5 rounded-xl border transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 min-h-[44px] min-w-[44px] flex items-center justify-center ${
-              isDark
-                ? "aero-glass-badge-dark text-amber-300 hover:border-white/30"
-                : "aero-glass-badge-light text-amber-700 hover:border-amber-300"
-            }`}
-          >
-            <Coffee className="w-4 h-4" />
-          </a>
         </HStack>
       </VStack>
     </Section>
