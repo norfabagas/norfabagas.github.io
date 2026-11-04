@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { HStack, VStack, Button, Heading } from "@astryxdesign/core";
-import { Moon, Sun, Menu, X, Coffee } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface NavbarProps {
@@ -66,34 +66,36 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
       }`}
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <HStack hAlign="between" vAlign="center" className="h-14 sm:h-16 w-full">
-          {/* Logo Brand: avatar/initials badge */}
-          <button
-            type="button"
-            onClick={(e) => handleNavClick(e, "beranda")}
-            className="flex-shrink-0 flex items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer group min-h-[44px]"
-            aria-label="Norfa Bagas Portfolio Home"
-          >
-            <img
-              src="/favicon.png"
-              alt={data.profile.name}
-              className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl object-cover border-2 shadow-sm transition-transform duration-200 group-hover:scale-105 ${
-                isDark ? "border-sky-500/40 shadow-sky-950/50" : "border-white shadow-sky-100"
-              }`}
-            />
-            <Heading level={3} className={`text-sm sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-              {data.profile.name}
-            </Heading>
-          </button>
+        <HStack hAlign="between" vAlign="center" className="h-14 sm:h-16 w-full relative">
+          {/* Left: Brand / Logo */}
+          <HStack vAlign="center" className="flex-1 justify-start">
+            <button
+              type="button"
+              onClick={(e) => handleNavClick(e, "beranda")}
+              className="flex-shrink-0 flex items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded-xl p-1 text-left bg-transparent border-0 cursor-pointer group min-h-[44px]"
+              aria-label="Norfa Bagas Portfolio Home"
+            >
+              <img
+                src="/favicon.png"
+                alt={data.profile.name}
+                className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl object-cover border-2 shadow-sm transition-transform duration-200 group-hover:scale-105 ${
+                  isDark ? "border-sky-500/40 shadow-sky-950/50" : "border-white shadow-sky-100"
+                }`}
+              />
+              <Heading level={3} className={`text-sm sm:text-lg font-bold tracking-tight ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                {data.profile.name}
+              </Heading>
+            </button>
+          </HStack>
 
-          {/* Desktop Nav Links */}
-          <HStack gap={1} vAlign="center" className="hidden md:flex">
+          {/* Middle: Desktop Nav Links (strictly centered) */}
+          <HStack gap={1} vAlign="center" className="hidden md:flex absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 type="button"
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`text-sm font-semibold transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer bg-transparent border py-1.5 px-3 rounded-lg min-h-[40px] ${
+                className={`text-sm font-semibold transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer bg-transparent border py-1.5 px-3.5 rounded-lg min-h-[40px] ${
                   isDark
                     ? "text-slate-300 border-transparent hover:text-white hover:bg-slate-800/60 hover:border-white/15"
                     : "text-slate-700 border-transparent hover:text-slate-950 hover:bg-white/80 hover:border-white/90 hover:shadow-sm"
@@ -104,8 +106,8 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
             ))}
           </HStack>
 
-          {/* Header Controls (Right side) */}
-          <HStack gap={1.5} vAlign="center">
+          {/* Right: Header Controls */}
+          <HStack gap={1.5} vAlign="center" className="flex-1 justify-end">
             {/* Language Switcher Toggle Button (ID <-> EN) */}
             <Button
               label={t.nav.toggleLang}
@@ -134,22 +136,6 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               }`}
             >
               {isDark ? <Sun className="w-4 h-4 text-amber-300" /> : <Moon className="w-4 h-4 text-sky-700" />}
-            </Button>
-
-            {/* Traktir Kopi / Coffee Action Button */}
-            <Button
-              label={t.nav.kopi}
-              variant="primary"
-              size="sm"
-              href={data.socials.buymeacoffee}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden sm:inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-xl text-sm font-semibold aero-btn-primary min-h-[40px] px-4 py-2"
-            >
-              <HStack gap={1.5} vAlign="center">
-                <Coffee className="w-3.5 h-3.5" />
-                <span>{t.nav.kopi}</span>
-              </HStack>
             </Button>
 
             {/* Mobile Menu Toggler */}
@@ -189,18 +175,6 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 {link.label}
               </button>
             ))}
-
-            <VStack gap={0} className="pt-2 px-1 w-full">
-              <a
-                href={data.socials.buymeacoffee}
-                target="_blank"
-                rel="noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary min-h-[44px] px-4"
-              >
-                <Coffee className="w-4 h-4" />
-                <span>{locale === "id-ID" ? "Traktir Kopi di BuyMeACoffee" : "Buy Me a Coffee"}</span>
-              </a>
-            </VStack>
           </VStack>
         )}
       </VStack>
