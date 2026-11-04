@@ -86,7 +86,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
                 {data.profile.name}
               </Heading>
               <span className={`text-[10px] sm:text-[11px] font-mono leading-none ${isDark ? "text-sky-400" : "text-sky-600"}`}>
-                Product Engineer
+                {data.profile.title}
               </span>
             </VStack>
           </button>

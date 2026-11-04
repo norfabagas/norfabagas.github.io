@@ -20,7 +20,7 @@ export function Hero({ isDark }: HeroProps) {
     }
   };
 
-  const focusAreas = ["Product Engineer", "IT Infrastructure"];
+  const focusAreas = [profile.title, "IT Infrastructure"];
 
   return (
     <Section
