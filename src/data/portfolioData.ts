@@ -341,7 +341,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         period: "2022 - 2025",
         description:
           "Mengerjakan ERP untuk sistem healthcare pada Eka Hospital, dan mengembangkan healthcare application SehatQ.",
-        skills: ["PHP", "PostgreSQL", "ERP Healthcare", "SIMRS", "SehatQ", "Integrasi Sistem"]
+        skills: ["System Architecture", "API Management", "Agentic Programming", "Product Engineering", "ERP Integration"]
       },
       {
         role: "Software Engineer",
@@ -668,7 +668,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         period: "2022 - 2025",
         description:
           "Engineered ERP for hospital healthcare systems at Eka Hospital, and developed the SehatQ healthcare application.",
-        skills: ["PHP", "PostgreSQL", "Healthcare ERP", "SIMRS", "SehatQ", "System Integration"]
+        skills: ["System Architecture", "API Management", "Agentic Programming", "Product Engineering", "ERP Integration"]
       },
       {
         role: "Software Engineer",
