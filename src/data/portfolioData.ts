@@ -90,7 +90,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       title: "Software Engineer",
       tagline: "All of my experiments",
       summary:
-        "Saya mengembangkan backend dan sistem data, termasuk aplikasi perbankan di LPS dan SIMRS di Eka Hospital.",
+        "Saya mengembangkan backend dan sistem data, dengan pengalaman di industri finance dan healthcare.",
       location: "Indonesia",
       avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
       githubUsername: "norfabagas"
@@ -417,7 +417,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
       title: "Software Engineer",
       tagline: "All of my experiments",
       summary:
-        "I build backend and data systems, including banking applications at LPS and hospital systems at Eka Hospital.",
+        "I build backend and data systems, with experience in the finance and healthcare industries.",
       location: "Indonesia",
       avatar: "https://avatars.githubusercontent.com/u/22408586?v=4",
       githubUsername: "norfabagas"
