@@ -333,7 +333,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         period: "2025 - Sekarang",
         description:
           "Melakukan manajemen server LPS, DevOps, dan software engineering untuk sistem core business serta supporting applications.",
-        skills: ["DevOps", "Server Management", "Software Engineering", "Go", "T-SQL", "Core Business"]
+        skills: ["DevOps", "Project Management", "AI Workflow", "Programming"]
       },
       {
         role: "Software Engineer",
@@ -660,7 +660,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         period: "2025 - Present",
         description:
           "Managing IDIC server infrastructure, DevOps, and software engineering for core business and supporting applications.",
-        skills: ["DevOps", "Server Management", "Software Engineering", "Go", "T-SQL", "Core Business"]
+        skills: ["DevOps", "Project Management", "AI Workflow", "Programming"]
       },
       {
         role: "Software Engineer",
