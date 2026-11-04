@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { HStack, VStack, Button, Heading } from "@astryxdesign/core";
-import { Moon, Sun, Menu, X, Coffee, Globe } from "lucide-react";
+import { Moon, Sun, Menu, X, Coffee } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface NavbarProps {
@@ -9,7 +9,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ isDark, toggleTheme }: NavbarProps) {
-  const { locale, setLocale, t, data } = useLanguage();
+  const { locale, toggleLocale, t, data } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -106,48 +106,20 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
 
           {/* Header Controls (Right side) */}
           <HStack gap={1.5} vAlign="center">
-            {/* Language Switcher Segmented Control (ID | EN) */}
-            <HStack
-              gap={0.5}
-              vAlign="center"
-              className={`p-1 rounded-xl border backdrop-blur-md min-h-[44px] ${
-                isDark ? "aero-glass-badge-dark border-white/15" : "aero-glass-badge-light border-slate-200"
+            {/* Language Switcher Toggle Button (ID <-> EN) */}
+            <Button
+              label={t.nav.toggleLang}
+              variant="ghost"
+              size="sm"
+              onClick={toggleLocale}
+              className={`p-2.5 rounded-xl border min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-150 active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 text-xs font-mono font-bold tracking-wider ${
+                isDark
+                  ? "aero-glass-badge-dark hover:border-white/25 text-slate-200 hover:text-white"
+                  : "aero-glass-badge-light hover:border-sky-300 text-slate-700 hover:text-slate-900"
               }`}
             >
-              <HStack gap={0} vAlign="center" className="pl-1.5 pr-0.5">
-                <Globe className={`w-3.5 h-3.5 ${isDark ? "text-sky-400" : "text-sky-600"}`} />
-              </HStack>
-              <button
-                type="button"
-                onClick={() => setLocale("id-ID")}
-                className={`px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all duration-150 min-h-[34px] cursor-pointer flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
-                  locale === "id-ID"
-                    ? "aero-btn-primary text-white shadow-sm"
-                    : isDark
-                      ? "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-white/70"
-                }`}
-                aria-label="Bahasa Indonesia"
-                aria-pressed={locale === "id-ID"}
-              >
-                ID
-              </button>
-              <button
-                type="button"
-                onClick={() => setLocale("en-US")}
-                className={`px-2.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all duration-150 min-h-[34px] cursor-pointer flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
-                  locale === "en-US"
-                    ? "aero-btn-primary text-white shadow-sm"
-                    : isDark
-                      ? "text-slate-400 hover:text-white hover:bg-slate-800/50"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-white/70"
-                }`}
-                aria-label="English"
-                aria-pressed={locale === "en-US"}
-              >
-                EN
-              </button>
-            </HStack>
+              {locale === "id-ID" ? "ID" : "EN"}
+            </Button>
 
             {/* Dark / Light Theme Toggle */}
             <Button
