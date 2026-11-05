@@ -36,6 +36,9 @@ export function Hero({ isDark }: HeroProps) {
           <img
             src={profile.avatar}
             alt={profile.name}
+            width="112"
+            height="112"
+            decoding="async"
             className={`w-20 h-20 sm:w-28 sm:h-28 rounded-full border-2 object-cover transition-all duration-300 hover:scale-105 ${
               isDark
                 ? "border-white/40 ring-4 ring-sky-500/30 shadow-[0_0_30px_rgba(14,165,233,0.45)]"

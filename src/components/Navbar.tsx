@@ -13,18 +13,9 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.location.hash) {
-        window.history.replaceState(null, "", window.location.pathname + window.location.search);
-      }
-    };
-
     if (window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -79,6 +70,9 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
               <img
                 src="/favicon.png"
                 alt={data.profile.name}
+                width="40"
+                height="40"
+                decoding="async"
                 className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl object-cover border-2 shadow-sm transition-transform duration-200 group-hover:scale-105 ${
                   isDark ? "border-sky-500/40 shadow-sky-950/50" : "border-white shadow-sky-100"
                 }`}

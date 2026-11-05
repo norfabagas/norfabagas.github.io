@@ -51,7 +51,6 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
     scroll-padding-top: 4.5rem;
     overflow-x: clip;
     width: 100%;
@@ -65,10 +64,10 @@
   }
 
   body {
-    @apply transition-colors duration-300;
     overflow-x: clip;
     width: 100%;
     min-width: 320px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Custom subtle slate scrollbar */
@@ -102,15 +101,19 @@
      ========================================================================== */
   .aero-base-light {
     background-color: #f0f9ff;
+    transform: translateZ(0);
   }
 
   .aero-base-dark {
     background-color: #020617;
+    transform: translateZ(0);
   }
 
   .aero-gradient-flow {
-    opacity: var(--scroll-progress, 0);
+    opacity: 0;
     will-change: opacity;
+    transform: translateZ(0);
+    pointer-events: none;
   }
 
   .aero-gradient-flow-light {
@@ -134,7 +137,10 @@
     background-color: transparent !important;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateZ(0);
+    will-change: transform;
+    contain: layout style;
+    transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .aero-glass-card-light {
