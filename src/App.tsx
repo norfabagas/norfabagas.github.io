@@ -64,33 +64,54 @@ function PortfolioContent() {
 
   useEffect(() => {
     const sectionIds: SectionId[] = ["beranda", "pengalaman", "artikel", "kontak"];
+    let ticking = false;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) {
-          visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-          const topId = visible[0].target.id as SectionId;
-          if (sectionIds.includes(topId)) {
-            setActiveSection(topId);
-          }
-        }
-      },
-      {
-        rootMargin: "-20% 0px -50% 0px",
-        threshold: [0.1, 0.25, 0.5, 0.75],
-      }
-    );
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    const handleScroll = () => {
+    const checkActiveSection = () => {
+      // 1. Near the top of page, anchor to Hero
       if (window.scrollY < 120) {
         setActiveSection("beranda");
+        return;
       }
+
+      // 2. Near the bottom of page, anchor to Contact
+      const scrollBottom = window.innerHeight + window.scrollY;
+      const docHeight = document.documentElement.scrollHeight;
+      if (scrollBottom >= docHeight - 80) {
+        setActiveSection("kontak");
+        return;
+      }
+
+      // 3. Focal line at 35% from the top of the viewport
+      const focalPoint = window.innerHeight * 0.35;
+      let matchedSection: SectionId = "beranda";
+
+      for (let i = 0; i < sectionIds.length; i++) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // If section intersects the focal line
+          if (rect.top <= focalPoint && rect.bottom > focalPoint) {
+            matchedSection = id;
+            break;
+          } else if (rect.top <= focalPoint) {
+            matchedSection = id;
+          }
+        }
+      }
+
+      setActiveSection((prev) => (prev !== matchedSection ? matchedSection : prev));
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          checkActiveSection();
+          ticking = false;
+        });
+        ticking = true;
+      }
+
       if (window.location.hash) {
         window.history.replaceState(null, "", window.location.pathname + window.location.search);
       }
@@ -105,11 +126,15 @@ function PortfolioContent() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("nb-section-change", handleCustomChange);
+    window.addEventListener("resize", checkActiveSection, { passive: true });
+
+    // Initial check on mount
+    checkActiveSection();
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("nb-section-change", handleCustomChange);
+      window.removeEventListener("resize", checkActiveSection);
     };
   }, []);
 
@@ -120,35 +145,39 @@ function PortfolioContent() {
   return (
     <VStack
       gap={0}
-      className={`min-h-screen relative font-sans transition-colors duration-500 selection:bg-sky-500 selection:text-white w-full ${
-        isDark ? "bg-slate-950 text-slate-100" : "bg-sky-100 text-slate-900"
+      className={`min-h-screen relative font-sans selection:bg-sky-500 selection:text-white w-full ${
+        isDark ? "text-slate-100" : "text-slate-900"
       }`}
     >
-      {/* Dynamic Section Background Cross-fade Layers */}
-      {SECTION_BACKGROUNDS.map((sec) => (
-        <VStack
-          key={sec.id}
-          gap={0}
-          aria-hidden="true"
-          className={`fixed inset-0 pointer-events-none -z-10 transition-opacity duration-1000 ease-in-out ${
-            activeSection === sec.id ? "opacity-100" : "opacity-0"
-          } ${isDark ? sec.darkClass : sec.lightClass}`}
-        />
-      ))}
+      {/* Dynamic Section Background Canvas (Fixed behind all content) */}
+      <VStack gap={0} aria-hidden="true" className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {SECTION_BACKGROUNDS.map((sec) => (
+          <VStack
+            key={sec.id}
+            gap={0}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              activeSection === sec.id ? "opacity-100" : "opacity-0"
+            } ${isDark ? sec.darkClass : sec.lightClass}`}
+          />
+        ))}
+      </VStack>
 
-      {/* Navigation Bar */}
-      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+      {/* Main Page Elements (Elevated above background canvas at z-10) */}
+      <VStack gap={0} className="relative z-10 w-full">
+        {/* Navigation Bar */}
+        <Navbar isDark={isDark} toggleTheme={toggleTheme} />
 
-      {/* Main Content Sections */}
-      <main id="main-content" tabIndex={-1} className="focus:outline-none w-full">
-        <Hero isDark={isDark} />
-        <Experience isDark={isDark} />
-        <Articles isDark={isDark} />
-        <SupportConnect isDark={isDark} />
-      </main>
+        {/* Main Content Sections */}
+        <main id="main-content" tabIndex={-1} className="focus:outline-none w-full">
+          <Hero isDark={isDark} />
+          <Experience isDark={isDark} />
+          <Articles isDark={isDark} />
+          <SupportConnect isDark={isDark} />
+        </main>
 
-      {/* Footer */}
-      <Footer isDark={isDark} />
+        {/* Footer */}
+        <Footer isDark={isDark} />
+      </VStack>
     </VStack>
   );
 }

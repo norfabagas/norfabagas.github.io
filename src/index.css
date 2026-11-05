@@ -114,65 +114,57 @@
   /* 1. Beranda (Hero): Clear Sky & Fresh Grass */
   .aero-bg-beranda-light {
     background: 
-      radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.3) 0%, transparent 50%),
-      radial-gradient(circle at 20% 80%, rgba(74, 222, 128, 0.2) 0%, transparent 50%),
-      linear-gradient(160deg, #bae6fd 0%, #e0f2fe 45%, #dcfce7 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.35) 0%, transparent 50%),
+      radial-gradient(circle at 15% 85%, rgba(74, 222, 128, 0.25) 0%, transparent 50%),
+      linear-gradient(160deg, #7dd3fc 0%, #bae6fd 40%, #bbf7d0 100%);
   }
   .aero-bg-beranda-dark {
     background: 
-      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.22) 0%, transparent 50%),
-      radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.12) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #0c4a6e 60%, #064e3b 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.28) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.18) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #0369a1 55%, #064e3b 100%);
   }
 
   /* 2. Pengalaman (Experience): Marine Aqua & Deep Teal */
   .aero-bg-pengalaman-light {
     background: 
-      radial-gradient(circle at 15% 30%, rgba(20, 184, 166, 0.28) 0%, transparent 50%),
-      radial-gradient(circle at 85% 70%, rgba(56, 189, 248, 0.22) 0%, transparent 50%),
-      linear-gradient(160deg, #cffafe 0%, #e0f2fe 50%, #ccfbf1 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 15% 25%, rgba(20, 184, 166, 0.35) 0%, transparent 50%),
+      radial-gradient(circle at 85% 75%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+      linear-gradient(160deg, #a5f3fc 0%, #e0f2fe 45%, #99f6e4 100%);
   }
   .aero-bg-pengalaman-dark {
     background: 
-      radial-gradient(circle at 15% 30%, rgba(20, 184, 166, 0.22) 0%, transparent 50%),
-      radial-gradient(circle at 85% 70%, rgba(14, 165, 233, 0.16) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #0f4c5c 45%, #042f2e 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 15% 25%, rgba(20, 184, 166, 0.28) 0%, transparent 50%),
+      radial-gradient(circle at 85% 75%, rgba(14, 165, 233, 0.2) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #0f766e 50%, #042f2e 100%);
   }
 
   /* 3. Artikel (Articles): Stratosphere Azure & Pure Sky */
   .aero-bg-artikel-light {
     background: 
-      radial-gradient(circle at 80% 35%, rgba(59, 130, 246, 0.22) 0%, transparent 50%),
-      radial-gradient(circle at 20% 75%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
-      linear-gradient(160deg, #dbeafe 0%, #bae6fd 55%, #e0f2fe 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 20% 70%, rgba(14, 165, 233, 0.25) 0%, transparent 50%),
+      linear-gradient(160deg, #bfdbfe 0%, #bae6fd 50%, #e0f2fe 100%);
   }
   .aero-bg-artikel-dark {
     background: 
-      radial-gradient(circle at 80% 35%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 20% 75%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #1e3a8a 50%, #0369a1 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.26) 0%, transparent 50%),
+      radial-gradient(circle at 20% 70%, rgba(14, 165, 233, 0.22) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #1e3a8a 50%, #0284c7 100%);
   }
 
   /* 4. Kontak (Get in Touch & Support): Emerald Lagoon & Turquoise */
   .aero-bg-kontak-light {
     background: 
-      radial-gradient(circle at 25% 65%, rgba(45, 212, 191, 0.28) 0%, transparent 50%),
-      radial-gradient(circle at 75% 25%, rgba(74, 222, 128, 0.22) 0%, transparent 50%),
-      linear-gradient(160deg, #d1fae5 0%, #ccfbf1 50%, #bae6fd 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 25% 60%, rgba(45, 212, 191, 0.35) 0%, transparent 50%),
+      radial-gradient(circle at 75% 20%, rgba(74, 222, 128, 0.25) 0%, transparent 50%),
+      linear-gradient(160deg, #86efac 0%, #a5f3fc 50%, #bae6fd 100%);
   }
   .aero-bg-kontak-dark {
     background: 
-      radial-gradient(circle at 25% 65%, rgba(20, 184, 166, 0.22) 0%, transparent 50%),
-      radial-gradient(circle at 75% 25%, rgba(34, 197, 94, 0.14) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #064e3b 50%, #0891b2 100%);
-    background-attachment: fixed;
+      radial-gradient(circle at 25% 60%, rgba(20, 184, 166, 0.28) 0%, transparent 50%),
+      radial-gradient(circle at 75% 20%, rgba(34, 197, 94, 0.18) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #047857 50%, #0e7490 100%);
   }
 
   /* Aero Glass Card - Core Glassmorphism */
