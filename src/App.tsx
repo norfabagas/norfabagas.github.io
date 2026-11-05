@@ -8,31 +8,6 @@ import { Articles } from "./components/Articles";
 import { SupportConnect } from "./components/SupportConnect";
 import { Footer } from "./components/Footer";
 
-export type SectionId = "beranda" | "pengalaman" | "artikel" | "kontak";
-
-const SECTION_BACKGROUNDS: { id: SectionId; darkClass: string; lightClass: string }[] = [
-  {
-    id: "beranda",
-    darkClass: "aero-bg-beranda-dark",
-    lightClass: "aero-bg-beranda-light",
-  },
-  {
-    id: "pengalaman",
-    darkClass: "aero-bg-pengalaman-dark",
-    lightClass: "aero-bg-pengalaman-light",
-  },
-  {
-    id: "artikel",
-    darkClass: "aero-bg-artikel-dark",
-    lightClass: "aero-bg-artikel-light",
-  },
-  {
-    id: "kontak",
-    darkClass: "aero-bg-kontak-dark",
-    lightClass: "aero-bg-kontak-light",
-  },
-];
-
 function PortfolioContent() {
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
@@ -44,8 +19,6 @@ function PortfolioContent() {
     }
     return true;
   });
-
-  const [activeSection, setActiveSection] = useState<SectionId>("beranda");
 
   useEffect(() => {
     const root = document.documentElement;
@@ -63,50 +36,18 @@ function PortfolioContent() {
   }, [isDark]);
 
   useEffect(() => {
-    const sectionIds: SectionId[] = ["beranda", "pengalaman", "artikel", "kontak"];
     let ticking = false;
 
-    const checkActiveSection = () => {
-      // 1. Near the top of page, anchor to Hero
-      if (window.scrollY < 120) {
-        setActiveSection("beranda");
-        return;
-      }
-
-      // 2. Near the bottom of page, anchor to Contact
-      const scrollBottom = window.innerHeight + window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      if (scrollBottom >= docHeight - 80) {
-        setActiveSection("kontak");
-        return;
-      }
-
-      // 3. Focal line at 35% from the top of the viewport
-      const focalPoint = window.innerHeight * 0.35;
-      let matchedSection: SectionId = "beranda";
-
-      for (let i = 0; i < sectionIds.length; i++) {
-        const id = sectionIds[i];
-        const el = document.getElementById(id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // If section intersects the focal line
-          if (rect.top <= focalPoint && rect.bottom > focalPoint) {
-            matchedSection = id;
-            break;
-          } else if (rect.top <= focalPoint) {
-            matchedSection = id;
-          }
-        }
-      }
-
-      setActiveSection((prev) => (prev !== matchedSection ? matchedSection : prev));
+    const updateScrollProgress = () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(1, Math.max(0, window.scrollY / docHeight)) : 0;
+      document.documentElement.style.setProperty("--scroll-progress", progress.toFixed(4));
     };
 
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          checkActiveSection();
+          updateScrollProgress();
           ticking = false;
         });
         ticking = true;
@@ -117,24 +58,15 @@ function PortfolioContent() {
       }
     };
 
-    const handleCustomChange = (e: Event) => {
-      const customEvent = e as CustomEvent<SectionId>;
-      if (customEvent.detail && sectionIds.includes(customEvent.detail)) {
-        setActiveSection(customEvent.detail);
-      }
-    };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("nb-section-change", handleCustomChange);
-    window.addEventListener("resize", checkActiveSection, { passive: true });
+    window.addEventListener("resize", updateScrollProgress, { passive: true });
 
-    // Initial check on mount
-    checkActiveSection();
+    // Initial calculation on mount
+    updateScrollProgress();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("nb-section-change", handleCustomChange);
-      window.removeEventListener("resize", checkActiveSection);
+      window.removeEventListener("resize", updateScrollProgress);
     };
   }, []);
 
@@ -149,17 +81,21 @@ function PortfolioContent() {
         isDark ? "text-slate-100" : "text-slate-900"
       }`}
     >
-      {/* Dynamic Section Background Canvas (Fixed behind all content) */}
+      {/* Background Canvas: Base Layer (0% gradient) + Dynamic Scroll-driven Gradient Layer (0% -> 100%) */}
       <VStack gap={0} aria-hidden="true" className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {SECTION_BACKGROUNDS.map((sec) => (
-          <VStack
-            key={sec.id}
-            gap={0}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              activeSection === sec.id ? "opacity-100" : "opacity-0"
-            } ${isDark ? sec.darkClass : sec.lightClass}`}
-          />
-        ))}
+        {/* Layer 1: Solid Clean Base Atmosphere (visible at top height 0%) */}
+        <VStack
+          gap={0}
+          className={`absolute inset-0 ${isDark ? "aero-base-dark" : "aero-base-light"}`}
+        />
+
+        {/* Layer 2: Rich Frutiger Aero Gradient (increases from 0% opacity at top to 100% on scroll) */}
+        <VStack
+          gap={0}
+          className={`absolute inset-0 aero-gradient-flow ${
+            isDark ? "aero-gradient-flow-dark" : "aero-gradient-flow-light"
+          }`}
+        />
       </VStack>
 
       {/* Main Page Elements (Elevated above background canvas at z-10) */}
