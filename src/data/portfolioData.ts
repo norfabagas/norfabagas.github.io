@@ -77,32 +77,32 @@ export interface LocalizedPortfolioData {
 
 export const COMMON_ARTICLES: Article[] = [
   {
-    title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",
-    url: "https://medium.com/@bgsnorfa",
+    title: "How to Dockerize your Rails 6 App from Scratch",
+    url: "https://bgsnorfa.medium.com/how-to-dockerize-your-rails-6-app-from-scratch-37083df752f5",
     category: "DevOps & Tooling",
     readTime: "5 min read",
-    snippet: "Running multiple containers with Docker Compose."
+    snippet: "A step-by-step tutorial on dockerizing a Rails 6 application with PostgreSQL and multiple containers using Docker Compose."
   },
   {
-    title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
-    url: "https://medium.com/@bgsnorfa",
+    title: "How I Enhance WSL for Development (Personal Approach)",
+    url: "https://bgsnorfa.medium.com/how-i-enhance-wsl-for-development-personal-approach-3aca92c53875",
     category: "Development Setup",
     readTime: "6 min read",
-    snippet: "Setting up Ruby on Rails on Windows with WSL2."
+    snippet: "Personal approach and practical setup tips for enhancing the Windows Subsystem for Linux (WSL) development workflow."
   },
   {
-    title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
-    url: "https://medium.com/@bgsnorfa",
+    title: "Write Bubble Sort Algorithm in Javascript",
+    url: "https://bgsnorfa.medium.com/write-bubble-sort-algorithm-in-javascript-3d2e2f5b2e6a",
     category: "Computer Science",
     readTime: "7 min read",
-    snippet: "Time and space complexity of sorting algorithms."
+    snippet: "Understanding the Bubble Sort algorithm in JavaScript through step-by-step implementation and time/space complexity analysis."
   },
   {
-    title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
-    url: "https://medium.com/@bgsnorfa",
+    title: "Create a Rock-Paper-Scissors game with Chatbot",
+    url: "https://bgsnorfa.medium.com/create-a-rock-paper-scissors-game-with-chatbot-2bf9a0c78868",
     category: "Artificial Intelligence",
     readTime: "4 min read",
-    snippet: "Building conversation flows in IBM Watson Assistant."
+    snippet: "Building conversation flows and game logic in IBM Watson Assistant to create an interactive Rock-Paper-Scissors chatbot."
   }
 ];
 
