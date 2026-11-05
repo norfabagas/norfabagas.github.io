@@ -75,7 +75,7 @@ export interface LocalizedPortfolioData {
   techTools: TechToolGroup[];
 }
 
-const COMMON_ARTICLES: Article[] = [
+export const COMMON_ARTICLES: Article[] = [
   {
     title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",
     url: "https://medium.com/@bgsnorfa",

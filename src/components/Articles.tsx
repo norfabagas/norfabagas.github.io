@@ -1,15 +1,12 @@
 import { Section, VStack, HStack, Grid, Card, Heading, Text } from "@astryxdesign/core";
 import { ExternalLink, Clock, BookOpen } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { COMMON_ARTICLES } from "../data/portfolioData";
 
 interface ArticlesProps {
   isDark: boolean;
 }
 
 export function Articles({ isDark }: ArticlesProps) {
-  const { data } = useLanguage();
-  const { articles, socials } = data;
-
   return (
     <Section
       id="artikel"
@@ -40,7 +37,7 @@ export function Articles({ isDark }: ArticlesProps) {
 
         {/* Articles Grid */}
         <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
-          {articles.map((art) => (
+          {COMMON_ARTICLES.map((art) => (
             <Card
               variant="transparent"
               key={art.title}
@@ -91,21 +88,6 @@ export function Articles({ isDark }: ArticlesProps) {
             </Card>
           ))}
         </Grid>
-
-        {/* Medium Profile Link */}
-        <VStack gap={0} hAlign="center" className="mt-6 sm:mt-8 text-center w-full">
-          <a
-            href={socials.medium}
-            target="_blank"
-            rel="noreferrer"
-            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold transition-all duration-150 px-6 min-h-[44px] rounded-xl active:scale-95 ${
-              isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
-            }`}
-          >
-            <span>Open Medium @bgsnorfa</span>
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </VStack>
       </VStack>
     </Section>
   );
