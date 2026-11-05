@@ -758,10 +758,10 @@ export const UI_STRINGS = {
       subtitle: "Bahasa, framework, dan tools yang saya gunakan."
     },
     articles: {
-      title: "Tulisan Teknis",
-      subtitle: "Tulisan tentang pengembangan perangkat lunak.",
-      visitMedium: "Buka Medium @bgsnorfa",
-      readArticle: "Baca Tulisan"
+      title: "Technical Articles",
+      subtitle: "Notes on software development.",
+      visitMedium: "Open Medium @bgsnorfa",
+      readArticle: "Read Article"
     },
     support: {
       coffeeTitle: "Dukungan",
