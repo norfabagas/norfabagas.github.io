@@ -365,28 +365,28 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",
         url: "https://medium.com/@bgsnorfa",
         category: "DevOps & Tooling",
-        readTime: "5 min baca",
+        readTime: "5 min read",
         snippet: "Docker Compose untuk menjalankan beberapa container."
       },
       {
         title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
         url: "https://medium.com/@bgsnorfa",
         category: "Development Setup",
-        readTime: "6 min baca",
+        readTime: "6 min read",
         snippet: "Setup Ruby on Rails di Windows dengan WSL2."
       },
       {
         title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
         url: "https://medium.com/@bgsnorfa",
         category: "Computer Science",
-        readTime: "7 min baca",
+        readTime: "7 min read",
         snippet: "Perbandingan kompleksitas waktu dan memori algoritma sorting."
       },
       {
         title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
         url: "https://medium.com/@bgsnorfa",
         category: "Artificial Intelligence",
-        readTime: "4 min baca",
+        readTime: "4 min read",
         snippet: "Membuat alur percakapan di IBM Watson Assistant."
       }
     ],
@@ -693,28 +693,28 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         url: "https://medium.com/@bgsnorfa",
         category: "DevOps & Tooling",
         readTime: "5 min read",
-        snippet: "Running multiple containers with Docker Compose."
+        snippet: "Docker Compose untuk menjalankan beberapa container."
       },
       {
         title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
         url: "https://medium.com/@bgsnorfa",
         category: "Development Setup",
         readTime: "6 min read",
-        snippet: "Setting up Ruby on Rails on Windows with WSL2."
+        snippet: "Setup Ruby on Rails di Windows dengan WSL2."
       },
       {
         title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
         url: "https://medium.com/@bgsnorfa",
         category: "Computer Science",
         readTime: "7 min read",
-        snippet: "Time and space complexity of sorting algorithms."
+        snippet: "Perbandingan kompleksitas waktu dan memori algoritma sorting."
       },
       {
         title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
         url: "https://medium.com/@bgsnorfa",
         category: "Artificial Intelligence",
         readTime: "4 min read",
-        snippet: "Building conversation flows in IBM Watson Assistant."
+        snippet: "Membuat alur percakapan di IBM Watson Assistant."
       }
     ],
     projectResearchSummary:
