@@ -38,17 +38,17 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           </Text>
         </VStack>
 
-        {/* 2-Card Layout: Professional Channels + Coffee Support */}
-        <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
-          {/* Card 1: Official Communication Channels */}
-          <Card
-            variant="transparent"
-            padding={4}
-            className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
-              isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
-            }`}
-          >
-            <VStack gap={4} className="w-full h-full justify-between">
+        {/* Single Unified Container: Professional Channels + Coffee Support */}
+        <Card
+          variant="transparent"
+          padding={5}
+          className={`rounded-2xl border aero-glass-card w-full ${
+            isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
+          }`}
+        >
+          <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={6} className="w-full">
+            {/* Left Column: Official Communication Channels */}
+            <VStack gap={4} className="w-full justify-between">
               <VStack gap={3} className="w-full">
                 <HStack gap={3} vAlign="center" className="w-full">
                   <HStack
@@ -93,7 +93,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   </HStack>
                 </Button>
 
-                <Grid columns={{ minWidth: 120, max: 3, repeat: "fit" }} gap={2} className="w-full">
+                <Grid columns={{ minWidth: 100, max: 3, repeat: "fit" }} gap={2} className="w-full">
                   <a
                     href={socials.github}
                     target="_blank"
@@ -132,17 +132,14 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </Grid>
               </VStack>
             </VStack>
-          </Card>
 
-          {/* Card 2: Buy Me a Coffee / Support */}
-          <Card
-            variant="transparent"
-            padding={4}
-            className={`rounded-2xl border flex flex-col justify-between aero-glass-card ${
-              isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
-            }`}
-          >
-            <VStack gap={4} className="w-full h-full justify-between">
+            {/* Right Column: Buy Me a Coffee / Support */}
+            <VStack
+              gap={4}
+              className={`w-full justify-between pt-6 border-t md:pt-0 md:border-t-0 md:border-l md:pl-6 ${
+                isDark ? "border-white/10" : "border-slate-200"
+              }`}
+            >
               <VStack gap={3} className="w-full">
                 <HStack gap={3} vAlign="center" className="w-full">
                   <HStack
@@ -169,8 +166,8 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                 </Text>
               </VStack>
 
-              {/* Action Buttons */}
-              <VStack gap={2} className="pt-2 w-full">
+              {/* Action Button */}
+              <VStack gap={0} className="pt-2 w-full">
                 <Button
                   label={t.support.coffeeButton}
                   variant="primary"
@@ -186,11 +183,10 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                     <ExternalLink className="w-3.5 h-3.5" />
                   </HStack>
                 </Button>
-
               </VStack>
             </VStack>
-          </Card>
-        </Grid>
+          </Grid>
+        </Card>
       </VStack>
     </Section>
   );
