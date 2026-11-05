@@ -75,6 +75,37 @@ export interface LocalizedPortfolioData {
   techTools: TechToolGroup[];
 }
 
+const COMMON_ARTICLES: Article[] = [
+  {
+    title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",
+    url: "https://medium.com/@bgsnorfa",
+    category: "DevOps & Tooling",
+    readTime: "5 min read",
+    snippet: "Running multiple containers with Docker Compose."
+  },
+  {
+    title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
+    url: "https://medium.com/@bgsnorfa",
+    category: "Development Setup",
+    readTime: "6 min read",
+    snippet: "Setting up Ruby on Rails on Windows with WSL2."
+  },
+  {
+    title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
+    url: "https://medium.com/@bgsnorfa",
+    category: "Computer Science",
+    readTime: "7 min read",
+    snippet: "Time and space complexity of sorting algorithms."
+  },
+  {
+    title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
+    url: "https://medium.com/@bgsnorfa",
+    category: "Artificial Intelligence",
+    readTime: "4 min read",
+    snippet: "Building conversation flows in IBM Watson Assistant."
+  }
+];
+
 const COMMON_SOCIALS: Socials = {
   github: "https://github.com/norfabagas",
   linkedin: "https://www.linkedin.com/in/norfabagas",
@@ -360,36 +391,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         skills: ["Programming", "Tech Sales"]
       }
     ],
-    articles: [
-      {
-        title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",
-        url: "https://medium.com/@bgsnorfa",
-        category: "DevOps & Tooling",
-        readTime: "5 min read",
-        snippet: "Docker Compose untuk menjalankan beberapa container."
-      },
-      {
-        title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
-        url: "https://medium.com/@bgsnorfa",
-        category: "Development Setup",
-        readTime: "6 min read",
-        snippet: "Setup Ruby on Rails di Windows dengan WSL2."
-      },
-      {
-        title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
-        url: "https://medium.com/@bgsnorfa",
-        category: "Computer Science",
-        readTime: "7 min read",
-        snippet: "Perbandingan kompleksitas waktu dan memori algoritma sorting."
-      },
-      {
-        title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
-        url: "https://medium.com/@bgsnorfa",
-        category: "Artificial Intelligence",
-        readTime: "4 min read",
-        snippet: "Membuat alur percakapan di IBM Watson Assistant."
-      }
-    ],
+    articles: COMMON_ARTICLES,
     projectResearchSummary:
       "Pekerjaan saya mencakup backend perbankan dan SIMRS, data warehouse OLAP, serta eksperimen machine learning dan chatbot.",
     techTools: [
@@ -687,36 +689,7 @@ export const PORTFOLIO_DATA: Record<Locale, LocalizedPortfolioData> = {
         skills: ["Programming", "Tech Sales"]
       }
     ],
-    articles: [
-      {
-        title: "Memahami Kontainerisasi dengan Docker untuk Web Developer",
-        url: "https://medium.com/@bgsnorfa",
-        category: "DevOps & Tooling",
-        readTime: "5 min read",
-        snippet: "Docker Compose untuk menjalankan beberapa container."
-      },
-      {
-        title: "Konfigurasi Lingkungan Ruby on Rails Menggunakan WSL",
-        url: "https://medium.com/@bgsnorfa",
-        category: "Development Setup",
-        readTime: "6 min read",
-        snippet: "Setup Ruby on Rails di Windows dengan WSL2."
-      },
-      {
-        title: "Analisis Kompleksitas Waktu dan Ruang pada Algoritma Sorting",
-        url: "https://medium.com/@bgsnorfa",
-        category: "Computer Science",
-        readTime: "7 min read",
-        snippet: "Perbandingan kompleksitas waktu dan memori algoritma sorting."
-      },
-      {
-        title: "Eksplorasi Chatbot Cerdas dengan IBM Watson Assistant",
-        url: "https://medium.com/@bgsnorfa",
-        category: "Artificial Intelligence",
-        readTime: "4 min read",
-        snippet: "Membuat alur percakapan di IBM Watson Assistant."
-      }
-    ],
+    articles: COMMON_ARTICLES,
     projectResearchSummary:
       "My work covers banking backends, hospital systems, OLAP data warehouses, and ML experiments.",
     techTools: [
@@ -747,7 +720,7 @@ export const UI_STRINGS = {
       experience: "Pengalaman",
       projects: "Proyek",
       skills: "Keahlian",
-      articles: "Artikel",
+      articles: "Articles",
       support: "Kontak",
       toggleThemeDark: "Mode Gelap",
       toggleThemeLight: "Mode Terang",

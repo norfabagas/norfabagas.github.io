@@ -7,7 +7,7 @@ interface ArticlesProps {
 }
 
 export function Articles({ isDark }: ArticlesProps) {
-  const { t, data } = useLanguage();
+  const { data } = useLanguage();
   const { articles, socials } = data;
 
   return (
@@ -18,7 +18,7 @@ export function Articles({ isDark }: ArticlesProps) {
       className="w-full flex flex-col justify-center py-10 sm:py-16 md:py-20 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
       <VStack gap={0} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        {/* Section Header */}
+        {/* Section Header (Untranslated as published on Medium) */}
         <VStack gap={2} hAlign="center" className="text-center mb-6 sm:mb-8 w-full">
           <Heading
             level={2}
@@ -26,7 +26,7 @@ export function Articles({ isDark }: ArticlesProps) {
               isDark ? "text-slate-100" : "text-slate-900"
             }`}
           >
-            {t.articles.title}
+            Technical Articles
           </Heading>
           <Text
             type="supporting"
@@ -34,7 +34,7 @@ export function Articles({ isDark }: ArticlesProps) {
               isDark ? "text-slate-300" : "text-slate-700"
             }`}
           >
-            {t.articles.subtitle}
+            Notes on software development.
           </Text>
         </VStack>
 
@@ -84,7 +84,7 @@ export function Articles({ isDark }: ArticlesProps) {
                   }`}
                 >
                   <BookOpen className="w-3.5 h-3.5 text-sky-500" />
-                  <span>{t.articles.readArticle}</span>
+                  <span>Read Article</span>
                   <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                 </a>
               </VStack>
@@ -102,7 +102,7 @@ export function Articles({ isDark }: ArticlesProps) {
               isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
             }`}
           >
-            <span>{t.articles.visitMedium}</span>
+            <span>Open Medium @bgsnorfa</span>
             <ExternalLink className="w-4 h-4" />
           </a>
         </VStack>
