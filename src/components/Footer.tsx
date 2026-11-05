@@ -12,6 +12,7 @@ export function Footer({ isDark }: FooterProps) {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    window.dispatchEvent(new CustomEvent("nb-section-change", { detail: "beranda" }));
     if (window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }

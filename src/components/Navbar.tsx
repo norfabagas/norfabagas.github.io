@@ -50,6 +50,7 @@ export function Navbar({ isDark, toggleTheme }: NavbarProps) {
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+      window.dispatchEvent(new CustomEvent("nb-section-change", { detail: targetId }));
     }
     setIsMobileMenuOpen(false);
     if (window.location.hash) {

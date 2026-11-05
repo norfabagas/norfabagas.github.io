@@ -14,6 +14,7 @@ export function Hero({ isDark }: HeroProps) {
     const el = document.getElementById(targetId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+      window.dispatchEvent(new CustomEvent("nb-section-change", { detail: targetId }));
     }
     if (window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname + window.location.search);
