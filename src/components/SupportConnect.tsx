@@ -1,5 +1,5 @@
-import { Section, VStack, HStack, Grid, Card, Heading, Text, Button } from "@astryxdesign/core";
-import { Coffee, Github, Linkedin, BookOpen, ExternalLink, MessageSquare, Terminal } from "lucide-react";
+import { Section, VStack, HStack, Grid, Card, Heading, Text } from "@astryxdesign/core";
+import { Coffee, Github, Linkedin, BookOpen, ExternalLink } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface SupportConnectProps {
@@ -7,8 +7,39 @@ interface SupportConnectProps {
 }
 
 export function SupportConnect({ isDark }: SupportConnectProps) {
-  const { t, data } = useLanguage();
+  const { t, data, locale } = useLanguage();
   const { socials } = data;
+
+  const contactLinks = [
+    {
+      name: "LinkedIn",
+      handle: "/in/norfabagas",
+      desc: locale === "id-ID" ? "Jaringan profesional & kolaborasi" : "Professional network & inquiries",
+      url: socials.linkedin,
+      icon: Linkedin,
+    },
+    {
+      name: "GitHub",
+      handle: "@norfabagas",
+      desc: locale === "id-ID" ? "Repositori & proyek open source" : "Repositories & open source code",
+      url: socials.github,
+      icon: Github,
+    },
+    {
+      name: "Medium",
+      handle: "@bgsnorfa",
+      desc: locale === "id-ID" ? "Artikel & catatan teknis" : "Technical articles & notes",
+      url: socials.medium,
+      icon: BookOpen,
+    },
+    {
+      name: "Buy Me a Coffee",
+      handle: "@bgsnorfa",
+      desc: locale === "id-ID" ? "Dukungan & apresiasi karya" : "Support my writing & projects",
+      url: socials.buymeacoffee,
+      icon: Coffee,
+    },
+  ];
 
   return (
     <Section
@@ -17,7 +48,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
       paddingBlock={0}
       className="w-full flex flex-col justify-center py-10 sm:py-16 md:py-20 bg-transparent transition-colors duration-300 border-b border-white/40 dark:border-white/10"
     >
-      <VStack gap={0} className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
+      <VStack gap={0} className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-left">
         {/* Section Header */}
         <VStack gap={2} hAlign="center" className="text-center mb-6 sm:mb-8 w-full">
           <Heading
@@ -38,7 +69,7 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
           </Text>
         </VStack>
 
-        {/* Single Unified Container: Professional Channels + Coffee Support */}
+        {/* Single Unified Container: 4 Equal-Level Channels */}
         <Card
           variant="transparent"
           padding={5}
@@ -46,145 +77,55 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
             isDark ? "aero-glass-card-dark" : "aero-glass-card-light"
           }`}
         >
-          <Grid columns={{ minWidth: 280, max: 2, repeat: "fit" }} gap={6} className="w-full">
-            {/* Left Column: Official Communication Channels */}
-            <VStack gap={4} className="w-full justify-between">
-              <VStack gap={3} className="w-full">
-                <HStack gap={3} vAlign="center" className="w-full">
+          <Grid columns={{ minWidth: 260, max: 2, repeat: "fit" }} gap={4} className="w-full">
+            {contactLinks.map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                className={`group flex items-center justify-between p-3.5 sm:p-4 rounded-xl border transition-all duration-200 min-h-[64px] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
+                  isDark
+                    ? "aero-glass-badge-dark hover:border-sky-400/50 hover:bg-slate-800/60"
+                    : "aero-glass-badge-light hover:border-sky-400/60 hover:bg-white/90 hover:shadow-md"
+                }`}
+              >
+                <HStack gap={3} vAlign="center" className="min-w-0">
                   <HStack
                     hAlign="center"
                     vAlign="center"
-                    className={`w-11 h-11 rounded-xl shrink-0 ${
+                    className={`w-10 h-10 sm:w-11 sm:h-11 rounded-xl shrink-0 transition-transform duration-200 group-hover:scale-105 ${
                       isDark ? "aero-icon-dark" : "aero-icon-light"
                     }`}
                   >
-                    <MessageSquare className="w-5 h-5" />
+                    <item.icon className="w-5 h-5 text-sky-500" />
                   </HStack>
-                  <VStack gap={0.5}>
-                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                      {t.support.connectSubtitle}
-                    </Heading>
-                    <Text type="supporting" className={`text-xs ${isDark ? "text-sky-300" : "text-sky-700"}`}>
-                      LinkedIn · GitHub · Stack Overflow
+                  <VStack gap={0.5} className="min-w-0 text-left">
+                    <HStack gap={1.5} vAlign="center" className="flex-wrap">
+                      <Heading level={4} className={`text-sm font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
+                        {item.name}
+                      </Heading>
+                      <span className={`text-xs font-mono font-medium ${isDark ? "text-sky-300/80" : "text-sky-700"}`}>
+                        {item.handle}
+                      </span>
+                    </HStack>
+                    <Text type="supporting" className={`text-xs truncate max-w-[200px] sm:max-w-xs ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                      {item.desc}
                     </Text>
                   </VStack>
                 </HStack>
 
-                <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                  {t.support.connectCardBody}
-                </Text>
-              </VStack>
-
-              {/* Action Buttons */}
-              <VStack gap={2} className="pt-2 w-full">
-                <Button
-                  label="LinkedIn @norfabagas"
-                  variant="primary"
-                  size="md"
-                  href={socials.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary min-h-[44px] h-11 px-4 active:scale-95"
+                <HStack
+                  hAlign="center"
+                  vAlign="center"
+                  className={`w-8 h-8 rounded-lg shrink-0 ml-2 transition-colors ${
+                    isDark ? "text-slate-400 group-hover:text-white" : "text-slate-500 group-hover:text-slate-900"
+                  }`}
                 >
-                  <HStack gap={2} vAlign="center">
-                    <Linkedin className="w-4 h-4" />
-                    <span>LinkedIn: /in/norfabagas</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </HStack>
-                </Button>
-
-                <Grid columns={{ minWidth: 100, max: 3, repeat: "fit" }} gap={2} className="w-full">
-                  <a
-                    href={socials.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold border min-h-[44px] transition-all duration-150 active:scale-95 ${
-                      isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
-                    }`}
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                    <span>GitHub</span>
-                  </a>
-
-                  <a
-                    href={socials.stackoverflow}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold border min-h-[44px] transition-all duration-150 active:scale-95 ${
-                      isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
-                    }`}
-                  >
-                    <Terminal className="w-3.5 h-3.5" />
-                    <span>Stack Overflow</span>
-                  </a>
-
-                  <a
-                    href={socials.medium}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs font-semibold border min-h-[44px] transition-all duration-150 active:scale-95 ${
-                      isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
-                    }`}
-                  >
-                    <BookOpen className="w-3.5 h-3.5" />
-                    <span>Medium</span>
-                  </a>
-                </Grid>
-              </VStack>
-            </VStack>
-
-            {/* Right Column: Buy Me a Coffee / Support */}
-            <VStack
-              gap={4}
-              className={`w-full justify-between pt-6 border-t md:pt-0 md:border-t-0 md:border-l md:pl-6 ${
-                isDark ? "border-white/10" : "border-slate-200"
-              }`}
-            >
-              <VStack gap={3} className="w-full">
-                <HStack gap={3} vAlign="center" className="w-full">
-                  <HStack
-                    hAlign="center"
-                    vAlign="center"
-                    className={`w-11 h-11 rounded-xl shrink-0 ${
-                      isDark ? "aero-icon-dark" : "aero-icon-light"
-                    }`}
-                  >
-                    <Coffee className="w-5 h-5" />
-                  </HStack>
-                  <VStack gap={0.5}>
-                    <Heading level={3} className={`text-base font-bold ${isDark ? "text-slate-100" : "text-slate-900"}`}>
-                      {t.support.coffeeTitle}
-                    </Heading>
-                    <Text type="supporting" className={`text-xs ${isDark ? "text-sky-300" : "text-sky-700"}`}>
-                      {t.support.coffeeSubtitle}
-                    </Text>
-                  </VStack>
+                  <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </HStack>
-
-                <Text type="body" className={`text-xs sm:text-sm leading-relaxed ${isDark ? "text-slate-200" : "text-slate-700"}`}>
-                  {t.support.coffeeBody}
-                </Text>
-              </VStack>
-
-              {/* Action Button */}
-              <VStack gap={0} className="pt-2 w-full">
-                <Button
-                  label={t.support.coffeeButton}
-                  variant="primary"
-                  size="md"
-                  href={socials.buymeacoffee}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-xl text-sm font-semibold aero-btn-primary min-h-[44px] h-11 px-4 active:scale-95"
-                >
-                  <HStack gap={2} vAlign="center">
-                    <Coffee className="w-4 h-4" />
-                    <span>{t.support.coffeeButton}</span>
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </HStack>
-                </Button>
-              </VStack>
-            </VStack>
+              </a>
+            ))}
           </Grid>
         </Card>
       </VStack>

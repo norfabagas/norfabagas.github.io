@@ -798,7 +798,7 @@ export const UI_STRINGS = {
       coffeeButton: "Traktir Kopi di BuyMeACoffee",
       connectTitle: "Kontak Langsung",
       connectSubtitle: "LinkedIn & GitHub",
-      connectHeaderDesc: "Hubungi saya melalui LinkedIn atau GitHub.",
+      connectHeaderDesc: "Terhubung melalui LinkedIn, GitHub, Medium, atau Buy Me a Coffee.",
       connectCardBody: "LinkedIn untuk kerja sama; GitHub untuk diskusi kode."
     },
     footer: {
@@ -864,7 +864,7 @@ export const UI_STRINGS = {
       coffeeButton: "Buy a Coffee on BuyMeACoffee",
       connectTitle: "Get in Touch",
       connectSubtitle: "LinkedIn & GitHub",
-      connectHeaderDesc: "Find me on LinkedIn or GitHub.",
+      connectHeaderDesc: "Connect with me across LinkedIn, GitHub, Medium, or Buy Me a Coffee.",
       connectCardBody: "LinkedIn for work inquiries; GitHub for code discussions."
     },
     footer: {
