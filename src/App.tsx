@@ -121,7 +121,7 @@ function PortfolioContent() {
     <VStack
       gap={0}
       className={`min-h-screen relative font-sans transition-colors duration-500 selection:bg-sky-500 selection:text-white w-full ${
-        isDark ? "bg-slate-950 text-slate-100" : "bg-sky-50 text-slate-900"
+        isDark ? "bg-slate-950 text-slate-100" : "bg-sky-100 text-slate-900"
       }`}
     >
       {/* Dynamic Section Background Cross-fade Layers */}

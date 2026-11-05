@@ -107,56 +107,71 @@
     background-attachment: fixed;
   }
 
-  /* Section-specific Frutiger Aero dynamic atmospheres with smooth transitions */
+  /* ==========================================================================
+     Section-specific Frutiger Aero dynamic atmospheres (Harmonious Dark & Light)
+     ========================================================================== */
+  
+  /* 1. Beranda (Hero): Clear Sky & Fresh Grass */
   .aero-bg-beranda-light {
     background: 
-      radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.28) 0%, transparent 50%),
-      linear-gradient(160deg, #bae6fd 0%, #dcfce7 100%);
+      radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(74, 222, 128, 0.2) 0%, transparent 50%),
+      linear-gradient(160deg, #bae6fd 0%, #e0f2fe 45%, #dcfce7 100%);
     background-attachment: fixed;
   }
   .aero-bg-beranda-dark {
     background: 
-      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #0c4a6e 100%);
+      radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.22) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(34, 197, 94, 0.12) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #0c4a6e 60%, #064e3b 100%);
     background-attachment: fixed;
   }
 
+  /* 2. Pengalaman (Experience): Marine Aqua & Deep Teal */
   .aero-bg-pengalaman-light {
     background: 
-      radial-gradient(circle at 15% 35%, rgba(20, 184, 166, 0.25) 0%, transparent 50%),
-      linear-gradient(160deg, #cffafe 0%, #e0f2fe 50%, #d1fae5 100%);
+      radial-gradient(circle at 15% 30%, rgba(20, 184, 166, 0.28) 0%, transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(56, 189, 248, 0.22) 0%, transparent 50%),
+      linear-gradient(160deg, #cffafe 0%, #e0f2fe 50%, #ccfbf1 100%);
     background-attachment: fixed;
   }
   .aero-bg-pengalaman-dark {
     background: 
-      radial-gradient(circle at 15% 35%, rgba(20, 184, 166, 0.16) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #042f2e 50%, #0c4a6e 100%);
+      radial-gradient(circle at 15% 30%, rgba(20, 184, 166, 0.22) 0%, transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(14, 165, 233, 0.16) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #0f4c5c 45%, #042f2e 100%);
     background-attachment: fixed;
   }
 
+  /* 3. Artikel (Articles): Stratosphere Azure & Pure Sky */
   .aero-bg-artikel-light {
     background: 
-      radial-gradient(circle at 85% 40%, rgba(165, 180, 252, 0.28) 0%, transparent 50%),
-      linear-gradient(160deg, #e0e7ff 0%, #bae6fd 60%, #f0fdf4 100%);
+      radial-gradient(circle at 80% 35%, rgba(59, 130, 246, 0.22) 0%, transparent 50%),
+      radial-gradient(circle at 20% 75%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+      linear-gradient(160deg, #dbeafe 0%, #bae6fd 55%, #e0f2fe 100%);
     background-attachment: fixed;
   }
   .aero-bg-artikel-dark {
     background: 
-      radial-gradient(circle at 85% 40%, rgba(99, 102, 241, 0.18) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #1e1b4b 50%, #0369a1 100%);
+      radial-gradient(circle at 80% 35%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 20% 75%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #1e3a8a 50%, #0369a1 100%);
     background-attachment: fixed;
   }
 
+  /* 4. Kontak (Get in Touch & Support): Emerald Lagoon & Turquoise */
   .aero-bg-kontak-light {
     background: 
-      radial-gradient(circle at 20% 60%, rgba(56, 189, 248, 0.26) 0%, transparent 50%),
-      linear-gradient(160deg, #bbf7d0 0%, #bae6fd 55%, #e0f2fe 100%);
+      radial-gradient(circle at 25% 65%, rgba(45, 212, 191, 0.28) 0%, transparent 50%),
+      radial-gradient(circle at 75% 25%, rgba(74, 222, 128, 0.22) 0%, transparent 50%),
+      linear-gradient(160deg, #d1fae5 0%, #ccfbf1 50%, #bae6fd 100%);
     background-attachment: fixed;
   }
   .aero-bg-kontak-dark {
     background: 
-      radial-gradient(circle at 20% 60%, rgba(14, 165, 233, 0.18) 0%, transparent 50%),
-      linear-gradient(160deg, #020617 0%, #075985 50%, #0f172a 100%);
+      radial-gradient(circle at 25% 65%, rgba(20, 184, 166, 0.22) 0%, transparent 50%),
+      radial-gradient(circle at 75% 25%, rgba(34, 197, 94, 0.14) 0%, transparent 50%),
+      linear-gradient(160deg, #020617 0%, #064e3b 50%, #0891b2 100%);
     background-attachment: fixed;
   }
 
