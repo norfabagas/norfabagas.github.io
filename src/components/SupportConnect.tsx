@@ -187,17 +187,6 @@ export function SupportConnect({ isDark }: SupportConnectProps) {
                   </HStack>
                 </Button>
 
-                <HStack
-                  hAlign="center"
-                  vAlign="center"
-                  className={`w-full py-2.5 px-3 rounded-xl border text-center transition-all duration-150 min-h-[44px] ${
-                    isDark ? "aero-btn-secondary-dark" : "aero-btn-secondary-light"
-                  }`}
-                >
-                  <Text type="supporting" className={`text-xs ${isDark ? "text-slate-300" : "text-slate-700"}`}>
-                    {t.support.coffeeHeart}
-                  </Text>
-                </HStack>
               </VStack>
             </VStack>
           </Card>
